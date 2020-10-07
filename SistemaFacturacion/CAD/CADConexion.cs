@@ -7,8 +7,9 @@ using System.Data.SqlClient;
 using System.Data;
 
 namespace CAD
+
 {
-    internal class CADConexion
+    public class CADConexion
     {
         private SqlConnection Conexion = new SqlConnection(
   "Data Source=localhost;Initial Catalog=TiendaInventario;Integrated Security=True");
