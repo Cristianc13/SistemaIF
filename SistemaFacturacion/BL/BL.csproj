@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CAD\CAD.csproj">
+      <Project>{4c401774-2d72-4194-a807-e584ef48c1bb}</Project>
+      <Name>CAD</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ENT\ENT.csproj">
       <Project>{d823cde5-76d1-4372-9b5c-fd173333dbf6}</Project>
       <Name>ENT</Name>
