@@ -19,25 +19,19 @@ namespace BL
             return cliente.MostrarCliente();
         }
 
-        public void InsertCliente(int idCLiente, string nombreCliente, string apellidoCliente, string telefono)
+        public void InsertCliente(ENTCliente ECliente)
         {
-            ENTCliente ccliente = new ENTCliente(idCLiente, nombreCliente, apellidoCliente, telefono);
-            cliente.InsertCliente(ccliente);
+            cliente.InsertCliente(ECliente);
         }
 
-        public void DeleteCliente (int idc)
+        public void DeleteCliente(ENTCliente ECliente)
         {
-            ENTCliente ccliente = new ENTCliente(idc);
-            cliente.DeleteCliente(ccliente);
+            cliente.DeleteCliente(ECliente);
         }
 
-        public void UpdateCliente (int idCliente, string nombreCliente, string apellidoCliente, String telefono)
+        public void UpdateCliente(ENTCliente ECliente)
         {
-            ENTCliente ccliente = new ENTCliente(idCliente, nombreCliente, apellidoCliente, telefono);
-            cliente.UpdateCliente(ccliente);
-
+            cliente.UpdateCliente(ECliente);
         }
-
-       
     }
 }
