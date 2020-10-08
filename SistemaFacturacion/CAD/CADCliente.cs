@@ -9,11 +9,10 @@ using System.Data.SqlClient;
 
 namespace CAD
 {
-    class CADCliente
+    public class CADCliente
     {
-
-        CADConexion conexion = new CADConexion();
-        DataTable tabla = new DataTable();
+        private CADConexion conexion = new CADConexion();
+        private DataTable tabla = new DataTable();
 
         public DataTable MostrarCliente()
         {
@@ -26,6 +25,15 @@ namespace CAD
             return tabla;
         }
 
-     
+        public void InsertCliente(ENTCliente cliente)
+        {
+            SqlCommand cmd = new SqlCommand("InsertCliente", conexion.AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nombreCliente", cliente.nombreCliente);
+            cmd.Parameters.AddWithValue("@apellidoCliente", cliente.apellidoCliente);
+            cmd.Parameters.AddWithValue("@telefono", cliente.telefono);
+            cmd.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
     }
 }

@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using ENT;
+using CAD;
 
 namespace BL
 {
     public class BLCliente
     {
-        private ENTCliente clientes = new ENTCliente();
         private CADCliente cliente = new CADCliente();
 
         public DataTable MostrarCliente()
         {
             return cliente.MostrarCliente();
+        }
+
+        public void InsertCliente(int idCLiente, string nombreCliente, string apellidoCliente, string telefono)
+        {
+            ENTCliente ccliente = new ENTCliente(idCLiente, nombreCliente, apellidoCliente, telefono);
+            cliente.InsertCliente(ccliente);
         }
     }
 }

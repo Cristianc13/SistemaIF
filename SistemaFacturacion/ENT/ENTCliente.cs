@@ -12,5 +12,13 @@ namespace ENT
         public string nombreCliente { get; set; }
         public string apellidoCliente { get; set; }
         public string telefono { get; set; }
+
+        public ENTCliente(int idClientec, string nombreClientec, string apellidoClientec, string telefonoc)
+        {
+            this.idCLiente = idClientec;
+            this.nombreCliente = nombreClientec;
+            this.apellidoCliente = apellidoClientec;
+            this.telefono = telefonoc;
+        }
     }
 }
