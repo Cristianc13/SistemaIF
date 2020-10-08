@@ -20,5 +20,11 @@ namespace ENT
             this.apellidoCliente = apellidoClientec;
             this.telefono = telefonoc;
         }
+
+        public ENTCliente(int idC)
+        {
+            this.idCLiente = idC;
+        }
+            
     }
 }

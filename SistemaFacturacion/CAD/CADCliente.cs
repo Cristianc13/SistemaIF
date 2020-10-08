@@ -35,5 +35,28 @@ namespace CAD
             cmd.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
+
+        public void DeleteCliente (ENTCliente cliente)
+        {
+            SqlCommand cmd = new SqlCommand("DeleteCliente", conexion.AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCliente", cliente.idCLiente);
+            cmd.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+
+        public void UpdateCliente (ENTCliente cliente)
+        {
+            SqlCommand cmd = new SqlCommand("UpdateCliente", conexion.AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCliente", cliente.idCLiente);
+            cmd.Parameters.AddWithValue("@nombreCliente", cliente.nombreCliente);
+            cmd.Parameters.AddWithValue("@apellidoCliente", cliente.apellidoCliente);
+            cmd.Parameters.AddWithValue("@telefono", cliente.telefono);
+            cmd.ExecuteNonQuery();
+            conexion.CerrarConexion();
+
+        }
+            
     }
 }

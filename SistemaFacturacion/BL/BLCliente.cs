@@ -24,5 +24,20 @@ namespace BL
             ENTCliente ccliente = new ENTCliente(idCLiente, nombreCliente, apellidoCliente, telefono);
             cliente.InsertCliente(ccliente);
         }
+
+        public void DeleteCliente (int idc)
+        {
+            ENTCliente ccliente = new ENTCliente(idc);
+            cliente.DeleteCliente(ccliente);
+        }
+
+        public void UpdateCliente (int idCliente, string nombreCliente, string apellidoCliente, String telefono)
+        {
+            ENTCliente ccliente = new ENTCliente(idCliente, nombreCliente, apellidoCliente, telefono);
+            cliente.UpdateCliente(ccliente);
+
+        }
+
+       
     }
 }
