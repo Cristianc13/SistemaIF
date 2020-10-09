@@ -9,54 +9,53 @@ using System.Data.SqlClient;
 
 namespace CAD
 {
-    public class CADCliente
+    public class CADCliente : CADConexion
     {
-        private CADConexion conexion = new CADConexion();
+        // private CADConexion conexion = new CADConexion();
         private DataTable tabla = new DataTable();
 
         public DataTable MostrarCliente()
         {
             tabla.Clear();
-            SqlCommand cmd = new SqlCommand("SelectCliente", conexion.AbrirConexion());
+            SqlCommand cmd = new SqlCommand("SelectCliente", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
+
             da.Fill(tabla);
-            conexion.CerrarConexion();
+            CerrarConexion();
             return tabla;
         }
 
         public void InsertCliente(ENTCliente cliente)
         {
-            SqlCommand cmd = new SqlCommand("InsertCliente", conexion.AbrirConexion());
+            SqlCommand cmd = new SqlCommand("InsertCliente", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@nombreCliente", cliente.nombreCliente);
             cmd.Parameters.AddWithValue("@apellidoCliente", cliente.apellidoCliente);
             cmd.Parameters.AddWithValue("@telefono", cliente.telefono);
             cmd.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            CerrarConexion();
         }
 
-        public void DeleteCliente (ENTCliente cliente)
+        public void DeleteCliente(ENTCliente cliente)
         {
-            SqlCommand cmd = new SqlCommand("DeleteCliente", conexion.AbrirConexion());
+            SqlCommand cmd = new SqlCommand("DeleteCliente", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@idCliente", cliente.idCLiente);
             cmd.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            CerrarConexion();
         }
 
-        public void UpdateCliente (ENTCliente cliente)
+        public void UpdateCliente(ENTCliente cliente)
         {
-            SqlCommand cmd = new SqlCommand("UpdateCliente", conexion.AbrirConexion());
+            SqlCommand cmd = new SqlCommand("UpdateCliente", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@idCliente", cliente.idCLiente);
             cmd.Parameters.AddWithValue("@nombreCliente", cliente.nombreCliente);
             cmd.Parameters.AddWithValue("@apellidoCliente", cliente.apellidoCliente);
             cmd.Parameters.AddWithValue("@telefono", cliente.telefono);
             cmd.ExecuteNonQuery();
-            conexion.CerrarConexion();
-
+            CerrarConexion();
         }
-            
     }
 }
