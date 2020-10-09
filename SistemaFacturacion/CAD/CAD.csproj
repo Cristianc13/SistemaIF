@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CADCliente.cs" />
     <Compile Include="CADConexion.cs" />
+    <Compile Include="CADMarca.cs" />
     <Compile Include="CADProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
