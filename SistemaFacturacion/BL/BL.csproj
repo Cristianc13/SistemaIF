@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLAdministrador.cs" />
     <Compile Include="BLCliente.cs" />
     <Compile Include="BLMarca.cs" />
     <Compile Include="BLProveedor.cs" />
