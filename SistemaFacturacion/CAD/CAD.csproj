@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CADAdministrador.cs" />
     <Compile Include="CADCliente.cs" />
     <Compile Include="CADConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
