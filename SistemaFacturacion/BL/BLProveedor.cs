@@ -18,5 +18,14 @@ namespace BL
         {
             CProveedor.InsertProveedor(EProveedor);
         }
+        public void DeleteProveedor(ENTProveedor EProveedor)
+        {
+            CProveedor.DeleteProveedor(EProveedor);
+        }
+
+        public void UpdateProveedor(ENTProveedor EProveedor)
+        {
+            CProveedor.UpdateProveedor(EProveedor);
+        }
     }
 }
