@@ -30,5 +30,25 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
+        public void DeleteProveedor(ENTProveedor EProvedor)
+        {
+            SqlCommand cmd = new SqlCommand("DeleteProveedor", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProveedor", EProvedor.idProveedor);
+            cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
+        public void UpdateProveedor(ENTProveedor EProveedor)
+        {
+            SqlCommand cmd = new SqlCommand("UpdateProveedor", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProveedor", EProveedor.idProveedor);
+            cmd.Parameters.AddWithValue("@nombreProv", EProveedor.nombreProv);
+            cmd.Parameters.AddWithValue("@telefonoProv", EProveedor.telefonoProv);
+            cmd.Parameters.AddWithValue("@nombreCompañia", EProveedor.nombreCompañia);
+            cmd.Parameters.AddWithValue("@numeroCompañia", EProveedor.numeroCompañia);
+            cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
     }
 }
