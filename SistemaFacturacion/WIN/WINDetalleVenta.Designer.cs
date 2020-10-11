@@ -46,6 +46,7 @@
             this.cIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cimporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cOpciones = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cidProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -193,7 +194,8 @@
             this.cprecioSalida,
             this.cIVA,
             this.cimporte,
-            this.cOpciones});
+            this.cOpciones,
+            this.cidProducto});
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
             this.DVentadataGridView.Name = "DVentadataGridView";
@@ -240,6 +242,13 @@
             this.cOpciones.Name = "cOpciones";
             this.cOpciones.ReadOnly = true;
             // 
+            // cidProducto
+            // 
+            this.cidProducto.HeaderText = "idP";
+            this.cidProducto.Name = "cidProducto";
+            this.cidProducto.ReadOnly = true;
+            this.cidProducto.Visible = false;
+            // 
             // WINDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,5 +288,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn cimporte;
         private System.Windows.Forms.DataGridViewButtonColumn cOpciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidProducto;
     }
 }

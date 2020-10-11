@@ -51,7 +51,8 @@ namespace WIN
             string Cantidad = CantidadtextBox.Text;
             string Precio = PreciotextBox.Text;
             string Importe = (int.Parse(Cantidad) * int.Parse(Precio)).ToString();
-            DVentadataGridView.Rows.Add(new object[] { Nombre, Cantidad, Precio, 15, Importe, "Eliminar" });
+            string idP = idProducto.ToString();
+            DVentadataGridView.Rows.Add(new object[] { Nombre, Cantidad, Precio, 15, Importe, "Eliminar", idP });
             CalcularTotal();
             Limpiar();
         }
@@ -111,11 +112,11 @@ namespace WIN
                     oConcepto.precioSalida = decimal.Parse(dr.Cells[2].Value.ToString());
                     oConcepto.IVA = decimal.Parse(dr.Cells[3].Value.ToString());
                     oConcepto.importe = decimal.Parse(dr.Cells[4].Value.ToString());
-                    oConcepto.Fk_idProducto = 1;
+                    oConcepto.Fk_idProducto = int.Parse(dr.Cells[6].Value.ToString());
                     lst.Add(oConcepto);
                 }
 
-                BLDetalle.InsertDetalleVenta(1, lst);
+                BLDetalle.InsertDetalleVenta(2, lst);
 
                 MessageBox.Show("Venta realizada");
             }
