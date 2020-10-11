@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="BLAdministrador.cs" />
     <Compile Include="BLCliente.cs" />
+    <Compile Include="BLDetalleVenta.cs" />
     <Compile Include="BLMarca.cs" />
+    <Compile Include="BLProducto.cs" />
     <Compile Include="BLProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

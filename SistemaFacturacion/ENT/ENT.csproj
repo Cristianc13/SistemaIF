@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="ENTAdministrador.cs" />
     <Compile Include="ENTCliente.cs" />
+    <Compile Include="ENTDetalleVenta.cs" />
     <Compile Include="ENTMarca.cs" />
+    <Compile Include="ENTProducto.cs" />
     <Compile Include="ENTProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
