@@ -8,6 +8,7 @@ namespace ENT
 {
     public class ENTAdministrador
     {
+        //gg
         public int idAdmin { get; set; }
         public string nombreAdmin { get; set; }
         public string apellidoAdmin { get; set; }
