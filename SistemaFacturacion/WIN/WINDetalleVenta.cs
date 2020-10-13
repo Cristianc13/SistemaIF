@@ -125,5 +125,10 @@ namespace WIN
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
