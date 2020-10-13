@@ -36,7 +36,7 @@ namespace CAD
                 i++;
             }
 
-            SqlCommand cmd = new SqlCommand("GuardarVenta", AbrirConexion());
+            SqlCommand cmd = new SqlCommand("InsertVenta", AbrirConexion());
             var listDetalle = new SqlParameter("@ListProducto", SqlDbType.Structured);
             listDetalle.TypeName = "dbo.DetalleV";
             listDetalle.Value = dt;
