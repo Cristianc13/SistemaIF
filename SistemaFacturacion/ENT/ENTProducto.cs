@@ -14,7 +14,7 @@ namespace ENT
         public string descripcion { get; set; }
         public DateTime fechaEntrada { get; set; }
         public decimal costo { get; set; }
-        public decimal precioSalida { get; set; }
+        public int precioSalida { get; set; }
         public decimal stockProducto { get; set; }
         public string observacion { get; set; }
         public int FK_idMarca { get; set; }

@@ -19,17 +19,17 @@ namespace BL
             return CMarca.MostrarMarca();
         }
 
-        public void InsertCliente(ENTMarca marca)
+        public void InsertMarca(ENTMarca marca)
         {
             CMarca.InsertMarca(marca);
         }
 
-        public void DeleteCliente(ENTMarca marca)
+        public void DeleteMarca(ENTMarca marca)
         {
             CMarca.DeleteMarca(marca);
         }
 
-        public void UpdateCliente(ENTMarca marca)
+        public void UpdateMarca(ENTMarca marca)
         {
             CMarca.UpdateMarca(marca);
         }

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using ENT;
 
@@ -19,16 +20,28 @@ namespace CAD
             return tabla;
         }
 
-        public DataTable ObtenerPrecio(ENTProducto producto)
+        public DataTable MostrarProductoByForanea()
         {
             tabla.Clear();
-            SqlCommand cmd = new SqlCommand("ObtenerPrecio", AbrirConexion());
+            SqlCommand cmd = new SqlCommand("SelectProductoByForanea", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idProducto", producto.idProducto);
-            var x = cmd.ExecuteReader();
-            cmd.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
             CerrarConexion();
-            return null;
+            return tabla;
+        }
+
+        public string ObtenerPrecio(int idProducto)
+        {
+            int a;
+            string i;
+            SqlCommand cmd = new SqlCommand("SelectProductoPrecio", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+            a = (int)cmd.ExecuteScalar();
+            i = Convert.ToString(a);
+            CerrarConexion();
+            return i;
         }
     }
 }

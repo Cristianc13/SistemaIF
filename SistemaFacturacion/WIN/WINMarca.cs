@@ -69,7 +69,7 @@ namespace WIN
         {
             EMarca.idMarca = id;
             EMarca.nombreMarca = MarcatextBox.Text;
-            BLMarca.UpdateCliente(EMarca);
+            BLMarca.UpdateMarca(EMarca);
             LlenarDataGrid();
             Limpiar();
             HabilitarBotones(true, false);
@@ -84,7 +84,7 @@ namespace WIN
             //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
             EMarca.idMarca = id;
 
-            BLMarca.DeleteCliente(EMarca);
+            BLMarca.DeleteMarca(EMarca);
             LlenarDataGrid();
             Limpiar();
             HabilitarBotones(true, false);
@@ -103,7 +103,7 @@ namespace WIN
 
             EMarca.nombreMarca = MarcatextBox.Text;
 
-            BLMarca.InsertCliente(EMarca);
+            BLMarca.InsertMarca(EMarca);
             LlenarDataGrid();
         }
 

@@ -90,6 +90,12 @@
     <Compile Include="WINMENU.Designer.cs">
       <DependentUpon>WINMENU.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINProducto.Designer.cs">
+      <DependentUpon>WINProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="WINProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINMENU.resx">
       <DependentUpon>WINMENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINProducto.resx">
+      <DependentUpon>WINProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINProveedor.resx">
       <DependentUpon>WINProveedor.cs</DependentUpon>

@@ -63,14 +63,16 @@ namespace WIN
             {
                 if (ProductocomboBox.SelectedValue != null)
                 {
-                    idProducto = Convert.ToInt32(ProductocomboBox.SelectedValue);
-                    //PreciotextBox.Text = ProductocomboBox.SelectedItem.ToString();
+                    idProducto = (int)ProductocomboBox.SelectedValue;
+                    PreciotextBox.Text = Convert.ToString(BProducto.ObtenerPrecio(idProducto));
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                ex.ToString();
             }
+
+            /// idProducto = Convert.ToInt32(ProductocomboBox.SelectedValue);
+            //  PreciotextBox.Text = BProducto.ObtenerPrecio(idProducto);
         }
 
         private void CalcularTotal()
@@ -90,12 +92,6 @@ namespace WIN
 
             DVentadataGridView.Rows.RemoveAt(e.RowIndex);
             CalcularTotal();
-        }
-
-        private void ObtenerPrecio()
-        {
-            Eproducto.idProducto = idProducto;
-            var x = BProducto.ObtenerPrecio(Eproducto);
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -128,7 +124,6 @@ namespace WIN
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }
