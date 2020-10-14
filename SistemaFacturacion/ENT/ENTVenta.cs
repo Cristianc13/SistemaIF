@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ENT
 {
-    class ENTVenta
+    public class ENTVenta
     {
         public int idVenta { get; set; }
         public DateTime fechaVenta { get; set; }

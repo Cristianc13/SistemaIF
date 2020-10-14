@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ENT
 {
-    class ENTCompra
+    public class ENTCompra
     {
         public int idCompra { get; set; }
         public string numeroFactura { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ENT
 {
-    class ENTDetalleCompra
+    public class ENTDetalleCompra
     {
         public int idDetallecompra { get; set; }
         public decimal cantidadProducto { get; set; }
