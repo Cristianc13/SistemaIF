@@ -71,8 +71,7 @@ namespace WIN
             {
             }
 
-            /// idProducto = Convert.ToInt32(ProductocomboBox.SelectedValue);
-            //  PreciotextBox.Text = BProducto.ObtenerPrecio(idProducto);
+     
         }
 
         private void CalcularTotal()
