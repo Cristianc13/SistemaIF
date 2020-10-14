@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.Threading.Tasks;
+using CAD;
+using ENT;
+
+namespace BL
+{
+    public class BLModelo
+    {
+
+        public CADModelo Mol = new CADModelo();
+
+        public DataTable MostrarModelo()
+        {
+            return Mol.MostrarModelo();
+        }
+
+        public void InsertModelo(ENTModelo mod)
+        {
+            Mol.InsertModelo(mod);
+        }
+
+        public void DeleteModelo(ENTModelo mod)
+        {
+            Mol.DeleteModelo(mod);
+        }
+
+        public void UpdateModelo(ENTModelo mod)
+        {
+            Mol.DeleteModelo(mod);
+        }
+
+    }
+}

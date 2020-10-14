@@ -42,9 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLAdministrador.cs" />
+    <Compile Include="BLCategoria.cs" />
     <Compile Include="BLCliente.cs" />
     <Compile Include="BLDetalleVenta.cs" />
+    <Compile Include="BLEstado.cs" />
     <Compile Include="BLMarca.cs" />
+    <Compile Include="BLModelo.cs" />
     <Compile Include="BLProducto.cs" />
     <Compile Include="BLProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
