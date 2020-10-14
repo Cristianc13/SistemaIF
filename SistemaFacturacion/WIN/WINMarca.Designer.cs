@@ -51,28 +51,32 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MarcadataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MarcadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MarcadataGridView.Location = new System.Drawing.Point(21, 88);
+            this.MarcadataGridView.Location = new System.Drawing.Point(28, 108);
+            this.MarcadataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MarcadataGridView.Name = "MarcadataGridView";
             this.MarcadataGridView.ReadOnly = true;
             this.MarcadataGridView.RowHeadersVisible = false;
+            this.MarcadataGridView.RowHeadersWidth = 51;
             this.MarcadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MarcadataGridView.Size = new System.Drawing.Size(701, 288);
+            this.MarcadataGridView.Size = new System.Drawing.Size(935, 354);
             this.MarcadataGridView.TabIndex = 0;
             this.MarcadataGridView.DoubleClick += new System.EventHandler(this.MarcadataGridView_DoubleClick);
             // 
             // MarcatextBox
             // 
-            this.MarcatextBox.Location = new System.Drawing.Point(76, 40);
+            this.MarcatextBox.Location = new System.Drawing.Point(101, 49);
+            this.MarcatextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MarcatextBox.Name = "MarcatextBox";
-            this.MarcatextBox.Size = new System.Drawing.Size(135, 20);
+            this.MarcatextBox.Size = new System.Drawing.Size(179, 22);
             this.MarcatextBox.TabIndex = 1;
             // 
             // Guardarbutton
             // 
             this.Guardarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Guardarbutton.Location = new System.Drawing.Point(226, 393);
+            this.Guardarbutton.Location = new System.Drawing.Point(301, 484);
+            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Guardarbutton.Size = new System.Drawing.Size(100, 28);
             this.Guardarbutton.TabIndex = 2;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@
             // Actualizarbutton
             // 
             this.Actualizarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Actualizarbutton.Location = new System.Drawing.Point(356, 393);
+            this.Actualizarbutton.Location = new System.Drawing.Point(475, 484);
+            this.Actualizarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Actualizarbutton.Name = "Actualizarbutton";
-            this.Actualizarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Actualizarbutton.Size = new System.Drawing.Size(100, 28);
             this.Actualizarbutton.TabIndex = 3;
             this.Actualizarbutton.Text = "Actualizar";
             this.Actualizarbutton.UseVisualStyleBackColor = true;
@@ -92,18 +97,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 43);
+            this.label1.Location = new System.Drawing.Point(17, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Marca";
             // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Eliminarbutton.Location = new System.Drawing.Point(497, 393);
+            this.Eliminarbutton.Location = new System.Drawing.Point(663, 484);
+            this.Eliminarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Eliminarbutton.Size = new System.Drawing.Size(100, 28);
             this.Eliminarbutton.TabIndex = 5;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -112,9 +119,10 @@
             // Cancelarbutton
             // 
             this.Cancelarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Cancelarbutton.Location = new System.Drawing.Point(620, 393);
+            this.Cancelarbutton.Location = new System.Drawing.Point(827, 484);
+            this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cancelarbutton.Name = "Cancelarbutton";
-            this.Cancelarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Cancelarbutton.Size = new System.Drawing.Size(100, 28);
             this.Cancelarbutton.TabIndex = 6;
             this.Cancelarbutton.Text = "Cancelar";
             this.Cancelarbutton.UseVisualStyleBackColor = true;
@@ -127,15 +135,17 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(-1, -2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 457);
+            this.panel1.Size = new System.Drawing.Size(1012, 562);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // WINMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 441);
+            this.ClientSize = new System.Drawing.Size(1009, 543);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.label1);
@@ -145,6 +155,7 @@
             this.Controls.Add(this.MarcadataGridView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WINMarca";
             this.Text = "Marca";
             this.Load += new System.EventHandler(this.WINMarca_Load);

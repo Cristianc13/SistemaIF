@@ -66,6 +66,11 @@ namespace WIN
             ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
         }
 
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void HabilitarBotones(bool p1, bool p2)
         {
             Guardarbutton.Enabled = p2;

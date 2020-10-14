@@ -112,5 +112,10 @@ namespace WIN
             HabilitarBotones(true, false);
             Limpiar();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
