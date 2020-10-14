@@ -78,8 +78,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.DVentadataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(744, 518);
-            this.splitContainer1.SplitterDistance = 248;
+            this.splitContainer1.Size = new System.Drawing.Size(744, 601);
+            this.splitContainer1.SplitterDistance = 326;
             this.splitContainer1.TabIndex = 0;
             // 
             // Guardarbutton
@@ -204,7 +204,7 @@
             this.DVentadataGridView.RowHeadersVisible = false;
             this.DVentadataGridView.RowHeadersWidth = 51;
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DVentadataGridView.Size = new System.Drawing.Size(744, 266);
+            this.DVentadataGridView.Size = new System.Drawing.Size(744, 271);
             this.DVentadataGridView.TabIndex = 0;
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
             // 
@@ -262,7 +262,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 518);
+            this.ClientSize = new System.Drawing.Size(744, 601);
             this.Controls.Add(this.splitContainer1);
             this.Name = "WINDetalleVenta";
             this.Text = "WINDetalleVenta";
