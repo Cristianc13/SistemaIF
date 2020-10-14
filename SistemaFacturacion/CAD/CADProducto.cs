@@ -33,12 +33,12 @@ namespace CAD
 
         public string ObtenerPrecio(int idProducto)
         {
-            int a;
+            decimal a;
             string i;
             SqlCommand cmd = new SqlCommand("SelectProductoPrecio", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@idProducto", idProducto);
-            a = (int)cmd.ExecuteScalar();
+            a = (decimal)cmd.ExecuteScalar();
             i = Convert.ToString(a);
             CerrarConexion();
             return i;
