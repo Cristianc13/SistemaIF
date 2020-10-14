@@ -50,6 +50,7 @@ namespace WIN
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
+            openChildForm(new WINAdministrador());
             //codigo aqui
             ocultarSubMenu();
         }
@@ -107,6 +108,35 @@ namespace WIN
                 childForm.Show();
 
             
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            mostrarSubMenu(PanelSubMenuProductos);
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            openChildForm(new WINProducto());
+            //codigo aqui
+            ocultarSubMenu();
+        }
+
+        private void btnMaestro_Click(object sender, EventArgs e)
+        {
+            mostrarSubMenu(PanelSubMenuMaestro);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            openChildForm(new WINDetalleVenta());
+            //codigo aqui
+            ocultarSubMenu();
         }
     }
 }

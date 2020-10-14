@@ -62,8 +62,8 @@ namespace WIN
             ProductodataGridView.Columns[11].HeaderText = "Estado";
             ProductodataGridView.AllowUserToResizeColumns = false;
             ProductodataGridView.AllowUserToResizeRows = false;
-            ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8);
+            ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8);
         }
 
         private void HabilitarBotones(bool p1, bool p2)
