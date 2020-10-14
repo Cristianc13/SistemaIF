@@ -89,6 +89,7 @@ namespace WIN
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
+            openChildForm(new WINProveedor());
             //codigo aqui
             ocultarSubMenu();
         }
