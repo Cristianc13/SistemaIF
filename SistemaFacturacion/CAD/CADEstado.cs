@@ -9,9 +9,8 @@ using System.Data.SqlClient;
 
 namespace CAD
 {
-    public class CADEstado:CADConexion
+    public class CADEstado : CADConexion
     {
-
         private DataTable tabla = new DataTable();
 
         public DataTable MostrarEstado()
@@ -53,6 +52,5 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
-
     }
 }

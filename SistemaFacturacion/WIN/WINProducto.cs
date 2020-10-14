@@ -15,15 +15,20 @@ namespace WIN
 
         private int IdCategoria, IdMarca, IdModelo, IdEstado;
         private BLMarca BMarca = new BLMarca();
+        private BLModelo BModelo = new BLModelo();
+        public BLCategoria BCategoria = new BLCategoria();
+        private BLEstado BEstado = new BLEstado();
         private BLProducto BProducto = new BLProducto();
         private ENTProducto EProducto = new ENTProducto();
 
         private void WINProducto_Load(object sender, EventArgs e)
         {
-            Limpiar();
+            LlenarEstado();
             LlenarGrid();
             FormatoGrid();
             LlenarMarca();
+            LlenarCategoria();
+            LlenarModelo();
         }
 
         public void Limpiar()
@@ -80,6 +85,86 @@ namespace WIN
             MarcacomboBox.DisplayMember = "nombreMarca";
             MarcacomboBox.ValueMember = "idMarca";
             MarcacomboBox.SelectedIndex = -1;
+        }
+
+        private void LlenarModelo()
+        {
+            ModelocomboBox.DataSource = BModelo.MostrarModelo();
+            ModelocomboBox.DisplayMember = "nombreModelo";
+            ModelocomboBox.ValueMember = "idModelo";
+            ModelocomboBox.SelectedIndex = -1;
+        }
+
+        private void MarcacomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MarcacomboBox.SelectedValue != null)
+                {
+                    IdMarca = (int)MarcacomboBox.SelectedValue;
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void ModelocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ModelocomboBox.SelectedValue != null)
+                {
+                    IdModelo = (int)ModelocomboBox.SelectedValue;
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CategoriacomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CategoriacomboBox.SelectedValue != null)
+                {
+                    IdCategoria = (int)CategoriacomboBox.SelectedValue;
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void EstadocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (EstadocomboBox.SelectedValue != null)
+                {
+                    IdEstado = (int)EstadocomboBox.SelectedValue;
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        public void LlenarCategoria()
+        {
+            CategoriacomboBox.DataSource = BCategoria.MostrarCategoria();
+            CategoriacomboBox.DisplayMember = "nombreCategoria";
+            CategoriacomboBox.ValueMember = "idCategoria";
+            CategoriacomboBox.SelectedIndex = -1;
+        }
+
+        private void LlenarEstado()
+        {
+            EstadocomboBox.DataSource = BEstado.MostrarEstado();
+            EstadocomboBox.DisplayMember = "estado";
+            EstadocomboBox.ValueMember = "idEstado";
+            EstadocomboBox.SelectedIndex = -1;
         }
 
         public bool Validar()

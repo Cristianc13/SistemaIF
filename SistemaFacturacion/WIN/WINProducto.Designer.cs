@@ -149,6 +149,7 @@
             this.EstadocomboBox.Name = "EstadocomboBox";
             this.EstadocomboBox.Size = new System.Drawing.Size(110, 21);
             this.EstadocomboBox.TabIndex = 18;
+            this.EstadocomboBox.SelectedIndexChanged += new System.EventHandler(this.EstadocomboBox_SelectedIndexChanged);
             // 
             // CategoriacomboBox
             // 
@@ -157,6 +158,7 @@
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(110, 21);
             this.CategoriacomboBox.TabIndex = 17;
+            this.CategoriacomboBox.SelectedIndexChanged += new System.EventHandler(this.CategoriacomboBox_SelectedIndexChanged);
             // 
             // ModelocomboBox
             // 
@@ -165,6 +167,7 @@
             this.ModelocomboBox.Name = "ModelocomboBox";
             this.ModelocomboBox.Size = new System.Drawing.Size(110, 21);
             this.ModelocomboBox.TabIndex = 16;
+            this.ModelocomboBox.SelectedIndexChanged += new System.EventHandler(this.ModelocomboBox_SelectedIndexChanged);
             // 
             // MarcacomboBox
             // 
@@ -173,6 +176,7 @@
             this.MarcacomboBox.Name = "MarcacomboBox";
             this.MarcacomboBox.Size = new System.Drawing.Size(105, 21);
             this.MarcacomboBox.TabIndex = 15;
+            this.MarcacomboBox.SelectedIndexChanged += new System.EventHandler(this.MarcacomboBox_SelectedIndexChanged);
             // 
             // ObservacionestextBox
             // 
