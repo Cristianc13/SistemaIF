@@ -13,9 +13,14 @@ namespace BL
             return CProducto.MostrarProducto();
         }
 
-        public DataTable ObtenerPrecio(ENTProducto producto)
+        public DataTable MostrarProductoByForanea()
         {
-            return CProducto.ObtenerPrecio(producto);
+            return CProducto.MostrarProductoByForanea();
+        }
+
+        public string ObtenerPrecio(int idProducto)
+        {
+            return CProducto.ObtenerPrecio(idProducto);
         }
     }
 }
