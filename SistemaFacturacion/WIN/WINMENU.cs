@@ -50,13 +50,14 @@ namespace WIN
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            openChildForm(new WINAdministrador());
+           
             //codigo aqui
             ocultarSubMenu();
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
+            openChildForm(new WINCategoria());
             //codigo aqui
             ocultarSubMenu();
         }

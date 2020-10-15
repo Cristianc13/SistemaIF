@@ -43,7 +43,6 @@
             this.btnEstado = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnCatalogo = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.Panelchild = new System.Windows.Forms.Panel();
@@ -76,7 +75,7 @@
             this.PanelSubMenuMaestro.Controls.Add(this.button11);
             this.PanelSubMenuMaestro.Controls.Add(this.button10);
             this.PanelSubMenuMaestro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSubMenuMaestro.Location = new System.Drawing.Point(0, 383);
+            this.PanelSubMenuMaestro.Location = new System.Drawing.Point(0, 357);
             this.PanelSubMenuMaestro.Name = "PanelSubMenuMaestro";
             this.PanelSubMenuMaestro.Size = new System.Drawing.Size(177, 56);
             this.PanelSubMenuMaestro.TabIndex = 6;
@@ -120,7 +119,7 @@
             this.btnMaestro.FlatAppearance.BorderSize = 0;
             this.btnMaestro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaestro.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMaestro.Location = new System.Drawing.Point(0, 348);
+            this.btnMaestro.Location = new System.Drawing.Point(0, 322);
             this.btnMaestro.Name = "btnMaestro";
             this.btnMaestro.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMaestro.Size = new System.Drawing.Size(177, 35);
@@ -135,7 +134,7 @@
             this.PanelSubMenuProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.PanelSubMenuProductos.Controls.Add(this.btnProductos);
             this.PanelSubMenuProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSubMenuProductos.Location = new System.Drawing.Point(0, 323);
+            this.PanelSubMenuProductos.Location = new System.Drawing.Point(0, 297);
             this.PanelSubMenuProductos.Name = "PanelSubMenuProductos";
             this.PanelSubMenuProductos.Size = new System.Drawing.Size(177, 25);
             this.PanelSubMenuProductos.TabIndex = 4;
@@ -164,7 +163,7 @@
             this.btnProducto.FlatAppearance.BorderSize = 0;
             this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnProducto.Location = new System.Drawing.Point(0, 288);
+            this.btnProducto.Location = new System.Drawing.Point(0, 262);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnProducto.Size = new System.Drawing.Size(177, 35);
@@ -183,11 +182,10 @@
             this.PanelSubMenuCatalogos.Controls.Add(this.btnEstado);
             this.PanelSubMenuCatalogos.Controls.Add(this.btnCliente);
             this.PanelSubMenuCatalogos.Controls.Add(this.btnCategorias);
-            this.PanelSubMenuCatalogos.Controls.Add(this.btnAdmin);
             this.PanelSubMenuCatalogos.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSubMenuCatalogos.Location = new System.Drawing.Point(0, 110);
             this.PanelSubMenuCatalogos.Name = "PanelSubMenuCatalogos";
-            this.PanelSubMenuCatalogos.Size = new System.Drawing.Size(177, 178);
+            this.PanelSubMenuCatalogos.Size = new System.Drawing.Size(177, 152);
             this.PanelSubMenuCatalogos.TabIndex = 2;
             // 
             // btnProveedor
@@ -196,7 +194,7 @@
             this.btnProveedor.FlatAppearance.BorderSize = 0;
             this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedor.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnProveedor.Location = new System.Drawing.Point(0, 150);
+            this.btnProveedor.Location = new System.Drawing.Point(0, 125);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnProveedor.Size = new System.Drawing.Size(177, 24);
@@ -212,7 +210,7 @@
             this.btnModelo.FlatAppearance.BorderSize = 0;
             this.btnModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModelo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnModelo.Location = new System.Drawing.Point(0, 125);
+            this.btnModelo.Location = new System.Drawing.Point(0, 100);
             this.btnModelo.Name = "btnModelo";
             this.btnModelo.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnModelo.Size = new System.Drawing.Size(177, 25);
@@ -228,7 +226,7 @@
             this.btnMarca.FlatAppearance.BorderSize = 0;
             this.btnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarca.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMarca.Location = new System.Drawing.Point(0, 100);
+            this.btnMarca.Location = new System.Drawing.Point(0, 75);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnMarca.Size = new System.Drawing.Size(177, 25);
@@ -244,7 +242,7 @@
             this.btnEstado.FlatAppearance.BorderSize = 0;
             this.btnEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstado.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEstado.Location = new System.Drawing.Point(0, 75);
+            this.btnEstado.Location = new System.Drawing.Point(0, 50);
             this.btnEstado.Name = "btnEstado";
             this.btnEstado.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnEstado.Size = new System.Drawing.Size(177, 25);
@@ -260,7 +258,7 @@
             this.btnCliente.FlatAppearance.BorderSize = 0;
             this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCliente.Location = new System.Drawing.Point(0, 50);
+            this.btnCliente.Location = new System.Drawing.Point(0, 25);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnCliente.Size = new System.Drawing.Size(177, 25);
@@ -276,7 +274,7 @@
             this.btnCategorias.FlatAppearance.BorderSize = 0;
             this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategorias.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 25);
+            this.btnCategorias.Location = new System.Drawing.Point(0, 0);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnCategorias.Size = new System.Drawing.Size(177, 25);
@@ -285,22 +283,6 @@
             this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategorias.UseVisualStyleBackColor = true;
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 0);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(177, 25);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.Text = "Administrador";
-            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnCatalogo
             // 
@@ -372,7 +354,6 @@
         private System.Windows.Forms.Button btnEstado;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnCategorias;
-        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnCatalogo;
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.Panel Panelchild;
