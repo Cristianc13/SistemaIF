@@ -124,6 +124,7 @@
             this.Actualizarbutton.TabIndex = 21;
             this.Actualizarbutton.Text = "Actualizar";
             this.Actualizarbutton.UseVisualStyleBackColor = true;
+            this.Actualizarbutton.Click += new System.EventHandler(this.Actualizarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -134,6 +135,7 @@
             this.Guardarbutton.TabIndex = 20;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // DescripciontextBox
             // 
@@ -337,6 +339,7 @@
             this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductodataGridView.Size = new System.Drawing.Size(743, 209);
             this.ProductodataGridView.TabIndex = 0;
+            this.ProductodataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellDoubleClick);
             // 
             // errorProvider1
             // 
