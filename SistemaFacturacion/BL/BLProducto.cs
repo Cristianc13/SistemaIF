@@ -22,5 +22,15 @@ namespace BL
         {
             return CProducto.ObtenerPrecio(idProducto);
         }
+
+        public void InsertarProducto(ENTProducto EProducto)
+        {
+            CProducto.InsertarProducto(EProducto);
+        }
+
+        public void UpdateProducto(ENTProducto EProducto)
+        {
+            CProducto.UpdateProducto(EProducto);
+        }
     }
 }

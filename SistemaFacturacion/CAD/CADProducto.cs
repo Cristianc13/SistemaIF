@@ -43,5 +43,42 @@ namespace CAD
             CerrarConexion();
             return i;
         }
+
+        public void InsertarProducto(ENTProducto EProducto)
+        {
+            SqlCommand cmd = new SqlCommand("InsertProducto", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nombreProducto", EProducto.nombreProducto);
+            cmd.Parameters.AddWithValue("@descripcion", EProducto.descripcion);
+            cmd.Parameters.AddWithValue("@costo", EProducto.costo);
+            cmd.Parameters.AddWithValue("@precioSalida", EProducto.precioSalida);
+            cmd.Parameters.AddWithValue("@stockProducto", EProducto.stockProducto);
+            cmd.Parameters.AddWithValue("@observacion", EProducto.observacion);
+            cmd.Parameters.AddWithValue("@FK_idMarca", EProducto.FK_idMarca);
+            cmd.Parameters.AddWithValue("@FK_idModelo", EProducto.FK_idModelo);
+            cmd.Parameters.AddWithValue("@FK_idCategoria", EProducto.FK_idCategoria);
+            cmd.Parameters.AddWithValue("@FK_idEstado", EProducto.FK_idEstado);
+            cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
+
+        public void UpdateProducto(ENTProducto EProducto)
+        {
+            SqlCommand cmd = new SqlCommand("UpdateProducto", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProducto", EProducto.idProducto);
+            cmd.Parameters.AddWithValue("@nombreProducto", EProducto.nombreProducto);
+            cmd.Parameters.AddWithValue("@descripcion", EProducto.descripcion);
+            cmd.Parameters.AddWithValue("@costo", EProducto.costo);
+            cmd.Parameters.AddWithValue("@precioSalida", EProducto.precioSalida);
+            cmd.Parameters.AddWithValue("@stockProducto", EProducto.stockProducto);
+            cmd.Parameters.AddWithValue("@observacion", EProducto.observacion);
+            cmd.Parameters.AddWithValue("@FK_idMarca", EProducto.FK_idMarca);
+            cmd.Parameters.AddWithValue("@FK_idModelo", EProducto.FK_idModelo);
+            cmd.Parameters.AddWithValue("@FK_idCategoria", EProducto.FK_idCategoria);
+            cmd.Parameters.AddWithValue("@FK_idEstado", EProducto.FK_idEstado);
+            cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
     }
 }
