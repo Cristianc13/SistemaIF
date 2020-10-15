@@ -25,14 +25,14 @@ namespace BL
             Cat.InsertCategoria(categ);
         }
 
-        public void DeleteCliente(ENTCategoria categ)
+        public void DeleteCategoria(ENTCategoria categ)
         {
             Cat.DeleteCategoria(categ);
         }
 
-        public void UpdateCliente(ENTCategoria categ)
+        public void UpdateCategoria(ENTCategoria categ)
         {
-            Cat.DeleteCategoria(categ);
+            Cat.UpdateCategoria(categ);
         }
 
     }
