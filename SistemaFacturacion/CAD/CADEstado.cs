@@ -28,7 +28,7 @@ namespace CAD
         {
             SqlCommand cmd = new SqlCommand("InsertEstado", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@nombreEstado", estado.estado);
+            cmd.Parameters.AddWithValue("@estado", estado.estado);
 
             cmd.ExecuteNonQuery();
             CerrarConexion();
