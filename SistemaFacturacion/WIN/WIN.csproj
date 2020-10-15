@@ -66,6 +66,12 @@
     <Compile Include="WINAdministrador.Designer.cs">
       <DependentUpon>WINAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINCategoria.Designer.cs">
+      <DependentUpon>WINCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="WINCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINAdministrador.resx">
       <DependentUpon>WINAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINCategoria.resx">
+      <DependentUpon>WINCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINCliente.resx">
       <DependentUpon>WINCliente.cs</DependentUpon>
