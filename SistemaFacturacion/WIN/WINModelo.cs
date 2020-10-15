@@ -14,9 +14,8 @@ namespace WIN
 {
     public partial class WINModelo : Form
     {
-
-        BLModelo BModelo = new BLModelo();
-        ENTModelo EMod = new ENTModelo();
+        private BLModelo BModelo = new BLModelo();
+        private ENTModelo EMod = new ENTModelo();
         public int id;
 
         public WINModelo()
