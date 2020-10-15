@@ -31,7 +31,7 @@ namespace BL
 
         public void UpdateModelo(ENTModelo mod)
         {
-            Mol.DeleteModelo(mod);
+            Mol.UpdateModelo(mod);
         }
 
     }
