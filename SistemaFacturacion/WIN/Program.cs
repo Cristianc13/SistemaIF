@@ -17,7 +17,8 @@ namespace WIN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new WINCategoria());
+            Application.Run(new WINMENU());
+
         }
     }
 }

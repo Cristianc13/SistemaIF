@@ -70,6 +70,7 @@ namespace WIN
 
         private void btnEstado_Click(object sender, EventArgs e)
         {
+            openChildForm(new WINEstado());
             //codigo aqui
             ocultarSubMenu();
         }
@@ -83,6 +84,7 @@ namespace WIN
 
         private void btnModelo_Click(object sender, EventArgs e)
         {
+            openChildForm(new WINModelo());
             //codigo aqui
             ocultarSubMenu();
         }

@@ -54,15 +54,15 @@
             // ModelotextBox
             // 
             this.ModelotextBox.Location = new System.Drawing.Point(80, 19);
-            this.ModelotextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ModelotextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ModelotextBox.Name = "ModelotextBox";
             this.ModelotextBox.Size = new System.Drawing.Size(138, 20);
             this.ModelotextBox.TabIndex = 1;
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(22, 69);
-            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Guardarbutton.Location = new System.Drawing.Point(49, 367);
+            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(56, 19);
             this.Guardarbutton.TabIndex = 2;
@@ -72,8 +72,8 @@
             // 
             // Actualizarbutton
             // 
-            this.Actualizarbutton.Location = new System.Drawing.Point(112, 68);
-            this.Actualizarbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Actualizarbutton.Location = new System.Drawing.Point(238, 367);
+            this.Actualizarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Actualizarbutton.Name = "Actualizarbutton";
             this.Actualizarbutton.Size = new System.Drawing.Size(63, 19);
             this.Actualizarbutton.TabIndex = 3;
@@ -83,8 +83,8 @@
             // 
             // Eliminar
             // 
-            this.Eliminar.Location = new System.Drawing.Point(210, 68);
-            this.Eliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Eliminar.Location = new System.Drawing.Point(445, 367);
+            this.Eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(56, 19);
             this.Eliminar.TabIndex = 4;
@@ -94,8 +94,8 @@
             // 
             // Cancelarbutton
             // 
-            this.Cancelarbutton.Location = new System.Drawing.Point(310, 68);
-            this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cancelarbutton.Location = new System.Drawing.Point(629, 367);
+            this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(62, 19);
             this.Cancelarbutton.TabIndex = 5;
@@ -108,15 +108,15 @@
             this.ModelodataGridView.AllowUserToAddRows = false;
             this.ModelodataGridView.AllowUserToDeleteRows = false;
             this.ModelodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ModelodataGridView.Location = new System.Drawing.Point(22, 119);
-            this.ModelodataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ModelodataGridView.Location = new System.Drawing.Point(23, 78);
+            this.ModelodataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ModelodataGridView.Name = "ModelodataGridView";
             this.ModelodataGridView.ReadOnly = true;
             this.ModelodataGridView.RowHeadersVisible = false;
             this.ModelodataGridView.RowHeadersWidth = 51;
             this.ModelodataGridView.RowTemplate.Height = 24;
             this.ModelodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ModelodataGridView.Size = new System.Drawing.Size(551, 224);
+            this.ModelodataGridView.Size = new System.Drawing.Size(677, 256);
             this.ModelodataGridView.TabIndex = 6;
             this.ModelodataGridView.DoubleClick += new System.EventHandler(this.ModelodataGridView_DoubleClick);
             // 
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(941, 472);
             this.Controls.Add(this.ModelodataGridView);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.Eliminar);
@@ -136,7 +136,7 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.ModelotextBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WINModelo";
             this.Text = "Modelo";
             this.Load += new System.EventHandler(this.WINModelo_Load);
