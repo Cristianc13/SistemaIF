@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using CAD;
 using ENT;
 
@@ -11,8 +6,6 @@ namespace BL
 {
     public class BLCategoria
     {
-
-
         public CADCategoria Cat = new CADCategoria();
 
         public DataTable MostrarCategoria()
@@ -35,5 +28,9 @@ namespace BL
             Cat.UpdateCategoria(categ);
         }
 
+        public string ObtenercodCat(int idCat)
+        {
+            return Cat.ObtenercodCat(idCat);
+        }
     }
 }

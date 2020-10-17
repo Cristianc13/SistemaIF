@@ -24,6 +24,7 @@ namespace WIN
 
         private void WINProducto_Load(object sender, EventArgs e)
         {
+            HabilitarBotones(false, true);
             LlenarEstado();
             LlenarGrid();
             FormatoGrid();
@@ -41,6 +42,7 @@ namespace WIN
             PrecioSalidatextBox.Text = string.Empty;
             DescripciontextBox.Text = string.Empty;
             ObservacionestextBox.Text = string.Empty;
+            CodigotextBox.Text = string.Empty;
             MarcacomboBox.SelectedIndex = -1;
             ModelocomboBox.SelectedIndex = -1;
             CategoriacomboBox.SelectedIndex = -1;
@@ -56,17 +58,18 @@ namespace WIN
         public void FormatoGrid()
         {
             ProductodataGridView.Columns[0].Visible = false;//idProducto
-            ProductodataGridView.Columns[1].HeaderText = "Producto";
-            ProductodataGridView.Columns[2].HeaderText = "Descripcion";
-            ProductodataGridView.Columns[3].HeaderText = "Fecha";
-            ProductodataGridView.Columns[4].HeaderText = "Costo";
-            ProductodataGridView.Columns[5].HeaderText = "Precio Salida";
-            ProductodataGridView.Columns[6].HeaderText = "Stock";
-            ProductodataGridView.Columns[7].HeaderText = "Observarcion";
-            ProductodataGridView.Columns[8].HeaderText = "Marca";
-            ProductodataGridView.Columns[9].HeaderText = "Modelo";
-            ProductodataGridView.Columns[10].HeaderText = "Categoria";
-            ProductodataGridView.Columns[11].HeaderText = "Estado";
+            ProductodataGridView.Columns[1].HeaderText = "Codigo";
+            ProductodataGridView.Columns[2].HeaderText = "Producto";
+            ProductodataGridView.Columns[3].HeaderText = "Descripcion";
+            ProductodataGridView.Columns[4].HeaderText = "Fecha";
+            ProductodataGridView.Columns[5].HeaderText = "Costo";
+            ProductodataGridView.Columns[6].HeaderText = "Precio Salida";
+            ProductodataGridView.Columns[7].HeaderText = "Stock";
+            ProductodataGridView.Columns[8].HeaderText = "Observarcion";
+            ProductodataGridView.Columns[9].HeaderText = "Marca";
+            ProductodataGridView.Columns[10].HeaderText = "Modelo";
+            ProductodataGridView.Columns[11].HeaderText = "Categoria";
+            ProductodataGridView.Columns[12].HeaderText = "Estado";
             ProductodataGridView.AllowUserToResizeColumns = false;
             ProductodataGridView.AllowUserToResizeRows = false;
             ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8);
@@ -78,7 +81,7 @@ namespace WIN
             Guardarbutton.Enabled = p2;
             Actualizarbutton.Enabled = p1;
             Eliminarbutton.Enabled = p1;
-            Cancelarbutton.Enabled = p1;
+            // Cancelarbutton.Enabled = p1;
         }
 
         private void LlenarMarca()
@@ -132,6 +135,7 @@ namespace WIN
                 if (CategoriacomboBox.SelectedValue != null)
                 {
                     IdCategoria = (int)CategoriacomboBox.SelectedValue;
+                    CodigotextBox.Text = BCategoria.ObtenercodCat(IdCategoria) + "-";
                 }
             }
             catch (Exception)
@@ -159,6 +163,7 @@ namespace WIN
             try
             {
                 EProducto.nombreProducto = NombretextBox.Text;
+                EProducto.codigopro = CodigotextBox.Text;
                 EProducto.stockProducto = Convert.ToDecimal(StocktextBox.Text);
                 EProducto.costo = Convert.ToDecimal(CostotextBox.Text);
                 EProducto.FK_idMarca = IdMarca;
@@ -171,9 +176,15 @@ namespace WIN
                 BProducto.InsertarProducto(EProducto);
                 Limpiar();
                 LlenarGrid();
+                HabilitarBotones(false, true);
             }
             catch (SqlException ex)
             {
+                if (ex.Message.Contains("IX_CodigoProducto"))
+                {
+                    MessageBox.Show("Codigo de Producto ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CodigotextBox.Focus();
+                }
             }
         }
 
@@ -182,16 +193,30 @@ namespace WIN
             if (ProductodataGridView.Rows.Count == 0) return;
             HabilitarBotones(true, false);
             IdProducto = (int)ProductodataGridView.CurrentRow.Cells[0].Value;
-            NombretextBox.Text = ProductodataGridView.CurrentRow.Cells[1].Value.ToString();
-            DescripciontextBox.Text = ProductodataGridView.CurrentRow.Cells[2].Value.ToString();
-            CostotextBox.Text = ProductodataGridView.CurrentRow.Cells[4].Value.ToString();
-            PrecioSalidatextBox.Text = ProductodataGridView.CurrentRow.Cells[5].Value.ToString();
-            StocktextBox.Text = ProductodataGridView.CurrentRow.Cells[6].Value.ToString();
-            ObservacionestextBox.Text = ProductodataGridView.CurrentRow.Cells[7].Value.ToString();
-            MarcacomboBox.Text = ProductodataGridView.CurrentRow.Cells[8].Value.ToString();
-            ModelocomboBox.Text = ProductodataGridView.CurrentRow.Cells[9].Value.ToString();
-            CategoriacomboBox.Text = ProductodataGridView.CurrentRow.Cells[10].Value.ToString();
-            EstadocomboBox.Text = ProductodataGridView.CurrentRow.Cells[11].Value.ToString();
+
+            NombretextBox.Text = ProductodataGridView.CurrentRow.Cells[2].Value.ToString();
+            DescripciontextBox.Text = ProductodataGridView.CurrentRow.Cells[3].Value.ToString();
+            CostotextBox.Text = ProductodataGridView.CurrentRow.Cells[5].Value.ToString();
+            PrecioSalidatextBox.Text = ProductodataGridView.CurrentRow.Cells[6].Value.ToString();
+            StocktextBox.Text = ProductodataGridView.CurrentRow.Cells[7].Value.ToString();
+            ObservacionestextBox.Text = ProductodataGridView.CurrentRow.Cells[8].Value.ToString();
+            MarcacomboBox.Text = ProductodataGridView.CurrentRow.Cells[9].Value.ToString();
+            ModelocomboBox.Text = ProductodataGridView.CurrentRow.Cells[10].Value.ToString();
+            CategoriacomboBox.Text = ProductodataGridView.CurrentRow.Cells[11].Value.ToString();
+            CodigotextBox.Text = ProductodataGridView.CurrentRow.Cells[1].Value.ToString();
+            EstadocomboBox.Text = ProductodataGridView.CurrentRow.Cells[12].Value.ToString();
+
+            HabilitarBotones(true, false);
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            DialogResult rpt = MessageBox.Show("Desea eliminar el registro", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (rpt == DialogResult.No) return;
+            EProducto.idProducto = IdProducto;
+
+            HabilitarBotones(false, true);
+            Limpiar();
         }
 
         private void Actualizarbutton_Click(object sender, EventArgs e)
@@ -200,6 +225,7 @@ namespace WIN
             try
             {
                 EProducto.idProducto = IdProducto;
+                EProducto.codigopro = CodigotextBox.Text;
                 EProducto.nombreProducto = NombretextBox.Text;
                 EProducto.stockProducto = Convert.ToDecimal(StocktextBox.Text);
                 EProducto.costo = Convert.ToDecimal(CostotextBox.Text);
@@ -213,9 +239,15 @@ namespace WIN
                 BProducto.UpdateProducto(EProducto);
                 Limpiar();
                 LlenarGrid();
+                HabilitarBotones(false, true);
             }
             catch (SqlException ex)
             {
+                if (ex.Message.Contains("IX_CodigoProducto"))
+                {
+                    MessageBox.Show("Codigo de Producto ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CodigotextBox.Focus();
+                }
             }
         }
 
@@ -237,6 +269,15 @@ namespace WIN
 
         public bool Validar()
         {
+            //Codigo
+            if (CodigotextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(CodigotextBox, "Debe ingresar un Nombre");
+                CodigotextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
             //Nombre
             if (NombretextBox.Text == string.Empty)
             {
