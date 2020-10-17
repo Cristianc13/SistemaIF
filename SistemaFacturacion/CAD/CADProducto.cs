@@ -48,6 +48,7 @@ namespace CAD
         {
             SqlCommand cmd = new SqlCommand("InsertProducto", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@codigo", EProducto.codigopro);
             cmd.Parameters.AddWithValue("@nombreProducto", EProducto.nombreProducto);
             cmd.Parameters.AddWithValue("@descripcion", EProducto.descripcion);
             cmd.Parameters.AddWithValue("@costo", EProducto.costo);
@@ -67,6 +68,7 @@ namespace CAD
             SqlCommand cmd = new SqlCommand("UpdateProducto", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@idProducto", EProducto.idProducto);
+            cmd.Parameters.AddWithValue("@codigo", EProducto.codigopro);
             cmd.Parameters.AddWithValue("@nombreProducto", EProducto.nombreProducto);
             cmd.Parameters.AddWithValue("@descripcion", EProducto.descripcion);
             cmd.Parameters.AddWithValue("@costo", EProducto.costo);

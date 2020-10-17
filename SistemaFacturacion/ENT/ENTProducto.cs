@@ -10,6 +10,7 @@ namespace ENT
     public class ENTProducto
     {
         public int idProducto { get; set; }
+        public string codigopro { get; set; }
         public string nombreProducto { get; set; }
         public string descripcion { get; set; }
         public DateTime fechaEntrada { get; set; }

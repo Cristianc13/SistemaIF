@@ -57,6 +57,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ProductodataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CodigotextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
@@ -65,6 +66,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.CodigotextBox);
             this.panel1.Controls.Add(this.Cancelarbutton);
             this.panel1.Controls.Add(this.Eliminarbutton);
             this.panel1.Controls.Add(this.Actualizarbutton);
@@ -97,7 +99,7 @@
             // 
             // Cancelarbutton
             // 
-            this.Cancelarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cancelarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Cancelarbutton.Location = new System.Drawing.Point(563, 173);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(85, 25);
@@ -107,17 +109,18 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Eliminarbutton.Location = new System.Drawing.Point(369, 173);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(85, 25);
             this.Eliminarbutton.TabIndex = 22;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Actualizarbutton
             // 
-            this.Actualizarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Actualizarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Actualizarbutton.Location = new System.Drawing.Point(224, 173);
             this.Actualizarbutton.Name = "Actualizarbutton";
             this.Actualizarbutton.Size = new System.Drawing.Size(85, 25);
@@ -128,7 +131,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Guardarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Guardarbutton.Location = new System.Drawing.Point(42, 173);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(85, 25);
@@ -139,15 +142,18 @@
             // 
             // DescripciontextBox
             // 
-            this.DescripciontextBox.Location = new System.Drawing.Point(467, 54);
+            this.DescripciontextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DescripciontextBox.Location = new System.Drawing.Point(580, 56);
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(106, 20);
             this.DescripciontextBox.TabIndex = 19;
             // 
             // EstadocomboBox
             // 
+            this.EstadocomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.EstadocomboBox.FormattingEnabled = true;
-            this.EstadocomboBox.Location = new System.Drawing.Point(322, 122);
+            this.EstadocomboBox.Location = new System.Drawing.Point(435, 124);
             this.EstadocomboBox.Name = "EstadocomboBox";
             this.EstadocomboBox.Size = new System.Drawing.Size(110, 21);
             this.EstadocomboBox.TabIndex = 18;
@@ -155,8 +161,12 @@
             // 
             // CategoriacomboBox
             // 
+            this.CategoriacomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CategoriacomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CategoriacomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CategoriacomboBox.FormattingEnabled = true;
-            this.CategoriacomboBox.Location = new System.Drawing.Point(322, 91);
+            this.CategoriacomboBox.Location = new System.Drawing.Point(435, 93);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(110, 21);
             this.CategoriacomboBox.TabIndex = 17;
@@ -164,8 +174,10 @@
             // 
             // ModelocomboBox
             // 
+            this.ModelocomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ModelocomboBox.FormattingEnabled = true;
-            this.ModelocomboBox.Location = new System.Drawing.Point(322, 56);
+            this.ModelocomboBox.Location = new System.Drawing.Point(435, 58);
             this.ModelocomboBox.Name = "ModelocomboBox";
             this.ModelocomboBox.Size = new System.Drawing.Size(110, 21);
             this.ModelocomboBox.TabIndex = 16;
@@ -182,15 +194,18 @@
             // 
             // ObservacionestextBox
             // 
-            this.ObservacionestextBox.Location = new System.Drawing.Point(458, 111);
+            this.ObservacionestextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ObservacionestextBox.Location = new System.Drawing.Point(571, 113);
             this.ObservacionestextBox.Multiline = true;
             this.ObservacionestextBox.Name = "ObservacionestextBox";
-            this.ObservacionestextBox.Size = new System.Drawing.Size(249, 56);
+            this.ObservacionestextBox.Size = new System.Drawing.Size(140, 56);
             this.ObservacionestextBox.TabIndex = 14;
             // 
             // PrecioSalidatextBox
             // 
-            this.PrecioSalidatextBox.Location = new System.Drawing.Point(322, 21);
+            this.PrecioSalidatextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrecioSalidatextBox.Location = new System.Drawing.Point(435, 23);
             this.PrecioSalidatextBox.Name = "PrecioSalidatextBox";
             this.PrecioSalidatextBox.Size = new System.Drawing.Size(110, 20);
             this.PrecioSalidatextBox.TabIndex = 13;
@@ -218,9 +233,11 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(223, 126);
+            this.label10.Location = new System.Drawing.Point(336, 128);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 17);
             this.label10.TabIndex = 9;
@@ -228,9 +245,11 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(221, 91);
+            this.label9.Location = new System.Drawing.Point(334, 93);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 17);
             this.label9.TabIndex = 8;
@@ -238,9 +257,11 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(221, 57);
+            this.label8.Location = new System.Drawing.Point(334, 59);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 17);
             this.label8.TabIndex = 7;
@@ -258,9 +279,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(464, 24);
+            this.label6.Location = new System.Drawing.Point(577, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 17);
             this.label6.TabIndex = 5;
@@ -278,9 +300,11 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(221, 21);
+            this.label4.Location = new System.Drawing.Point(334, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 17);
             this.label4.TabIndex = 3;
@@ -298,9 +322,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(464, 91);
+            this.label2.Location = new System.Drawing.Point(577, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 17);
             this.label2.TabIndex = 1;
@@ -344,6 +369,13 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // CodigotextBox
+            // 
+            this.CodigotextBox.Location = new System.Drawing.Point(215, 23);
+            this.CodigotextBox.Name = "CodigotextBox";
+            this.CodigotextBox.Size = new System.Drawing.Size(100, 20);
+            this.CodigotextBox.TabIndex = 24;
             // 
             // WINProducto
             // 
@@ -394,5 +426,6 @@
         private System.Windows.Forms.Button Actualizarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox CodigotextBox;
     }
 }

@@ -9,9 +9,8 @@ using ENT;
 
 namespace CAD
 {
-    public class CADCategoria:CADConexion
+    public class CADCategoria : CADConexion
     {
-
         private DataTable tabla = new DataTable();
 
         public DataTable MostrarCategoria()
@@ -56,5 +55,15 @@ namespace CAD
             CerrarConexion();
         }
 
+        public string ObtenercodCat(int idCat)
+        {
+            string i;
+            SqlCommand cmd = new SqlCommand("ObtenercodCat", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCategoria", idCat);
+            i = (string)cmd.ExecuteScalar();//castear
+            CerrarConexion();
+            return i;
+        }
     }
 }
