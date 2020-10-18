@@ -44,10 +44,15 @@ namespace WIN
             ObservacionestextBox.Text = string.Empty;
             CodigotextBox.Text = string.Empty;
             MarcacomboBox.SelectedIndex = -1;
+            MarcacomboBox.Text = string.Empty;
             ModelocomboBox.SelectedIndex = -1;
+            ModelocomboBox.Text = string.Empty;
             CategoriacomboBox.SelectedIndex = -1;
+            CategoriacomboBox.Text = string.Empty;
             EstadocomboBox.SelectedIndex = -1;
+            EstadocomboBox.Text = string.Empty;
             NombretextBox.Focus();
+            errorProvider1.Clear();
         }
 
         public void LlenarGrid()
@@ -217,6 +222,51 @@ namespace WIN
 
             HabilitarBotones(false, true);
             Limpiar();
+        }
+
+        private void Cancelarbutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            HabilitarBotones(false, true);
+        }
+
+        private void StocktextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CostotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void PrecioSalidatextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         private void Actualizarbutton_Click(object sender, EventArgs e)

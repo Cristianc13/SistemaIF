@@ -90,8 +90,6 @@ namespace WIN
             catch (Exception)
             {
             }
-
-     
         }
 
         private void CalcularTotal()
