@@ -63,6 +63,15 @@ namespace CAD
             CerrarConexion();
         }
 
+        public void EliminarProduto(ENTProducto EProducto)
+        {
+            SqlCommand cmd = new SqlCommand("DeleteProducto", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProducto", EProducto.idProducto);
+            cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
+
         public void UpdateProducto(ENTProducto EProducto)
         {
             SqlCommand cmd = new SqlCommand("UpdateProducto", AbrirConexion());
@@ -81,6 +90,28 @@ namespace CAD
             cmd.Parameters.AddWithValue("@FK_idEstado", EProducto.FK_idEstado);
             cmd.ExecuteNonQuery();
             CerrarConexion();
+        }
+
+        public DataTable BuscarProducto(ENTProducto EProducto)
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("BuscarProductoCod", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@codigo", EProducto.codigopro);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
+
+        public int CantidadProducto()
+        {
+            int i;
+            SqlCommand cmd = new SqlCommand("ContarProductos", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            i = (int)cmd.ExecuteScalar();
+            CerrarConexion();
+            return i;
         }
     }
 }

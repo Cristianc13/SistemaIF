@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BuscartextBox = new System.Windows.Forms.TextBox();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.CodigotextBox = new System.Windows.Forms.TextBox();
             this.Cancelarbutton = new System.Windows.Forms.Button();
@@ -59,6 +63,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ProductodataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TotalProductoslabel = new System.Windows.Forms.Label();
+            this.CantidadProduLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
@@ -67,6 +73,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.BuscartextBox);
+            this.panel1.Controls.Add(this.Buscarbutton);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.CodigotextBox);
             this.panel1.Controls.Add(this.Cancelarbutton);
@@ -99,6 +107,24 @@
             this.panel1.Size = new System.Drawing.Size(743, 203);
             this.panel1.TabIndex = 0;
             // 
+            // BuscartextBox
+            // 
+            this.BuscartextBox.Location = new System.Drawing.Point(550, 169);
+            this.BuscartextBox.Name = "BuscartextBox";
+            this.BuscartextBox.Size = new System.Drawing.Size(100, 20);
+            this.BuscartextBox.TabIndex = 27;
+            this.BuscartextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BuscartextBox_KeyUp);
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Location = new System.Drawing.Point(656, 167);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Buscarbutton.TabIndex = 26;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -114,15 +140,15 @@
             this.CodigotextBox.Location = new System.Drawing.Point(94, 87);
             this.CodigotextBox.Name = "CodigotextBox";
             this.CodigotextBox.Size = new System.Drawing.Size(130, 20);
-            this.CodigotextBox.TabIndex = 24;
+            this.CodigotextBox.TabIndex = 2;
             // 
             // Cancelarbutton
             // 
             this.Cancelarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Cancelarbutton.Location = new System.Drawing.Point(563, 167);
+            this.Cancelarbutton.Location = new System.Drawing.Point(413, 167);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(85, 25);
-            this.Cancelarbutton.TabIndex = 23;
+            this.Cancelarbutton.TabIndex = 14;
             this.Cancelarbutton.Text = "Cancelar";
             this.Cancelarbutton.UseVisualStyleBackColor = true;
             this.Cancelarbutton.Click += new System.EventHandler(this.Cancelarbutton_Click);
@@ -130,10 +156,10 @@
             // Eliminarbutton
             // 
             this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Eliminarbutton.Location = new System.Drawing.Point(369, 167);
+            this.Eliminarbutton.Location = new System.Drawing.Point(291, 167);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(85, 25);
-            this.Eliminarbutton.TabIndex = 22;
+            this.Eliminarbutton.TabIndex = 13;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
@@ -141,10 +167,10 @@
             // Actualizarbutton
             // 
             this.Actualizarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Actualizarbutton.Location = new System.Drawing.Point(224, 167);
+            this.Actualizarbutton.Location = new System.Drawing.Point(174, 167);
             this.Actualizarbutton.Name = "Actualizarbutton";
             this.Actualizarbutton.Size = new System.Drawing.Size(85, 25);
-            this.Actualizarbutton.TabIndex = 21;
+            this.Actualizarbutton.TabIndex = 12;
             this.Actualizarbutton.Text = "Actualizar";
             this.Actualizarbutton.UseVisualStyleBackColor = true;
             this.Actualizarbutton.Click += new System.EventHandler(this.Actualizarbutton_Click);
@@ -155,7 +181,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(42, 167);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(85, 25);
-            this.Guardarbutton.TabIndex = 20;
+            this.Guardarbutton.TabIndex = 11;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
@@ -166,7 +192,7 @@
             this.DescripciontextBox.Location = new System.Drawing.Point(596, 51);
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(137, 20);
-            this.DescripciontextBox.TabIndex = 19;
+            this.DescripciontextBox.TabIndex = 9;
             // 
             // EstadocomboBox
             // 
@@ -175,7 +201,7 @@
             this.EstadocomboBox.Location = new System.Drawing.Point(596, 17);
             this.EstadocomboBox.Name = "EstadocomboBox";
             this.EstadocomboBox.Size = new System.Drawing.Size(137, 21);
-            this.EstadocomboBox.TabIndex = 18;
+            this.EstadocomboBox.TabIndex = 8;
             this.EstadocomboBox.SelectedIndexChanged += new System.EventHandler(this.EstadocomboBox_SelectedIndexChanged);
             // 
             // CategoriacomboBox
@@ -183,10 +209,10 @@
             this.CategoriacomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CategoriacomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CategoriacomboBox.FormattingEnabled = true;
-            this.CategoriacomboBox.Location = new System.Drawing.Point(94, 22);
+            this.CategoriacomboBox.Location = new System.Drawing.Point(94, 52);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(130, 21);
-            this.CategoriacomboBox.TabIndex = 17;
+            this.CategoriacomboBox.TabIndex = 1;
             this.CategoriacomboBox.SelectedIndexChanged += new System.EventHandler(this.CategoriacomboBox_SelectedIndexChanged);
             // 
             // ModelocomboBox
@@ -197,7 +223,7 @@
             this.ModelocomboBox.Location = new System.Drawing.Point(352, 90);
             this.ModelocomboBox.Name = "ModelocomboBox";
             this.ModelocomboBox.Size = new System.Drawing.Size(136, 21);
-            this.ModelocomboBox.TabIndex = 16;
+            this.ModelocomboBox.TabIndex = 6;
             this.ModelocomboBox.SelectedIndexChanged += new System.EventHandler(this.ModelocomboBox_SelectedIndexChanged);
             // 
             // MarcacomboBox
@@ -208,7 +234,7 @@
             this.MarcacomboBox.Location = new System.Drawing.Point(352, 125);
             this.MarcacomboBox.Name = "MarcacomboBox";
             this.MarcacomboBox.Size = new System.Drawing.Size(136, 21);
-            this.MarcacomboBox.TabIndex = 15;
+            this.MarcacomboBox.TabIndex = 7;
             this.MarcacomboBox.SelectedIndexChanged += new System.EventHandler(this.MarcacomboBox_SelectedIndexChanged);
             // 
             // ObservacionestextBox
@@ -218,7 +244,7 @@
             this.ObservacionestextBox.Multiline = true;
             this.ObservacionestextBox.Name = "ObservacionestextBox";
             this.ObservacionestextBox.Size = new System.Drawing.Size(135, 39);
-            this.ObservacionestextBox.TabIndex = 14;
+            this.ObservacionestextBox.TabIndex = 10;
             // 
             // PrecioSalidatextBox
             // 
@@ -227,7 +253,7 @@
             this.PrecioSalidatextBox.Location = new System.Drawing.Point(352, 55);
             this.PrecioSalidatextBox.Name = "PrecioSalidatextBox";
             this.PrecioSalidatextBox.Size = new System.Drawing.Size(136, 20);
-            this.PrecioSalidatextBox.TabIndex = 13;
+            this.PrecioSalidatextBox.TabIndex = 5;
             this.PrecioSalidatextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrecioSalidatextBox_KeyPress);
             // 
             // CostotextBox
@@ -237,7 +263,7 @@
             this.CostotextBox.Location = new System.Drawing.Point(352, 24);
             this.CostotextBox.Name = "CostotextBox";
             this.CostotextBox.Size = new System.Drawing.Size(136, 20);
-            this.CostotextBox.TabIndex = 12;
+            this.CostotextBox.TabIndex = 4;
             this.CostotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostotextBox_KeyPress);
             // 
             // StocktextBox
@@ -245,15 +271,15 @@
             this.StocktextBox.Location = new System.Drawing.Point(94, 124);
             this.StocktextBox.Name = "StocktextBox";
             this.StocktextBox.Size = new System.Drawing.Size(130, 20);
-            this.StocktextBox.TabIndex = 11;
+            this.StocktextBox.TabIndex = 3;
             this.StocktextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.StocktextBox_KeyPress);
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(94, 57);
+            this.NombretextBox.Location = new System.Drawing.Point(94, 23);
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(130, 20);
-            this.NombretextBox.TabIndex = 10;
+            this.NombretextBox.TabIndex = 0;
             // 
             // label10
             // 
@@ -272,7 +298,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(15, 22);
+            this.label9.Location = new System.Drawing.Point(15, 51);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 17);
             this.label9.TabIndex = 8;
@@ -362,7 +388,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(26, 58);
+            this.label1.Location = new System.Drawing.Point(26, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 0;
@@ -370,6 +396,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.CantidadProduLabel);
+            this.panel2.Controls.Add(this.TotalProductoslabel);
             this.panel2.Controls.Add(this.ProductodataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 203);
@@ -381,21 +409,59 @@
             // 
             this.ProductodataGridView.AllowUserToAddRows = false;
             this.ProductodataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
+            this.ProductodataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.ProductodataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ProductodataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ProductodataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.ProductodataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.ProductodataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductodataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProductodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductodataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductodataGridView.EnableHeadersVisualStyles = false;
+            this.ProductodataGridView.GridColor = System.Drawing.SystemColors.Control;
             this.ProductodataGridView.Location = new System.Drawing.Point(0, 0);
             this.ProductodataGridView.Name = "ProductodataGridView";
             this.ProductodataGridView.ReadOnly = true;
             this.ProductodataGridView.RowHeadersVisible = false;
             this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductodataGridView.Size = new System.Drawing.Size(743, 215);
+            this.ProductodataGridView.Size = new System.Drawing.Size(743, 186);
             this.ProductodataGridView.TabIndex = 0;
             this.ProductodataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellDoubleClick);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // TotalProductoslabel
+            // 
+            this.TotalProductoslabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TotalProductoslabel.AutoSize = true;
+            this.TotalProductoslabel.Location = new System.Drawing.Point(12, 193);
+            this.TotalProductoslabel.Name = "TotalProductoslabel";
+            this.TotalProductoslabel.Size = new System.Drawing.Size(103, 13);
+            this.TotalProductoslabel.TabIndex = 1;
+            this.TotalProductoslabel.Text = "Total de Productos: ";
+            // 
+            // CantidadProduLabel
+            // 
+            this.CantidadProduLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CantidadProduLabel.AutoSize = true;
+            this.CantidadProduLabel.Location = new System.Drawing.Point(107, 193);
+            this.CantidadProduLabel.Name = "CantidadProduLabel";
+            this.CantidadProduLabel.Size = new System.Drawing.Size(13, 13);
+            this.CantidadProduLabel.TabIndex = 2;
+            this.CantidadProduLabel.Text = "0";
             // 
             // WINProducto
             // 
@@ -405,11 +471,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "WINProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Producto";
             this.Load += new System.EventHandler(this.WINProducto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -448,5 +516,9 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox CodigotextBox;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox BuscartextBox;
+        private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.Label TotalProductoslabel;
+        private System.Windows.Forms.Label CantidadProduLabel;
     }
 }

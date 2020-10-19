@@ -28,9 +28,24 @@ namespace BL
             CProducto.InsertarProducto(EProducto);
         }
 
+        public void EliminarProduto(ENTProducto EProducto)
+        {
+            CProducto.EliminarProduto(EProducto);
+        }
+
         public void UpdateProducto(ENTProducto EProducto)
         {
             CProducto.UpdateProducto(EProducto);
+        }
+
+        public DataTable BuscarProducto(ENTProducto EProducto)
+        {
+            return CProducto.BuscarProducto(EProducto);
+        }
+
+        public int CantidadProducto()
+        {
+            return CProducto.CantidadProducto();
         }
     }
 }
