@@ -32,6 +32,7 @@ namespace WIN
             LlenarCategoria();
             LlenarModelo();
             Limpiar();
+            CantidadProducto();
         }
 
         public void Limpiar()
@@ -51,6 +52,7 @@ namespace WIN
             CategoriacomboBox.Text = string.Empty;
             EstadocomboBox.SelectedIndex = -1;
             EstadocomboBox.Text = string.Empty;
+            BuscartextBox.Text = string.Empty;
             NombretextBox.Focus();
             errorProvider1.Clear();
         }
@@ -78,7 +80,7 @@ namespace WIN
             ProductodataGridView.AllowUserToResizeColumns = false;
             ProductodataGridView.AllowUserToResizeRows = false;
             ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8);
-            ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8);
+            ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
         }
 
         private void HabilitarBotones(bool p1, bool p2)
@@ -182,6 +184,7 @@ namespace WIN
                 Limpiar();
                 LlenarGrid();
                 HabilitarBotones(false, true);
+                CantidadProducto();
             }
             catch (SqlException ex)
             {
@@ -219,9 +222,11 @@ namespace WIN
             DialogResult rpt = MessageBox.Show("Desea eliminar el registro", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.No) return;
             EProducto.idProducto = IdProducto;
-
+            BProducto.EliminarProduto(EProducto);
             HabilitarBotones(false, true);
             Limpiar();
+            LlenarGrid();
+            CantidadProducto();
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
@@ -267,6 +272,19 @@ namespace WIN
             {
                 e.Handled = true;
             }
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void BuscartextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            string filtro;
+            filtro = BuscartextBox.Text;
+            EProducto.codigopro = filtro;
+            //  ProductodataGridView.Columns.Clear();
+            ProductodataGridView.DataSource = BProducto.BuscarProducto(EProducto);
         }
 
         private void Actualizarbutton_Click(object sender, EventArgs e)
@@ -401,6 +419,11 @@ namespace WIN
             errorProvider1.Clear();
 
             return true;
+        }
+
+        public void CantidadProducto()
+        {
+            CantidadProduLabel.Text = BProducto.CantidadProducto().ToString();
         }
     }
 }
