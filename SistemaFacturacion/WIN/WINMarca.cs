@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using BL;
 using ENT;
@@ -45,6 +46,10 @@ namespace WIN
         {
             MarcadataGridView.Columns[0].Visible = false;
             MarcadataGridView.Columns[1].HeaderText = "Marca";
+            MarcadataGridView.AllowUserToResizeColumns = false;
+            MarcadataGridView.AllowUserToResizeRows = false;
+            MarcadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            MarcadataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
         }
 
         //Limpiar Cajas

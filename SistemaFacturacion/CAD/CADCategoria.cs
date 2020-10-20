@@ -31,6 +31,7 @@ namespace CAD
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@nombreCategoria", categoria.nombreCategoria);
             cmd.Parameters.AddWithValue("@descripcion", categoria.descripcion);
+            cmd.Parameters.AddWithValue("@codigo", categoria.codigocategoria);
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
@@ -51,6 +52,7 @@ namespace CAD
             cmd.Parameters.AddWithValue("@idCategoria", categoria.idCategoria);
             cmd.Parameters.AddWithValue("@nombreCategoria", categoria.nombreCategoria);
             cmd.Parameters.AddWithValue("@descripcion", categoria.descripcion);
+            cmd.Parameters.AddWithValue("@codigo", categoria.codigocategoria);
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
@@ -65,8 +67,5 @@ namespace CAD
             CerrarConexion();
             return i;
         }
-
-
-
     }
 }
