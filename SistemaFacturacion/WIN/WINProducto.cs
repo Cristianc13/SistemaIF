@@ -53,7 +53,6 @@ namespace WIN
             EstadocomboBox.SelectedIndex = -1;
             EstadocomboBox.Text = string.Empty;
             BuscartextBox.Text = string.Empty;
-            LlenarGrid();
             NombretextBox.Focus();
             errorProvider1.Clear();
         }
@@ -73,14 +72,14 @@ namespace WIN
             ProductodataGridView.Columns[5].HeaderText = "Costo";
             ProductodataGridView.Columns[6].HeaderText = "Precio Salida";
             ProductodataGridView.Columns[7].HeaderText = "Stock";
-            ProductodataGridView.Columns[8].HeaderText = "Observacion";
+            ProductodataGridView.Columns[8].HeaderText = "Observarcion";
             ProductodataGridView.Columns[9].HeaderText = "Marca";
             ProductodataGridView.Columns[10].HeaderText = "Modelo";
             ProductodataGridView.Columns[11].HeaderText = "Categoria";
             ProductodataGridView.Columns[12].HeaderText = "Estado";
             ProductodataGridView.AllowUserToResizeColumns = false;
             ProductodataGridView.AllowUserToResizeRows = false;
-            ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9);
+            ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8);
             ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
         }
 
@@ -277,9 +276,6 @@ namespace WIN
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            WINCategoria WCat = new WINCategoria();
-            WCat.ShowDialog();
-            LlenarCategoria();
         }
 
         private void BuscartextBox_KeyUp(object sender, KeyEventArgs e)
@@ -321,20 +317,6 @@ namespace WIN
                     CodigotextBox.Focus();
                 }
             }
-        }
-
-        private void BuscarModbutton_Click(object sender, EventArgs e)
-        {
-            WINModelo WMod = new WINModelo();
-            WMod.ShowDialog();
-            LlenarModelo();
-        }
-
-        private void BuscarMarbutton_Click(object sender, EventArgs e)
-        {
-            WINMarca WMar = new WINMarca();
-            WMar.ShowDialog();
-            LlenarMarca();
         }
 
         public void LlenarCategoria()

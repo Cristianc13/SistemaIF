@@ -14,8 +14,9 @@ namespace WIN
 {
     public partial class WINCategoria : Form
     {
-        private BLCategoria BCat = new BLCategoria();
-        private ENTCategoria ECat = new ENTCategoria();
+
+        BLCategoria BCat = new BLCategoria();
+        ENTCategoria ECat = new ENTCategoria();
         public int id;
 
         public WINCategoria()
@@ -25,10 +26,8 @@ namespace WIN
 
         public void Limpiar()
         {
-            CategoriatextBox.Text = string.Empty;
-            DescripciontextBox.Text = string.Empty;
-            CodigotextBox.Text = string.Empty;
-
+            CategoriatextBox.Text = "";
+            DescripciontextBox.Text = "";
             CategoriatextBox.Focus();
         }
 
@@ -50,7 +49,6 @@ namespace WIN
         {
             ECat.nombreCategoria = CategoriatextBox.Text;
             ECat.descripcion = DescripciontextBox.Text;
-            ECat.codigocategoria = CodigotextBox.Text;
             BCat.InsertCategoria(ECat);
         }
 
@@ -59,7 +57,6 @@ namespace WIN
             CategoriadataGridView.Columns[0].Visible = false;//idProducto
             CategoriadataGridView.Columns[1].HeaderText = "Modelo";
             CategoriadataGridView.Columns[2].HeaderText = "Descripcion";
-            CategoriadataGridView.Columns[3].HeaderText = "Codigo";
             CategoriadataGridView.AllowUserToResizeColumns = false;
             CategoriadataGridView.AllowUserToResizeRows = false;
             CategoriadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
@@ -74,7 +71,6 @@ namespace WIN
             //MessageBox.Show(vIDEquipo.ToString());
             CategoriatextBox.Text = CategoriadataGridView.CurrentRow.Cells[1].Value.ToString();
             DescripciontextBox.Text = CategoriadataGridView.CurrentRow.Cells[2].Value.ToString();
-            CodigotextBox.Text = CategoriadataGridView.CurrentRow.Cells[3].Value.ToString();
             errorProvider1.Clear();
         }
 
@@ -88,23 +84,16 @@ namespace WIN
         {
             if (CategoriatextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(CategoriatextBox, "Debe ingresar una Categoria");
+                errorProvider1.SetError(CategoriatextBox, "Debe ingresar una categoria");
                 return;
             }
-            errorProvider1.Clear();
 
             if (DescripciontextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(DescripciontextBox, "Debe ingresar una Descripcion");
+                errorProvider1.SetError(DescripciontextBox, "Debe ingresar una descripcion");
                 return;
             }
-            errorProvider1.Clear();
 
-            if (CodigotextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(CodigotextBox, "Debe ingresar un Codigo");
-                return;
-            }
             errorProvider1.Clear();
 
             Guardar();
@@ -123,7 +112,6 @@ namespace WIN
             ECat.idCategoria = id;
             ECat.nombreCategoria = CategoriatextBox.Text;
             ECat.descripcion = DescripciontextBox.Text;
-            ECat.codigocategoria = CodigotextBox.Text;
             BCat.UpdateCategoria(ECat);
             LlenarGrid();
             Limpiar();
@@ -133,9 +121,13 @@ namespace WIN
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             string valor = CategoriadataGridView.CurrentRow.Cells[1].Value.ToString();
-            DialogResult rpt = MessageBox.Show("Eliminar Categoria " + valor, "Categoria", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            DialogResult rpt = MessageBox.Show("Eliminar Modelo " + valor, "Modelo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.No) return;
+
+            //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
             ECat.idCategoria = id;
+            ECat.nombreCategoria = CategoriatextBox.Text;
+            ECat.descripcion = DescripciontextBox.Text;
             BCat.DeleteCategoria(ECat);
             LlenarGrid();
             Limpiar();
