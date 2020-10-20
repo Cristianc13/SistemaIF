@@ -45,9 +45,6 @@
             // 
             this.MarcadataGridView.AllowUserToAddRows = false;
             this.MarcadataGridView.AllowUserToDeleteRows = false;
-            this.MarcadataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.MarcadataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MarcadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MarcadataGridView.Location = new System.Drawing.Point(21, 88);
@@ -55,21 +52,20 @@
             this.MarcadataGridView.ReadOnly = true;
             this.MarcadataGridView.RowHeadersVisible = false;
             this.MarcadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MarcadataGridView.Size = new System.Drawing.Size(727, 431);
+            this.MarcadataGridView.Size = new System.Drawing.Size(339, 146);
             this.MarcadataGridView.TabIndex = 0;
             this.MarcadataGridView.DoubleClick += new System.EventHandler(this.MarcadataGridView_DoubleClick);
             // 
             // MarcatextBox
             // 
-            this.MarcatextBox.Location = new System.Drawing.Point(76, 40);
+            this.MarcatextBox.Location = new System.Drawing.Point(76, 45);
             this.MarcatextBox.Name = "MarcatextBox";
             this.MarcatextBox.Size = new System.Drawing.Size(135, 20);
             this.MarcatextBox.TabIndex = 1;
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Guardarbutton.Location = new System.Drawing.Point(135, 558);
+            this.Guardarbutton.Location = new System.Drawing.Point(21, 264);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 2;
@@ -79,8 +75,7 @@
             // 
             // Actualizarbutton
             // 
-            this.Actualizarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Actualizarbutton.Location = new System.Drawing.Point(320, 558);
+            this.Actualizarbutton.Location = new System.Drawing.Point(113, 264);
             this.Actualizarbutton.Name = "Actualizarbutton";
             this.Actualizarbutton.Size = new System.Drawing.Size(75, 23);
             this.Actualizarbutton.TabIndex = 3;
@@ -91,16 +86,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Marca";
+            this.label1.Text = "Marca:";
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Eliminarbutton.Location = new System.Drawing.Point(497, 558);
+            this.Eliminarbutton.Location = new System.Drawing.Point(211, 264);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 5;
@@ -110,8 +105,7 @@
             // 
             // Cancelarbutton
             // 
-            this.Cancelarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Cancelarbutton.Location = new System.Drawing.Point(648, 558);
+            this.Cancelarbutton.Location = new System.Drawing.Point(306, 264);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(75, 23);
             this.Cancelarbutton.TabIndex = 6;
@@ -125,9 +119,8 @@
             // 
             // WINMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 661);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(397, 307);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.label1);
@@ -135,8 +128,8 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.MarcatextBox);
             this.Controls.Add(this.MarcadataGridView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WINMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Marca";
             this.Load += new System.EventHandler(this.WINMarca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MarcadataGridView)).EndInit();
