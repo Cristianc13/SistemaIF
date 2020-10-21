@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.Cancelarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.ImportetextBox = new System.Windows.Forms.TextBox();
@@ -49,7 +50,7 @@
             this.cOpciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cidProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Cancelarbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,12 +63,13 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.Buscarbutton);
             this.splitContainer1.Panel1.Controls.Add(this.Cancelarbutton);
             this.splitContainer1.Panel1.Controls.Add(this.Guardarbutton);
             this.splitContainer1.Panel1.Controls.Add(this.Agregarbutton);
@@ -89,10 +91,21 @@
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
+            // Cancelarbutton
+            // 
+            this.Cancelarbutton.Location = new System.Drawing.Point(357, 167);
+            this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Cancelarbutton.Name = "Cancelarbutton";
+            this.Cancelarbutton.Size = new System.Drawing.Size(115, 37);
+            this.Cancelarbutton.TabIndex = 10;
+            this.Cancelarbutton.Text = "Cancelar";
+            this.Cancelarbutton.UseVisualStyleBackColor = true;
+            this.Cancelarbutton.Click += new System.EventHandler(this.Cancelarbutton_Click);
+            // 
             // Guardarbutton
             // 
             this.Guardarbutton.Location = new System.Drawing.Point(204, 167);
-            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(115, 37);
             this.Guardarbutton.TabIndex = 9;
@@ -103,7 +116,7 @@
             // Agregarbutton
             // 
             this.Agregarbutton.Location = new System.Drawing.Point(56, 167);
-            this.Agregarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Agregarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(115, 37);
             this.Agregarbutton.TabIndex = 8;
@@ -115,7 +128,7 @@
             // 
             this.ImportetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImportetextBox.Location = new System.Drawing.Point(632, 112);
-            this.ImportetextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ImportetextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ImportetextBox.Name = "ImportetextBox";
             this.ImportetextBox.ReadOnly = true;
             this.ImportetextBox.Size = new System.Drawing.Size(264, 26);
@@ -125,16 +138,17 @@
             // 
             this.PreciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PreciotextBox.Location = new System.Drawing.Point(632, 44);
-            this.PreciotextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PreciotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(264, 26);
             this.PreciotextBox.TabIndex = 6;
+            this.PreciotextBox.TextChanged += new System.EventHandler(this.PreciotextBox_TextChanged);
             // 
             // CantidadtextBox
             // 
             this.CantidadtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CantidadtextBox.Location = new System.Drawing.Point(143, 112);
-            this.CantidadtextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CantidadtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(307, 26);
             this.CantidadtextBox.TabIndex = 5;
@@ -196,7 +210,7 @@
             this.ProductocomboBox.FormattingEnabled = true;
             this.ProductocomboBox.IntegralHeight = false;
             this.ProductocomboBox.Location = new System.Drawing.Point(143, 41);
-            this.ProductocomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductocomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(307, 28);
             this.ProductocomboBox.TabIndex = 0;
@@ -220,7 +234,7 @@
             this.cidProducto});
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
-            this.DVentadataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DVentadataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.DVentadataGridView.Name = "DVentadataGridView";
             this.DVentadataGridView.ReadOnly = true;
             this.DVentadataGridView.RowHeadersVisible = false;
@@ -284,16 +298,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // Cancelarbutton
+            // Buscarbutton
             // 
-            this.Cancelarbutton.Location = new System.Drawing.Point(357, 167);
-            this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.Cancelarbutton.Name = "Cancelarbutton";
-            this.Cancelarbutton.Size = new System.Drawing.Size(115, 37);
-            this.Cancelarbutton.TabIndex = 10;
-            this.Cancelarbutton.Text = "Cancelar";
-            this.Cancelarbutton.UseVisualStyleBackColor = true;
-            this.Cancelarbutton.Click += new System.EventHandler(this.Cancelarbutton_Click);
+            this.Buscarbutton.Location = new System.Drawing.Point(508, 167);
+            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(115, 37);
+            this.Buscarbutton.TabIndex = 11;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // WINDetalleVenta
             // 
@@ -301,7 +315,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 740);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WINDetalleVenta";
             this.Text = "WINDetalleVenta";
             this.Load += new System.EventHandler(this.WINDetalleVenta_Load);
@@ -320,12 +334,10 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ProductocomboBox;
         private System.Windows.Forms.DataGridView DVentadataGridView;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Agregarbutton;
         private System.Windows.Forms.TextBox ImportetextBox;
-        private System.Windows.Forms.TextBox PreciotextBox;
         private System.Windows.Forms.TextBox CantidadtextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -339,5 +351,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cidProducto;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button Cancelarbutton;
+        private System.Windows.Forms.Button Buscarbutton;
+        public System.Windows.Forms.ComboBox ProductocomboBox;
+        public System.Windows.Forms.TextBox PreciotextBox;
     }
 }
