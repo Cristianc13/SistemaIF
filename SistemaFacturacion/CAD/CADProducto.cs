@@ -31,6 +31,17 @@ namespace CAD
             return tabla;
         }
 
+        public DataTable MostrarProductoVenta()
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("SelectProdVent", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
+
         public string ObtenerPrecio(int idProducto)
         {
             decimal a;

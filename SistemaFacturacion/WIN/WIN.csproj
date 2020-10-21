@@ -120,6 +120,12 @@
     <Compile Include="WINProveedor.Designer.cs">
       <DependentUpon>WINProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINProVent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINProVent.Designer.cs">
+      <DependentUpon>WINProVent.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINProveedor.resx">
       <DependentUpon>WINProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINProVent.resx">
+      <DependentUpon>WINProVent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

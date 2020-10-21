@@ -192,5 +192,17 @@ namespace WIN
                 e.Handled = true;
             }
         }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            WINProVent pv = new WINProVent();
+            AddOwnedForm(pv);
+            pv.Show();
+        }
+
+        private void PreciotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
