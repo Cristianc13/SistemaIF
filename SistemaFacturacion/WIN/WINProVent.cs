@@ -66,7 +66,7 @@ namespace WIN
         {
             WINDetalleVenta dx = Owner as WINDetalleVenta;
             dx.ProductocomboBox.Text = ProductotextBox.Text;
-            dx.PreciotextBox.Text = PreciotextBox.Text;
+            this.Close();
         }
     }
 }

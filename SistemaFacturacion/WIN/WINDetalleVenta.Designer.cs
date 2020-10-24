@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.Clientebutton = new System.Windows.Forms.Button();
+            this.TelefonotextBox = new System.Windows.Forms.TextBox();
+            this.Telefono = new System.Windows.Forms.Label();
+            this.ClientetextBox = new System.Windows.Forms.TextBox();
+            this.Cliente = new System.Windows.Forms.Label();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.Cancelarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Agregarbutton = new System.Windows.Forms.Button();
@@ -50,50 +55,80 @@
             this.cOpciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cidProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // Clientebutton
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.Clientebutton.Location = new System.Drawing.Point(694, 196);
+            this.Clientebutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Clientebutton.Name = "Clientebutton";
+            this.Clientebutton.Size = new System.Drawing.Size(115, 37);
+            this.Clientebutton.TabIndex = 16;
+            this.Clientebutton.Text = "Cliente";
+            this.Clientebutton.UseVisualStyleBackColor = true;
+            this.Clientebutton.Click += new System.EventHandler(this.Clientebutton_Click);
             // 
-            // splitContainer1.Panel1
+            // TelefonotextBox
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.Buscarbutton);
-            this.splitContainer1.Panel1.Controls.Add(this.Cancelarbutton);
-            this.splitContainer1.Panel1.Controls.Add(this.Guardarbutton);
-            this.splitContainer1.Panel1.Controls.Add(this.Agregarbutton);
-            this.splitContainer1.Panel1.Controls.Add(this.ImportetextBox);
-            this.splitContainer1.Panel1.Controls.Add(this.PreciotextBox);
-            this.splitContainer1.Panel1.Controls.Add(this.CantidadtextBox);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.ProductocomboBox);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            this.TelefonotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelefonotextBox.Location = new System.Drawing.Point(639, 11);
+            this.TelefonotextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.TelefonotextBox.Name = "TelefonotextBox";
+            this.TelefonotextBox.ReadOnly = true;
+            this.TelefonotextBox.Size = new System.Drawing.Size(264, 26);
+            this.TelefonotextBox.TabIndex = 15;
             // 
-            // splitContainer1.Panel2
+            // Telefono
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.DVentadataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(992, 740);
-            this.splitContainer1.SplitterDistance = 271;
-            this.splitContainer1.SplitterWidth = 5;
-            this.splitContainer1.TabIndex = 0;
+            this.Telefono.AutoSize = true;
+            this.Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Telefono.Location = new System.Drawing.Point(532, 12);
+            this.Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Size = new System.Drawing.Size(89, 25);
+            this.Telefono.TabIndex = 14;
+            this.Telefono.Text = "Telefono";
+            // 
+            // ClientetextBox
+            // 
+            this.ClientetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientetextBox.Location = new System.Drawing.Point(150, 11);
+            this.ClientetextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientetextBox.Name = "ClientetextBox";
+            this.ClientetextBox.Size = new System.Drawing.Size(307, 26);
+            this.ClientetextBox.TabIndex = 13;
+            // 
+            // Cliente
+            // 
+            this.Cliente.AutoSize = true;
+            this.Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cliente.Location = new System.Drawing.Point(23, 12);
+            this.Cliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Size = new System.Drawing.Size(73, 25);
+            this.Cliente.TabIndex = 12;
+            this.Cliente.Text = "Cliente";
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Location = new System.Drawing.Point(536, 196);
+            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(115, 37);
+            this.Buscarbutton.TabIndex = 11;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Cancelarbutton
             // 
-            this.Cancelarbutton.Location = new System.Drawing.Point(357, 167);
+            this.Cancelarbutton.Location = new System.Drawing.Point(385, 196);
             this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(115, 37);
@@ -104,7 +139,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(204, 167);
+            this.Guardarbutton.Location = new System.Drawing.Point(232, 196);
             this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(115, 37);
@@ -115,7 +150,7 @@
             // 
             // Agregarbutton
             // 
-            this.Agregarbutton.Location = new System.Drawing.Point(56, 167);
+            this.Agregarbutton.Location = new System.Drawing.Point(84, 196);
             this.Agregarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(115, 37);
@@ -127,7 +162,7 @@
             // ImportetextBox
             // 
             this.ImportetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ImportetextBox.Location = new System.Drawing.Point(632, 112);
+            this.ImportetextBox.Location = new System.Drawing.Point(639, 144);
             this.ImportetextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ImportetextBox.Name = "ImportetextBox";
             this.ImportetextBox.ReadOnly = true;
@@ -137,7 +172,7 @@
             // PreciotextBox
             // 
             this.PreciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreciotextBox.Location = new System.Drawing.Point(632, 44);
+            this.PreciotextBox.Location = new System.Drawing.Point(639, 76);
             this.PreciotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(264, 26);
@@ -147,7 +182,7 @@
             // CantidadtextBox
             // 
             this.CantidadtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantidadtextBox.Location = new System.Drawing.Point(143, 112);
+            this.CantidadtextBox.Location = new System.Drawing.Point(150, 144);
             this.CantidadtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(307, 26);
@@ -159,7 +194,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(527, 113);
+            this.label4.Location = new System.Drawing.Point(534, 145);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 25);
@@ -170,7 +205,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(527, 46);
+            this.label3.Location = new System.Drawing.Point(534, 78);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 25);
@@ -181,7 +216,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 113);
+            this.label2.Location = new System.Drawing.Point(23, 145);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 25);
@@ -192,7 +227,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 38);
+            this.label1.Location = new System.Drawing.Point(23, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 25);
@@ -209,7 +244,7 @@
             this.ProductocomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductocomboBox.FormattingEnabled = true;
             this.ProductocomboBox.IntegralHeight = false;
-            this.ProductocomboBox.Location = new System.Drawing.Point(143, 41);
+            this.ProductocomboBox.Location = new System.Drawing.Point(150, 73);
             this.ProductocomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(307, 28);
@@ -240,7 +275,7 @@
             this.DVentadataGridView.RowHeadersVisible = false;
             this.DVentadataGridView.RowHeadersWidth = 51;
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DVentadataGridView.Size = new System.Drawing.Size(992, 464);
+            this.DVentadataGridView.Size = new System.Drawing.Size(935, 479);
             this.DVentadataGridView.TabIndex = 0;
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
             // 
@@ -298,41 +333,61 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // Buscarbutton
+            // panel1
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(508, 167);
-            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(115, 37);
-            this.Buscarbutton.TabIndex = 11;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            this.panel1.Controls.Add(this.DVentadataGridView);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 261);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(935, 479);
+            this.panel1.TabIndex = 17;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.Cliente);
+            this.panel2.Controls.Add(this.ImportetextBox);
+            this.panel2.Controls.Add(this.Clientebutton);
+            this.panel2.Controls.Add(this.PreciotextBox);
+            this.panel2.Controls.Add(this.Buscarbutton);
+            this.panel2.Controls.Add(this.TelefonotextBox);
+            this.panel2.Controls.Add(this.Cancelarbutton);
+            this.panel2.Controls.Add(this.CantidadtextBox);
+            this.panel2.Controls.Add(this.Guardarbutton);
+            this.panel2.Controls.Add(this.ProductocomboBox);
+            this.panel2.Controls.Add(this.Agregarbutton);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.Telefono);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.ClientetextBox);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(935, 255);
+            this.panel2.TabIndex = 18;
             // 
             // WINDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 740);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(935, 740);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WINDetalleVenta";
             this.Text = "WINDetalleVenta";
             this.Load += new System.EventHandler(this.WINDetalleVenta_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DVentadataGridView;
         private System.Windows.Forms.Button Guardarbutton;
@@ -354,5 +409,12 @@
         private System.Windows.Forms.Button Buscarbutton;
         public System.Windows.Forms.ComboBox ProductocomboBox;
         public System.Windows.Forms.TextBox PreciotextBox;
+        private System.Windows.Forms.Button Clientebutton;
+        private System.Windows.Forms.Label Telefono;
+        private System.Windows.Forms.Label Cliente;
+        public System.Windows.Forms.TextBox TelefonotextBox;
+        public System.Windows.Forms.TextBox ClientetextBox;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
