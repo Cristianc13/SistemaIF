@@ -170,10 +170,12 @@
             // 
             this.ProductodataGridView.AllowUserToAddRows = false;
             this.ProductodataGridView.AllowUserToDeleteRows = false;
+            this.ProductodataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProductodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductodataGridView.Location = new System.Drawing.Point(12, 161);
             this.ProductodataGridView.Name = "ProductodataGridView";
             this.ProductodataGridView.ReadOnly = true;
+            this.ProductodataGridView.RowHeadersVisible = false;
             this.ProductodataGridView.RowHeadersWidth = 51;
             this.ProductodataGridView.RowTemplate.Height = 24;
             this.ProductodataGridView.Size = new System.Drawing.Size(776, 277);

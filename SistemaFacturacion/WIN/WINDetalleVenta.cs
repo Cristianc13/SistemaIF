@@ -204,5 +204,12 @@ namespace WIN
         {
 
         }
+
+        private void Clientebutton_Click(object sender, EventArgs e)
+        {
+            WINCliente cl = new WINCliente();
+            AddOwnedForm(cl);
+            cl.Show();
+        }
     }
 }
