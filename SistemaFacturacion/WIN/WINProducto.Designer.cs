@@ -69,6 +69,9 @@
             this.TotalProductoslabel = new System.Windows.Forms.Label();
             this.ProductodataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+
+            this.Exportarbutton = new System.Windows.Forms.Button();
+
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
@@ -120,10 +123,15 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label12.Location = new System.Drawing.Point(1004, 213);
+       this.label12.Location = new System.Drawing.Point(1004, 213);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(58, 20);
+
+            this.label12.Location = new System.Drawing.Point(753, 173);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 17);
+
             this.label12.TabIndex = 30;
             this.label12.Text = "Filtrar:";
             // 
@@ -470,6 +478,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Exportarbutton);
             this.panel2.Controls.Add(this.CantidadProduLabel);
             this.panel2.Controls.Add(this.TotalProductoslabel);
             this.panel2.Controls.Add(this.ProductodataGridView);
@@ -543,7 +552,9 @@
             this.ProductodataGridView.RowHeadersVisible = false;
             this.ProductodataGridView.RowHeadersWidth = 51;
             this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductodataGridView.Size = new System.Drawing.Size(1225, 350);
+
+            this.ProductodataGridView.Size = new System.Drawing.Size(919, 273);
+
             this.ProductodataGridView.TabIndex = 0;
             this.ProductodataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellDoubleClick);
             // 
@@ -551,6 +562,19 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+
+            // Exportarbutton
+            // 
+            this.Exportarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Exportarbutton.Location = new System.Drawing.Point(822, 279);
+            this.Exportarbutton.Name = "Exportarbutton";
+            this.Exportarbutton.Size = new System.Drawing.Size(85, 25);
+            this.Exportarbutton.TabIndex = 31;
+            this.Exportarbutton.Text = "Exportar";
+            this.Exportarbutton.UseVisualStyleBackColor = true;
+            this.Exportarbutton.Click += new System.EventHandler(this.Exportarbutton_Click);
+            // 
+
             // WINProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -613,5 +637,6 @@
         private System.Windows.Forms.Button BuscarModbutton;
         private System.Windows.Forms.Button BuscarMarbutton;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button Exportarbutton;
     }
 }
