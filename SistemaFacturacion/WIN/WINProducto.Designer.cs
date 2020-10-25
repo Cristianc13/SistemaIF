@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.BuscarMarbutton = new System.Windows.Forms.Button();
             this.BuscarModbutton = new System.Windows.Forms.Button();
             this.BuscartextBox = new System.Windows.Forms.TextBox();
@@ -68,7 +69,7 @@
             this.TotalProductoslabel = new System.Windows.Forms.Label();
             this.ProductodataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label12 = new System.Windows.Forms.Label();
+            this.Exportarbutton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
@@ -113,6 +114,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(919, 203);
             this.panel1.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label12.Location = new System.Drawing.Point(753, 173);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 17);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Filtrar:";
             // 
             // BuscarMarbutton
             // 
@@ -426,6 +438,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Exportarbutton);
             this.panel2.Controls.Add(this.CantidadProduLabel);
             this.panel2.Controls.Add(this.TotalProductoslabel);
             this.panel2.Controls.Add(this.ProductodataGridView);
@@ -494,7 +507,7 @@
             this.ProductodataGridView.ReadOnly = true;
             this.ProductodataGridView.RowHeadersVisible = false;
             this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductodataGridView.Size = new System.Drawing.Size(919, 284);
+            this.ProductodataGridView.Size = new System.Drawing.Size(919, 273);
             this.ProductodataGridView.TabIndex = 0;
             this.ProductodataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellDoubleClick);
             // 
@@ -502,16 +515,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label12
+            // Exportarbutton
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label12.Location = new System.Drawing.Point(753, 173);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 17);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "Filtrar:";
+            this.Exportarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Exportarbutton.Location = new System.Drawing.Point(822, 279);
+            this.Exportarbutton.Name = "Exportarbutton";
+            this.Exportarbutton.Size = new System.Drawing.Size(85, 25);
+            this.Exportarbutton.TabIndex = 31;
+            this.Exportarbutton.Text = "Exportar";
+            this.Exportarbutton.UseVisualStyleBackColor = true;
+            this.Exportarbutton.Click += new System.EventHandler(this.Exportarbutton_Click);
             // 
             // WINProducto
             // 
@@ -574,5 +587,6 @@
         private System.Windows.Forms.Button BuscarModbutton;
         private System.Windows.Forms.Button BuscarMarbutton;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button Exportarbutton;
     }
 }
