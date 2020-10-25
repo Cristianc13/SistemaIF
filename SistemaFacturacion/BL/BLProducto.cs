@@ -48,6 +48,16 @@ namespace BL
             return CProducto.BuscarProducto(EProducto);
         }
 
+        public DataTable BusarProdMarcaModelo(ENTProducto EProducto)
+        {
+            return CProducto.BusarProdMarcaModelo(EProducto);
+        }
+
+        public DataTable BuscarProdCodigoNombre(ENTProducto EProducto)
+        {
+            return CProducto.BuscarProdCodigoNombre(EProducto);
+        }
+
         public int CantidadProducto()
         {
             return CProducto.CantidadProducto();

@@ -145,7 +145,7 @@ namespace WIN
         private void Enviarbutton_Click(object sender, EventArgs e)
         {
             WINDetalleVenta dv = Owner as WINDetalleVenta;
-            dv.ClientetextBox.Text = NombreTextBox.Text + " " + ApellidoTextBox.Text;
+            dv.ClientecomboBox.Text = NombreTextBox.Text + " " + ApellidoTextBox.Text;
             dv.TelefonotextBox.Text = TelefonoTextBox.Text;
         }
     }

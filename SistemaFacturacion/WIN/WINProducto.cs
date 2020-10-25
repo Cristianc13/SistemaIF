@@ -340,6 +340,7 @@ namespace WIN
             LlenarMarca();
         }
 
+
         private void Exportarbutton_Click(object sender, EventArgs e)
         {
             ExportarDatos(ProductodataGridView);
