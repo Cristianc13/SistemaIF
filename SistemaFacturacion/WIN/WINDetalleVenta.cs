@@ -108,6 +108,9 @@ namespace WIN
             if (e.RowIndex < 0 || e.ColumnIndex != DVentadataGridView.Columns["cOpciones"].Index) return;
 
             DVentadataGridView.Rows.RemoveAt(e.RowIndex);
+
+            HabilitarBotones(false, true);
+
             CalcularTotal();
         }
 
@@ -210,6 +213,11 @@ namespace WIN
             WINCliente cl = new WINCliente();
             AddOwnedForm(cl);
             cl.Show();
+        }
+
+        private void DVentadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

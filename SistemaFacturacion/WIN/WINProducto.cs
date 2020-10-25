@@ -337,6 +337,11 @@ namespace WIN
             LlenarMarca();
         }
 
+        private void BuscartextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public void LlenarCategoria()
         {
             CategoriacomboBox.DataSource = BCategoria.MostrarCategoria();

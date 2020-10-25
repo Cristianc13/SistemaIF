@@ -43,6 +43,10 @@
             this.Cancelarbutton = new System.Windows.Forms.Button();
             this.Enviarbutton = new System.Windows.Forms.Button();
             this.ProductodataGridView = new System.Windows.Forms.DataGridView();
+            this.MarcModeltextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DescripciontextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,16 +55,17 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 17);
+            this.label1.Size = new System.Drawing.Size(121, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar Producto:";
+            this.label1.Text = "Codigo y Nombre:";
             // 
             // BuscartextBox
             // 
             this.BuscartextBox.Location = new System.Drawing.Point(153, 17);
             this.BuscartextBox.Name = "BuscartextBox";
-            this.BuscartextBox.Size = new System.Drawing.Size(477, 22);
+            this.BuscartextBox.Size = new System.Drawing.Size(146, 22);
             this.BuscartextBox.TabIndex = 1;
+            this.BuscartextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BuscartextBox_KeyUp);
             // 
             // label2
             // 
@@ -107,7 +112,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(362, 120);
+            this.label5.Location = new System.Drawing.Point(347, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 17);
             this.label5.TabIndex = 10;
@@ -124,7 +129,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(362, 71);
+            this.label7.Location = new System.Drawing.Point(347, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 17);
             this.label7.TabIndex = 8;
@@ -148,7 +153,7 @@
             // 
             // Cancelarbutton
             // 
-            this.Cancelarbutton.Location = new System.Drawing.Point(663, 64);
+            this.Cancelarbutton.Location = new System.Drawing.Point(663, 16);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(101, 23);
             this.Cancelarbutton.TabIndex = 13;
@@ -158,7 +163,7 @@
             // 
             // Enviarbutton
             // 
-            this.Enviarbutton.Location = new System.Drawing.Point(663, 113);
+            this.Enviarbutton.Location = new System.Drawing.Point(809, 16);
             this.Enviarbutton.Name = "Enviarbutton";
             this.Enviarbutton.Size = new System.Drawing.Size(101, 23);
             this.Enviarbutton.TabIndex = 14;
@@ -178,15 +183,55 @@
             this.ProductodataGridView.RowHeadersVisible = false;
             this.ProductodataGridView.RowHeadersWidth = 51;
             this.ProductodataGridView.RowTemplate.Height = 24;
-            this.ProductodataGridView.Size = new System.Drawing.Size(776, 277);
+            this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProductodataGridView.Size = new System.Drawing.Size(964, 277);
             this.ProductodataGridView.TabIndex = 15;
             this.ProductodataGridView.DoubleClick += new System.EventHandler(this.ProductodataGridView_DoubleClick);
+            // 
+            // MarcModeltextBox
+            // 
+            this.MarcModeltextBox.Location = new System.Drawing.Point(484, 17);
+            this.MarcModeltextBox.Name = "MarcModeltextBox";
+            this.MarcModeltextBox.Size = new System.Drawing.Size(146, 22);
+            this.MarcModeltextBox.TabIndex = 17;
+            this.MarcModeltextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MarcModeltextBox_KeyUp);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(347, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 17);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Marca y Modelo:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(760, 44);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Descripcion:";
+            // 
+            // DescripciontextBox
+            // 
+            this.DescripciontextBox.Location = new System.Drawing.Point(663, 65);
+            this.DescripciontextBox.Multiline = true;
+            this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.ReadOnly = true;
+            this.DescripciontextBox.Size = new System.Drawing.Size(290, 72);
+            this.DescripciontextBox.TabIndex = 19;
             // 
             // WINProVent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(988, 450);
+            this.Controls.Add(this.DescripciontextBox);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.MarcModeltextBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.ProductodataGridView);
             this.Controls.Add(this.Enviarbutton);
             this.Controls.Add(this.Cancelarbutton);
@@ -228,5 +273,9 @@
         private System.Windows.Forms.DataGridView ProductodataGridView;
         public System.Windows.Forms.TextBox ProductotextBox;
         public System.Windows.Forms.TextBox PreciotextBox;
+        private System.Windows.Forms.TextBox MarcModeltextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox DescripciontextBox;
     }
 }

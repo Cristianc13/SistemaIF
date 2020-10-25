@@ -32,7 +32,6 @@
             this.Clientebutton = new System.Windows.Forms.Button();
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
-            this.ClientetextBox = new System.Windows.Forms.TextBox();
             this.Cliente = new System.Windows.Forms.Label();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Cancelarbutton = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -65,19 +65,19 @@
             // 
             // Clientebutton
             // 
-            this.Clientebutton.Location = new System.Drawing.Point(694, 196);
+            this.Clientebutton.Location = new System.Drawing.Point(465, 7);
             this.Clientebutton.Margin = new System.Windows.Forms.Padding(4);
             this.Clientebutton.Name = "Clientebutton";
-            this.Clientebutton.Size = new System.Drawing.Size(115, 37);
+            this.Clientebutton.Size = new System.Drawing.Size(40, 37);
             this.Clientebutton.TabIndex = 16;
-            this.Clientebutton.Text = "Cliente";
+            this.Clientebutton.Text = "+";
             this.Clientebutton.UseVisualStyleBackColor = true;
             this.Clientebutton.Click += new System.EventHandler(this.Clientebutton_Click);
             // 
             // TelefonotextBox
             // 
             this.TelefonotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonotextBox.Location = new System.Drawing.Point(639, 11);
+            this.TelefonotextBox.Location = new System.Drawing.Point(639, 12);
             this.TelefonotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.ReadOnly = true;
@@ -88,27 +88,18 @@
             // 
             this.Telefono.AutoSize = true;
             this.Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telefono.Location = new System.Drawing.Point(532, 12);
+            this.Telefono.Location = new System.Drawing.Point(532, 13);
             this.Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Telefono.Name = "Telefono";
             this.Telefono.Size = new System.Drawing.Size(89, 25);
             this.Telefono.TabIndex = 14;
             this.Telefono.Text = "Telefono";
             // 
-            // ClientetextBox
-            // 
-            this.ClientetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientetextBox.Location = new System.Drawing.Point(150, 11);
-            this.ClientetextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ClientetextBox.Name = "ClientetextBox";
-            this.ClientetextBox.Size = new System.Drawing.Size(307, 26);
-            this.ClientetextBox.TabIndex = 13;
-            // 
             // Cliente
             // 
             this.Cliente.AutoSize = true;
             this.Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cliente.Location = new System.Drawing.Point(23, 12);
+            this.Cliente.Location = new System.Drawing.Point(23, 13);
             this.Cliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Cliente.Name = "Cliente";
             this.Cliente.Size = new System.Drawing.Size(73, 25);
@@ -117,18 +108,18 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(536, 196);
+            this.Buscarbutton.Location = new System.Drawing.Point(465, 49);
             this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(115, 37);
+            this.Buscarbutton.Size = new System.Drawing.Size(40, 37);
             this.Buscarbutton.TabIndex = 11;
-            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.Text = "+";
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Cancelarbutton
             // 
-            this.Cancelarbutton.Location = new System.Drawing.Point(385, 196);
+            this.Cancelarbutton.Location = new System.Drawing.Point(607, 129);
             this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(115, 37);
@@ -139,7 +130,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(232, 196);
+            this.Guardarbutton.Location = new System.Drawing.Point(437, 129);
             this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(115, 37);
@@ -150,7 +141,7 @@
             // 
             // Agregarbutton
             // 
-            this.Agregarbutton.Location = new System.Drawing.Point(84, 196);
+            this.Agregarbutton.Location = new System.Drawing.Point(268, 129);
             this.Agregarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(115, 37);
@@ -162,7 +153,7 @@
             // ImportetextBox
             // 
             this.ImportetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ImportetextBox.Location = new System.Drawing.Point(639, 144);
+            this.ImportetextBox.Location = new System.Drawing.Point(639, 95);
             this.ImportetextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ImportetextBox.Name = "ImportetextBox";
             this.ImportetextBox.ReadOnly = true;
@@ -172,9 +163,10 @@
             // PreciotextBox
             // 
             this.PreciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreciotextBox.Location = new System.Drawing.Point(639, 76);
+            this.PreciotextBox.Location = new System.Drawing.Point(639, 56);
             this.PreciotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PreciotextBox.Name = "PreciotextBox";
+            this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(264, 26);
             this.PreciotextBox.TabIndex = 6;
             this.PreciotextBox.TextChanged += new System.EventHandler(this.PreciotextBox_TextChanged);
@@ -182,7 +174,7 @@
             // CantidadtextBox
             // 
             this.CantidadtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantidadtextBox.Location = new System.Drawing.Point(150, 144);
+            this.CantidadtextBox.Location = new System.Drawing.Point(150, 95);
             this.CantidadtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(307, 26);
@@ -194,7 +186,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(534, 145);
+            this.label4.Location = new System.Drawing.Point(534, 96);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 25);
@@ -205,7 +197,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(534, 78);
+            this.label3.Location = new System.Drawing.Point(534, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 25);
@@ -216,7 +208,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 145);
+            this.label2.Location = new System.Drawing.Point(23, 96);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 25);
@@ -227,7 +219,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 70);
+            this.label1.Location = new System.Drawing.Point(23, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 25);
@@ -244,7 +236,7 @@
             this.ProductocomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductocomboBox.FormattingEnabled = true;
             this.ProductocomboBox.IntegralHeight = false;
-            this.ProductocomboBox.Location = new System.Drawing.Point(150, 73);
+            this.ProductocomboBox.Location = new System.Drawing.Point(150, 53);
             this.ProductocomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(307, 28);
@@ -275,9 +267,10 @@
             this.DVentadataGridView.RowHeadersVisible = false;
             this.DVentadataGridView.RowHeadersWidth = 51;
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DVentadataGridView.Size = new System.Drawing.Size(935, 479);
+            this.DVentadataGridView.Size = new System.Drawing.Size(1141, 380);
             this.DVentadataGridView.TabIndex = 0;
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
+            this.DVentadataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellContentClick);
             // 
             // cnombreProducto
             // 
@@ -337,41 +330,56 @@
             // 
             this.panel1.Controls.Add(this.DVentadataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 261);
+            this.panel1.Location = new System.Drawing.Point(0, 296);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(935, 479);
+            this.panel1.Size = new System.Drawing.Size(1141, 380);
             this.panel1.TabIndex = 17;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Cancelarbutton);
+            this.panel2.Controls.Add(this.Guardarbutton);
+            this.panel2.Controls.Add(this.ClientecomboBox);
+            this.panel2.Controls.Add(this.Agregarbutton);
             this.panel2.Controls.Add(this.Cliente);
             this.panel2.Controls.Add(this.ImportetextBox);
             this.panel2.Controls.Add(this.Clientebutton);
             this.panel2.Controls.Add(this.PreciotextBox);
             this.panel2.Controls.Add(this.Buscarbutton);
             this.panel2.Controls.Add(this.TelefonotextBox);
-            this.panel2.Controls.Add(this.Cancelarbutton);
             this.panel2.Controls.Add(this.CantidadtextBox);
-            this.panel2.Controls.Add(this.Guardarbutton);
             this.panel2.Controls.Add(this.ProductocomboBox);
-            this.panel2.Controls.Add(this.Agregarbutton);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.Telefono);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.ClientetextBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(935, 255);
+            this.panel2.Size = new System.Drawing.Size(1141, 181);
             this.panel2.TabIndex = 18;
+            // 
+            // ClientecomboBox
+            // 
+            this.ClientecomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ClientecomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ClientecomboBox.DropDownHeight = 115;
+            this.ClientecomboBox.DropDownWidth = 240;
+            this.ClientecomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientecomboBox.FormattingEnabled = true;
+            this.ClientecomboBox.IntegralHeight = false;
+            this.ClientecomboBox.Location = new System.Drawing.Point(150, 10);
+            this.ClientecomboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientecomboBox.Name = "ClientecomboBox";
+            this.ClientecomboBox.Size = new System.Drawing.Size(307, 28);
+            this.ClientecomboBox.TabIndex = 18;
             // 
             // WINDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 740);
+            this.ClientSize = new System.Drawing.Size(1141, 676);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -413,8 +421,8 @@
         private System.Windows.Forms.Label Telefono;
         private System.Windows.Forms.Label Cliente;
         public System.Windows.Forms.TextBox TelefonotextBox;
-        public System.Windows.Forms.TextBox ClientetextBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.ComboBox ClientecomboBox;
     }
 }

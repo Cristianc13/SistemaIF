@@ -115,6 +115,30 @@ namespace CAD
             return tabla;
         }
 
+        public DataTable BusarProdMarcaModelo(ENTProducto EProducto)
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("BusarProdMarcaModelo", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@codigo", EProducto.codigopro);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable BuscarProdCodigoNombre(ENTProducto EProducto)
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("BuscarProdCodigoNombre", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@codigo", EProducto.codigopro);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
+
         public int CantidadProducto()
         {
             int i;
