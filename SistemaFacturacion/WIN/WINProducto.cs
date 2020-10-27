@@ -5,7 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using BL;
-using Syncfusion.XlsIO;
+
 using ENT;
 
 namespace WIN
@@ -83,8 +83,8 @@ namespace WIN
             ProductodataGridView.Columns[12].HeaderText = "Estado";
             ProductodataGridView.AllowUserToResizeColumns = false;
             ProductodataGridView.AllowUserToResizeRows = false;
-            ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9);
-            ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
         }
 
         private void HabilitarBotones(bool p1, bool p2)
@@ -340,7 +340,6 @@ namespace WIN
             LlenarMarca();
         }
 
-
         private void Exportarbutton_Click(object sender, EventArgs e)
         {
             ExportarDatos(ProductodataGridView);
@@ -451,6 +450,10 @@ namespace WIN
         public void CantidadProducto()
         {
             CantidadProduLabel.Text = BProducto.CantidadProducto().ToString();
+        }
+
+        public void CantCategoria()
+        {
         }
 
         public void ExportarDatos(DataGridView datalistado)
