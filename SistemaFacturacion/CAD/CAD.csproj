@@ -46,6 +46,7 @@
     <Compile Include="CADCliente.cs" />
     <Compile Include="CADCompra.cs" />
     <Compile Include="CADConexion.cs" />
+    <Compile Include="CADDetalleCompra.cs" />
     <Compile Include="CADDetalleVenta.cs" />
     <Compile Include="CADEstado.cs" />
     <Compile Include="CADMarca.cs" />
