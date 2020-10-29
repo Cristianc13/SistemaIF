@@ -41,6 +41,7 @@ namespace WIN
             txtNFactura.Text = string.Empty;
             txtdescrip.Text = string.Empty;
             ProveedorcomboBox.Text = string.Empty;
+            txtIVA.Text = string.Empty;
 
             txtNFactura.Focus();
         }
@@ -49,6 +50,7 @@ namespace WIN
         {
             Guardarbutton.Enabled = p2;
             Actualizarbutton.Enabled = p1;
+            Eliminarbutton.Enabled = p1;
 
             //Cancelarbutton.Enabled = p1;
         }
@@ -68,15 +70,23 @@ namespace WIN
 
             txtNFactura.Text = CompraGridView1.CurrentRow.Cells[1].Value.ToString();
             txtdescrip.Text = CompraGridView1.CurrentRow.Cells[3].Value.ToString();
-            ProveedorcomboBox.Text = CompraGridView1.CurrentRow.Cells[4].Value.ToString();
-            
+            txtIVA.Text = CompraGridView1.CurrentRow.Cells[4].Value.ToString();
+            ProveedorcomboBox.Text = CompraGridView1.CurrentRow.Cells[5].Value.ToString();
+
 
             HabilitarBotones(true, false);
         }
 
+        public void validaciones()
+        {
+
+            
+        }
+
+
         private void WINCompra_Load(object sender, EventArgs e)
         {
-            HabilitarBotones(false, true);
+            //HabilitarBotones(false, true);
             LlenarGrid();
             FormatoGrid();
             Limpiar();
@@ -86,8 +96,37 @@ namespace WIN
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            if (txtNFactura.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtNFactura, "Debe ingresar un Nº de Factura");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (ProveedorcomboBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(ProveedorcomboBox, "Debe ingresar un Proveedor");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (txtdescrip.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtdescrip, "Debe ingresar una descripcion");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (txtIVA.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtIVA, "Debe ingresar el IVA");
+                return;
+            }
+            errorProvider1.Clear();
+
             Ecompra.numeroFactura = txtNFactura.Text;
             Ecompra.descripcion = txtdescrip.Text;
+            Ecompra.IVA = decimal.Parse(txtIVA.Text);
             Ecompra.FK_idProveedor = idProveedor;
             Bcompra.InsertCompra(Ecompra);
             Limpiar();
@@ -100,7 +139,7 @@ namespace WIN
             Ecompra.idCompra = idCompra;
             Ecompra.numeroFactura = txtNFactura.Text;
             Ecompra.descripcion = txtdescrip.Text;
-            
+            Ecompra.IVA = decimal.Parse(txtIVA.Text);
             Ecompra.FK_idProveedor = idProveedor;
         
             Bcompra.UpdateCompra(Ecompra);
@@ -133,7 +172,8 @@ namespace WIN
             CompraGridView1.Columns[1].HeaderText = "N° Factura";
             CompraGridView1.Columns[2].HeaderText = "Fecha de Compra";
             CompraGridView1.Columns[3].HeaderText = "Descripcion";
-            CompraGridView1.Columns[4].HeaderText = "Proveedor";
+            CompraGridView1.Columns[4].HeaderText = "IVA";
+            CompraGridView1.Columns[5].HeaderText = "Proveedor";
    
             CompraGridView1.AllowUserToResizeColumns = false;
             CompraGridView1.AllowUserToResizeRows = false;
@@ -155,5 +195,12 @@ namespace WIN
             }
         
     }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            WINProveedor cl = new WINProveedor();
+            cl.ShowDialog();
+            LlenaComboProveedor();
+        }
     }
 }

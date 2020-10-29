@@ -32,6 +32,7 @@ namespace CAD
             cmd.Parameters.AddWithValue("@numeroFactura", Ecompra.numeroFactura);
             //cmd.Parameters.AddWithValue("@fechaCompra", Ecompra.fechaCompra);
             cmd.Parameters.AddWithValue("@descripcion", Ecompra.descripcion);
+            cmd.Parameters.AddWithValue("@IVA", Ecompra.IVA);
             cmd.Parameters.AddWithValue("@FK_idProveedor", Ecompra.FK_idProveedor);
             cmd.ExecuteNonQuery();
             CerrarConexion();
@@ -53,6 +54,7 @@ namespace CAD
             cmd.Parameters.AddWithValue("@idCompra", Ecompra.idCompra);
             cmd.Parameters.AddWithValue("@numeroFactura", Ecompra.numeroFactura);
             cmd.Parameters.AddWithValue("@descripcion", Ecompra.descripcion);
+            cmd.Parameters.AddWithValue("@IVA", Ecompra.IVA);
             cmd.Parameters.AddWithValue("@FK_idProveedor", Ecompra.FK_idProveedor);
             cmd.ExecuteNonQuery();
             CerrarConexion();
