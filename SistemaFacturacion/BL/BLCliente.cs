@@ -19,6 +19,11 @@ namespace BL
             return cliente.MostrarCliente();
         }
 
+        public string ObtenerNumeroCliente(int idCliente)
+        {
+            return cliente.ObtenerNumeroCliente(idCliente);
+        }
+
         public void InsertCliente(ENTCliente ECliente)
         {
             cliente.InsertCliente(ECliente);

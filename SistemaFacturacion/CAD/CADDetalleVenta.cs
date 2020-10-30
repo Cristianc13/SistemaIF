@@ -18,41 +18,30 @@ namespace CAD
             return null;
         }
 
-        public void InsertDetalleVenta(int idCliente, List<ENTDetalleVenta> Edetalle)
+        public int InsertarVenta(int idCliente)
         {
-            List<ENTCliente> lst = new List<ENTCliente>();
-            var dt = new DataTable();
-            dt.Columns.Add("ID");
-            dt.Columns.Add("cantidadProducto");
-            dt.Columns.Add("precioSalida");
-            dt.Columns.Add("IVA");
-            dt.Columns.Add("importe");
-            dt.Columns.Add("Fk_idProducto");
-
-            int i = 1;
-            foreach (var item in Edetalle)
-            {
-                dt.Rows.Add(i, item.cantidadProducto, item.precioSalida, item.IVA, item.importe, item.Fk_idProducto);
-                i++;
-            }
-
-            SqlCommand cmd = new SqlCommand("InsertVenta", AbrirConexion());
-            var listDetalle = new SqlParameter("@ListProducto", SqlDbType.Structured);
-            listDetalle.TypeName = "dbo.DetalleV";
-            listDetalle.Value = dt;
+            SqlCommand cmd = new SqlCommand("InsertarVenta", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(listDetalle);
-            cmd.Parameters.AddWithValue("@FK_idCliente", idCliente);
+            cmd.Parameters.AddWithValue("@fkCliente", idCliente);
+            int g = (int)cmd.ExecuteScalar();
+            int a = Convert.ToInt32(g);
+            CerrarConexion();
+            return a;
+        }
+
+        public void InsertDetalleVenta(int idventa, ENTDetalleVenta Edetalle)
+        {
+            SqlCommand cmd = new SqlCommand("InsertDetalleVenta", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@cantidadProducto", Edetalle.cantidadProducto);
+            cmd.Parameters.AddWithValue("@precioSalida", Edetalle.precioSalida);
+            cmd.Parameters.AddWithValue("@IVA", Edetalle.IVA);
+            cmd.Parameters.AddWithValue("@importe", Edetalle.importe);
+            cmd.Parameters.AddWithValue("@FK_idProducto", Edetalle.Fk_idProducto);
+            cmd.Parameters.AddWithValue("@FK_idVenta", idventa);
             cmd.ExecuteNonQuery();
             CerrarConexion();
-        }
 
-        public void DeleteDetalleVenta(ENTCliente cliente)
-        {
-        }
-
-        public void UpdateDetalleVenta(ENTCliente cliente)
-        {
         }
     }
 }
