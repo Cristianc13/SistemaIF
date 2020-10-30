@@ -94,6 +94,12 @@
     <Compile Include="WINDetalleCompra.Designer.cs">
       <DependentUpon>WINDetalleCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINDetalleCompra2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINDetalleCompra2.Designer.cs">
+      <DependentUpon>WINDetalleCompra2.cs</DependentUpon>
+    </Compile>
     <Compile Include="WINDetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>

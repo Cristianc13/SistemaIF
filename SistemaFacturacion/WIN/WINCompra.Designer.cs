@@ -187,6 +187,7 @@
             this.txtIVA.Name = "txtIVA";
             this.txtIVA.Size = new System.Drawing.Size(231, 23);
             this.txtIVA.TabIndex = 26;
+            this.txtIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVA_KeyPress);
             // 
             // errorProvider1
             // 

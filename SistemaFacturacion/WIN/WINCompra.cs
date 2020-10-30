@@ -86,7 +86,7 @@ namespace WIN
 
         private void WINCompra_Load(object sender, EventArgs e)
         {
-            //HabilitarBotones(false, true);
+            HabilitarBotones(false, true);
             LlenarGrid();
             FormatoGrid();
             Limpiar();
@@ -136,6 +136,34 @@ namespace WIN
 
         private void Actualizarbutton_Click(object sender, EventArgs e)
         {
+            if (txtNFactura.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtNFactura, "Debe ingresar un Nº de Factura");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (ProveedorcomboBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(ProveedorcomboBox, "Debe ingresar un Proveedor");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (txtdescrip.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtdescrip, "Debe ingresar una descripcion");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (txtIVA.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtIVA, "Debe ingresar el IVA");
+                return;
+            }
+            errorProvider1.Clear();
+
             Ecompra.idCompra = idCompra;
             Ecompra.numeroFactura = txtNFactura.Text;
             Ecompra.descripcion = txtdescrip.Text;
@@ -201,6 +229,19 @@ namespace WIN
             WINProveedor cl = new WINProveedor();
             cl.ShowDialog();
             LlenaComboProveedor();
+        }
+
+        private void txtIVA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
