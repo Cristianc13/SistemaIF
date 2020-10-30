@@ -18,9 +18,14 @@ namespace BL
             return CdetalleVenta.MostrarDetalleVenta();
         }
 
-        public void InsertDetalleVenta(int idCliente, List<ENTDetalleVenta> Edetalle)
+        public void InsertDetalleVenta(int idventa, ENTDetalleVenta Edetalle)
         {
-            CdetalleVenta.InsertDetalleVenta(idCliente, Edetalle);
+            CdetalleVenta.InsertDetalleVenta(idventa, Edetalle);
+        }
+
+        public int InsertarVenta(int idCliente)
+        {
+            return CdetalleVenta.InsertarVenta(idCliente);
         }
     }
 }

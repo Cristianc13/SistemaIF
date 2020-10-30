@@ -14,10 +14,17 @@ namespace WIN
         }
 
         private int idProducto = 0;
+        private int idCl = 0;
+        //private int idcliente = 2;
+        public int idventa;
+
+        private List<ENTVenta> Eventa = new List<ENTVenta>();
+        private List<ENTDetalleVenta> EDventa = new List<ENTDetalleVenta>();
 
         private ENTProducto Eproducto = new ENTProducto();
         private BLProducto BProducto = new BLProducto();
         private BLDetalleVenta BLDetalle = new BLDetalleVenta();
+        private BLCliente BCliente = new BLCliente();
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -27,8 +34,25 @@ namespace WIN
         {
             ImportetextBox.Text = "0";
             HabilitarBotones(false, true);
+            LlenarComboCliente();
             LlenaComboProducto();
             Limpiar();
+        }
+
+        private void FormatoGrid()
+        {
+            DVentadataGridView.Columns[0].Visible = false;
+            DVentadataGridView.Columns[1].Visible = false;
+            DVentadataGridView.Columns[2].HeaderText = "Producto";
+            DVentadataGridView.Columns[3].HeaderText = "Cantidad";
+            DVentadataGridView.Columns[4].HeaderText = "Costo";
+            DVentadataGridView.Columns[5].HeaderText = "IVA";
+            DVentadataGridView.Columns[6].HeaderText = "Importe";
+            DVentadataGridView.Columns[7].Visible = false;
+            DVentadataGridView.AllowUserToResizeColumns = false;
+            DVentadataGridView.AllowUserToResizeRows = false;
+            //DVentadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            //DVentadataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
         }
 
         private void LlenaComboProducto()
@@ -39,14 +63,22 @@ namespace WIN
             ProductocomboBox.SelectedIndex = -1;
         }
 
+        private void LlenarComboCliente()
+        {
+            ClientecomboBox.DataSource = BCliente.MostrarCliente();
+            ClientecomboBox.DisplayMember = "nombreCliente";
+            ClientecomboBox.ValueMember = "idCliente";
+            ClientecomboBox.SelectedIndex = -1;
+        }
+
         private void Limpiar()
         {
-            ProductocomboBox.Text = string.Empty; 
+            ProductocomboBox.Text = string.Empty;
             CantidadtextBox.Text = string.Empty;
             PreciotextBox.Text = string.Empty;
             errorProvider1.Clear();
             ProductocomboBox.SelectedIndex = -1;
-            ProductocomboBox.Focus();           
+            ProductocomboBox.Focus();
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)
@@ -65,16 +97,20 @@ namespace WIN
             }
             errorProvider1.Clear();
 
-            string Nombre = ProductocomboBox.Text;// ProductocomboBox.SelectedItem;
-            string Cantidad = CantidadtextBox.Text;
-            string Precio = PreciotextBox.Text;
-            string Importe = (decimal.Parse(Cantidad) * decimal.Parse(Precio)).ToString();
-            string idP = idProducto.ToString();
-            DVentadataGridView.Rows.Add(new object[] { Nombre, Cantidad, Precio, 15, Importe, "Eliminar", idP });
+            ENTDetalleVenta miDetalle = new ENTDetalleVenta();
+            miDetalle.Fk_idProducto = idProducto;
+            miDetalle.producto = ProductocomboBox.Text;
+            miDetalle.cantidadProducto = Convert.ToDecimal(CantidadtextBox.Text);
+            miDetalle.precioSalida = Convert.ToDecimal(PreciotextBox.Text);
+            miDetalle.IVA = 15;
+            miDetalle.importe = miDetalle.cantidadProducto * miDetalle.precioSalida;
+            EDventa.Add(miDetalle);
+            DVentadataGridView.DataSource = null;
+            DVentadataGridView.DataSource = EDventa;
+            FormatoGrid();
             CalcularTotal();
+            HabilitarBotones(true, false);
             Limpiar();
-            HabilitarGuardar();
-            errorProvider1.Clear();
         }
 
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,12 +128,27 @@ namespace WIN
             }
         }
 
+        private void ClientecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ClientecomboBox.SelectedValue != null)
+                {
+                    idCl = (int)ClientecomboBox.SelectedValue;
+                    TelefonotextBox.Text = Convert.ToString(BCliente.ObtenerNumeroCliente(idCl));
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         private void CalcularTotal()
         {
             decimal total = 0;
             foreach (DataGridViewRow dr in DVentadataGridView.Rows)
             {
-                decimal importe = decimal.Parse(dr.Cells[4].Value.ToString());
+                decimal importe = decimal.Parse(dr.Cells[5].Value.ToString());
                 total += importe;
             }
             ImportetextBox.Text = total.ToString();
@@ -105,55 +156,47 @@ namespace WIN
 
         private void DVentadataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex != DVentadataGridView.Columns["cOpciones"].Index) return;
+            //if (e.RowIndex < 0 || e.ColumnIndex != DVentadataGridView.Columns["cOpciones"].Index) return;
 
-            DVentadataGridView.Rows.RemoveAt(e.RowIndex);
+            //DVentadataGridView.Rows.RemoveAt(e.RowIndex);
 
-            HabilitarBotones(false, true);
+            //HabilitarBotones(false, true);
 
-            CalcularTotal();
+            //CalcularTotal();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            
 
-            try
+            if (ClientecomboBox.Text == string.Empty)
             {
-                List<ENTDetalleVenta> lst = new List<ENTDetalleVenta>();
-
-                //llenado de elementos detalles
-                foreach (DataGridViewRow dr in DVentadataGridView.Rows)
-                {
-                    ENTDetalleVenta oConcepto = new ENTDetalleVenta();
-                    oConcepto.cantidadProducto = decimal.Parse(dr.Cells[1].Value.ToString());
-                    oConcepto.precioSalida = decimal.Parse(dr.Cells[2].Value.ToString());
-                    oConcepto.IVA = decimal.Parse(dr.Cells[3].Value.ToString());
-                    oConcepto.importe = decimal.Parse(dr.Cells[4].Value.ToString());
-                    oConcepto.Fk_idProducto = int.Parse(dr.Cells[6].Value.ToString());
-                    lst.Add(oConcepto);
-                    DVentadataGridView.Rows.Clear();
-                    ImportetextBox.Text = "0";
-                    ProductocomboBox.Focus();
-                    HabilitarBotones(false, true);
-                }
-
-                BLDetalle.InsertDetalleVenta(2, lst);
-
-                MessageBox.Show("Venta realizada");
+                errorProvider1.SetError(ClientecomboBox, "Debe ingresar un Cliente para realizar su venta");
+                return;
             }
-            catch (Exception ex)
+            errorProvider1.Clear();
+
+            object idcliente = ClientecomboBox.SelectedValue;
+            int xd = Convert.ToInt32(idcliente);
+            idventa = BLDetalle.InsertarVenta(xd);
+
+            foreach (ENTDetalleVenta miDetalle in EDventa)
             {
-                MessageBox.Show(ex.Message);
+                BLDetalle.InsertDetalleVenta(idventa, miDetalle);               
             }
+            MessageBox.Show("Venta realizada con exito");
+            DVentadataGridView.DataSource = null;
+            ImportetextBox.Text = "0";
+            ClientecomboBox.SelectedIndex = -1;
+            TelefonotextBox.Text = "";
+            HabilitarBotones(false, true);
+            Limpiar();
         }
 
         private void HabilitarBotones(bool p1, bool p2)
         {
-            Guardarbutton.Enabled = p1;            
-           //Cancelarbutton.Enabled = p1;
+            Guardarbutton.Enabled = p1;
+            //Cancelarbutton.Enabled = p1;
         }
-
 
         public void HabilitarGuardar()
         {
@@ -179,7 +222,6 @@ namespace WIN
 
         private void CantidadtextBox_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -198,26 +240,26 @@ namespace WIN
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
+            
             WINProVent pv = new WINProVent();
             AddOwnedForm(pv);
-            pv.Show();
+            pv.ShowDialog();
         }
 
         private void PreciotextBox_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Clientebutton_Click(object sender, EventArgs e)
         {
             WINCliente cl = new WINCliente();
             AddOwnedForm(cl);
-            cl.Show();
+            cl.ShowDialog();
         }
 
         private void DVentadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
+
     }
 }

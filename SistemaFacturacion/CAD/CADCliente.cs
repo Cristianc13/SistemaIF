@@ -57,5 +57,19 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
+
+        public string ObtenerNumeroCliente(int idCliente)
+        {
+            string a;
+            string i;
+            SqlCommand cmd = new SqlCommand("SelectClienteNumero", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCliente", idCliente);
+            a = (string)cmd.ExecuteScalar();
+            i = Convert.ToString(a);
+            CerrarConexion();
+            return i;
+        }
+
     }
 }
