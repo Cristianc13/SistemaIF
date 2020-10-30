@@ -72,34 +72,7 @@ namespace WIN
 
         public void validaciones()
         {
-            if (bmbproducto.SelectedIndex == -1)
-            {
-                errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
-                return;
-            }
-            errorProvider1.Clear();
-
-            if (cmbNFactura.SelectedIndex == -1)
-            {
-                errorProvider1.SetError(cmbNFactura, "Debe ingresar un N° de factura");
-                return;
-            }
-            errorProvider1.Clear();
-
-            if (txtcantidad.Text == string.Empty)
-            {
-                errorProvider1.SetError(txtcantidad, "Debe ingresar una cantidad");
-                return;
-            }
-            errorProvider1.Clear();
-
-            if (txtcosto.Text == string.Empty)
-            {
-                errorProvider1.SetError(txtcosto, "Debe ingresar un costo");
-                return;
-            }
-            errorProvider1.Clear();
-
+           
         }
 
         private void HabilitarBotones(bool p1, bool p2)
@@ -110,7 +83,8 @@ namespace WIN
 
         private void WINDetalleCompra_Load(object sender, EventArgs e)
         {
-
+            LlenaComboFractura();
+            LlenaComboProducto();
         }
 
         private void cmbNFactura_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,12 +99,46 @@ namespace WIN
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            validaciones();
-            string NumeroFactura = cmbNFactura.Text;
+            if (bmbproducto.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (cmbNFactura.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(cmbNFactura, "Debe ingresar un N° de Factura");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (txtcantidad.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (txtcosto.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtcosto, "Debe ingresar un Costo");
+                return;
+            }
+            errorProvider1.Clear();
+
+            string Nombre = bmbproducto.Text;// ProductocomboBox.SelectedItem;
+            string factura = cmbNFactura.Text; //Factura.selectedItem;
             string Cantidad = txtcantidad.Text;
             string Costo = txtcosto.Text;
             string Importe = (decimal.Parse(Cantidad) * decimal.Parse(Costo)).ToString();
             string idP = idProducto.ToString();
+            string idF = idCompra.ToString();
+            DetalleCompraGridView1.Rows.Add(new object[] { Nombre, factura ,Cantidad, Costo, Importe, "Eliminar", idP , idF});
+            //CalcularTotal();
+            Limpiar();
+            HabilitarGuardar();
+            errorProvider1.Clear();
 
         }
 
@@ -151,7 +159,11 @@ namespace WIN
 
         private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex != DetalleCompraGridView1.Columns["cOpciones"].Index) return;
 
+            DetalleCompraGridView1.Rows.RemoveAt(e.RowIndex);
+
+            HabilitarBotones(false, true);
         }
 
         private void button1_Click(object sender, EventArgs e)
