@@ -176,8 +176,8 @@ namespace WIN
             errorProvider1.Clear();
 
             object idcliente = ClientecomboBox.SelectedValue;
-            int xd = Convert.ToInt32(idcliente);
-            idventa = BLDetalle.InsertarVenta(xd);
+            int cliente = Convert.ToInt32(idcliente);
+            idventa = BLDetalle.InsertarVenta(cliente);
 
             foreach (ENTDetalleVenta miDetalle in EDventa)
             {
