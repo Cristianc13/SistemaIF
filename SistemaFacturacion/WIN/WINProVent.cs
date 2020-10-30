@@ -94,9 +94,17 @@ namespace WIN
 
         private void Enviarbutton_Click(object sender, EventArgs e)
         {
-            WINDetalleVenta dx = Owner as WINDetalleVenta;
-            dx.ProductocomboBox.Text = ProductotextBox.Text;
-            this.Close();
+            decimal x = Convert.ToDecimal(StocktextBox.Text);
+            if (x <= 0)
+            {
+                MessageBox.Show("Stock del producto en su minimo valor");
+            }
+            else
+            {
+                WINDetalleVenta dx = Owner as WINDetalleVenta;
+                dx.ProductocomboBox.Text = ProductotextBox.Text;
+                this.Close();
+            }
         }
 
         private void BuscartextBox_KeyUp(object sender, KeyEventArgs e)
