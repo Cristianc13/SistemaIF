@@ -18,15 +18,15 @@
 
 - Factura
 
-- Validaciones
+- Validaciones ************** Finalizado ****************
 
-- Trigger de stock
+- Trigger de stock ************** Finalizado ****************
 
-- validar en WINDetalleVenta stcok de producto ************** Finalizado
+- validar en WINDetalleVenta stcok de producto ************** Finalizado ****************
 
 - Disenio
 
-- Implementar descuento
+- Implementar descuento ************** Finalizado ****************
 
 - KARDEX
 
