@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BL;
 
 namespace WIN.WINReportes
 {
@@ -15,6 +16,20 @@ namespace WIN.WINReportes
         public RProducto()
         {
             InitializeComponent();
+        }
+
+        private void RProducto_Load(object sender, EventArgs e)
+        {
+            GenerarInforme();
+        }
+
+        private void GenerarInforme()
+        {
+            RBLProducto informeProducto = new RBLProducto();
+            informeProducto.GenerarReporte(0);
+
+            RBLProductoBindingSource.DataSource = informeProducto.EReportePro;
+            this.reportViewer1.RefreshReport();
         }
     }
 }
