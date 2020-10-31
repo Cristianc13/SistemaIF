@@ -18,6 +18,7 @@ namespace WIN
         {
             InitializeComponent();
         }
+        
 
         private int idCompra = 0;
 
@@ -29,6 +30,8 @@ namespace WIN
         private ENTProducto Eproducto = new ENTProducto();
         private BLProducto BProducto = new BLProducto();
         private BLDetalleCompra Bldetallec = new BLDetalleCompra();
+        private List<ENTDetalleCompra> EDetalleC = new List<ENTDetalleCompra>();
+
 
         private void LlenaComboProducto()
         {
@@ -58,6 +61,18 @@ namespace WIN
             cmbNFactura.Focus();
         }
 
+        private void limpiar2()
+        {
+           
+            bmbproducto.Text = string.Empty;
+            txtcantidad.Text = string.Empty;
+            txtcosto.Text = string.Empty;
+            errorProvider1.Clear();
+            
+            bmbproducto.SelectedIndex = -1;
+            bmbproducto.Focus();
+        }
+
         public void HabilitarGuardar()
         {
             if (DetalleCompraGridView1.Rows.Count == 0)
@@ -75,26 +90,62 @@ namespace WIN
            
         }
 
+        private void FormatoGrid()
+        {
+            DetalleCompraGridView1.Columns["FK_idCompra"].Visible = false;
+            DetalleCompraGridView1.Columns["FK_idProducto"].Visible = false;
+            DetalleCompraGridView1.Columns["idDetallecompra"].Visible = false;
+            DetalleCompraGridView1.Columns["cantidadProducto"].HeaderText = "Cantidad";
+            DetalleCompraGridView1.Columns["costo"].HeaderText = "Costo";
+            DetalleCompraGridView1.Columns["importe"].HeaderText = "Importe";
+
+            DetalleCompraGridView1.AllowUserToResizeColumns = false;
+            DetalleCompraGridView1.AllowUserToResizeRows = false;
+            DetalleCompraGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            DetalleCompraGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+        }
+
         private void HabilitarBotones(bool p1, bool p2)
         {
             btnguardar.Enabled = p1;
+            btnactualizar.Enabled = p1;
+           
             //Cancelarbutton.Enabled = p1;
         }
 
         private void WINDetalleCompra_Load(object sender, EventArgs e)
         {
+            HabilitarBotones(false, true);
             LlenaComboFractura();
             LlenaComboProducto();
         }
 
         private void cmbNFactura_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (cmbNFactura.SelectedValue != null)
+                {
+                    idCompra = (int)cmbNFactura.SelectedValue;
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void bmbproducto_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (bmbproducto.SelectedValue != null)
+                {
+                    idProducto = (int)bmbproducto.SelectedValue;
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -127,24 +178,40 @@ namespace WIN
             }
             errorProvider1.Clear();
 
-            string Nombre = bmbproducto.Text;// ProductocomboBox.SelectedItem;
-            string factura = cmbNFactura.Text; //Factura.selectedItem;
-            string Cantidad = txtcantidad.Text;
-            string Costo = txtcosto.Text;
-            string Importe = (decimal.Parse(Cantidad) * decimal.Parse(Costo)).ToString();
-            string idP = idProducto.ToString();
-            string idF = idCompra.ToString();
-            DetalleCompraGridView1.Rows.Add(new object[] { Nombre, factura ,Cantidad, Costo, Importe, "Eliminar", idP , idF});
+            ENTDetalleCompra miDetalle = new ENTDetalleCompra();
+            miDetalle.FK_idCompra = idCompra;
+            miDetalle.FK_idProducto = idProducto;
+            miDetalle.Producto = bmbproducto.Text;
+            miDetalle.cantidadProducto = Convert.ToDecimal(txtcantidad.Text);
+            miDetalle.costo = Convert.ToDecimal(txtcosto.Text);
+
+            miDetalle.importe = miDetalle.cantidadProducto * miDetalle.costo;
+            EDetalleC.Add(miDetalle);
+            DetalleCompraGridView1.DataSource = null;
+            DetalleCompraGridView1.DataSource = EDetalleC;
+            FormatoGrid();
             //CalcularTotal();
-            Limpiar();
-            HabilitarGuardar();
-            errorProvider1.Clear();
+            HabilitarBotones(true, false);
+            limpiar2();
+
+       
 
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            
 
+            foreach (ENTDetalleCompra miDetalle in EDetalleC)
+            {
+                Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
+            }
+            MessageBox.Show("Venta realizada con exito");
+            DetalleCompraGridView1.DataSource = null;
+            //ImportetextBox.Text = "0";
+            //TelefonotextBox.Text = "";
+            HabilitarBotones(false, true);
+            Limpiar();
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
@@ -154,21 +221,35 @@ namespace WIN
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            Limpiar();
         }
 
         private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex != DetalleCompraGridView1.Columns["cOpciones"].Index) return;
+            //if (e.RowIndex < 0 || e.ColumnIndex != DetalleCompraGridView1.Columns["cOpciones"].Index) return;
 
-            DetalleCompraGridView1.Rows.RemoveAt(e.RowIndex);
+            //DetalleCompraGridView1.Rows.RemoveAt(e.RowIndex);
 
-            HabilitarBotones(false, true);
+            //HabilitarBotones(false, true);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DetalleCompraGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DetalleCompraGridView1.Rows.Count == 0) return;
+            HabilitarBotones(true, false);
+            
+            cmbNFactura.Text = DetalleCompraGridView1.CurrentRow.Cells[0].Value.ToString();
+            bmbproducto.Text = DetalleCompraGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtcantidad.Text = DetalleCompraGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtcosto.Text = DetalleCompraGridView1.CurrentRow.Cells[5].Value.ToString();
+
+
+            HabilitarBotones(true, false);
         }
     }
 }
