@@ -23,6 +23,11 @@ namespace BL
             return CProducto.MostrarProductoVenta();
         }
 
+        public string ObtenerStock(int idProducto)
+        {
+            return CProducto.SelectProductoStock(idProducto);
+        }
+
         public string ObtenerPrecio(int idProducto)
         {
             return CProducto.ObtenerPrecio(idProducto);

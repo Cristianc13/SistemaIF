@@ -256,9 +256,13 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Notas.txt" />
     <Content Include="Recursos\icerrar.png" />
     <None Include="Recursos\user.png" />
     <None Include="Recursos\javascript_logo_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -240,6 +240,7 @@
             this.DVentadataGridView.TabIndex = 0;
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
             this.DVentadataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellContentClick);
+            this.DVentadataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DVentadataGridView_CellPainting);
             // 
             // errorProvider1
             // 
