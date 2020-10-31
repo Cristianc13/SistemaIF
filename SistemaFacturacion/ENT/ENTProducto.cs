@@ -22,5 +22,9 @@ namespace ENT
         public int FK_idModelo { get; set; }
         public int FK_idCategoria { get; set; }
         public int FK_idEstado { get; set; }
+        public string categoria { get; set; }
+        public string estado { get; set; }
+        public string modelo { get; set; }
+        public string marca { get; set; }
     }
 }
