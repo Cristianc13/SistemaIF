@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 66);
+            this.label1.Location = new System.Drawing.Point(398, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 16;
@@ -79,7 +79,7 @@
             // txtdescrip
             // 
             this.txtdescrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdescrip.Location = new System.Drawing.Point(107, 65);
+            this.txtdescrip.Location = new System.Drawing.Point(496, 24);
             this.txtdescrip.Name = "txtdescrip";
             this.txtdescrip.Size = new System.Drawing.Size(231, 23);
             this.txtdescrip.TabIndex = 17;
@@ -93,7 +93,7 @@
             this.ProveedorcomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedorcomboBox.FormattingEnabled = true;
             this.ProveedorcomboBox.IntegralHeight = false;
-            this.ProveedorcomboBox.Location = new System.Drawing.Point(478, 24);
+            this.ProveedorcomboBox.Location = new System.Drawing.Point(107, 67);
             this.ProveedorcomboBox.Name = "ProveedorcomboBox";
             this.ProveedorcomboBox.Size = new System.Drawing.Size(231, 24);
             this.ProveedorcomboBox.TabIndex = 18;
@@ -103,7 +103,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(378, 24);
+            this.label2.Location = new System.Drawing.Point(12, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 19;
@@ -174,7 +174,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(378, 68);
+            this.label3.Location = new System.Drawing.Point(398, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 20);
             this.label3.TabIndex = 25;
@@ -183,7 +183,7 @@
             // txtIVA
             // 
             this.txtIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIVA.Location = new System.Drawing.Point(478, 68);
+            this.txtIVA.Location = new System.Drawing.Point(496, 71);
             this.txtIVA.Name = "txtIVA";
             this.txtIVA.Size = new System.Drawing.Size(231, 23);
             this.txtIVA.TabIndex = 26;
@@ -197,7 +197,7 @@
             // 
             this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedor.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedor.Location = new System.Drawing.Point(728, 25);
+            this.btnProveedor.Location = new System.Drawing.Point(344, 68);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(34, 23);
             this.btnProveedor.TabIndex = 27;

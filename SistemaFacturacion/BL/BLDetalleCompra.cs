@@ -18,9 +18,9 @@ namespace BL
             return CdetalleCompra.MostrarDetalleCompra();
         }
 
-        public void InsertDetalleCompra()
+        public void InsertDetalleCompra(int idCompra, ENTDetalleCompra EdetalleC)
         {
-
+            CdetalleCompra.InsertDetalleCompra(idCompra, EdetalleC);
         }
     }
 }
