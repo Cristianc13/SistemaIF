@@ -49,6 +49,8 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DescuentotextBox = new System.Windows.Forms.TextBox();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -189,7 +191,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 80);
+            this.label2.Location = new System.Drawing.Point(17, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 2;
@@ -199,7 +201,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 48);
+            this.label1.Location = new System.Drawing.Point(17, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 1;
@@ -220,6 +222,7 @@
             this.ProductocomboBox.Size = new System.Drawing.Size(231, 24);
             this.ProductocomboBox.TabIndex = 0;
             this.ProductocomboBox.SelectedIndexChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
+            this.ProductocomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductocomboBox_KeyPress);
             // 
             // DVentadataGridView
             // 
@@ -236,7 +239,7 @@
             this.DVentadataGridView.RowHeadersVisible = false;
             this.DVentadataGridView.RowHeadersWidth = 51;
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DVentadataGridView.Size = new System.Drawing.Size(856, 309);
+            this.DVentadataGridView.Size = new System.Drawing.Size(899, 309);
             this.DVentadataGridView.TabIndex = 0;
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
             this.DVentadataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellContentClick);
@@ -253,11 +256,13 @@
             this.panel1.Location = new System.Drawing.Point(0, 240);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(856, 309);
+            this.panel1.Size = new System.Drawing.Size(899, 309);
             this.panel1.TabIndex = 17;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.DescuentotextBox);
             this.panel2.Controls.Add(this.Cancelarbutton);
             this.panel2.Controls.Add(this.Guardarbutton);
             this.panel2.Controls.Add(this.ClientecomboBox);
@@ -279,8 +284,27 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(856, 235);
+            this.panel2.Size = new System.Drawing.Size(899, 235);
             this.panel2.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(701, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 20);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Descuento";
+            // 
+            // DescuentotextBox
+            // 
+            this.DescuentotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescuentotextBox.Location = new System.Drawing.Point(797, 50);
+            this.DescuentotextBox.Name = "DescuentotextBox";
+            this.DescuentotextBox.Size = new System.Drawing.Size(84, 23);
+            this.DescuentotextBox.TabIndex = 19;
+            this.DescuentotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescuentotextBox_KeyPress);
             // 
             // ClientecomboBox
             // 
@@ -296,12 +320,13 @@
             this.ClientecomboBox.Size = new System.Drawing.Size(231, 24);
             this.ClientecomboBox.TabIndex = 18;
             this.ClientecomboBox.SelectedIndexChanged += new System.EventHandler(this.ClientecomboBox_SelectedIndexChanged);
+            this.ClientecomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClientecomboBox_KeyPress);
             // 
             // WINDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 549);
+            this.ClientSize = new System.Drawing.Size(899, 549);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "WINDetalleVenta";
@@ -338,5 +363,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.ComboBox ClientecomboBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox DescuentotextBox;
     }
 }

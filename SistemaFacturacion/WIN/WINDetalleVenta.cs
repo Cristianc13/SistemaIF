@@ -15,10 +15,10 @@ namespace WIN
 
         private int idProducto = 0;
         decimal stock;
+        decimal costo;
         private int idCl = 0;
-        int fila;
-        //private int idcliente = 2;
         public int idventa;
+        int fila;
 
         private List<ENTVenta> Eventa = new List<ENTVenta>();
         private List<ENTDetalleVenta> EDventa = new List<ENTDetalleVenta>();
@@ -34,11 +34,12 @@ namespace WIN
 
         private void WINDetalleVenta_Load(object sender, EventArgs e)
         {     
-            ImportetextBox.Text = "0";
+            ImportetextBox.Text = "0";           
             HabilitarBotones(false, true);
             LlenarComboCliente();
             LlenaComboProducto();
             Limpiar();
+            DescuentotextBox.Text = "0";
         }
 
         private void FormatoGrid()
@@ -106,13 +107,27 @@ namespace WIN
 
             decimal cantidad = Convert.ToDecimal(CantidadtextBox.Text);
 
-            if (stock == 0)
+            decimal precio = Convert.ToDecimal(PreciotextBox.Text);
+            decimal descuento = Convert.ToDecimal(DescuentotextBox.Text);
+            decimal NuevoPrecio = precio - descuento ;
+
+            if (NuevoPrecio <= costo)
+            {
+                MessageBox.Show("No puedes aplicar este descuento porque no hay ninguna ganancia");
+            }
+
+            else if (stock == 0)
             {
                 MessageBox.Show("No Hay existencia de este producto");
                 CantidadtextBox.Text = "";
                 PreciotextBox.Text = "";
                 ProductocomboBox.SelectedIndex = -1;
                 ProductocomboBox.Focus();
+            }
+
+            else if (cantidad == 0)
+            {
+                MessageBox.Show("Para realizar la venta debes agregar la cantidad a vender");
             }
 
             else if (cantidad > stock)
@@ -127,7 +142,7 @@ namespace WIN
                 miDetalle.Fk_idProducto = idProducto;
                 miDetalle.producto = ProductocomboBox.Text;
                 miDetalle.cantidadProducto = Convert.ToDecimal(CantidadtextBox.Text);
-                miDetalle.precioSalida = Convert.ToDecimal(PreciotextBox.Text);
+                miDetalle.precioSalida = NuevoPrecio;
                 miDetalle.IVA = 15;
                 miDetalle.importe = miDetalle.cantidadProducto * miDetalle.precioSalida;
                 EDventa.Add(miDetalle);
@@ -137,6 +152,7 @@ namespace WIN
                 CalcularTotal();
                 HabilitarBotones(true, false);
                 Limpiar();
+                DescuentotextBox.Text = "0";
             }
 
         }
@@ -150,6 +166,7 @@ namespace WIN
                     idProducto = (int)ProductocomboBox.SelectedValue;
                     PreciotextBox.Text = Convert.ToString(BProducto.ObtenerPrecio(idProducto));
                     stock = Convert.ToDecimal(BProducto.ObtenerStock(idProducto));
+                    costo = Convert.ToDecimal(BProducto.SelectProductocosto(idProducto));
                 }
             }
             catch (Exception)
@@ -230,7 +247,7 @@ namespace WIN
             TelefonotextBox.Text = "";
             HabilitarBotones(false, true);
             Limpiar();
-            this.Dispose(false);
+            //this.Dispose(false);
         }
 
         private void HabilitarBotones(bool p1, bool p2)
@@ -257,7 +274,6 @@ namespace WIN
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-
             Limpiar();
         }
 
@@ -304,11 +320,70 @@ namespace WIN
 
         private void DVentadataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex >= 0 && this.DVentadataGridView.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0 )
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                DataGridViewButtonCell cellbtn = this.DVentadataGridView.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
+            //if (e.ColumnIndex >= 0 && this.DVentadataGridView.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0 )
+            //{
+            //    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+            //    DataGridViewButtonCell cellbtn = this.DVentadataGridView.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
 
+            //    e.Handled = true;
+            //}
+        }
+
+        private void ClientecomboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ProductocomboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DescuentotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
                 e.Handled = true;
             }
         }

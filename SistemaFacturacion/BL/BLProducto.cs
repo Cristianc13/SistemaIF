@@ -33,6 +33,11 @@ namespace BL
             return CProducto.ObtenerPrecio(idProducto);
         }
 
+        public string SelectProductocosto (int idProducto)
+        {
+            return CProducto.ObtenerCosto(idProducto);
+        }
+
         public void InsertarProducto(ENTProducto EProducto)
         {
             CProducto.InsertarProducto(EProducto);
