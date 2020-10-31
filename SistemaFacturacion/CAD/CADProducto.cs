@@ -55,6 +55,19 @@ namespace CAD
             return i;
         }
 
+        public string SelectProductoStock(int idProducto)
+        {
+            decimal a;
+            string i;
+            SqlCommand cmd = new SqlCommand("SelectProductoStock", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+            a = (decimal)cmd.ExecuteScalar();
+            i = Convert.ToString(a);
+            CerrarConexion();
+            return i;
+        }
+
         public void InsertarProducto(ENTProducto EProducto)
         {
             SqlCommand cmd = new SqlCommand("InsertProducto", AbrirConexion());

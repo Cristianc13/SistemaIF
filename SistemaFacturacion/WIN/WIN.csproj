@@ -265,6 +265,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Notas.txt" />
     <Content Include="Recursos\icerrar.png" />
     <None Include="Recursos\user.png" />
     <None Include="Recursos\javascript_logo_50px.png" />

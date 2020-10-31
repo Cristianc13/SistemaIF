@@ -1,0 +1,33 @@
+﻿========================================================================================================================================================
+
+---------------------------------------------------------Albertb11-------------------------------------------------------------------------------------
+
+- Emplear Transacciones tanto en venta como en compra
+
+- Reparar la data grid al guardar en venta 
+
+- ELIMINAR CON BOTON DENTRO DE LAS CELDAS DE LA GRID
+
+- ACTULIZAR DESDE LAS CELDAS DE LA GRID
+
+- Acoplar la grid al panel
+
+- BOTON DE CANCELAR VENTA
+
+- Reportes de venta
+
+- Factura
+
+- Validaciones
+
+- Trigger de stock
+
+- validar en WINDetalleVenta stcok de producto ************** Finalizado
+
+- Disenio
+
+- Implementar descuento
+
+- KARDEX
+
+========================================================================================================================================================
