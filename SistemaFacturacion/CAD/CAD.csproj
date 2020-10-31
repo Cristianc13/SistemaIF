@@ -53,6 +53,7 @@
     <Compile Include="CADModelo.cs" />
     <Compile Include="CADProducto.cs" />
     <Compile Include="CADProveedor.cs" />
+    <Compile Include="CADReporte\RCADProducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

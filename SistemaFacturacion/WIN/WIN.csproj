@@ -148,6 +148,12 @@
     <Compile Include="WINProVent.Designer.cs">
       <DependentUpon>WINProVent.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINReportes\RProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RProducto.Designer.cs">
+      <DependentUpon>RProducto.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINProVent.resx">
       <DependentUpon>WINProVent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\RProducto.resx">
+      <DependentUpon>RProducto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -259,6 +268,9 @@
     <Content Include="Recursos\icerrar.png" />
     <None Include="Recursos\user.png" />
     <None Include="Recursos\javascript_logo_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
