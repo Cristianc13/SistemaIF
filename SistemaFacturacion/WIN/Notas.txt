@@ -8,7 +8,7 @@
 
 - ELIMINAR CON BOTON DENTRO DE LAS CELDAS DE LA GRID
 
-- ACTULIZAR DESDE LAS CELDAS DE LA GRID
+- ACTUALIZAR
 
 - Acoplar la grid al panel
 
@@ -24,12 +24,17 @@
 
 - validar en WINDetalleVenta stcok de producto ************** Finalizado ****************
 
-- Disenio
+- Diseño
 
 - Implementar descuento ************** Finalizado ****************
 
 - KARDEX
 
+
+-Tabulacion
+
+=============================================================================================================================================
+=======
 ========================================================================================================================================================
 
 
@@ -55,3 +60,4 @@
 - Diseñio
 
 - KARDEX
+
