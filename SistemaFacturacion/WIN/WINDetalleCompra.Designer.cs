@@ -44,6 +44,12 @@
             this.btnactualizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtsubtotal = new System.Windows.Forms.TextBox();
+            this.txtIVA = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCompraGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -166,14 +172,14 @@
             this.DetalleCompraGridView1.ReadOnly = true;
             this.DetalleCompraGridView1.RowHeadersVisible = false;
             this.DetalleCompraGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DetalleCompraGridView1.Size = new System.Drawing.Size(768, 200);
+            this.DetalleCompraGridView1.Size = new System.Drawing.Size(768, 148);
             this.DetalleCompraGridView1.TabIndex = 15;
             this.DetalleCompraGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCompraGridView1_CellClick);
             this.DetalleCompraGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCompraGridView1_CellDoubleClick);
             // 
             // btnguardar
             // 
-            this.btnguardar.Location = new System.Drawing.Point(240, 383);
+            this.btnguardar.Location = new System.Drawing.Point(158, 353);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(109, 33);
             this.btnguardar.TabIndex = 14;
@@ -205,11 +211,65 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(676, 323);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Subtotal";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(676, 347);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "IVA";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(676, 373);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Total";
+            // 
+            // txtsubtotal
+            // 
+            this.txtsubtotal.Location = new System.Drawing.Point(737, 323);
+            this.txtsubtotal.Name = "txtsubtotal";
+            this.txtsubtotal.Size = new System.Drawing.Size(47, 20);
+            this.txtsubtotal.TabIndex = 19;
+            // 
+            // txtIVA
+            // 
+            this.txtIVA.Location = new System.Drawing.Point(737, 347);
+            this.txtIVA.Name = "txtIVA";
+            this.txtIVA.Size = new System.Drawing.Size(47, 20);
+            this.txtIVA.TabIndex = 20;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(737, 373);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(47, 20);
+            this.txtTotal.TabIndex = 21;
+            // 
             // WINDetalleCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 428);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.txtIVA);
+            this.Controls.Add(this.txtsubtotal);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnactualizar);
             this.Controls.Add(this.btnguardar);
@@ -251,5 +311,11 @@
         private System.Windows.Forms.Button btnactualizar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtIVA;
+        private System.Windows.Forms.TextBox txtsubtotal;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

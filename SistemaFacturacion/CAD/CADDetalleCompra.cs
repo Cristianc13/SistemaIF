@@ -41,5 +41,18 @@ namespace CAD
         {
 
         }
+
+        public string ObtenerIVA(int idCompra)
+        {
+            decimal a;
+            string i;
+            SqlCommand cmd = new SqlCommand("ObtenerIVA", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCompra", idCompra);
+            a = (decimal)cmd.ExecuteScalar();//castear
+            i = Convert.ToString(a);
+            CerrarConexion();
+            return i;
+        }
     }
 }
