@@ -18,9 +18,10 @@ namespace WIN
         {
             InitializeComponent();
         }
-        
 
+        private decimal IVA = 0;
         private int idCompra = 0;
+        
 
         private ENTCompra Ecompra = new ENTCompra();
         private BLCompra BCompra = new BLCompra();
@@ -44,9 +45,34 @@ namespace WIN
         private void LlenaComboFractura()
         {
             cmbNFactura.DataSource = BCompra.MostrarCompra();
-            cmbNFactura.DisplayMember = "nombreFactura";
+            cmbNFactura.DisplayMember = "numeroFactura";
             cmbNFactura.ValueMember = "idCompra";
             cmbNFactura.SelectedIndex = -1;
+        }
+
+        public void CalcularTotal()
+        {
+            decimal subtotal = 0;
+            decimal total = 0;
+            decimal iva2 = 0;
+            
+            foreach (DataGridViewRow dr in DetalleCompraGridView1.Rows)
+            {
+                
+                decimal importe = decimal.Parse(dr.Cells[6].Value.ToString());
+                subtotal += importe;
+                iva2 = IVA / 100;
+               
+                iva2 = subtotal * iva2;
+                
+                txtIVA.Text = iva2.ToString();
+                total = subtotal + iva2;
+                
+
+            }
+
+            txtsubtotal.Text = subtotal.ToString();
+            txtTotal.Text = total.ToString();
         }
 
         private void Limpiar()
@@ -127,11 +153,24 @@ namespace WIN
                 if (cmbNFactura.SelectedValue != null)
                 {
                     idCompra = (int)cmbNFactura.SelectedValue;
+                    IVA =decimal.Parse(Bldetallec.ObtenerIVA(idCompra));
+                    //txtIVA.Text = Bldetallec.ObtenerIVA(idCompra);
                 }
             }
             catch (Exception)
             {
             }
+
+            //try
+            //{
+            //    if (cmbNFactura.SelectedValue != null)
+            //    {
+            //        idCompra = (int)cmbNFactura.SelectedValue;
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //}
         }
 
         private void bmbproducto_SelectedIndexChanged(object sender, EventArgs e)
@@ -190,7 +229,7 @@ namespace WIN
             DetalleCompraGridView1.DataSource = null;
             DetalleCompraGridView1.DataSource = EDetalleC;
             FormatoGrid();
-            //CalcularTotal();
+            CalcularTotal();
             HabilitarBotones(true, false);
             limpiar2();
 

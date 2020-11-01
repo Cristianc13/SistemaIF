@@ -22,5 +22,10 @@ namespace BL
         {
             CdetalleCompra.InsertDetalleCompra(idCompra, EdetalleC);
         }
+
+        public string ObtenerIVA(int idCompra)
+        {
+            return CdetalleCompra.ObtenerIVA(idCompra);
+        }
     }
 }
