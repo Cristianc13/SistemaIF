@@ -98,7 +98,10 @@ namespace WIN
 
         private void btnventa_Click(object sender, EventArgs e)
         {
+            lbltitulo.Text = "Panel de Producto";
+            //Venta
             SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
+            AbrirFormulario(new WINDetalleVenta());
         }
 
         private void btnproducto_Click(object sender, EventArgs e)
@@ -120,7 +123,7 @@ namespace WIN
             if (formActivado != null) formActivado.Close();
             formActivado = formHijo;
             formHijo.TopLevel = false;
-            // formHijo.Dock = DockStyle.Fill;
+            formHijo.Dock = DockStyle.Fill;
             wrapper.Controls.Add(formHijo);
             wrapper.Tag = formHijo;
             formHijo.BringToFront();

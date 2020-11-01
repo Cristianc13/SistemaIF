@@ -110,7 +110,7 @@
             // 
             // Cancelarbutton
             // 
-            this.Cancelarbutton.Location = new System.Drawing.Point(455, 123);
+            this.Cancelarbutton.Location = new System.Drawing.Point(228, 124);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(86, 30);
             this.Cancelarbutton.TabIndex = 10;
@@ -120,7 +120,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(328, 123);
+            this.Guardarbutton.Location = new System.Drawing.Point(126, 123);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(86, 30);
             this.Guardarbutton.TabIndex = 9;
@@ -130,7 +130,7 @@
             // 
             // Agregarbutton
             // 
-            this.Agregarbutton.Location = new System.Drawing.Point(201, 123);
+            this.Agregarbutton.Location = new System.Drawing.Point(21, 123);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(86, 30);
             this.Agregarbutton.TabIndex = 8;
@@ -239,7 +239,7 @@
             this.DVentadataGridView.RowHeadersVisible = false;
             this.DVentadataGridView.RowHeadersWidth = 51;
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DVentadataGridView.Size = new System.Drawing.Size(899, 309);
+            this.DVentadataGridView.Size = new System.Drawing.Size(935, 309);
             this.DVentadataGridView.TabIndex = 0;
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
             this.DVentadataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellContentClick);
@@ -253,10 +253,10 @@
             // 
             this.panel1.Controls.Add(this.DVentadataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 240);
+            this.panel1.Location = new System.Drawing.Point(0, 219);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(899, 309);
+            this.panel1.Size = new System.Drawing.Size(935, 309);
             this.panel1.TabIndex = 17;
             // 
             // panel2
@@ -280,11 +280,11 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(899, 235);
+            this.panel2.Size = new System.Drawing.Size(935, 219);
             this.panel2.TabIndex = 18;
             // 
             // label5
@@ -326,7 +326,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 549);
+            this.ClientSize = new System.Drawing.Size(935, 528);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "WINDetalleVenta";

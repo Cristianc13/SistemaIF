@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.RBLProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.RBLProductoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // RBLProductoBindingSource
+            // 
+            this.RBLProductoBindingSource.DataMember = "EReportePro";
+            this.RBLProductoBindingSource.DataSource = typeof(BL.RBLProducto);
             // 
             // reportViewer1
             // 
@@ -47,11 +52,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1288, 736);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // RBLProductoBindingSource
-            // 
-            this.RBLProductoBindingSource.DataMember = "EReportePro";
-            this.RBLProductoBindingSource.DataSource = typeof(BL.RBLProducto);
             // 
             // RProducto
             // 
