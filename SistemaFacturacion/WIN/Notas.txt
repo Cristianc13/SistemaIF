@@ -30,6 +30,34 @@
 
 - KARDEX
 
+
 -Tabulacion
 
 =============================================================================================================================================
+=======
+========================================================================================================================================================
+
+
+
+-Andru -------------------------------------------------------------------------------------
+
+- Emplear Transacciones tanto en venta como en compra
+
+- Reparar la data grid al guardar en venta 
+
+- ELIMINAR CON BOTON DENTRO DE LAS CELDAS DE LA GRID
+
+- BOTON DE CANCELAR VENTA
+
+- Reportes de compra
+
+- Validaciones detallecompra, compra
+
+- Trigger de stock
+
+- Tabulacion
+
+- Diseñio
+
+- KARDEX
+
