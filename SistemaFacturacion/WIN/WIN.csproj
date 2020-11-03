@@ -203,6 +203,9 @@
     <EmbeddedResource Include="WINDetalleCompra.resx">
       <DependentUpon>WINDetalleCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WINDetalleCompra2.resx">
+      <DependentUpon>WINDetalleCompra2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WINDetalleVenta.resx">
       <DependentUpon>WINDetalleVenta.cs</DependentUpon>
     </EmbeddedResource>

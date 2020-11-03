@@ -18,6 +18,11 @@ namespace BL
             return CProducto.MostrarProductoByForanea();
         }
 
+        public DataTable MostrarDetallesProd()
+        {
+            return CProducto.MostrarSelectDetallePro();
+        }
+
         public DataTable MostrarProductoVenta()
         {
             return CProducto.MostrarProductoVenta();
@@ -37,6 +42,8 @@ namespace BL
         {
             return CProducto.ObtenerCosto(idProducto);
         }
+
+
 
         public void InsertarProducto(ENTProducto EProducto)
         {
