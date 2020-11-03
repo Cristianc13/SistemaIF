@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using BL;
 using ENT;
@@ -14,11 +15,11 @@ namespace WIN
         }
 
         private int idProducto = 0;
-        decimal stock;
-        decimal costo;
+        private decimal stock;
+        private decimal costo;
         private int idCl = 0;
         public int idventa;
-        int fila;
+        private int fila;
 
         private List<ENTVenta> Eventa = new List<ENTVenta>();
         private List<ENTDetalleVenta> EDventa = new List<ENTDetalleVenta>();
@@ -33,8 +34,8 @@ namespace WIN
         }
 
         private void WINDetalleVenta_Load(object sender, EventArgs e)
-        {     
-            ImportetextBox.Text = "0";           
+        {
+            ImportetextBox.Text = "0";
             HabilitarBotones(false, true);
             LlenarComboCliente();
             LlenaComboProducto();
@@ -54,6 +55,9 @@ namespace WIN
             DVentadataGridView.Columns[7].Visible = false;
             DVentadataGridView.AllowUserToResizeColumns = false;
             DVentadataGridView.AllowUserToResizeRows = false;
+
+            DVentadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            DVentadataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
 
             //DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             //btn.Name = "Eliminar";
@@ -109,13 +113,12 @@ namespace WIN
 
             decimal precio = Convert.ToDecimal(PreciotextBox.Text);
             decimal descuento = Convert.ToDecimal(DescuentotextBox.Text);
-            decimal NuevoPrecio = precio - descuento ;
+            decimal NuevoPrecio = precio - descuento;
 
             if (NuevoPrecio <= costo)
             {
                 MessageBox.Show("No puedes aplicar este descuento porque no hay ninguna ganancia");
             }
-
             else if (stock == 0)
             {
                 MessageBox.Show("No Hay existencia de este producto");
@@ -124,18 +127,15 @@ namespace WIN
                 ProductocomboBox.SelectedIndex = -1;
                 ProductocomboBox.Focus();
             }
-
             else if (cantidad == 0)
             {
                 MessageBox.Show("Para realizar la venta debes agregar la cantidad a vender");
             }
-
             else if (cantidad > stock)
             {
                 MessageBox.Show("No puedes venter mas de:" + " " + stock + " " + "Productos");
                 CantidadtextBox.Focus();
             }
-
             else
             {
                 ENTDetalleVenta miDetalle = new ENTDetalleVenta();
@@ -154,7 +154,6 @@ namespace WIN
                 Limpiar();
                 DescuentotextBox.Text = "0";
             }
-
         }
 
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,7 +180,7 @@ namespace WIN
                 if (ClientecomboBox.SelectedValue != null)
                 {
                     idCl = (int)ClientecomboBox.SelectedValue;
-                    TelefonotextBox.Text = Convert.ToString(BCliente.ObtenerNumeroCliente(idCl));                  
+                    TelefonotextBox.Text = Convert.ToString(BCliente.ObtenerNumeroCliente(idCl));
                 }
             }
             catch (Exception)
@@ -203,28 +202,27 @@ namespace WIN
         private void DVentadataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //if (this.DVentadataGridView.Columns[e.ColumnIndex].Name == "Eliminar")
+            ////{
+            ////    this.DVentadataGridView.Rows.Remove(this.DVentadataGridView.CurrentRow);
+            ////}
+
+            ////RECORREMOS LOS ELEMENTOS GUARDADOS EN LA LISTA
+            //for (int i = 0; i < EDventa.Count; i++)
             //{
-            //    this.DVentadataGridView.Rows.Remove(this.DVentadataGridView.CurrentRow);
+            //    //COMPROBAMOS QUE LA FILA SELECCIONADA ES IGUAL AL DE LA LISTA
+            //    if (i == fila)
+            //    {
+            //        EDventa.RemoveAt(fila);
+            //    }
+
+            //    //ACTUALIZAMOS LA LISTA Y EL DATAGRIDVIEW
+            //    DVentadataGridView.DataSource = null;
+            //    DVentadataGridView.DataSource = EDventa;
             //}
-
-            //RECORREMOS LOS ELEMENTOS GUARDADOS EN LA LISTA
-            for (int i = 0; i < EDventa.Count; i++)
-            {
-                //COMPROBAMOS QUE LA FILA SELECCIONADA ES IGUAL AL DE LA LISTA
-                if (i == fila)
-                {
-                    EDventa.RemoveAt(fila);
-                }
-
-                //ACTUALIZAMOS LA LISTA Y EL DATAGRIDVIEW
-                DVentadataGridView.DataSource = null;
-                DVentadataGridView.DataSource = EDventa;
-
-            }
         }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-
             if (ClientecomboBox.Text == string.Empty)
             {
                 errorProvider1.SetError(ClientecomboBox, "Debe ingresar un Cliente para realizar su venta");
@@ -238,7 +236,7 @@ namespace WIN
 
             foreach (ENTDetalleVenta miDetalle in EDventa)
             {
-                BLDetalle.InsertDetalleVenta(idventa, miDetalle);               
+                BLDetalle.InsertDetalleVenta(idventa, miDetalle);
             }
             MessageBox.Show("Venta realizada con exito");
             DVentadataGridView.DataSource = null;
@@ -297,7 +295,6 @@ namespace WIN
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            
             WINProVent pv = new WINProVent();
             AddOwnedForm(pv);
             pv.ShowDialog();
@@ -335,17 +332,14 @@ namespace WIN
             {
                 e.Handled = false;
             }
-
             else if (char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
             }
-
             else if (char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
             }
-
             else
             {
                 e.Handled = true;
@@ -358,17 +352,14 @@ namespace WIN
             {
                 e.Handled = false;
             }
-
             else if (char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
             }
-
             else if (char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
             }
-
             else
             {
                 e.Handled = true;

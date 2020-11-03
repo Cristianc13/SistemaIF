@@ -43,5 +43,20 @@ namespace CAD
             CerrarConexion();
 
         }
+
+        /*=====================================================================================================*/
+
+        public DataTable GenerarReporteVenta(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            SqlCommand cmd = new SqlCommand("GenerarFactura", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@fechaInicial", fechaInicial);
+            cmd.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+            var reader = cmd.ExecuteReader();
+            var table = new DataTable();
+            table.Load(reader);
+            reader.Dispose();
+            return table;
+        }
     }
 }

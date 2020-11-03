@@ -231,11 +231,25 @@
       <DependentUpon>WINProVent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\Reportes\RProducto.rdlc" />
+    <EmbeddedResource Include="WINReportes\Reportes\RVenta.rdlc" />
     <EmbeddedResource Include="WINReportes\RProducto.resx">
       <DependentUpon>RProducto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BL.BLAdministrador.datasource" />
+    <None Include="Properties\DataSources\BL.BLCategoria.datasource" />
+    <None Include="Properties\DataSources\BL.BLCliente.datasource" />
+    <None Include="Properties\DataSources\BL.BLCompra.datasource" />
+    <None Include="Properties\DataSources\BL.BLDetalleCompra.datasource" />
+    <None Include="Properties\DataSources\BL.BLDetalleVenta.datasource" />
+    <None Include="Properties\DataSources\BL.BLEstado.datasource" />
+    <None Include="Properties\DataSources\BL.BLMarca.datasource" />
+    <None Include="Properties\DataSources\BL.BLModelo.datasource" />
+    <None Include="Properties\DataSources\BL.BLProducto.datasource" />
+    <None Include="Properties\DataSources\BL.BLProveedor.datasource" />
+    <None Include="Properties\DataSources\BL.RBLDetalleVenta.datasource" />
     <None Include="Properties\DataSources\BL.RBLProducto.datasource" />
+    <None Include="Properties\DataSources\CAD.CADDetalleVenta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -253,6 +267,10 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{b60822a9-b345-41b7-b517-e0658f66cf08}</Project>
       <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAD\CAD.csproj">
+      <Project>{4c401774-2d72-4194-a807-e584ef48c1bb}</Project>
+      <Name>CAD</Name>
     </ProjectReference>
     <ProjectReference Include="..\ENT\ENT.csproj">
       <Project>{d823cde5-76d1-4372-9b5c-fd173333dbf6}</Project>
