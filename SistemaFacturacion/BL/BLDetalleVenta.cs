@@ -12,6 +12,9 @@ namespace BL
     public class BLDetalleVenta
     {
         private CADDetalleVenta CdetalleVenta = new CADDetalleVenta();
+        private ENTReporteVenta ERV = new ENTReporteVenta();
+        private ENTReporteListaVentas ELRV = new ENTReporteListaVentas();
+        //private ENTReporteVentasPorPeriodo ERVPP = new ENTReporteVentasPorPeriodo();
 
         public DataTable MostrarDetalleVenta()
         {
@@ -27,5 +30,6 @@ namespace BL
         {
             return CdetalleVenta.InsertarVenta(idCliente);
         }
+
     }
 }
