@@ -52,6 +52,9 @@
     <Compile Include="ENTModelo.cs" />
     <Compile Include="ENTProducto.cs" />
     <Compile Include="ENTProveedor.cs" />
+    <Compile Include="ENTReporteListaVentas.cs" />
+    <Compile Include="ENTReporteVenta.cs" />
+    <Compile Include="ENTReporteVentasPorPeriodo.cs" />
     <Compile Include="ENTVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
