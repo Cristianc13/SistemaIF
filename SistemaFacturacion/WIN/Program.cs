@@ -18,6 +18,8 @@ namespace WIN
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new WINDetalleCompra());
+
+
         }
     }
 }
