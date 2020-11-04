@@ -258,6 +258,11 @@ namespace WIN
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            WINDetalleCompra2 WCd2 = new WINDetalleCompra2();
+            WCd2.ShowDialog();
+            LlenaComboProducto();
+
         }
 
         private void DetalleCompraGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -23,10 +23,11 @@ namespace CAD
         {
             SqlCommand cmd = new SqlCommand("InsertDetalleCompra", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
+            
             cmd.Parameters.AddWithValue("@cantidadProducto", EdetalleC.cantidadProducto);
             cmd.Parameters.AddWithValue("@costo", EdetalleC.costo);
             cmd.Parameters.AddWithValue("@importe", EdetalleC.importe);
-            cmd.Parameters.AddWithValue("@FK_idCompra", EdetalleC.FK_idCompra);
+            cmd.Parameters.AddWithValue("@FK_idCompra", idCompra);
             cmd.Parameters.AddWithValue("@FK_idProducto", EdetalleC.FK_idProducto);
             cmd.ExecuteNonQuery();
             CerrarConexion();

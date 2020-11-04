@@ -61,3 +61,4 @@
 
 - KARDEX
 
+- Categoria DetalleCompra agregar por codigo
