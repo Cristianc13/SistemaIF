@@ -25,6 +25,9 @@ namespace CAD
             return tabla;
         }
 
+       
+
+
         public void InsertModelo(ENTModelo modelo)
         {
             SqlCommand cmd = new SqlCommand("InsertModelo", AbrirConexion());

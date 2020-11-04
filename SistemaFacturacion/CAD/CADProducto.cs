@@ -20,6 +20,17 @@ namespace CAD
             return tabla;
         }
 
+        public DataTable MostrarSelectDetallePro()
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("SelectDetalleProducto", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
+
         public DataTable MostrarProductoByForanea()
         {
             tabla.Clear();
