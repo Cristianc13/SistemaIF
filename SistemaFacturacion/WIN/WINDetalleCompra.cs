@@ -21,7 +21,6 @@ namespace WIN
 
         private decimal IVA = 0;
         private int idCompra = 0;
-        
 
         private ENTCompra Ecompra = new ENTCompra();
         private BLCompra BCompra = new BLCompra();
@@ -32,7 +31,6 @@ namespace WIN
         private BLProducto BProducto = new BLProducto();
         private BLDetalleCompra Bldetallec = new BLDetalleCompra();
         private List<ENTDetalleCompra> EDetalleC = new List<ENTDetalleCompra>();
-
 
         private void LlenaComboProducto()
         {
@@ -55,20 +53,17 @@ namespace WIN
             decimal subtotal = 0;
             decimal total = 0;
             decimal iva2 = 0;
-            
+
             foreach (DataGridViewRow dr in DetalleCompraGridView1.Rows)
             {
-                
                 decimal importe = decimal.Parse(dr.Cells[6].Value.ToString());
                 subtotal += importe;
                 iva2 = IVA / 100;
-               
+
                 iva2 = subtotal * iva2;
-                
+
                 txtIVA.Text = iva2.ToString();
                 total = subtotal + iva2;
-                
-
             }
 
             txtsubtotal.Text = subtotal.ToString();
@@ -89,12 +84,11 @@ namespace WIN
 
         private void limpiar2()
         {
-           
             bmbproducto.Text = string.Empty;
             txtcantidad.Text = string.Empty;
             txtcosto.Text = string.Empty;
             errorProvider1.Clear();
-            
+
             bmbproducto.SelectedIndex = -1;
             bmbproducto.Focus();
         }
@@ -113,7 +107,6 @@ namespace WIN
 
         public void validaciones()
         {
-           
         }
 
         private void FormatoGrid()
@@ -124,7 +117,6 @@ namespace WIN
             DetalleCompraGridView1.Columns["cantidadProducto"].HeaderText = "Cantidad";
             DetalleCompraGridView1.Columns["costo"].HeaderText = "Costo";
             DetalleCompraGridView1.Columns["importe"].HeaderText = "Importe";
-
             DetalleCompraGridView1.AllowUserToResizeColumns = false;
             DetalleCompraGridView1.AllowUserToResizeRows = false;
             DetalleCompraGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
@@ -135,7 +127,7 @@ namespace WIN
         {
             btnguardar.Enabled = p1;
             btnactualizar.Enabled = p1;
-           
+
             //Cancelarbutton.Enabled = p1;
         }
 
@@ -153,7 +145,7 @@ namespace WIN
                 if (cmbNFactura.SelectedValue != null)
                 {
                     idCompra = (int)cmbNFactura.SelectedValue;
-                    IVA =decimal.Parse(Bldetallec.ObtenerIVA(idCompra));
+                    IVA = decimal.Parse(Bldetallec.ObtenerIVA(idCompra));
                     //txtIVA.Text = Bldetallec.ObtenerIVA(idCompra);
                 }
             }
@@ -232,30 +224,22 @@ namespace WIN
             CalcularTotal();
             HabilitarBotones(true, false);
             limpiar2();
-
-       
-
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            
-
             foreach (ENTDetalleCompra miDetalle in EDetalleC)
             {
                 Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
             }
             MessageBox.Show("Venta realizada con exito");
             DetalleCompraGridView1.DataSource = null;
-            //ImportetextBox.Text = "0";
-            //TelefonotextBox.Text = "";
             HabilitarBotones(false, true);
             Limpiar();
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -274,21 +258,44 @@ namespace WIN
 
         private void button1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void DetalleCompraGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DetalleCompraGridView1.Rows.Count == 0) return;
             HabilitarBotones(true, false);
-            
+
             cmbNFactura.Text = DetalleCompraGridView1.CurrentRow.Cells[0].Value.ToString();
             bmbproducto.Text = DetalleCompraGridView1.CurrentRow.Cells[2].Value.ToString();
             txtcantidad.Text = DetalleCompraGridView1.CurrentRow.Cells[4].Value.ToString();
             txtcosto.Text = DetalleCompraGridView1.CurrentRow.Cells[5].Value.ToString();
-
-
             HabilitarBotones(true, false);
+        }
+
+        private void txtcantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
