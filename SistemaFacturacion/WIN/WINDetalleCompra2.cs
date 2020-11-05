@@ -64,11 +64,12 @@ namespace WIN
             DetalleCompra2GridView1.Columns[8].HeaderText = "Modelo";
             DetalleCompra2GridView1.Columns[9].HeaderText = "Categoria";
             DetalleCompra2GridView1.Columns[10].HeaderText = "Estado";
-            DetalleCompra2GridView1.AllowUserToResizeColumns = false;
+           DetalleCompra2GridView1.AllowUserToResizeColumns = false;
             DetalleCompra2GridView1.AllowUserToResizeRows = false;
             DetalleCompra2GridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             DetalleCompra2GridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
         }
+
         private void HabilitarBotones(bool p1, bool p2)
         {
             btnAgregar.Enabled = p2;
@@ -114,8 +115,6 @@ namespace WIN
             DetalleCompra2GridView1.DataSource = BProducto.MostrarDetallesProd();
         }
 
-
-
         private void WINDetalleCompra2_Load(object sender, EventArgs e)
         {
             //HabilitarBotones(false, true);
@@ -126,12 +125,10 @@ namespace WIN
             LlenarCategoria();
             LlenarModelo();
             Limpiar();
-           
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
                 EProducto.nombreProducto = txtnombre.Text;
                 EProducto.codigopro = txtcodigo.Text;
                 EProducto.FK_idMarca = IdMarca;
@@ -147,24 +144,18 @@ namespace WIN
                 Limpiar();
                 LlenarGrid();
             HabilitarBotones(false, true);
-
         }
-        
-    
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
         }
 
         private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,7 +193,6 @@ namespace WIN
                 if (cmbCategoria.SelectedValue != null)
                 {
                     IdCategoria = (int)cmbCategoria.SelectedValue;
-                    
                 }
             }
             catch (Exception)
@@ -226,7 +216,6 @@ namespace WIN
 
         private void DetalleCompra2GridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void DetalleCompra2GridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -237,9 +226,9 @@ namespace WIN
 
             txtnombre.Text = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
             txtdescripcion.Text = DetalleCompra2GridView1.CurrentRow.Cells[3].Value.ToString();
-           
+
             txtpreciosalida.Text = DetalleCompra2GridView1.CurrentRow.Cells[4].Value.ToString();
-           
+
             txtobservacion.Text = DetalleCompra2GridView1.CurrentRow.Cells[5].Value.ToString();
             cmbMarca.Text = DetalleCompra2GridView1.CurrentRow.Cells[6].Value.ToString();
             cmbModelo.Text = DetalleCompra2GridView1.CurrentRow.Cells[7].Value.ToString();

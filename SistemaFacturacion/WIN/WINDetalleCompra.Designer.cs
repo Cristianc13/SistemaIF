@@ -369,7 +369,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "WINDetalleCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WINDetalleCompra";
+            this.Text = "Compra";
             this.Load += new System.EventHandler(this.WINDetalleCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCompraGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
