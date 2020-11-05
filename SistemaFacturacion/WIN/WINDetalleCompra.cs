@@ -107,6 +107,8 @@ namespace WIN
 
         public void validaciones()
         {
+
+
         }
 
         private void FormatoGrid()
@@ -181,50 +183,65 @@ namespace WIN
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (bmbproducto.SelectedIndex == -1)
+            bool bloqueo;
+            bloqueo = false;
+            if (bloqueo == false)
             {
-                errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
-                return;
-            }
-            errorProvider1.Clear();
 
-            if (cmbNFactura.SelectedIndex == -1)
+                if (bmbproducto.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (cmbNFactura.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(cmbNFactura, "Debe ingresar un N° de Factura");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (txtcantidad.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (txtcosto.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txtcosto, "Debe ingresar un Costo");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                ENTDetalleCompra miDetalle = new ENTDetalleCompra();
+                miDetalle.FK_idCompra = idCompra;
+                miDetalle.FK_idProducto = idProducto;
+                miDetalle.Producto = bmbproducto.Text;
+                miDetalle.cantidadProducto = Convert.ToDecimal(txtcantidad.Text);
+                miDetalle.costo = Convert.ToDecimal(txtcosto.Text);
+
+                miDetalle.importe = miDetalle.cantidadProducto * miDetalle.costo;
+                EDetalleC.Add(miDetalle);
+                DetalleCompraGridView1.DataSource = null;
+                DetalleCompraGridView1.DataSource = EDetalleC;
+                FormatoGrid();
+                CalcularTotal();
+                HabilitarBotones(true, false);
+                limpiar2();
+                cmbNFactura.Enabled = false;
+
+            }
+            else
             {
-                errorProvider1.SetError(cmbNFactura, "Debe ingresar un N° de Factura");
-                return;
+                cmbNFactura.Enabled = true;
+                bloqueo = true;
             }
-            errorProvider1.Clear();
-
-            if (txtcantidad.Text == string.Empty)
-            {
-                errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad");
-                return;
-            }
-            errorProvider1.Clear();
-
-            if (txtcosto.Text == string.Empty)
-            {
-                errorProvider1.SetError(txtcosto, "Debe ingresar un Costo");
-                return;
-            }
-            errorProvider1.Clear();
-
-            ENTDetalleCompra miDetalle = new ENTDetalleCompra();
-            miDetalle.FK_idCompra = idCompra;
-            miDetalle.FK_idProducto = idProducto;
-            miDetalle.Producto = bmbproducto.Text;
-            miDetalle.cantidadProducto = Convert.ToDecimal(txtcantidad.Text);
-            miDetalle.costo = Convert.ToDecimal(txtcosto.Text);
-
-            miDetalle.importe = miDetalle.cantidadProducto * miDetalle.costo;
-            EDetalleC.Add(miDetalle);
-            DetalleCompraGridView1.DataSource = null;
-            DetalleCompraGridView1.DataSource = EDetalleC;
-            FormatoGrid();
-            CalcularTotal();
-            HabilitarBotones(true, false);
-            limpiar2();
         }
+        
+        
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -245,6 +262,7 @@ namespace WIN
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            cmbNFactura.Enabled = true;
         }
 
         private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

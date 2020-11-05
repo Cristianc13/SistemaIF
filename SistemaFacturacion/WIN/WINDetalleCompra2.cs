@@ -193,6 +193,7 @@ namespace WIN
                 if (cmbCategoria.SelectedValue != null)
                 {
                     IdCategoria = (int)cmbCategoria.SelectedValue;
+                    txtcodigo.Text = BCategoria.ObtenercodCat(IdCategoria) + "-";
                 }
             }
             catch (Exception)

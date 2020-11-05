@@ -116,6 +116,7 @@
             this.dataGridProovedor.AllowUserToAddRows = false;
             this.dataGridProovedor.AllowUserToDeleteRows = false;
             this.dataGridProovedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridProovedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridProovedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProovedor.Location = new System.Drawing.Point(26, 156);
             this.dataGridProovedor.Name = "dataGridProovedor";
