@@ -61,7 +61,6 @@ namespace WIN
             txtNFactura.Focus();
         }
 
-
         private void CompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (CompraGridView1.Rows.Count == 0) return;
@@ -73,16 +72,12 @@ namespace WIN
             txtIVA.Text = CompraGridView1.CurrentRow.Cells[4].Value.ToString();
             ProveedorcomboBox.Text = CompraGridView1.CurrentRow.Cells[5].Value.ToString();
 
-
             HabilitarBotones(true, false);
         }
 
         public void validaciones()
         {
-
-            
         }
-
 
         private void WINCompra_Load(object sender, EventArgs e)
         {
@@ -91,7 +86,6 @@ namespace WIN
             FormatoGrid();
             Limpiar();
             LlenaComboProveedor();
-            
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -169,7 +163,7 @@ namespace WIN
             Ecompra.descripcion = txtdescrip.Text;
             Ecompra.IVA = decimal.Parse(txtIVA.Text);
             Ecompra.FK_idProveedor = idProveedor;
-        
+
             Bcompra.UpdateCompra(Ecompra);
             Limpiar();
             LlenarGrid();
@@ -185,7 +179,6 @@ namespace WIN
             HabilitarBotones(false, true);
             Limpiar();
             LlenarGrid();
-            
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
@@ -202,11 +195,11 @@ namespace WIN
             CompraGridView1.Columns[3].HeaderText = "Descripcion";
             CompraGridView1.Columns[4].HeaderText = "IVA";
             CompraGridView1.Columns[5].HeaderText = "Proveedor";
-   
+
             CompraGridView1.AllowUserToResizeColumns = false;
             CompraGridView1.AllowUserToResizeRows = false;
-            CompraGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9);
-            CompraGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            CompraGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            CompraGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
         }
 
         private void ProveedorcomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -221,8 +214,7 @@ namespace WIN
             catch (Exception)
             {
             }
-        
-    }
+        }
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
