@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINDetalleCompra2));
             this.label1 = new System.Windows.Forms.Label();
             this.txtcodigo = new System.Windows.Forms.TextBox();
@@ -299,11 +298,6 @@
             this.DetalleCompra2GridView1.Name = "DetalleCompra2GridView1";
             this.DetalleCompra2GridView1.ReadOnly = true;
             this.DetalleCompra2GridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.DetalleCompra2GridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DetalleCompra2GridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DetalleCompra2GridView1.Size = new System.Drawing.Size(989, 340);
             this.DetalleCompra2GridView1.TabIndex = 14;
