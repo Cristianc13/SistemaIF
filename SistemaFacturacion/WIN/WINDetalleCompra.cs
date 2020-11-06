@@ -318,5 +318,12 @@ namespace WIN
                 e.Handled = true;
             }
         }
+
+        private void Comprabutton_Click(object sender, EventArgs e)
+        {
+            WINCompra compra = new WINCompra();
+            compra.ShowDialog();
+            LlenaComboFractura();
+        }
     }
 }
