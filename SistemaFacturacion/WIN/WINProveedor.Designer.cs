@@ -139,6 +139,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
             this.dataGridProovedor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridProovedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+            this.dataGridProovedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+
             this.dataGridProovedor.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -148,6 +151,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridProovedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+
             this.dataGridProovedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;

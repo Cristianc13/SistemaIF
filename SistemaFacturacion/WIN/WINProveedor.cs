@@ -29,6 +29,7 @@ namespace WIN
             HabilitarBotones(true, false);
             LlenarDataGrid();
             FormatoGrid();
+            Limpiar();
         }
 
         private void GuardarProv_Click(object sender, EventArgs e)
@@ -119,7 +120,9 @@ namespace WIN
 
         private void dataGridProovedor_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridProovedor.Rows.Count == 0) return;
+
+
+            if ( dataGridProovedor.Rows.Count == 0) return;
 
             try
             {
@@ -135,6 +138,7 @@ namespace WIN
             {
                 MessageBox.Show("Celda Vacia");
             }
+
         }
 
         private void EliminarProv_Click(object sender, EventArgs e)

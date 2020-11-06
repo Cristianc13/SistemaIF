@@ -47,7 +47,7 @@
 
 - ELIMINAR CON BOTON DENTRO DE LAS CELDAS DE LA GRID
 
-- BOTON DE CANCELAR VENTA
+- BOTON DE CANCELAR Compra
 
 - Reportes de compra
 
@@ -61,4 +61,4 @@
 
 - KARDEX
 
-- Categoria DetalleCompra agregar por codigo
+- Categoria DetalleCompra agregar por codigo ///////////// Finalizado ///////////////

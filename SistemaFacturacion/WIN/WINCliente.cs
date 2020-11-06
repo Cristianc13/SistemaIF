@@ -104,14 +104,22 @@ namespace WIN
 
         private void ClienteDataGridView_DoubleClick(object sender, EventArgs e)
         {
-            if (ClienteDataGridView.Rows.Count == 0) return;
-            HabilitarBotones(false, true);
-            id = (int)ClienteDataGridView.CurrentRow.Cells[0].Value;
-            //MessageBox.Show(vIDEquipo.ToString());
-            NombreTextBox.Text = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
-            ApellidoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[2].Value.ToString();
-            TelefonoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[3].Value.ToString();
-            errorProvider1.Clear();
+            try
+            {
+                if (ClienteDataGridView.Rows.Count == 0) return;
+                HabilitarBotones(false, true);
+                id = (int)ClienteDataGridView.CurrentRow.Cells[0].Value;
+                //MessageBox.Show(vIDEquipo.ToString());
+                NombreTextBox.Text = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
+                ApellidoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[2].Value.ToString();
+                TelefonoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[3].Value.ToString();
+                errorProvider1.Clear();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Celda Vacia");
+            }
         }
 
         //Clases Diseño
