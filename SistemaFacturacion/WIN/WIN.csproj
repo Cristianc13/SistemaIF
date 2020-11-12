@@ -166,6 +166,12 @@
     <Compile Include="WINProVent.Designer.cs">
       <DependentUpon>WINProVent.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINReportes\RDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RDetalleVenta.Designer.cs">
+      <DependentUpon>RDetalleVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="WINReportes\RProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,8 +236,12 @@
     <EmbeddedResource Include="WINProVent.resx">
       <DependentUpon>WINProVent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\RDetalleVenta.resx">
+      <DependentUpon>RDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\Reportes\RDetalleVenta.rdlc" />
+    <EmbeddedResource Include="WINReportes\Reportes\RGenerarFactura.rdlc" />
     <EmbeddedResource Include="WINReportes\Reportes\RProducto.rdlc" />
-    <EmbeddedResource Include="WINReportes\Reportes\RVenta.rdlc" />
     <EmbeddedResource Include="WINReportes\RProducto.resx">
       <DependentUpon>RProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,7 +258,9 @@
     <None Include="Properties\DataSources\BL.BLProducto.datasource" />
     <None Include="Properties\DataSources\BL.BLProveedor.datasource" />
     <None Include="Properties\DataSources\BL.RBLDetalleVenta.datasource" />
+    <None Include="Properties\DataSources\BL.RBLGenerarFacturaVenta.datasource" />
     <None Include="Properties\DataSources\BL.RBLProducto.datasource" />
+    <None Include="Properties\DataSources\BL.RBLReporteVentas.datasource" />
     <None Include="Properties\DataSources\CAD.CADDetalleVenta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
