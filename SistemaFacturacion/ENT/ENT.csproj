@@ -48,16 +48,19 @@
     <Compile Include="ENTDetalleCompra.cs" />
     <Compile Include="ENTDetalleVenta.cs" />
     <Compile Include="ENTEstado.cs" />
+
+    <Compile Include="ENTFacturaVenta.cs" />
+
     <Compile Include="ENTKardex.cs" />
+
     <Compile Include="ENTMarca.cs" />
     <Compile Include="ENTModelo.cs" />
     <Compile Include="ENTProducto.cs" />
     <Compile Include="ENTProveedor.cs" />
     <Compile Include="ENTReporteListaVentas.cs" />
-    <Compile Include="ENTReporteVenta.cs" />
-    <Compile Include="ENTReporteVentasPorPeriodo.cs" />
     <Compile Include="ENTVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteVenta.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

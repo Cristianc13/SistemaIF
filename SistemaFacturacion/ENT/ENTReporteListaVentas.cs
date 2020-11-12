@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace ENT
 {
     public class ENTReporteListaVentas
@@ -9,5 +10,6 @@ namespace ENT
         public string cliente { get; set; }
         public string nombreProducto { get; set; }
         public decimal ventasTotales { get; set; }
+        public decimal importe { get; set; }
     }
 }
