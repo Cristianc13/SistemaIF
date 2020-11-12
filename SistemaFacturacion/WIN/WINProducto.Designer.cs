@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINProducto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.BuscarMarbutton = new System.Windows.Forms.Button();
@@ -77,22 +77,22 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.cantcate = new System.Windows.Forms.Label();
+            this.lbcantcate = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.cantmarca = new System.Windows.Forms.Label();
+            this.lbcantmarca = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.cantmodelo = new System.Windows.Forms.Label();
+            this.lbcantmodelo = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.cantestado = new System.Windows.Forms.Label();
+            this.lbcantestado = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -492,31 +492,31 @@
             // 
             this.ProductodataGridView.AllowUserToAddRows = false;
             this.ProductodataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
-            this.ProductodataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            this.ProductodataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ProductodataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProductodataGridView.BackgroundColor = System.Drawing.Color.White;
             this.ProductodataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ProductodataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.ProductodataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductodataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductodataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ProductodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProductodataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductodataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.ProductodataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductodataGridView.EnableHeadersVisualStyles = false;
             this.ProductodataGridView.GridColor = System.Drawing.SystemColors.Control;
@@ -558,7 +558,7 @@
             this.CantidadProduLabel.AutoSize = true;
             this.CantidadProduLabel.BackColor = System.Drawing.Color.Transparent;
             this.CantidadProduLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantidadProduLabel.Location = new System.Drawing.Point(186, 17);
+            this.CantidadProduLabel.Location = new System.Drawing.Point(178, 17);
             this.CantidadProduLabel.Name = "CantidadProduLabel";
             this.CantidadProduLabel.Size = new System.Drawing.Size(29, 31);
             this.CantidadProduLabel.TabIndex = 2;
@@ -569,7 +569,7 @@
             this.TotalProductoslabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TotalProductoslabel.AutoSize = true;
             this.TotalProductoslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalProductoslabel.Location = new System.Drawing.Point(63, 18);
+            this.TotalProductoslabel.Location = new System.Drawing.Point(60, 18);
             this.TotalProductoslabel.Name = "TotalProductoslabel";
             this.TotalProductoslabel.Size = new System.Drawing.Size(134, 29);
             this.TotalProductoslabel.TabIndex = 1;
@@ -584,7 +584,7 @@
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Location = new System.Drawing.Point(12, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(242, 77);
+            this.panel4.Size = new System.Drawing.Size(259, 77);
             this.panel4.TabIndex = 0;
             // 
             // panel8
@@ -596,7 +596,7 @@
             this.panel8.Controls.Add(this.TotalProductoslabel);
             this.panel8.Location = new System.Drawing.Point(6, 6);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(225, 65);
+            this.panel8.Size = new System.Drawing.Size(250, 65);
             this.panel8.TabIndex = 1;
             // 
             // pictureBox1
@@ -614,43 +614,43 @@
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Location = new System.Drawing.Point(277, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(244, 77);
+            this.panel6.Size = new System.Drawing.Size(253, 77);
             this.panel6.TabIndex = 1;
             // 
             // panel9
             // 
             this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Controls.Add(this.cantcate);
+            this.panel9.Controls.Add(this.lbcantcate);
             this.panel9.Controls.Add(this.label13);
             this.panel9.Controls.Add(this.pictureBox2);
             this.panel9.Location = new System.Drawing.Point(6, 6);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(225, 65);
+            this.panel9.Size = new System.Drawing.Size(244, 65);
             this.panel9.TabIndex = 2;
             // 
-            // cantcate
+            // lbcantcate
             // 
-            this.cantcate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cantcate.AutoSize = true;
-            this.cantcate.BackColor = System.Drawing.Color.Transparent;
-            this.cantcate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantcate.Location = new System.Drawing.Point(190, 18);
-            this.cantcate.Name = "cantcate";
-            this.cantcate.Size = new System.Drawing.Size(29, 31);
-            this.cantcate.TabIndex = 3;
-            this.cantcate.Text = "0";
+            this.lbcantcate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbcantcate.AutoSize = true;
+            this.lbcantcate.BackColor = System.Drawing.Color.Transparent;
+            this.lbcantcate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcantcate.Location = new System.Drawing.Point(182, 18);
+            this.lbcantcate.Name = "lbcantcate";
+            this.lbcantcate.Size = new System.Drawing.Size(29, 31);
+            this.lbcantcate.TabIndex = 3;
+            this.lbcantcate.Text = "0";
             // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(59, 18);
+            this.label13.Location = new System.Drawing.Point(55, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(142, 29);
+            this.label13.Size = new System.Drawing.Size(136, 29);
             this.label13.TabIndex = 3;
-            this.label13.Text = "Categorias: ";
+            this.label13.Text = "Categorias:";
             // 
             // pictureBox2
             // 
@@ -667,32 +667,32 @@
             this.panel5.Controls.Add(this.panel10);
             this.panel5.Location = new System.Drawing.Point(548, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(226, 77);
+            this.panel5.Size = new System.Drawing.Size(240, 77);
             this.panel5.TabIndex = 1;
             // 
             // panel10
             // 
             this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
             this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Controls.Add(this.cantmarca);
+            this.panel10.Controls.Add(this.lbcantmarca);
             this.panel10.Controls.Add(this.label14);
             this.panel10.Controls.Add(this.pictureBox3);
             this.panel10.Location = new System.Drawing.Point(5, 6);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(216, 65);
+            this.panel10.Size = new System.Drawing.Size(232, 65);
             this.panel10.TabIndex = 2;
             // 
-            // cantmarca
+            // lbcantmarca
             // 
-            this.cantmarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cantmarca.AutoSize = true;
-            this.cantmarca.BackColor = System.Drawing.Color.Transparent;
-            this.cantmarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantmarca.Location = new System.Drawing.Point(151, 18);
-            this.cantmarca.Name = "cantmarca";
-            this.cantmarca.Size = new System.Drawing.Size(29, 31);
-            this.cantmarca.TabIndex = 4;
-            this.cantmarca.Text = "0";
+            this.lbcantmarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbcantmarca.AutoSize = true;
+            this.lbcantmarca.BackColor = System.Drawing.Color.Transparent;
+            this.lbcantmarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcantmarca.Location = new System.Drawing.Point(152, 19);
+            this.lbcantmarca.Name = "lbcantmarca";
+            this.lbcantmarca.Size = new System.Drawing.Size(29, 31);
+            this.lbcantmarca.TabIndex = 4;
+            this.lbcantmarca.Text = "0";
             // 
             // label14
             // 
@@ -727,7 +727,7 @@
             // 
             this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
             this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel11.Controls.Add(this.cantmodelo);
+            this.panel11.Controls.Add(this.lbcantmodelo);
             this.panel11.Controls.Add(this.label16);
             this.panel11.Controls.Add(this.pictureBox4);
             this.panel11.Location = new System.Drawing.Point(7, 6);
@@ -735,17 +735,17 @@
             this.panel11.Size = new System.Drawing.Size(198, 65);
             this.panel11.TabIndex = 2;
             // 
-            // cantmodelo
+            // lbcantmodelo
             // 
-            this.cantmodelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cantmodelo.AutoSize = true;
-            this.cantmodelo.BackColor = System.Drawing.Color.Transparent;
-            this.cantmodelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantmodelo.Location = new System.Drawing.Point(161, 19);
-            this.cantmodelo.Name = "cantmodelo";
-            this.cantmodelo.Size = new System.Drawing.Size(29, 31);
-            this.cantmodelo.TabIndex = 5;
-            this.cantmodelo.Text = "0";
+            this.lbcantmodelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbcantmodelo.AutoSize = true;
+            this.lbcantmodelo.BackColor = System.Drawing.Color.Transparent;
+            this.lbcantmodelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcantmodelo.Location = new System.Drawing.Point(161, 19);
+            this.lbcantmodelo.Name = "lbcantmodelo";
+            this.lbcantmodelo.Size = new System.Drawing.Size(29, 31);
+            this.lbcantmodelo.TabIndex = 5;
+            this.lbcantmodelo.Text = "0";
             // 
             // label16
             // 
@@ -780,7 +780,7 @@
             // 
             this.panel13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel13.BackgroundImage")));
             this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel13.Controls.Add(this.cantestado);
+            this.panel13.Controls.Add(this.lbcantestado);
             this.panel13.Controls.Add(this.label15);
             this.panel13.Controls.Add(this.pictureBox5);
             this.panel13.Location = new System.Drawing.Point(7, 6);
@@ -788,17 +788,17 @@
             this.panel13.Size = new System.Drawing.Size(192, 65);
             this.panel13.TabIndex = 2;
             // 
-            // cantestado
+            // lbcantestado
             // 
-            this.cantestado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cantestado.AutoSize = true;
-            this.cantestado.BackColor = System.Drawing.Color.Transparent;
-            this.cantestado.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantestado.Location = new System.Drawing.Point(157, 19);
-            this.cantestado.Name = "cantestado";
-            this.cantestado.Size = new System.Drawing.Size(29, 31);
-            this.cantestado.TabIndex = 6;
-            this.cantestado.Text = "0";
+            this.lbcantestado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbcantestado.AutoSize = true;
+            this.lbcantestado.BackColor = System.Drawing.Color.Transparent;
+            this.lbcantestado.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcantestado.Location = new System.Drawing.Point(155, 19);
+            this.lbcantestado.Name = "lbcantestado";
+            this.lbcantestado.Size = new System.Drawing.Size(29, 31);
+            this.lbcantestado.TabIndex = 6;
+            this.lbcantestado.Text = "0";
             // 
             // label15
             // 
@@ -937,13 +937,13 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label cantestado;
+        private System.Windows.Forms.Label lbcantestado;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label cantmodelo;
+        private System.Windows.Forms.Label lbcantmodelo;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label cantcate;
+        private System.Windows.Forms.Label lbcantcate;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label cantmarca;
+        private System.Windows.Forms.Label lbcantmarca;
         private System.Windows.Forms.Label label14;
     }
 }

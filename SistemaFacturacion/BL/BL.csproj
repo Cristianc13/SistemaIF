@@ -48,6 +48,7 @@
     <Compile Include="BLDetalleCompra.cs" />
     <Compile Include="BLDetalleVenta.cs" />
     <Compile Include="BLEstado.cs" />
+    <Compile Include="BLKardex.cs" />
     <Compile Include="BLMarca.cs" />
     <Compile Include="BLModelo.cs" />
     <Compile Include="BLProducto.cs" />
