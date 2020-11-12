@@ -48,6 +48,7 @@
     <Compile Include="ENTDetalleCompra.cs" />
     <Compile Include="ENTDetalleVenta.cs" />
     <Compile Include="ENTEstado.cs" />
+    <Compile Include="ENTKardex.cs" />
     <Compile Include="ENTMarca.cs" />
     <Compile Include="ENTModelo.cs" />
     <Compile Include="ENTProducto.cs" />

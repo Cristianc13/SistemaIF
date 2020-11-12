@@ -38,16 +38,14 @@ namespace BL
             return CProducto.ObtenerPrecio(idProducto);
         }
 
-        public string SelectProductocosto (int idProducto)
+        public string SelectProductocosto(int idProducto)
         {
             return CProducto.ObtenerCosto(idProducto);
         }
 
-
-
-        public void InsertarProducto(ENTProducto EProducto)
+        public int InsertarProducto(ENTProducto EProducto)
         {
-            CProducto.InsertarProducto(EProducto);
+            return CProducto.InsertarProducto(EProducto);
         }
 
         public void EliminarProduto(ENTProducto EProducto)
@@ -78,6 +76,26 @@ namespace BL
         public int CantidadProducto()
         {
             return CProducto.CantidadProducto();
+        }
+
+        public int CantidadCategorias()
+        {
+            return CProducto.CantidadCategorias();
+        }
+
+        public int CantidadMarca()
+        {
+            return CProducto.CantidadMarca();
+        }
+
+        public int CantidadModelo()
+        {
+            return CProducto.CantidadModelo();
+        }
+
+        public int CantidadEstado()
+        {
+            return CProducto.CantidadEstado();
         }
     }
 }
