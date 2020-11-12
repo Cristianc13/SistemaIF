@@ -27,5 +27,12 @@ namespace BL
         {
             return CdetalleCompra.ObtenerIVA(idCompra);
         }
+
+        public void DeleteDetalleCompra(ENTDetalleCompra EdetalleC)
+        {
+            CdetalleCompra.DeleteDetalleCompra(EdetalleC);
+        }
+
+
     }
 }

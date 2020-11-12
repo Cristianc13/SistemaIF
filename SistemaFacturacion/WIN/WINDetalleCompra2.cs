@@ -64,7 +64,7 @@ namespace WIN
             DetalleCompra2GridView1.Columns[8].HeaderText = "Modelo";
             DetalleCompra2GridView1.Columns[9].HeaderText = "Categoria";
             DetalleCompra2GridView1.Columns[10].HeaderText = "Estado";
-           DetalleCompra2GridView1.AllowUserToResizeColumns = false;
+            DetalleCompra2GridView1.AllowUserToResizeColumns = false;
             DetalleCompra2GridView1.AllowUserToResizeRows = false;
             DetalleCompra2GridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             DetalleCompra2GridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
@@ -129,20 +129,20 @@ namespace WIN
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-                EProducto.nombreProducto = txtnombre.Text;
-                EProducto.codigopro = txtcodigo.Text;
-                EProducto.FK_idMarca = IdMarca;
-                EProducto.precioSalida = int.Parse(txtpreciosalida.Text);
+            EProducto.nombreProducto = txtnombre.Text;
+            EProducto.codigopro = txtcodigo.Text;
+            EProducto.FK_idMarca = IdMarca;
+            EProducto.precioSalida = int.Parse(txtpreciosalida.Text);
             EProducto.costo = 0;
             EProducto.stockProducto = 0;
-                EProducto.FK_idModelo = IdModelo;
-                EProducto.FK_idCategoria = IdCategoria;
-                EProducto.FK_idEstado = IdEstado;
-                EProducto.descripcion = txtdescripcion.Text;
-                EProducto.observacion = txtobservacion.Text;
-                BProducto.InsertarProducto(EProducto);
-                Limpiar();
-                LlenarGrid();
+            EProducto.FK_idModelo = IdModelo;
+            EProducto.FK_idCategoria = IdCategoria;
+            EProducto.FK_idEstado = IdEstado;
+            EProducto.descripcion = txtdescripcion.Text;
+            EProducto.observacion = txtobservacion.Text;
+            BProducto.InsertarProducto(EProducto);
+            Limpiar();
+            LlenarGrid();
             HabilitarBotones(false, true);
         }
 
@@ -193,6 +193,7 @@ namespace WIN
                 if (cmbCategoria.SelectedValue != null)
                 {
                     IdCategoria = (int)cmbCategoria.SelectedValue;
+                    txtcodigo.Text = BCategoria.ObtenercodCat(IdCategoria) + "-";
                 }
             }
             catch (Exception)
@@ -223,18 +224,16 @@ namespace WIN
             if (DetalleCompra2GridView1.Rows.Count == 0) return;
             //HabilitarBotones(true, false);
             IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
-
+            txtcodigo.Text = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
             txtnombre.Text = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
             txtdescripcion.Text = DetalleCompra2GridView1.CurrentRow.Cells[3].Value.ToString();
-
-            txtpreciosalida.Text = DetalleCompra2GridView1.CurrentRow.Cells[4].Value.ToString();
-
-            txtobservacion.Text = DetalleCompra2GridView1.CurrentRow.Cells[5].Value.ToString();
-            cmbMarca.Text = DetalleCompra2GridView1.CurrentRow.Cells[6].Value.ToString();
-            cmbModelo.Text = DetalleCompra2GridView1.CurrentRow.Cells[7].Value.ToString();
-            cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[8].Value.ToString();
-            txtcodigo.Text = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
-            cmbEstado.Text = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
+            //4 fecha
+            txtpreciosalida.Text = DetalleCompra2GridView1.CurrentRow.Cells[5].Value.ToString();
+            txtobservacion.Text = DetalleCompra2GridView1.CurrentRow.Cells[6].Value.ToString();
+            cmbMarca.Text = DetalleCompra2GridView1.CurrentRow.Cells[7].Value.ToString();
+            cmbModelo.Text = DetalleCompra2GridView1.CurrentRow.Cells[8].Value.ToString();
+            cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
+            cmbEstado.Text = DetalleCompra2GridView1.CurrentRow.Cells[10].Value.ToString();
 
             //HabilitarBotones(true, false);
         }

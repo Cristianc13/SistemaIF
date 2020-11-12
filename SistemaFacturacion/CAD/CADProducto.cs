@@ -92,7 +92,7 @@ namespace CAD
             return i;
         }
 
-        public void InsertarProducto(ENTProducto EProducto)
+        public int InsertarProducto(ENTProducto EProducto)
         {
             SqlCommand cmd = new SqlCommand("InsertProducto", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
@@ -107,8 +107,10 @@ namespace CAD
             cmd.Parameters.AddWithValue("@FK_idModelo", EProducto.FK_idModelo);
             cmd.Parameters.AddWithValue("@FK_idCategoria", EProducto.FK_idCategoria);
             cmd.Parameters.AddWithValue("@FK_idEstado", EProducto.FK_idEstado);
-            cmd.ExecuteNonQuery();
+            int g = (int)cmd.ExecuteScalar();
+            //  cmd.ExecuteNonQuery();
             CerrarConexion();
+            return g;
         }
 
         public void EliminarProduto(ENTProducto EProducto)
@@ -180,6 +182,46 @@ namespace CAD
         {
             int i;
             SqlCommand cmd = new SqlCommand("ContarProductos", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            i = (int)cmd.ExecuteScalar();
+            CerrarConexion();
+            return i;
+        }
+
+        public int CantidadCategorias()
+        {
+            int i;
+            SqlCommand cmd = new SqlCommand("ContarCategorias", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            i = (int)cmd.ExecuteScalar();
+            CerrarConexion();
+            return i;
+        }
+
+        public int CantidadMarca()
+        {
+            int i;
+            SqlCommand cmd = new SqlCommand("ContarMarcas", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            i = (int)cmd.ExecuteScalar();
+            CerrarConexion();
+            return i;
+        }
+
+        public int CantidadModelo()
+        {
+            int i;
+            SqlCommand cmd = new SqlCommand("ContarModelos", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            i = (int)cmd.ExecuteScalar();
+            CerrarConexion();
+            return i;
+        }
+
+        public int CantidadEstado()
+        {
+            int i;
+            SqlCommand cmd = new SqlCommand("ContarEstados", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             i = (int)cmd.ExecuteScalar();
             CerrarConexion();

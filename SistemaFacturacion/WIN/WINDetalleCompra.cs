@@ -18,6 +18,8 @@ namespace WIN
         {
             InitializeComponent();
         }
+       public bool bloqueo;
+        public int fila = 0;
 
         private decimal IVA = 0;
         private int idCompra = 0;
@@ -30,7 +32,11 @@ namespace WIN
         private ENTProducto Eproducto = new ENTProducto();
         private BLProducto BProducto = new BLProducto();
         private BLDetalleCompra Bldetallec = new BLDetalleCompra();
+
+        private int idetalleCompra = 0;
+
         private List<ENTDetalleCompra> EDetalleC = new List<ENTDetalleCompra>();
+        private ENTDetalleCompra EdetalleCompra = new ENTDetalleCompra();
 
         private void LlenaComboProducto()
         {
@@ -70,6 +76,7 @@ namespace WIN
             txtTotal.Text = total.ToString();
         }
 
+        #region Limpiar
         private void Limpiar()
         {
             cmbNFactura.Text = string.Empty;
@@ -88,10 +95,40 @@ namespace WIN
             txtcantidad.Text = string.Empty;
             txtcosto.Text = string.Empty;
             errorProvider1.Clear();
+          
 
             bmbproducto.SelectedIndex = -1;
             bmbproducto.Focus();
         }
+
+        private void limpiar4()
+        {
+            bmbproducto.Text = string.Empty;
+            txtcantidad.Text = string.Empty;
+            txtcosto.Text = string.Empty;
+            errorProvider1.Clear();
+            txtsubtotal.Text = string.Empty;
+            txtIVA.Text = string.Empty;
+            txtTotal.Text = string.Empty;
+            cmbNFactura.Text = string.Empty;
+
+            bmbproducto.SelectedIndex = -1;
+            
+            cmbNFactura.SelectedIndex = -1;
+           
+            cmbNFactura.Focus();
+        }
+        private void limpiar3()
+        {
+            bmbproducto.Text = string.Empty;
+            txtcantidad.Text = string.Empty;
+            txtcosto.Text = string.Empty;
+            errorProvider1.Clear();
+         
+            
+            bmbproducto.Focus();
+        } 
+        #endregion
 
         public void HabilitarGuardar()
         {
@@ -107,6 +144,8 @@ namespace WIN
 
         public void validaciones()
         {
+
+
         }
 
         private void FormatoGrid()
@@ -127,6 +166,7 @@ namespace WIN
         {
             btnguardar.Enabled = p1;
             btnactualizar.Enabled = p1;
+            btnEliminar.Enabled = p1;
 
             //Cancelarbutton.Enabled = p1;
         }
@@ -181,50 +221,65 @@ namespace WIN
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (bmbproducto.SelectedIndex == -1)
+            
+            bloqueo = false;
+            if (bloqueo == false)
             {
-                errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
-                return;
-            }
-            errorProvider1.Clear();
 
-            if (cmbNFactura.SelectedIndex == -1)
+                if (bmbproducto.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (cmbNFactura.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(cmbNFactura, "Debe ingresar un N° de Factura");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (txtcantidad.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (txtcosto.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txtcosto, "Debe ingresar un Costo");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                ENTDetalleCompra miDetalle = new ENTDetalleCompra();
+                miDetalle.FK_idCompra = idCompra;
+                miDetalle.FK_idProducto = idProducto;
+                miDetalle.Producto = bmbproducto.Text;
+                miDetalle.cantidadProducto = Convert.ToDecimal(txtcantidad.Text);
+                miDetalle.costo = Convert.ToDecimal(txtcosto.Text);
+
+                miDetalle.importe = miDetalle.cantidadProducto * miDetalle.costo;
+                EDetalleC.Add(miDetalle);
+                DetalleCompraGridView1.DataSource = null;
+                DetalleCompraGridView1.DataSource = EDetalleC;
+                FormatoGrid();
+                CalcularTotal();
+                HabilitarBotones(true, false);
+                limpiar2();
+                cmbNFactura.Enabled = false;
+
+            }
+            else
             {
-                errorProvider1.SetError(cmbNFactura, "Debe ingresar un N° de Factura");
-                return;
+                cmbNFactura.Enabled = true;
+                bloqueo = true;
             }
-            errorProvider1.Clear();
-
-            if (txtcantidad.Text == string.Empty)
-            {
-                errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad");
-                return;
-            }
-            errorProvider1.Clear();
-
-            if (txtcosto.Text == string.Empty)
-            {
-                errorProvider1.SetError(txtcosto, "Debe ingresar un Costo");
-                return;
-            }
-            errorProvider1.Clear();
-
-            ENTDetalleCompra miDetalle = new ENTDetalleCompra();
-            miDetalle.FK_idCompra = idCompra;
-            miDetalle.FK_idProducto = idProducto;
-            miDetalle.Producto = bmbproducto.Text;
-            miDetalle.cantidadProducto = Convert.ToDecimal(txtcantidad.Text);
-            miDetalle.costo = Convert.ToDecimal(txtcosto.Text);
-
-            miDetalle.importe = miDetalle.cantidadProducto * miDetalle.costo;
-            EDetalleC.Add(miDetalle);
-            DetalleCompraGridView1.DataSource = null;
-            DetalleCompraGridView1.DataSource = EDetalleC;
-            FormatoGrid();
-            CalcularTotal();
-            HabilitarBotones(true, false);
-            limpiar2();
         }
+        
+        
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -235,7 +290,10 @@ namespace WIN
             MessageBox.Show("Venta realizada con exito");
             DetalleCompraGridView1.DataSource = null;
             HabilitarBotones(false, true);
-            Limpiar();
+           limpiar4();
+            cmbNFactura.Enabled = true;
+            //btnguardar.Enabled = true;
+            
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
@@ -245,15 +303,15 @@ namespace WIN
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            cmbNFactura.Enabled = true;
         }
 
         private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex < 0 || e.ColumnIndex != DetalleCompraGridView1.Columns["cOpciones"].Index) return;
+            //NUMERO DE FILA EN EL DATAGRIDVIEW
+            
 
-            //DetalleCompraGridView1.Rows.RemoveAt(e.RowIndex);
-
-            //HabilitarBotones(false, true);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -265,10 +323,12 @@ namespace WIN
 
         private void DetalleCompraGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            fila = DetalleCompraGridView1.CurrentRow.Index;
+
             if (DetalleCompraGridView1.Rows.Count == 0) return;
             HabilitarBotones(true, false);
 
-            cmbNFactura.Text = DetalleCompraGridView1.CurrentRow.Cells[0].Value.ToString();
+            //cmbNFactura.Text = DetalleCompraGridView1.CurrentRow.Cells[0].Value.ToString();
             bmbproducto.Text = DetalleCompraGridView1.CurrentRow.Cells[2].Value.ToString();
             txtcantidad.Text = DetalleCompraGridView1.CurrentRow.Cells[4].Value.ToString();
             txtcosto.Text = DetalleCompraGridView1.CurrentRow.Cells[5].Value.ToString();
@@ -299,6 +359,40 @@ namespace WIN
             {
                 e.Handled = true;
             }
+        }
+
+        private void Comprabutton_Click(object sender, EventArgs e)
+        {
+            WINCompra compra = new WINCompra();
+            compra.ShowDialog();
+            LlenaComboFractura();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //RECORREMOS LOS ELEMENTOS GUARDADOS EN LA LISTA
+            for (int i = 0; i < EDetalleC.Count; i++)
+            {
+                //COMPROBAMOS QUE LA FILA SELECCIONADA ES IGUAL AL DE LA LISTA
+                if (i == fila)
+                {
+                    EDetalleC.RemoveAt(fila);
+                }
+
+                //ACTUALIZAMOS LA LISTA Y EL DATAGRIDVIEW
+                DetalleCompraGridView1.DataSource = null;
+                DetalleCompraGridView1.DataSource = EDetalleC;
+                FormatoGrid();
+                CalcularTotal();
+                limpiar3();
+            }
+
+
+        }
+
+        private void DetalleCompraGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

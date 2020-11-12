@@ -49,6 +49,7 @@
     <Compile Include="CADDetalleCompra.cs" />
     <Compile Include="CADDetalleVenta.cs" />
     <Compile Include="CADEstado.cs" />
+    <Compile Include="CADKardex.cs" />
     <Compile Include="CADMarca.cs" />
     <Compile Include="CADModelo.cs" />
     <Compile Include="CADProducto.cs" />

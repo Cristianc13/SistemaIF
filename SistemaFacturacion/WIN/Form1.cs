@@ -93,12 +93,14 @@ namespace WIN
 
         private void btncompra_Click(object sender, EventArgs e)
         {
+            lbltitulo.Text = "Panel de Compra";
             SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
+            AbrirFormulario(new WINDetalleCompra());
         }
 
         private void btnventa_Click(object sender, EventArgs e)
         {
-            lbltitulo.Text = "Panel de Producto";
+            lbltitulo.Text = "Panel de Venta";
             //Venta
             SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
             AbrirFormulario(new WINDetalleVenta());

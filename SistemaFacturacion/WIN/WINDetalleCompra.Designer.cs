@@ -55,8 +55,10 @@
             this.txtIVA = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Comprabutton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCompraGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -213,11 +215,12 @@
             this.DetalleCompraGridView1.Size = new System.Drawing.Size(1140, 287);
             this.DetalleCompraGridView1.TabIndex = 15;
             this.DetalleCompraGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCompraGridView1_CellClick);
+            this.DetalleCompraGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCompraGridView1_CellContentClick);
             this.DetalleCompraGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCompraGridView1_CellDoubleClick);
             // 
             // btnguardar
             // 
-            this.btnguardar.Location = new System.Drawing.Point(949, 129);
+            this.btnguardar.Location = new System.Drawing.Point(969, 127);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(109, 33);
             this.btnguardar.TabIndex = 14;
@@ -288,7 +291,7 @@
             this.txtsubtotal.Location = new System.Drawing.Point(975, 7);
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.ReadOnly = true;
-            this.txtsubtotal.Size = new System.Drawing.Size(74, 26);
+            this.txtsubtotal.Size = new System.Drawing.Size(103, 26);
             this.txtsubtotal.TabIndex = 19;
             // 
             // txtIVA
@@ -297,7 +300,7 @@
             this.txtIVA.Location = new System.Drawing.Point(975, 45);
             this.txtIVA.Name = "txtIVA";
             this.txtIVA.ReadOnly = true;
-            this.txtIVA.Size = new System.Drawing.Size(74, 26);
+            this.txtIVA.Size = new System.Drawing.Size(103, 26);
             this.txtIVA.TabIndex = 20;
             // 
             // txtTotal
@@ -306,13 +309,15 @@
             this.txtTotal.Location = new System.Drawing.Point(975, 79);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(74, 26);
+            this.txtTotal.Size = new System.Drawing.Size(103, 26);
             this.txtTotal.TabIndex = 21;
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Controls.Add(this.Comprabutton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbNFactura);
             this.panel1.Controls.Add(this.label2);
@@ -330,6 +335,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1140, 178);
             this.panel1.TabIndex = 22;
+            // 
+            // Comprabutton
+            // 
+            this.Comprabutton.Location = new System.Drawing.Point(457, 14);
+            this.Comprabutton.Name = "Comprabutton";
+            this.Comprabutton.Size = new System.Drawing.Size(33, 28);
+            this.Comprabutton.TabIndex = 14;
+            this.Comprabutton.Text = "+";
+            this.Comprabutton.UseVisualStyleBackColor = true;
+            this.Comprabutton.Click += new System.EventHandler(this.Comprabutton_Click);
             // 
             // panel2
             // 
@@ -359,6 +374,16 @@
             this.panel3.Size = new System.Drawing.Size(1140, 287);
             this.panel3.TabIndex = 24;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(532, 129);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(109, 33);
+            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // WINDetalleCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +392,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WINDetalleCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compra";
@@ -408,5 +434,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button Comprabutton;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

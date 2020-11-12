@@ -18,12 +18,14 @@ namespace WIN
         }
 
         private int IdCategoria, IdMarca, IdModelo, IdEstado, IdProducto;
+        private ENTKardex kardex = new ENTKardex();
         private BLMarca BMarca = new BLMarca();
         private BLModelo BModelo = new BLModelo();
         public BLCategoria BCategoria = new BLCategoria();
         private BLEstado BEstado = new BLEstado();
         private BLProducto BProducto = new BLProducto();
         private ENTProducto EProducto = new ENTProducto();
+        private BLKardex BKardex = new BLKardex();
 
         private void WINProducto_Load(object sender, EventArgs e)
         {
@@ -35,7 +37,7 @@ namespace WIN
             LlenarCategoria();
             LlenarModelo();
             Limpiar();
-            CantidadProducto();
+            Tarjetas();
         }
 
         public void Limpiar()
@@ -184,11 +186,22 @@ namespace WIN
                 EProducto.FK_idEstado = IdEstado;
                 EProducto.descripcion = DescripciontextBox.Text;
                 EProducto.observacion = ObservacionestextBox.Text;
-                BProducto.InsertarProducto(EProducto);
+
+                int idP = BProducto.InsertarProducto(EProducto);
+                kardex.fecha = DateTime.Now;
+                kardex.concepto = "Inventario Inicial";
+                kardex.entrada = EProducto.stockProducto;
+                kardex.salida = 0;
+                kardex.existencia = 0;//Momento
+                kardex.costeunitario = EProducto.costo;
+                kardex.costepromedio = 0;
+                kardex.FK_idProducto = idP;
+                BKardex.InsertKardex(kardex);
+
                 Limpiar();
                 LlenarGrid();
                 HabilitarBotones(false, true);
-                CantidadProducto();
+                Tarjetas();
             }
             catch (SqlException ex)
             {
@@ -230,7 +243,7 @@ namespace WIN
             HabilitarBotones(false, true);
             Limpiar();
             LlenarGrid();
-            CantidadProducto();
+            Tarjetas();
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
@@ -283,6 +296,7 @@ namespace WIN
             WINCategoria WCat = new WINCategoria();
             WCat.ShowDialog();
             LlenarCategoria();
+            Tarjetas();
         }
 
         private void BuscartextBox_KeyUp(object sender, KeyEventArgs e)
@@ -331,6 +345,7 @@ namespace WIN
             WINModelo WMod = new WINModelo();
             WMod.ShowDialog();
             LlenarModelo();
+            Tarjetas();
         }
 
         private void BuscarMarbutton_Click(object sender, EventArgs e)
@@ -338,6 +353,7 @@ namespace WIN
             WINMarca WMar = new WINMarca();
             WMar.ShowDialog();
             LlenarMarca();
+            Tarjetas();
         }
 
         private void Exportarbutton_Click(object sender, EventArgs e)
@@ -447,13 +463,13 @@ namespace WIN
             return true;
         }
 
-        public void CantidadProducto()
+        public void Tarjetas()
         {
             CantidadProduLabel.Text = BProducto.CantidadProducto().ToString();
-        }
-
-        public void CantCategoria()
-        {
+            lbcantcate.Text = BProducto.CantidadCategorias().ToString();
+            lbcantmarca.Text = BProducto.CantidadMarca().ToString();
+            lbcantmodelo.Text = BProducto.CantidadModelo().ToString();
+            lbcantestado.Text = BProducto.CantidadEstado().ToString();
         }
 
         public void ExportarDatos()
