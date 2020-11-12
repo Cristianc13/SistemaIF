@@ -33,9 +33,13 @@ namespace CAD
             CerrarConexion();
         }
         
-        public void DeleteDetalleCompra()
+        public void DeleteDetalleCompra(ENTDetalleCompra edetallec)
         {
-
+            SqlCommand cmd = new SqlCommand("DeleteDetalleCompra", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@iddetalleCompra", edetallec.idDetallecompra);
+            cmd.ExecuteNonQuery();
+            CerrarConexion();
         }
 
         public void UpdateDetalleCompra()
