@@ -14,5 +14,6 @@ namespace ENT
         public string descripcion { get; set; }
         public decimal IVA { get; set; }
         public int FK_idProveedor { get; set; }
+        public bool realizada { get; set; }
     }
 }

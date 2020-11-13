@@ -33,6 +33,10 @@ namespace BL
             CdetalleCompra.DeleteDetalleCompra(EdetalleC);
         }
 
+        public void UpdateDetalleCompra(ENTCompra Ecompra)
+        {
+            CdetalleCompra.UpdateDetalleCompra(Ecompra);
+        }
 
     }
 }

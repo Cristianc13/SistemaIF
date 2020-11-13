@@ -13,6 +13,7 @@ namespace CAD
     {
         //private ENTDetalleCompra EdetalleC = new ENTDetalleCompra();
         private DataTable tabla = new DataTable();
+        
 
         public DataTable MostrarDetalleCompra()
         {
@@ -42,9 +43,14 @@ namespace CAD
             CerrarConexion();
         }
 
-        public void UpdateDetalleCompra()
+        public void UpdateDetalleCompra(ENTCompra Ecompra)
         {
-
+            SqlCommand cmd = new SqlCommand("UpdateCompraRealizada", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCompra", Ecompra.idCompra);
+            cmd.Parameters.AddWithValue("@realizada", Ecompra.realizada);
+            cmd.ExecuteNonQuery();
+            CerrarConexion();
         }
 
         public string ObtenerIVA(int idCompra)
@@ -59,5 +65,6 @@ namespace CAD
             CerrarConexion();
             return i;
         }
+
     }
 }

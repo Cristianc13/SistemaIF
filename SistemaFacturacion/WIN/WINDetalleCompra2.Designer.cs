@@ -126,6 +126,7 @@
             this.txtpreciosalida.Name = "txtpreciosalida";
             this.txtpreciosalida.Size = new System.Drawing.Size(186, 26);
             this.txtpreciosalida.TabIndex = 4;
+            this.txtpreciosalida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpreciosalida_KeyPress);
             // 
             // label4
             // 
@@ -158,6 +159,7 @@
             this.cmbMarca.Size = new System.Drawing.Size(236, 28);
             this.cmbMarca.TabIndex = 5;
             this.cmbMarca.SelectedIndexChanged += new System.EventHandler(this.cmbMarca_SelectedIndexChanged);
+            this.cmbMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMarca_KeyPress);
             // 
             // cmbModelo
             // 
@@ -168,6 +170,7 @@
             this.cmbModelo.Size = new System.Drawing.Size(236, 28);
             this.cmbModelo.TabIndex = 6;
             this.cmbModelo.SelectedIndexChanged += new System.EventHandler(this.cmbModelo_SelectedIndexChanged);
+            this.cmbModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMarca_KeyPress);
             // 
             // label6
             // 
@@ -189,6 +192,7 @@
             this.cmbCategoria.Size = new System.Drawing.Size(236, 28);
             this.cmbCategoria.TabIndex = 7;
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
+            this.cmbCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMarca_KeyPress);
             // 
             // label7
             // 
@@ -210,6 +214,7 @@
             this.cmbEstado.Size = new System.Drawing.Size(236, 28);
             this.cmbEstado.TabIndex = 8;
             this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMarca_KeyPress);
             // 
             // label8
             // 

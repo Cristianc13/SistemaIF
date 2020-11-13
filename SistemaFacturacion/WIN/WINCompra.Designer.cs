@@ -108,6 +108,7 @@
             this.ProveedorcomboBox.Size = new System.Drawing.Size(231, 28);
             this.ProveedorcomboBox.TabIndex = 18;
             this.ProveedorcomboBox.SelectedIndexChanged += new System.EventHandler(this.ProveedorcomboBox_SelectedIndexChanged);
+            this.ProveedorcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProveedorcomboBox_KeyPress);
             // 
             // label2
             // 
