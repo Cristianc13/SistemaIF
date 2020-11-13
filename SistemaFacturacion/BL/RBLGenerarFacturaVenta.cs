@@ -19,16 +19,20 @@ namespace BL
             var resultado = reporte.GenerarFacturaVenta(i);
             EDV = new List<ENTFacturaVenta>();
 
-            foreach (DataRow fila in resultado.Rows)
+            foreach (System.Data.DataRow fila in resultado.Rows)
             {
                 var DetalleFactura = new ENTFacturaVenta()
                 {
-                    descripcion = fila[1].ToString(),
-                    cantidad = Convert.ToDecimal(fila[2].ToString()),
-                    precioUnitario = Convert.ToDecimal(fila[3].ToString()),
-                    importe = Convert.ToDecimal(fila[4].ToString()),
+                    factura = Convert.ToInt32(fila[0]),
+                    cliente = fila[1].ToString(),
+                    descripcion = fila[2].ToString(),
+                    cantidad = Convert.ToDecimal(fila[3].ToString()),
+                    precioUnitario = Convert.ToDecimal(fila[4].ToString()),
+                    importe = Convert.ToDecimal(fila[5].ToString()),
+
+                    
                 };
-                TotalFactura += Convert.ToDecimal(fila[4]);
+                TotalFactura += Convert.ToDecimal(fila[5]);
 
                 EDV.Add(DetalleFactura);
             }

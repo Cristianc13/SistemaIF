@@ -13,8 +13,8 @@ namespace ENT
         public string descripcion { get; set; }
         public decimal cantidad { get; set; }
         public decimal  precioUnitario{ get; set; }
-        public decimal importe{ get; set; }
-        
+        public decimal importe { get; set; }
+        public decimal TotalFactura { get; set; }
 
     }
 }

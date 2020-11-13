@@ -15,7 +15,6 @@ namespace BL
 
         public List<ENTReporteListaVentas> listaVentas { get; set; }
         //public List<ENTReporteVentasPorPeriodo> listaVentasPeriodo { get; set; }
-        public decimal totalesventas { get; set; }
 
         //Metodo
         public void CrearReporteVenta(DateTime finicio, DateTime ffinal)
@@ -41,9 +40,6 @@ namespace BL
                 };
                 listaVentas.Add(salesModel);
 
-                //calculate total net sales
-
-                totalesventas += Convert.ToDecimal(rows[4]);
             }
         }
     }
