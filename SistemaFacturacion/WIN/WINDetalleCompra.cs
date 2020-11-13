@@ -283,13 +283,21 @@ namespace WIN
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            
             foreach (ENTDetalleCompra miDetalle in EDetalleC)
             {
                 Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
+
             }
-            MessageBox.Show("Venta realizada con exito");
+
+            Ecompra.idCompra = idCompra;
+            Ecompra.realizada = false;
+            Bldetallec.UpdateDetalleCompra(Ecompra);
+            MessageBox.Show("Compra realizada con exito");
             DetalleCompraGridView1.DataSource = null;
+            EDetalleC.Clear();
             HabilitarBotones(false, true);
+            LlenaComboFractura();
            limpiar4();
             cmbNFactura.Enabled = true;
             //btnguardar.Enabled = true;
@@ -393,6 +401,42 @@ namespace WIN
         private void DetalleCompraGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void cmbNFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+              if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void bmbproducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
