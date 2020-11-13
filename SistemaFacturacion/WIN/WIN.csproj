@@ -178,6 +178,12 @@
     <Compile Include="WINReportes\RProducto.Designer.cs">
       <DependentUpon>RProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINReportes\RReporteVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RReporteVenta.Designer.cs">
+      <DependentUpon>RReporteVenta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +250,9 @@
     <EmbeddedResource Include="WINReportes\Reportes\RProducto.rdlc" />
     <EmbeddedResource Include="WINReportes\RProducto.resx">
       <DependentUpon>RProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\RReporteVenta.resx">
+      <DependentUpon>RReporteVenta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.BLAdministrador.datasource" />

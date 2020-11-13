@@ -245,6 +245,7 @@ namespace WIN
             TelefonotextBox.Text = "";
             HabilitarBotones(false, true);
             Limpiar();
+            EnviarID();
             //this.Dispose(false);
         }
 
@@ -377,6 +378,14 @@ namespace WIN
             {
                 e.Handled = true;
             }
+        }
+
+        public void EnviarID()
+        {
+            WINReportes.RReporteVenta GenerarFactura = new WINReportes.RReporteVenta();
+            GenerarFactura.Factura = idventa;
+            GenerarFactura.ShowDialog();
+            
         }
     }
 }
