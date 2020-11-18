@@ -5,7 +5,6 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using BL;
-
 using ENT;
 
 namespace WIN
@@ -38,6 +37,21 @@ namespace WIN
             LlenarModelo();
             Limpiar();
             Tarjetas();
+            IniciarTextbox();
+        }
+
+        public void IniciarTextbox()
+        {
+            NombretextBox.Visible = true;
+            CodigotextBox.Visible = true;
+            StocktextBox.Visible = true;
+            CostotextBox.Visible = true;
+            PrecioSalidatextBox.Visible = true;
+            DescripciontextBox.Visible = true;
+            ObservacionestextBox.Visible = true;
+            BuscartextBox.Visible = true;
+            Actualizarbutton.Visible = true;
+            Eliminarbutton.Visible = true;
         }
 
         public void Limpiar()
@@ -70,7 +84,7 @@ namespace WIN
 
         public void FormatoGrid()
         {
-            ProductodataGridView.Columns[0].Visible = false;//idProducto
+            ProductodataGridView.Columns[0].Visible = false;
             ProductodataGridView.Columns[1].HeaderText = "Codigo";
             ProductodataGridView.Columns[2].HeaderText = "Producto";
             ProductodataGridView.Columns[3].HeaderText = "Descripcion";
