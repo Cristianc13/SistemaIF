@@ -41,7 +41,6 @@ namespace CAD
             cmd.Parameters.AddWithValue("@FK_idVenta", idventa);
             cmd.ExecuteNonQuery();
             CerrarConexion();
-
         }
 
         /*=====================================================================================================*/
@@ -56,6 +55,7 @@ namespace CAD
             var table = new DataTable();
             table.Load(reader);
             reader.Dispose();
+            CerrarConexion();
             return table;
         }
 

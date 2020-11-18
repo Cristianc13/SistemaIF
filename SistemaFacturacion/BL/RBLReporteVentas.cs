@@ -10,7 +10,7 @@ namespace BL
 {
     public class RBLReporteVentas
     {
-        private  ReporteVenta ENTDV = new ReporteVenta();
+        private ReporteVenta ENTDV = new ReporteVenta();
         public decimal totalNetSales { get; private set; }
 
         public List<ENTReporteListaVentas> listaVentas { get; set; }
@@ -39,7 +39,6 @@ namespace BL
                     ventasTotales = Convert.ToDecimal(rows[4])
                 };
                 listaVentas.Add(salesModel);
-
             }
         }
     }
