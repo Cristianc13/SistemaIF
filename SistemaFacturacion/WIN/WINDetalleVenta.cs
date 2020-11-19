@@ -19,7 +19,6 @@ namespace WIN
         private decimal costo;
         private int idCl = 0;
         public int idventa;
-        private int fila;
 
         private List<ENTVenta> Eventa = new List<ENTVenta>();
         private List<ENTDetalleVenta> EDventa = new List<ENTDetalleVenta>();
@@ -193,7 +192,7 @@ namespace WIN
             decimal total = 0;
             foreach (DataGridViewRow dr in DVentadataGridView.Rows)
             {
-                decimal importe = decimal.Parse(dr.Cells[5].Value.ToString());
+                decimal importe = decimal.Parse(dr.Cells[4].Value.ToString());
                 total += importe;
             }
             ImportetextBox.Text = total.ToString();
@@ -386,6 +385,11 @@ namespace WIN
             GenerarFactura.Factura = idventa;
             GenerarFactura.ShowDialog();
             
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

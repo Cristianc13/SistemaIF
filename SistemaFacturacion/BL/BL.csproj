@@ -58,6 +58,7 @@
     <Compile Include="RBLGenerarFacturaVenta.cs" />
     <Compile Include="RBLProducto.cs" />
     <Compile Include="RBLReporteVentas.cs" />
+    <Compile Include="RBLVentasCliente.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CAD\CAD.csproj">

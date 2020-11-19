@@ -60,5 +60,10 @@ namespace WIN.WINReportes
             var toDate = DateTime.Now;
             Reporte(fromDate, toDate);
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
     }
 }

@@ -71,5 +71,18 @@ namespace CAD
             return i;
         }
 
+        /*===============================Reporte=============================================*/
+
+        public DataTable GenerarVentasCliente(int idCliente)
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("GenerarReporteVentaClientes", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCliente", idCliente);
+            var reader = cmd.ExecuteReader();
+            tabla.Load(reader);
+            CerrarConexion();
+            return tabla;
+        }
     }
 }
