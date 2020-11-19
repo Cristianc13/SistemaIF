@@ -190,6 +190,12 @@
     <Compile Include="WINReportes\RReporteVenta.Designer.cs">
       <DependentUpon>RReporteVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINReportes\RVentasCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RVentasCliente.Designer.cs">
+      <DependentUpon>RVentasCliente.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +261,7 @@
       <DependentUpon>RDetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\Reportes\RDetalleVenta.rdlc" />
+    <EmbeddedResource Include="WINReportes\Reportes\ReporteVentasCliente1.rdlc" />
     <EmbeddedResource Include="WINReportes\Reportes\RGenerarFactura.rdlc" />
     <EmbeddedResource Include="WINReportes\Reportes\RProducto.rdlc" />
     <EmbeddedResource Include="WINReportes\RProducto.resx">
@@ -262,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\RReporteVenta.resx">
       <DependentUpon>RReporteVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\RVentasCliente.resx">
+      <DependentUpon>RVentasCliente.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.BLAdministrador.datasource" />
@@ -279,6 +289,7 @@
     <None Include="Properties\DataSources\BL.RBLGenerarFacturaVenta.datasource" />
     <None Include="Properties\DataSources\BL.RBLProducto.datasource" />
     <None Include="Properties\DataSources\BL.RBLReporteVentas.datasource" />
+    <None Include="Properties\DataSources\BL.RBLVentasCliente.datasource" />
     <None Include="Properties\DataSources\CAD.CADDetalleVenta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -29,8 +29,7 @@ namespace BL
                     cantidad = Convert.ToDecimal(fila[3].ToString()),
                     precioUnitario = Convert.ToDecimal(fila[4].ToString()),
                     importe = Convert.ToDecimal(fila[5].ToString()),
-
-                    
+                     
                 };
                 TotalFactura += Convert.ToDecimal(fila[5]);
 
