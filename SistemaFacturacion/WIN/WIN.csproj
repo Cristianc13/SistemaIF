@@ -82,6 +82,7 @@
     <Compile Include="Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="Recursos\DatagridviewDiseño.cs" />
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>

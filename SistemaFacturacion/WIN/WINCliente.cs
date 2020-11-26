@@ -117,7 +117,6 @@ namespace WIN
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Celda Vacia");
             }
         }
@@ -139,6 +138,8 @@ namespace WIN
             ClienteDataGridView.Columns[1].HeaderText = "Nombre";
             ClienteDataGridView.Columns[2].HeaderText = "Apellido";
             ClienteDataGridView.Columns[3].HeaderText = "Telefono";
+
+            WIN.Recursos.DatagridviewDiseño.DiseñoDGV(ref ClienteDataGridView);
         }
 
         //Limpiar Cajas
