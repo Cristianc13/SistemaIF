@@ -57,6 +57,7 @@ namespace WIN
 
             DVentadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             DVentadataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            Recursos.DatagridviewDiseño.DiseñoDGV(ref DVentadataGridView);
 
             //DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             //btn.Name = "Eliminar";
@@ -384,12 +385,10 @@ namespace WIN
             WINReportes.RReporteVenta GenerarFactura = new WINReportes.RReporteVenta();
             GenerarFactura.Factura = idventa;
             GenerarFactura.ShowDialog();
-            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

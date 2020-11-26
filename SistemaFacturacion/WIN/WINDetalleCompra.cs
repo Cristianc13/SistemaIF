@@ -18,7 +18,8 @@ namespace WIN
         {
             InitializeComponent();
         }
-       public bool bloqueo;
+
+        public bool bloqueo;
         public int fila = 0;
 
         private decimal IVA = 0;
@@ -33,7 +34,7 @@ namespace WIN
         private BLProducto BProducto = new BLProducto();
         private BLDetalleCompra Bldetallec = new BLDetalleCompra();
 
-        private int idetalleCompra = 0;
+        //   private int idetalleCompra = 0;
 
         private List<ENTDetalleCompra> EDetalleC = new List<ENTDetalleCompra>();
         private ENTDetalleCompra EdetalleCompra = new ENTDetalleCompra();
@@ -77,6 +78,7 @@ namespace WIN
         }
 
         #region Limpiar
+
         private void Limpiar()
         {
             cmbNFactura.Text = string.Empty;
@@ -95,7 +97,6 @@ namespace WIN
             txtcantidad.Text = string.Empty;
             txtcosto.Text = string.Empty;
             errorProvider1.Clear();
-          
 
             bmbproducto.SelectedIndex = -1;
             bmbproducto.Focus();
@@ -113,22 +114,23 @@ namespace WIN
             cmbNFactura.Text = string.Empty;
 
             bmbproducto.SelectedIndex = -1;
-            
+
             cmbNFactura.SelectedIndex = -1;
-           
+
             cmbNFactura.Focus();
         }
+
         private void limpiar3()
         {
             bmbproducto.Text = string.Empty;
             txtcantidad.Text = string.Empty;
             txtcosto.Text = string.Empty;
             errorProvider1.Clear();
-         
-            
+
             bmbproducto.Focus();
-        } 
-        #endregion
+        }
+
+        #endregion Limpiar
 
         public void HabilitarGuardar()
         {
@@ -144,8 +146,6 @@ namespace WIN
 
         public void validaciones()
         {
-
-
         }
 
         private void FormatoGrid()
@@ -160,6 +160,8 @@ namespace WIN
             DetalleCompraGridView1.AllowUserToResizeRows = false;
             DetalleCompraGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             DetalleCompraGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+
+            Recursos.DatagridviewDiseño.DiseñoDGV(ref DetalleCompraGridView1);
         }
 
         private void HabilitarBotones(bool p1, bool p2)
@@ -221,11 +223,9 @@ namespace WIN
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
             bloqueo = false;
             if (bloqueo == false)
             {
-
                 if (bmbproducto.SelectedIndex == -1)
                 {
                     errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
@@ -270,7 +270,6 @@ namespace WIN
                 HabilitarBotones(true, false);
                 limpiar2();
                 cmbNFactura.Enabled = false;
-
             }
             else
             {
@@ -278,16 +277,12 @@ namespace WIN
                 bloqueo = true;
             }
         }
-        
-        
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            
             foreach (ENTDetalleCompra miDetalle in EDetalleC)
             {
                 Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
-
             }
 
             Ecompra.idCompra = idCompra;
@@ -298,10 +293,9 @@ namespace WIN
             EDetalleC.Clear();
             HabilitarBotones(false, true);
             LlenaComboFractura();
-           limpiar4();
+            limpiar4();
             cmbNFactura.Enabled = true;
             //btnguardar.Enabled = true;
-            
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
@@ -317,9 +311,6 @@ namespace WIN
         private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //NUMERO DE FILA EN EL DATAGRIDVIEW
-            
-
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -394,18 +385,15 @@ namespace WIN
                 CalcularTotal();
                 limpiar3();
             }
-
-
         }
 
         private void DetalleCompraGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void cmbNFactura_KeyPress(object sender, KeyPressEventArgs e)
         {
-              if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
