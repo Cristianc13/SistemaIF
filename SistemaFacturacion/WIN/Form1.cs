@@ -4,23 +4,40 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace WIN
 {
     public partial class Form1 : Form
     {
+        private IconButton BotonActual;
+        public Panel panelizquierdo;
+        private Form actualformhijo;
+
         public Form1()
         {
             InitializeComponent();
+            panelizquierdo = new Panel();
+            panelizquierdo.Size = new Size(7, 46);
+            slidebar.Controls.Add(panelizquierdo);
+
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MinimumSize = this.Size;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // PantallaOk();
         }
+
+        #region Controles basicos
 
         public void PantallaOk()
         {
@@ -33,108 +50,139 @@ namespace WIN
             Application.Exit();
         }
 
-        public void SeleccionarBoton(Bunifu.Framework.UI.BunifuFlatButton sender)
-        {
-            btncategoria.Textcolor = Color.White;
-            btncliente.Textcolor = Color.White;
-            btncompra.Textcolor = Color.White;
-            btnestado.Textcolor = Color.White;
-            btnmarca.Textcolor = Color.White;
-            btnmodelo.Textcolor = Color.White;
-            btnprincipal.Textcolor = Color.White;
-            btnproducto.Textcolor = Color.White;
-            btnproveedor.Textcolor = Color.White;
-            btnventa.Textcolor = Color.White;
-            sender.selected = true;
-
-            if (sender.selected)
-            {
-                sender.Textcolor = Color.FromArgb(95, 195, 140);
-            }
-        }
-
-        public void SeguirBoton(Bunifu.Framework.UI.BunifuFlatButton sender)
-        {
-            flecha.Top = sender.Top;
-        }
-
-        private void btnestado_Click(object sender, EventArgs e)
-        {
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-            SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-        }
-
-        private void btncategoria_Click(object sender, EventArgs e)
-        {
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-        }
-
-        private void btnmodelo_Click(object sender, EventArgs e)
-        {
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-            SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-        }
-
-        private void btnmarca_Click(object sender, EventArgs e)
-        {
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-        }
-
-        private void btnproveedor_Click(object sender, EventArgs e)
-        {
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-        }
-
-        private void btncliente_Click(object sender, EventArgs e)
-        {
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-            AbrirFormulario(new WINCliente());
-        }
-
-        private void btncompra_Click(object sender, EventArgs e)
-        {
-            lbltitulo.Text = "Panel de Compra";
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-            AbrirFormulario(new WINDetalleCompra());
-        }
-
-        private void btnventa_Click(object sender, EventArgs e)
-        {
-            lbltitulo.Text = "Panel de Venta";
-            //Venta
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-            AbrirFormulario(new WINDetalleVenta());
-        }
-
-        private void btnproducto_Click(object sender, EventArgs e)
-        {
-            lbltitulo.Text = "Panel de Producto";
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-            AbrirFormulario(new WINProducto());
-        }
-
-        private void btnprincipal_Click(object sender, EventArgs e)
-        {
-            SeleccionarBoton((Bunifu.Framework.UI.BunifuFlatButton)sender); SeguirBoton((Bunifu.Framework.UI.BunifuFlatButton)sender);
-        }
-
-        private Form formActivado = null;
-
-        private void AbrirFormulario(Form formHijo)
-        {
-            if (formActivado != null) formActivado.Close();
-            formActivado = formHijo;
-            formHijo.TopLevel = false;
-            formHijo.Dock = DockStyle.Fill;
-            wrapper.Controls.Add(formHijo);
-            wrapper.Tag = formHijo;
-            formHijo.BringToFront();
-            formHijo.Show();
-        }
-
         private void minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        #endregion Controles basicos
+
+        #region Segundo Codigo
+
+        //Colores
+
+        private void ActivarBoton(object sender, Color color)
+        {
+            if (sender != null)
+            {
+                //Activar boton
+                DesactivarBoton();
+                BotonActual = (IconButton)sender;
+                BotonActual.BackColor = Color.FromArgb(38, 55, 75);
+                BotonActual.ForeColor = color;
+                BotonActual.TextAlign = ContentAlignment.MiddleCenter;
+                BotonActual.IconColor = color;
+                BotonActual.TextImageRelation = TextImageRelation.TextBeforeImage;
+                BotonActual.ImageAlign = ContentAlignment.MiddleRight;
+
+                //Panel izquiedo
+                panelizquierdo.BackColor = color;
+                panelizquierdo.Location = new Point(0, BotonActual.Location.Y);
+                panelizquierdo.Visible = true;
+                panelizquierdo.BringToFront();
+
+                //Cambiar iconohome
+                icohome.IconChar = BotonActual.IconChar;
+                icohome.IconColor = Color.FromArgb(21, 30, 41);
+                //Texto
+                lbltitulo.Text = BotonActual.Text;
+            }
+        }
+
+        private void DesactivarBoton()
+        {
+            if (BotonActual != null)
+            {
+                BotonActual.BackColor = Color.FromArgb(21, 30, 41);
+                BotonActual.ForeColor = Color.White;
+                BotonActual.TextAlign = ContentAlignment.MiddleLeft;
+                BotonActual.IconColor = Color.White;
+                BotonActual.TextImageRelation = TextImageRelation.ImageBeforeText;
+                BotonActual.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
+
+        private void btventa_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(sender, Color.FromArgb(52, 152, 219));
+            AbrirForm(new WINDetalleVenta());
+        }
+
+        private void btcompra_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(sender, Color.FromArgb(230, 126, 34));
+            AbrirForm(new WINDetalleCompra());
+        }
+
+        private void btdashboard_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(sender, Color.FromArgb(39, 174, 96));
+        }
+
+        private void btproducto_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(sender, Color.FromArgb(241, 196, 15));
+            AbrirForm(new WINProducto());
+        }
+
+        private void pictreinicio_Click(object sender, EventArgs e)
+        {
+            DesactivarBoton();
+            panelizquierdo.Visible = false;
+            icohome.IconChar = IconChar.TachometerAlt;
+            icohome.IconColor = Color.FromArgb(21, 30, 41);
+            lbltitulo.Text = "Dashboard";
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            //Proveedor
+            ActivarBoton(sender, Color.FromArgb(196, 229, 56));
+            AbrirForm(new WINProveedor());
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            //Cliente
+            ActivarBoton(sender, Color.FromArgb(61, 193, 211));
+            AbrirForm(new WINCliente());
+        }
+
+        #region MoverFormulario
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void header_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        #endregion MoverFormulario
+
+        //Abrir formulario
+        private void AbrirForm(Form hijoForm)
+        {
+            //open only form
+            if (actualformhijo != null)
+            {
+                actualformhijo.Close();
+            }
+            actualformhijo = hijoForm;
+            //End
+            hijoForm.TopLevel = false;
+            hijoForm.FormBorderStyle = FormBorderStyle.None;
+            hijoForm.Dock = DockStyle.Fill;
+            wrapper.Controls.Add(hijoForm);
+            wrapper.Tag = hijoForm;
+            hijoForm.BringToFront();
+            hijoForm.Show();
+        }
+
+        #endregion Segundo Codigo
     }
 }

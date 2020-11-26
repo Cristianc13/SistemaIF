@@ -14,6 +14,8 @@ namespace WIN
         public WINProducto()
         {
             InitializeComponent();
+            panelproducto.Width = this.Width;
+            this.panel12.Width = this.Width;
         }
 
         private int IdCategoria, IdMarca, IdModelo, IdEstado, IdProducto;
