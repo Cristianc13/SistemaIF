@@ -28,533 +28,266 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.slidebar = new System.Windows.Forms.Panel();
+            this.btproveedor = new FontAwesome.Sharp.IconButton();
+            this.btcliente = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictreinicio = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btventa = new FontAwesome.Sharp.IconButton();
+            this.btcompra = new FontAwesome.Sharp.IconButton();
+            this.btdashboard = new FontAwesome.Sharp.IconButton();
+            this.btproducto = new FontAwesome.Sharp.IconButton();
             this.wrapper = new System.Windows.Forms.Panel();
             this.header = new System.Windows.Forms.Panel();
-            this.lbltitulo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.salir = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnprincipal = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnproducto = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnventa = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btncompra = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btncliente = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnproveedor = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btncategoria = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnmodelo = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnmarca = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnestado = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.flecha = new System.Windows.Forms.PictureBox();
+            this.icohome = new FontAwesome.Sharp.IconPictureBox();
             this.minimizar = new System.Windows.Forms.PictureBox();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.lbltitulo = new System.Windows.Forms.Label();
+            this.salir = new System.Windows.Forms.PictureBox();
             this.slidebar.SuspendLayout();
-            this.header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flecha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictreinicio)).BeginInit();
+            this.header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icohome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             this.SuspendLayout();
             // 
             // slidebar
             // 
             this.slidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.slidebar.Controls.Add(this.flecha);
-            this.slidebar.Controls.Add(this.btnestado);
-            this.slidebar.Controls.Add(this.btncategoria);
-            this.slidebar.Controls.Add(this.btnmodelo);
-            this.slidebar.Controls.Add(this.btnmarca);
-            this.slidebar.Controls.Add(this.btnproveedor);
-            this.slidebar.Controls.Add(this.btncliente);
-            this.slidebar.Controls.Add(this.btncompra);
-            this.slidebar.Controls.Add(this.btnventa);
-            this.slidebar.Controls.Add(this.btnproducto);
-            this.slidebar.Controls.Add(this.btnprincipal);
-            this.slidebar.Controls.Add(this.label3);
-            this.slidebar.Controls.Add(this.pictureBox2);
-            this.slidebar.Controls.Add(this.label2);
-            this.slidebar.Controls.Add(this.pictureBox1);
+            this.slidebar.Controls.Add(this.btproveedor);
+            this.slidebar.Controls.Add(this.btcliente);
+            this.slidebar.Controls.Add(this.panel1);
+            this.slidebar.Controls.Add(this.btventa);
+            this.slidebar.Controls.Add(this.btcompra);
+            this.slidebar.Controls.Add(this.btdashboard);
+            this.slidebar.Controls.Add(this.btproducto);
             this.slidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.slidebar.Location = new System.Drawing.Point(0, 0);
             this.slidebar.Name = "slidebar";
-            this.slidebar.Size = new System.Drawing.Size(270, 900);
+            this.slidebar.Size = new System.Drawing.Size(250, 900);
             this.slidebar.TabIndex = 0;
             // 
-            // wrapper
+            // btproveedor
             // 
-            this.wrapper.BackColor = System.Drawing.SystemColors.Control;
-            this.wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wrapper.Location = new System.Drawing.Point(270, 60);
-            this.wrapper.Name = "wrapper";
-            this.wrapper.Size = new System.Drawing.Size(1260, 840);
-            this.wrapper.TabIndex = 1;
+            this.btproveedor.FlatAppearance.BorderSize = 0;
+            this.btproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btproveedor.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btproveedor.ForeColor = System.Drawing.Color.White;
+            this.btproveedor.IconChar = FontAwesome.Sharp.IconChar.DollyFlatbed;
+            this.btproveedor.IconColor = System.Drawing.Color.White;
+            this.btproveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btproveedor.IconSize = 38;
+            this.btproveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btproveedor.Location = new System.Drawing.Point(0, 495);
+            this.btproveedor.Name = "btproveedor";
+            this.btproveedor.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btproveedor.Size = new System.Drawing.Size(250, 46);
+            this.btproveedor.TabIndex = 18;
+            this.btproveedor.Text = "Proveedor";
+            this.btproveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btproveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btproveedor.UseVisualStyleBackColor = true;
+            this.btproveedor.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-            // header
+            // btcliente
             // 
-            this.header.BackColor = System.Drawing.Color.White;
-            this.header.Controls.Add(this.minimizar);
-            this.header.Controls.Add(this.lbltitulo);
-            this.header.Controls.Add(this.salir);
-            this.header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header.Location = new System.Drawing.Point(270, 0);
-            this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1260, 60);
-            this.header.TabIndex = 1;
+            this.btcliente.FlatAppearance.BorderSize = 0;
+            this.btcliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcliente.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcliente.ForeColor = System.Drawing.Color.White;
+            this.btcliente.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
+            this.btcliente.IconColor = System.Drawing.Color.White;
+            this.btcliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btcliente.IconSize = 38;
+            this.btcliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcliente.Location = new System.Drawing.Point(1, 437);
+            this.btcliente.Name = "btcliente";
+            this.btcliente.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btcliente.Size = new System.Drawing.Size(250, 46);
+            this.btcliente.TabIndex = 17;
+            this.btcliente.Text = "Cliente";
+            this.btcliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btcliente.UseVisualStyleBackColor = true;
+            this.btcliente.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // lbltitulo
+            // panel1
             // 
-            this.lbltitulo.AutoSize = true;
-            this.lbltitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.lbltitulo.Location = new System.Drawing.Point(6, 18);
-            this.lbltitulo.Name = "lbltitulo";
-            this.lbltitulo.Size = new System.Drawing.Size(179, 20);
-            this.lbltitulo.TabIndex = 1;
-            this.lbltitulo.Text = "Panel de Administracion";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(103, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "LOGO";
-            // 
-            // salir
-            // 
-            this.salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.salir.Image = global::WIN.Properties.Resources.icerrar;
-            this.salir.Location = new System.Drawing.Point(1222, 3);
-            this.salir.Name = "salir";
-            this.salir.Size = new System.Drawing.Size(35, 35);
-            this.salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.salir.TabIndex = 0;
-            this.salir.TabStop = false;
-            this.salir.Click += new System.EventHandler(this.salir_Click);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictreinicio);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 199);
+            this.panel1.TabIndex = 16;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(90, 88);
+            this.pictureBox2.Location = new System.Drawing.Point(94, 100);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(64, 64);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // pictreinicio
             // 
-            this.pictureBox1.Image = global::WIN.Properties.Resources.javascript_logo_50px;
-            this.pictureBox1.Location = new System.Drawing.Point(47, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictreinicio.Image = ((System.Drawing.Image)(resources.GetObject("pictreinicio.Image")));
+            this.pictreinicio.Location = new System.Drawing.Point(65, 3);
+            this.pictreinicio.Name = "pictreinicio";
+            this.pictreinicio.Size = new System.Drawing.Size(120, 116);
+            this.pictreinicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictreinicio.TabIndex = 0;
+            this.pictreinicio.TabStop = false;
+            this.pictreinicio.Click += new System.EventHandler(this.pictreinicio_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(49, 164);
+            this.label3.Location = new System.Drawing.Point(61, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "ADMINISTRADOR";
+            this.label3.Text = "ELIAS TALAVERA";
             // 
-            // btnprincipal
+            // btventa
             // 
-            this.btnprincipal.Activecolor = System.Drawing.Color.Transparent;
-            this.btnprincipal.BackColor = System.Drawing.Color.Transparent;
-            this.btnprincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnprincipal.BorderRadius = 0;
-            this.btnprincipal.ButtonText = "   Panel Principal";
-            this.btnprincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnprincipal.DisabledColor = System.Drawing.Color.Gray;
-            this.btnprincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnprincipal.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnprincipal.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnprincipal.Iconimage")));
-            this.btnprincipal.Iconimage_right = null;
-            this.btnprincipal.Iconimage_right_Selected = null;
-            this.btnprincipal.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnprincipal.Iconimage_Selected")));
-            this.btnprincipal.IconMarginLeft = 0;
-            this.btnprincipal.IconMarginRight = 0;
-            this.btnprincipal.IconRightVisible = true;
-            this.btnprincipal.IconRightZoom = 0D;
-            this.btnprincipal.IconVisible = true;
-            this.btnprincipal.IconZoom = 60D;
-            this.btnprincipal.IsTab = true;
-            this.btnprincipal.Location = new System.Drawing.Point(-1, 205);
-            this.btnprincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnprincipal.Name = "btnprincipal";
-            this.btnprincipal.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnprincipal.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnprincipal.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btnprincipal.selected = false;
-            this.btnprincipal.Size = new System.Drawing.Size(270, 46);
-            this.btnprincipal.TabIndex = 5;
-            this.btnprincipal.Text = "   Panel Principal";
-            this.btnprincipal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnprincipal.Textcolor = System.Drawing.Color.White;
-            this.btnprincipal.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnprincipal.Click += new System.EventHandler(this.btnprincipal_Click);
+            this.btventa.FlatAppearance.BorderSize = 0;
+            this.btventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btventa.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btventa.ForeColor = System.Drawing.Color.White;
+            this.btventa.IconChar = FontAwesome.Sharp.IconChar.CartArrowDown;
+            this.btventa.IconColor = System.Drawing.Color.White;
+            this.btventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btventa.IconSize = 38;
+            this.btventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btventa.Location = new System.Drawing.Point(0, 379);
+            this.btventa.Name = "btventa";
+            this.btventa.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btventa.Size = new System.Drawing.Size(250, 46);
+            this.btventa.TabIndex = 15;
+            this.btventa.Text = "Venta";
+            this.btventa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btventa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btventa.UseVisualStyleBackColor = true;
+            this.btventa.Click += new System.EventHandler(this.btventa_Click);
             // 
-            // btnproducto
+            // btcompra
             // 
-            this.btnproducto.Activecolor = System.Drawing.Color.Transparent;
-            this.btnproducto.BackColor = System.Drawing.Color.Transparent;
-            this.btnproducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnproducto.BorderRadius = 0;
-            this.btnproducto.ButtonText = "   Producto";
-            this.btnproducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnproducto.DisabledColor = System.Drawing.Color.Gray;
-            this.btnproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnproducto.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnproducto.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnproducto.Iconimage")));
-            this.btnproducto.Iconimage_right = null;
-            this.btnproducto.Iconimage_right_Selected = null;
-            this.btnproducto.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnproducto.Iconimage_Selected")));
-            this.btnproducto.IconMarginLeft = 0;
-            this.btnproducto.IconMarginRight = 0;
-            this.btnproducto.IconRightVisible = true;
-            this.btnproducto.IconRightZoom = 0D;
-            this.btnproducto.IconVisible = true;
-            this.btnproducto.IconZoom = 60D;
-            this.btnproducto.IsTab = true;
-            this.btnproducto.Location = new System.Drawing.Point(-1, 259);
-            this.btnproducto.Margin = new System.Windows.Forms.Padding(4);
-            this.btnproducto.Name = "btnproducto";
-            this.btnproducto.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnproducto.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnproducto.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btnproducto.selected = false;
-            this.btnproducto.Size = new System.Drawing.Size(270, 46);
-            this.btnproducto.TabIndex = 6;
-            this.btnproducto.Text = "   Producto";
-            this.btnproducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnproducto.Textcolor = System.Drawing.Color.White;
-            this.btnproducto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnproducto.Click += new System.EventHandler(this.btnproducto_Click);
+            this.btcompra.FlatAppearance.BorderSize = 0;
+            this.btcompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcompra.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcompra.ForeColor = System.Drawing.Color.White;
+            this.btcompra.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            this.btcompra.IconColor = System.Drawing.Color.White;
+            this.btcompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btcompra.IconSize = 38;
+            this.btcompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcompra.Location = new System.Drawing.Point(0, 321);
+            this.btcompra.Name = "btcompra";
+            this.btcompra.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btcompra.Size = new System.Drawing.Size(250, 46);
+            this.btcompra.TabIndex = 14;
+            this.btcompra.Text = "Compra";
+            this.btcompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btcompra.UseVisualStyleBackColor = true;
+            this.btcompra.Click += new System.EventHandler(this.btcompra_Click);
             // 
-            // btnventa
+            // btdashboard
             // 
-            this.btnventa.Activecolor = System.Drawing.Color.Transparent;
-            this.btnventa.BackColor = System.Drawing.Color.Transparent;
-            this.btnventa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnventa.BorderRadius = 0;
-            this.btnventa.ButtonText = "   Venta";
-            this.btnventa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnventa.DisabledColor = System.Drawing.Color.Gray;
-            this.btnventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnventa.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnventa.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnventa.Iconimage")));
-            this.btnventa.Iconimage_right = null;
-            this.btnventa.Iconimage_right_Selected = null;
-            this.btnventa.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnventa.Iconimage_Selected")));
-            this.btnventa.IconMarginLeft = 0;
-            this.btnventa.IconMarginRight = 0;
-            this.btnventa.IconRightVisible = true;
-            this.btnventa.IconRightZoom = 0D;
-            this.btnventa.IconVisible = true;
-            this.btnventa.IconZoom = 64D;
-            this.btnventa.IsTab = true;
-            this.btnventa.Location = new System.Drawing.Point(-1, 313);
-            this.btnventa.Margin = new System.Windows.Forms.Padding(4);
-            this.btnventa.Name = "btnventa";
-            this.btnventa.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnventa.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnventa.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btnventa.selected = false;
-            this.btnventa.Size = new System.Drawing.Size(270, 46);
-            this.btnventa.TabIndex = 7;
-            this.btnventa.Text = "   Venta";
-            this.btnventa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnventa.Textcolor = System.Drawing.Color.White;
-            this.btnventa.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnventa.Click += new System.EventHandler(this.btnventa_Click);
+            this.btdashboard.FlatAppearance.BorderSize = 0;
+            this.btdashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btdashboard.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btdashboard.ForeColor = System.Drawing.Color.White;
+            this.btdashboard.IconChar = FontAwesome.Sharp.IconChar.TachometerAlt;
+            this.btdashboard.IconColor = System.Drawing.Color.White;
+            this.btdashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btdashboard.IconSize = 38;
+            this.btdashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btdashboard.Location = new System.Drawing.Point(0, 205);
+            this.btdashboard.Name = "btdashboard";
+            this.btdashboard.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btdashboard.Size = new System.Drawing.Size(250, 46);
+            this.btdashboard.TabIndex = 13;
+            this.btdashboard.Text = "Dashboard";
+            this.btdashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btdashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btdashboard.UseVisualStyleBackColor = true;
+            this.btdashboard.Click += new System.EventHandler(this.btdashboard_Click);
             // 
-            // btncompra
+            // btproducto
             // 
-            this.btncompra.Activecolor = System.Drawing.Color.Transparent;
-            this.btncompra.BackColor = System.Drawing.Color.Transparent;
-            this.btncompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncompra.BorderRadius = 0;
-            this.btncompra.ButtonText = "   Compra";
-            this.btncompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncompra.DisabledColor = System.Drawing.Color.Gray;
-            this.btncompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncompra.Iconcolor = System.Drawing.Color.Transparent;
-            this.btncompra.Iconimage = ((System.Drawing.Image)(resources.GetObject("btncompra.Iconimage")));
-            this.btncompra.Iconimage_right = null;
-            this.btncompra.Iconimage_right_Selected = null;
-            this.btncompra.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btncompra.Iconimage_Selected")));
-            this.btncompra.IconMarginLeft = 0;
-            this.btncompra.IconMarginRight = 0;
-            this.btncompra.IconRightVisible = true;
-            this.btncompra.IconRightZoom = 0D;
-            this.btncompra.IconVisible = true;
-            this.btncompra.IconZoom = 60D;
-            this.btncompra.IsTab = true;
-            this.btncompra.Location = new System.Drawing.Point(-1, 367);
-            this.btncompra.Margin = new System.Windows.Forms.Padding(4);
-            this.btncompra.Name = "btncompra";
-            this.btncompra.Normalcolor = System.Drawing.Color.Transparent;
-            this.btncompra.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btncompra.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btncompra.selected = false;
-            this.btncompra.Size = new System.Drawing.Size(270, 46);
-            this.btncompra.TabIndex = 8;
-            this.btncompra.Text = "   Compra";
-            this.btncompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncompra.Textcolor = System.Drawing.Color.White;
-            this.btncompra.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncompra.Click += new System.EventHandler(this.btncompra_Click);
+            this.btproducto.FlatAppearance.BorderSize = 0;
+            this.btproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btproducto.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btproducto.ForeColor = System.Drawing.Color.White;
+            this.btproducto.IconChar = FontAwesome.Sharp.IconChar.Archive;
+            this.btproducto.IconColor = System.Drawing.Color.White;
+            this.btproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btproducto.IconSize = 38;
+            this.btproducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btproducto.Location = new System.Drawing.Point(0, 263);
+            this.btproducto.Name = "btproducto";
+            this.btproducto.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btproducto.Size = new System.Drawing.Size(250, 46);
+            this.btproducto.TabIndex = 12;
+            this.btproducto.Text = "Producto";
+            this.btproducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btproducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btproducto.UseVisualStyleBackColor = true;
+            this.btproducto.Click += new System.EventHandler(this.btproducto_Click);
             // 
-            // btncliente
+            // wrapper
             // 
-            this.btncliente.Activecolor = System.Drawing.Color.Transparent;
-            this.btncliente.BackColor = System.Drawing.Color.Transparent;
-            this.btncliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncliente.BorderRadius = 0;
-            this.btncliente.ButtonText = "   Cliente";
-            this.btncliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncliente.DisabledColor = System.Drawing.Color.Gray;
-            this.btncliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncliente.Iconcolor = System.Drawing.Color.Transparent;
-            this.btncliente.Iconimage = ((System.Drawing.Image)(resources.GetObject("btncliente.Iconimage")));
-            this.btncliente.Iconimage_right = null;
-            this.btncliente.Iconimage_right_Selected = null;
-            this.btncliente.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btncliente.Iconimage_Selected")));
-            this.btncliente.IconMarginLeft = 0;
-            this.btncliente.IconMarginRight = 0;
-            this.btncliente.IconRightVisible = true;
-            this.btncliente.IconRightZoom = 0D;
-            this.btncliente.IconVisible = true;
-            this.btncliente.IconZoom = 60D;
-            this.btncliente.IsTab = true;
-            this.btncliente.Location = new System.Drawing.Point(-1, 421);
-            this.btncliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btncliente.Name = "btncliente";
-            this.btncliente.Normalcolor = System.Drawing.Color.Transparent;
-            this.btncliente.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btncliente.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btncliente.selected = false;
-            this.btncliente.Size = new System.Drawing.Size(270, 46);
-            this.btncliente.TabIndex = 9;
-            this.btncliente.Text = "   Cliente";
-            this.btncliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncliente.Textcolor = System.Drawing.Color.White;
-            this.btncliente.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncliente.Click += new System.EventHandler(this.btncliente_Click);
+            this.wrapper.BackColor = System.Drawing.SystemColors.Control;
+            this.wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wrapper.Location = new System.Drawing.Point(250, 60);
+            this.wrapper.Name = "wrapper";
+            this.wrapper.Size = new System.Drawing.Size(1251, 840);
+            this.wrapper.TabIndex = 1;
             // 
-            // btnproveedor
+            // header
             // 
-            this.btnproveedor.Activecolor = System.Drawing.Color.Transparent;
-            this.btnproveedor.BackColor = System.Drawing.Color.Transparent;
-            this.btnproveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnproveedor.BorderRadius = 0;
-            this.btnproveedor.ButtonText = "   Proveedor";
-            this.btnproveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnproveedor.DisabledColor = System.Drawing.Color.Gray;
-            this.btnproveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnproveedor.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnproveedor.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnproveedor.Iconimage")));
-            this.btnproveedor.Iconimage_right = null;
-            this.btnproveedor.Iconimage_right_Selected = null;
-            this.btnproveedor.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnproveedor.Iconimage_Selected")));
-            this.btnproveedor.IconMarginLeft = 0;
-            this.btnproveedor.IconMarginRight = 0;
-            this.btnproveedor.IconRightVisible = true;
-            this.btnproveedor.IconRightZoom = 0D;
-            this.btnproveedor.IconVisible = true;
-            this.btnproveedor.IconZoom = 60D;
-            this.btnproveedor.IsTab = true;
-            this.btnproveedor.Location = new System.Drawing.Point(-1, 475);
-            this.btnproveedor.Margin = new System.Windows.Forms.Padding(4);
-            this.btnproveedor.Name = "btnproveedor";
-            this.btnproveedor.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnproveedor.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnproveedor.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btnproveedor.selected = false;
-            this.btnproveedor.Size = new System.Drawing.Size(270, 46);
-            this.btnproveedor.TabIndex = 10;
-            this.btnproveedor.Text = "   Proveedor";
-            this.btnproveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnproveedor.Textcolor = System.Drawing.Color.White;
-            this.btnproveedor.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnproveedor.Click += new System.EventHandler(this.btnproveedor_Click);
+            this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.header.Controls.Add(this.icohome);
+            this.header.Controls.Add(this.minimizar);
+            this.header.Controls.Add(this.lbltitulo);
+            this.header.Controls.Add(this.salir);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(250, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(1251, 60);
+            this.header.TabIndex = 1;
+            this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.header_MouseDown);
             // 
-            // btncategoria
+            // icohome
             // 
-            this.btncategoria.Activecolor = System.Drawing.Color.Transparent;
-            this.btncategoria.BackColor = System.Drawing.Color.Transparent;
-            this.btncategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncategoria.BorderRadius = 0;
-            this.btncategoria.ButtonText = "   Categoria";
-            this.btncategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncategoria.DisabledColor = System.Drawing.Color.Gray;
-            this.btncategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncategoria.Iconcolor = System.Drawing.Color.Transparent;
-            this.btncategoria.Iconimage = ((System.Drawing.Image)(resources.GetObject("btncategoria.Iconimage")));
-            this.btncategoria.Iconimage_right = null;
-            this.btncategoria.Iconimage_right_Selected = null;
-            this.btncategoria.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btncategoria.Iconimage_Selected")));
-            this.btncategoria.IconMarginLeft = 0;
-            this.btncategoria.IconMarginRight = 0;
-            this.btncategoria.IconRightVisible = true;
-            this.btncategoria.IconRightZoom = 0D;
-            this.btncategoria.IconVisible = true;
-            this.btncategoria.IconZoom = 60D;
-            this.btncategoria.IsTab = true;
-            this.btncategoria.Location = new System.Drawing.Point(-1, 639);
-            this.btncategoria.Margin = new System.Windows.Forms.Padding(4);
-            this.btncategoria.Name = "btncategoria";
-            this.btncategoria.Normalcolor = System.Drawing.Color.Transparent;
-            this.btncategoria.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btncategoria.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btncategoria.selected = false;
-            this.btncategoria.Size = new System.Drawing.Size(270, 46);
-            this.btncategoria.TabIndex = 13;
-            this.btncategoria.Text = "   Categoria";
-            this.btncategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncategoria.Textcolor = System.Drawing.Color.White;
-            this.btncategoria.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncategoria.Click += new System.EventHandler(this.btncategoria_Click);
-            // 
-            // btnmodelo
-            // 
-            this.btnmodelo.Activecolor = System.Drawing.Color.Transparent;
-            this.btnmodelo.BackColor = System.Drawing.Color.Transparent;
-            this.btnmodelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnmodelo.BorderRadius = 0;
-            this.btnmodelo.ButtonText = "   Modelo";
-            this.btnmodelo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmodelo.DisabledColor = System.Drawing.Color.Gray;
-            this.btnmodelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodelo.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnmodelo.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnmodelo.Iconimage")));
-            this.btnmodelo.Iconimage_right = null;
-            this.btnmodelo.Iconimage_right_Selected = null;
-            this.btnmodelo.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnmodelo.Iconimage_Selected")));
-            this.btnmodelo.IconMarginLeft = 0;
-            this.btnmodelo.IconMarginRight = 0;
-            this.btnmodelo.IconRightVisible = true;
-            this.btnmodelo.IconRightZoom = 0D;
-            this.btnmodelo.IconVisible = true;
-            this.btnmodelo.IconZoom = 60D;
-            this.btnmodelo.IsTab = true;
-            this.btnmodelo.Location = new System.Drawing.Point(-1, 585);
-            this.btnmodelo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnmodelo.Name = "btnmodelo";
-            this.btnmodelo.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnmodelo.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnmodelo.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btnmodelo.selected = false;
-            this.btnmodelo.Size = new System.Drawing.Size(270, 46);
-            this.btnmodelo.TabIndex = 12;
-            this.btnmodelo.Text = "   Modelo";
-            this.btnmodelo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmodelo.Textcolor = System.Drawing.Color.White;
-            this.btnmodelo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodelo.Click += new System.EventHandler(this.btnmodelo_Click);
-            // 
-            // btnmarca
-            // 
-            this.btnmarca.Activecolor = System.Drawing.Color.Transparent;
-            this.btnmarca.BackColor = System.Drawing.Color.Transparent;
-            this.btnmarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnmarca.BorderRadius = 0;
-            this.btnmarca.ButtonText = "   Marca";
-            this.btnmarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmarca.DisabledColor = System.Drawing.Color.Gray;
-            this.btnmarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmarca.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnmarca.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnmarca.Iconimage")));
-            this.btnmarca.Iconimage_right = null;
-            this.btnmarca.Iconimage_right_Selected = null;
-            this.btnmarca.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnmarca.Iconimage_Selected")));
-            this.btnmarca.IconMarginLeft = 0;
-            this.btnmarca.IconMarginRight = 0;
-            this.btnmarca.IconRightVisible = true;
-            this.btnmarca.IconRightZoom = 0D;
-            this.btnmarca.IconVisible = true;
-            this.btnmarca.IconZoom = 60D;
-            this.btnmarca.IsTab = true;
-            this.btnmarca.Location = new System.Drawing.Point(-1, 531);
-            this.btnmarca.Margin = new System.Windows.Forms.Padding(4);
-            this.btnmarca.Name = "btnmarca";
-            this.btnmarca.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnmarca.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnmarca.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btnmarca.selected = false;
-            this.btnmarca.Size = new System.Drawing.Size(270, 46);
-            this.btnmarca.TabIndex = 11;
-            this.btnmarca.Text = "   Marca";
-            this.btnmarca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmarca.Textcolor = System.Drawing.Color.White;
-            this.btnmarca.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmarca.Click += new System.EventHandler(this.btnmarca_Click);
-            // 
-            // btnestado
-            // 
-            this.btnestado.Activecolor = System.Drawing.Color.Transparent;
-            this.btnestado.BackColor = System.Drawing.Color.Transparent;
-            this.btnestado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnestado.BorderRadius = 0;
-            this.btnestado.ButtonText = "   Estado";
-            this.btnestado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnestado.DisabledColor = System.Drawing.Color.Gray;
-            this.btnestado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnestado.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnestado.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnestado.Iconimage")));
-            this.btnestado.Iconimage_right = null;
-            this.btnestado.Iconimage_right_Selected = null;
-            this.btnestado.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnestado.Iconimage_Selected")));
-            this.btnestado.IconMarginLeft = 0;
-            this.btnestado.IconMarginRight = 0;
-            this.btnestado.IconRightVisible = true;
-            this.btnestado.IconRightZoom = 0D;
-            this.btnestado.IconVisible = true;
-            this.btnestado.IconZoom = 60D;
-            this.btnestado.IsTab = true;
-            this.btnestado.Location = new System.Drawing.Point(-1, 693);
-            this.btnestado.Margin = new System.Windows.Forms.Padding(4);
-            this.btnestado.Name = "btnestado";
-            this.btnestado.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnestado.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btnestado.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(174)))), ((int)(((byte)(154)))));
-            this.btnestado.selected = false;
-            this.btnestado.Size = new System.Drawing.Size(270, 46);
-            this.btnestado.TabIndex = 14;
-            this.btnestado.Text = "   Estado";
-            this.btnestado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnestado.Textcolor = System.Drawing.Color.White;
-            this.btnestado.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnestado.Click += new System.EventHandler(this.btnestado_Click);
-            // 
-            // flecha
-            // 
-            this.flecha.Image = ((System.Drawing.Image)(resources.GetObject("flecha.Image")));
-            this.flecha.Location = new System.Drawing.Point(237, 208);
-            this.flecha.Name = "flecha";
-            this.flecha.Size = new System.Drawing.Size(35, 35);
-            this.flecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.flecha.TabIndex = 0;
-            this.flecha.TabStop = false;
+            this.icohome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.icohome.IconChar = FontAwesome.Sharp.IconChar.TachometerAlt;
+            this.icohome.IconColor = System.Drawing.Color.White;
+            this.icohome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icohome.IconSize = 38;
+            this.icohome.Location = new System.Drawing.Point(7, 13);
+            this.icohome.Name = "icohome";
+            this.icohome.Size = new System.Drawing.Size(38, 38);
+            this.icohome.TabIndex = 3;
+            this.icohome.TabStop = false;
             // 
             // minimizar
             // 
             this.minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
-            this.minimizar.Location = new System.Drawing.Point(1181, 3);
+            this.minimizar.Location = new System.Drawing.Point(1172, 3);
             this.minimizar.Name = "minimizar";
             this.minimizar.Size = new System.Drawing.Size(35, 35);
             this.minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -562,36 +295,54 @@
             this.minimizar.TabStop = false;
             this.minimizar.Click += new System.EventHandler(this.minimizar_Click);
             // 
-            // bunifuDragControl1
+            // lbltitulo
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.header;
-            this.bunifuDragControl1.Vertical = true;
+            this.lbltitulo.AutoSize = true;
+            this.lbltitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.lbltitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitulo.ForeColor = System.Drawing.Color.White;
+            this.lbltitulo.Location = new System.Drawing.Point(48, 18);
+            this.lbltitulo.Name = "lbltitulo";
+            this.lbltitulo.Size = new System.Drawing.Size(88, 20);
+            this.lbltitulo.TabIndex = 1;
+            this.lbltitulo.Text = "Dashboard";
+            // 
+            // salir
+            // 
+            this.salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.salir.Image = global::WIN.Properties.Resources.icerrar;
+            this.salir.Location = new System.Drawing.Point(1213, 3);
+            this.salir.Name = "salir";
+            this.salir.Size = new System.Drawing.Size(35, 35);
+            this.salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.salir.TabIndex = 0;
+            this.salir.TabStop = false;
+            this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1530, 900);
+            this.ClientSize = new System.Drawing.Size(1501, 900);
+            this.ControlBox = false;
             this.Controls.Add(this.wrapper);
             this.Controls.Add(this.header);
             this.Controls.Add(this.slidebar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.slidebar.ResumeLayout(false);
-            this.slidebar.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictreinicio)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flecha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icohome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -602,24 +353,19 @@
         private System.Windows.Forms.Panel wrapper;
         private System.Windows.Forms.Panel header;
         private System.Windows.Forms.PictureBox salir;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictreinicio;
         private System.Windows.Forms.Label lbltitulo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.Framework.UI.BunifuFlatButton btnprincipal;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuFlatButton btnproducto;
-        private Bunifu.Framework.UI.BunifuFlatButton btnproveedor;
-        private Bunifu.Framework.UI.BunifuFlatButton btncliente;
-        private Bunifu.Framework.UI.BunifuFlatButton btncompra;
-        private Bunifu.Framework.UI.BunifuFlatButton btnventa;
-        private Bunifu.Framework.UI.BunifuFlatButton btnestado;
-        private Bunifu.Framework.UI.BunifuFlatButton btncategoria;
-        private Bunifu.Framework.UI.BunifuFlatButton btnmodelo;
-        private Bunifu.Framework.UI.BunifuFlatButton btnmarca;
-        private System.Windows.Forms.PictureBox flecha;
         private System.Windows.Forms.PictureBox minimizar;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private FontAwesome.Sharp.IconButton btproducto;
+        private FontAwesome.Sharp.IconButton btventa;
+        private FontAwesome.Sharp.IconButton btcompra;
+        private FontAwesome.Sharp.IconButton btdashboard;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton btproveedor;
+        private FontAwesome.Sharp.IconButton btcliente;
+        private FontAwesome.Sharp.IconPictureBox icohome;
     }
 }
 

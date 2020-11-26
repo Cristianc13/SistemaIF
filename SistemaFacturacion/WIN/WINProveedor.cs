@@ -103,8 +103,7 @@ namespace WIN
 
             dataGridProovedor.AllowUserToResizeColumns = false;
             dataGridProovedor.AllowUserToResizeRows = false;
-            dataGridProovedor.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            dataGridProovedor.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            Recursos.DatagridviewDiseño.DiseñoDGV(ref dataGridProovedor);
         }
 
         //Limpiar Cajas
@@ -120,9 +119,7 @@ namespace WIN
 
         private void dataGridProovedor_DoubleClick(object sender, EventArgs e)
         {
-
-
-            if ( dataGridProovedor.Rows.Count == 0) return;
+            if (dataGridProovedor.Rows.Count == 0) return;
 
             try
             {
@@ -138,7 +135,6 @@ namespace WIN
             {
                 MessageBox.Show("Celda Vacia");
             }
-
         }
 
         private void EliminarProv_Click(object sender, EventArgs e)

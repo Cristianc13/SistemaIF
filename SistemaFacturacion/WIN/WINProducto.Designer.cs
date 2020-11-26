@@ -98,12 +98,12 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelproducto = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelgrid = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -127,12 +127,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelproducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelgrid.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProductodataGridView
@@ -174,7 +174,7 @@
             this.ProductodataGridView.RowHeadersVisible = false;
             this.ProductodataGridView.RowHeadersWidth = 51;
             this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductodataGridView.Size = new System.Drawing.Size(1261, 284);
+            this.ProductodataGridView.Size = new System.Drawing.Size(1261, 288);
             this.ProductodataGridView.TabIndex = 0;
             this.ProductodataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellDoubleClick);
             this.ProductodataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ProductodataGridView_CellFormatting);
@@ -186,16 +186,15 @@
             this.panel3.Controls.Add(this.Exportarbutton);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 672);
-            this.panel3.MaximumSize = new System.Drawing.Size(1261, 52);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1261, 52);
             this.panel3.TabIndex = 32;
             // 
             // Exportarbutton
             // 
-            this.Exportarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Exportarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Exportarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exportarbutton.Location = new System.Drawing.Point(1169, 10);
+            this.Exportarbutton.Location = new System.Drawing.Point(11, 10);
             this.Exportarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Exportarbutton.Name = "Exportarbutton";
             this.Exportarbutton.Size = new System.Drawing.Size(75, 31);
@@ -494,7 +493,6 @@
             this.panel14.Controls.Add(this.panel5);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 0);
-            this.panel14.MaximumSize = new System.Drawing.Size(1261, 94);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1261, 94);
             this.panel14.TabIndex = 4;
@@ -590,7 +588,7 @@
             // Cancelarbutton
             // 
             this.Cancelarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Cancelarbutton.Location = new System.Drawing.Point(324, 249);
+            this.Cancelarbutton.Location = new System.Drawing.Point(324, 245);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(85, 25);
             this.Cancelarbutton.TabIndex = 14;
@@ -612,7 +610,7 @@
             // Eliminarbutton
             // 
             this.Eliminarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Eliminarbutton.Location = new System.Drawing.Point(227, 249);
+            this.Eliminarbutton.Location = new System.Drawing.Point(227, 245);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(85, 25);
             this.Eliminarbutton.TabIndex = 13;
@@ -635,7 +633,7 @@
             // Actualizarbutton
             // 
             this.Actualizarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Actualizarbutton.Location = new System.Drawing.Point(133, 249);
+            this.Actualizarbutton.Location = new System.Drawing.Point(133, 245);
             this.Actualizarbutton.Name = "Actualizarbutton";
             this.Actualizarbutton.Size = new System.Drawing.Size(85, 25);
             this.Actualizarbutton.TabIndex = 12;
@@ -647,7 +645,7 @@
             // Guardarbutton
             // 
             this.Guardarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Guardarbutton.Location = new System.Drawing.Point(35, 249);
+            this.Guardarbutton.Location = new System.Drawing.Point(35, 245);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(85, 25);
             this.Guardarbutton.TabIndex = 11;
@@ -903,56 +901,55 @@
             this.pictureBox9.TabIndex = 34;
             this.pictureBox9.TabStop = false;
             // 
-            // panel1
+            // panelproducto
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.ModelocomboBox);
-            this.panel1.Controls.Add(this.MarcacomboBox);
-            this.panel1.Controls.Add(this.CategoriacomboBox);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.ObservacionestextBox);
-            this.panel1.Controls.Add(this.EstadocomboBox);
-            this.panel1.Controls.Add(this.BuscarMarbutton);
-            this.panel1.Controls.Add(this.PrecioSalidatextBox);
-            this.panel1.Controls.Add(this.DescripciontextBox);
-            this.panel1.Controls.Add(this.BuscarModbutton);
-            this.panel1.Controls.Add(this.CostotextBox);
-            this.panel1.Controls.Add(this.Guardarbutton);
-            this.panel1.Controls.Add(this.BuscartextBox);
-            this.panel1.Controls.Add(this.StocktextBox);
-            this.panel1.Controls.Add(this.Actualizarbutton);
-            this.panel1.Controls.Add(this.BuscarCatbutton);
-            this.panel1.Controls.Add(this.NombretextBox);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.Eliminarbutton);
-            this.panel1.Controls.Add(this.CodigotextBox);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.Cancelarbutton);
-            this.panel1.Controls.Add(this.pictureBox10);
-            this.panel1.Controls.Add(this.pictureBox11);
-            this.panel1.Controls.Add(this.pictureBox12);
-            this.panel1.Controls.Add(this.pictureBox13);
-            this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.pictureBox9);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 94);
-            this.panel1.MaximumSize = new System.Drawing.Size(1261, 294);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1261, 294);
-            this.panel1.TabIndex = 35;
+            this.panelproducto.BackColor = System.Drawing.Color.White;
+            this.panelproducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelproducto.BackgroundImage")));
+            this.panelproducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelproducto.Controls.Add(this.label1);
+            this.panelproducto.Controls.Add(this.ModelocomboBox);
+            this.panelproducto.Controls.Add(this.MarcacomboBox);
+            this.panelproducto.Controls.Add(this.CategoriacomboBox);
+            this.panelproducto.Controls.Add(this.label12);
+            this.panelproducto.Controls.Add(this.ObservacionestextBox);
+            this.panelproducto.Controls.Add(this.EstadocomboBox);
+            this.panelproducto.Controls.Add(this.BuscarMarbutton);
+            this.panelproducto.Controls.Add(this.PrecioSalidatextBox);
+            this.panelproducto.Controls.Add(this.DescripciontextBox);
+            this.panelproducto.Controls.Add(this.BuscarModbutton);
+            this.panelproducto.Controls.Add(this.CostotextBox);
+            this.panelproducto.Controls.Add(this.Guardarbutton);
+            this.panelproducto.Controls.Add(this.BuscartextBox);
+            this.panelproducto.Controls.Add(this.StocktextBox);
+            this.panelproducto.Controls.Add(this.Actualizarbutton);
+            this.panelproducto.Controls.Add(this.BuscarCatbutton);
+            this.panelproducto.Controls.Add(this.NombretextBox);
+            this.panelproducto.Controls.Add(this.pictureBox6);
+            this.panelproducto.Controls.Add(this.label10);
+            this.panelproducto.Controls.Add(this.label11);
+            this.panelproducto.Controls.Add(this.label9);
+            this.panelproducto.Controls.Add(this.label3);
+            this.panelproducto.Controls.Add(this.Eliminarbutton);
+            this.panelproducto.Controls.Add(this.CodigotextBox);
+            this.panelproducto.Controls.Add(this.label8);
+            this.panelproducto.Controls.Add(this.label4);
+            this.panelproducto.Controls.Add(this.label2);
+            this.panelproducto.Controls.Add(this.label6);
+            this.panelproducto.Controls.Add(this.label7);
+            this.panelproducto.Controls.Add(this.label5);
+            this.panelproducto.Controls.Add(this.Cancelarbutton);
+            this.panelproducto.Controls.Add(this.pictureBox10);
+            this.panelproducto.Controls.Add(this.pictureBox11);
+            this.panelproducto.Controls.Add(this.pictureBox12);
+            this.panelproducto.Controls.Add(this.pictureBox13);
+            this.panelproducto.Controls.Add(this.pictureBox8);
+            this.panelproducto.Controls.Add(this.pictureBox7);
+            this.panelproducto.Controls.Add(this.pictureBox9);
+            this.panelproducto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelproducto.Location = new System.Drawing.Point(0, 94);
+            this.panelproducto.Name = "panelproducto";
+            this.panelproducto.Size = new System.Drawing.Size(1261, 290);
+            this.panelproducto.TabIndex = 35;
             // 
             // pictureBox10
             // 
@@ -1002,15 +999,15 @@
             this.pictureBox13.TabIndex = 38;
             this.pictureBox13.TabStop = false;
             // 
-            // panel2
+            // panelgrid
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.ProductodataGridView);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 388);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1261, 284);
-            this.panel2.TabIndex = 36;
+            this.panelgrid.BackColor = System.Drawing.Color.White;
+            this.panelgrid.Controls.Add(this.ProductodataGridView);
+            this.panelgrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelgrid.Location = new System.Drawing.Point(0, 384);
+            this.panelgrid.Name = "panelgrid";
+            this.panelgrid.Size = new System.Drawing.Size(1261, 288);
+            this.panelgrid.TabIndex = 36;
             // 
             // WINProducto
             // 
@@ -1018,8 +1015,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 724);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelgrid);
+            this.Controls.Add(this.panelproducto);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel14);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1056,13 +1053,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelproducto.ResumeLayout(false);
+            this.panelproducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.panelgrid.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1133,11 +1130,11 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelproducto;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Panel panelgrid;
     }
 }
