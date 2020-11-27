@@ -19,9 +19,11 @@ namespace WIN
         private decimal costo;
         private int idCl = 0;
         public int idventa;
+        int fila;
 
         private List<ENTVenta> Eventa = new List<ENTVenta>();
         private List<ENTDetalleVenta> EDventa = new List<ENTDetalleVenta>();
+        private ENTDetalleVenta miDetalle = new ENTDetalleVenta();
 
         private ENTProducto Eproducto = new ENTProducto();
         private BLProducto BProducto = new BLProducto();
@@ -49,22 +51,14 @@ namespace WIN
             DVentadataGridView.Columns[2].HeaderText = "Producto";
             DVentadataGridView.Columns[3].HeaderText = "Cantidad";
             DVentadataGridView.Columns[4].HeaderText = "Costo";
-            DVentadataGridView.Columns[5].HeaderText = "IVA";
-            DVentadataGridView.Columns[6].HeaderText = "Importe";
-            DVentadataGridView.Columns[7].Visible = false;
+            DVentadataGridView.Columns[5].HeaderText = "Importe";
+            DVentadataGridView.Columns[6].Visible = false;
             DVentadataGridView.AllowUserToResizeColumns = false;
             DVentadataGridView.AllowUserToResizeRows = false;
 
             DVentadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             DVentadataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
             Recursos.DatagridviewDiseño.DiseñoDGV(ref DVentadataGridView);
-
-            //DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            //btn.Name = "Eliminar";
-            //DVentadataGridView.Columns.Add(btn);
-
-            //DVentadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            //DVentadataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
         }
 
         private void LlenaComboProducto()
@@ -138,12 +132,11 @@ namespace WIN
             }
             else
             {
-                ENTDetalleVenta miDetalle = new ENTDetalleVenta();
+                //ENTDetalleVenta miDetalle = new ENTDetalleVenta();
                 miDetalle.Fk_idProducto = idProducto;
                 miDetalle.producto = ProductocomboBox.Text;
                 miDetalle.cantidadProducto = Convert.ToDecimal(CantidadtextBox.Text);
                 miDetalle.precioSalida = NuevoPrecio;
-                miDetalle.IVA = 15;
                 miDetalle.importe = miDetalle.cantidadProducto * miDetalle.precioSalida;
                 EDventa.Add(miDetalle);
                 DVentadataGridView.DataSource = null;
@@ -199,28 +192,6 @@ namespace WIN
             ImportetextBox.Text = total.ToString();
         }
 
-        private void DVentadataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //if (this.DVentadataGridView.Columns[e.ColumnIndex].Name == "Eliminar")
-            ////{
-            ////    this.DVentadataGridView.Rows.Remove(this.DVentadataGridView.CurrentRow);
-            ////}
-
-            ////RECORREMOS LOS ELEMENTOS GUARDADOS EN LA LISTA
-            //for (int i = 0; i < EDventa.Count; i++)
-            //{
-            //    //COMPROBAMOS QUE LA FILA SELECCIONADA ES IGUAL AL DE LA LISTA
-            //    if (i == fila)
-            //    {
-            //        EDventa.RemoveAt(fila);
-            //    }
-
-            //    //ACTUALIZAMOS LA LISTA Y EL DATAGRIDVIEW
-            //    DVentadataGridView.DataSource = null;
-            //    DVentadataGridView.DataSource = EDventa;
-            //}
-        }
-
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             if (ClientecomboBox.Text == string.Empty)
@@ -246,13 +217,12 @@ namespace WIN
             HabilitarBotones(false, true);
             Limpiar();
             EnviarID();
-            //this.Dispose(false);
+            EDventa.Clear();
         }
 
         private void HabilitarBotones(bool p1, bool p2)
         {
             Guardarbutton.Enabled = p1;
-            //Cancelarbutton.Enabled = p1;
         }
 
         public void HabilitarGuardar()
@@ -267,17 +237,9 @@ namespace WIN
             }
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
             Limpiar();
-        }
-
-        private void CantidadtextBox_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -301,30 +263,11 @@ namespace WIN
             pv.ShowDialog();
         }
 
-        private void PreciotextBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void Clientebutton_Click(object sender, EventArgs e)
         {
             WINCliente cl = new WINCliente();
             AddOwnedForm(cl);
             cl.ShowDialog();
-        }
-
-        private void DVentadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void DVentadataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            //if (e.ColumnIndex >= 0 && this.DVentadataGridView.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0 )
-            //{
-            //    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-            //    DataGridViewButtonCell cellbtn = this.DVentadataGridView.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
-
-            //    e.Handled = true;
-            //}
         }
 
         private void ClientecomboBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -387,8 +330,31 @@ namespace WIN
             GenerarFactura.ShowDialog();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < EDventa.Count; i++)
+            {
+                if (i == fila)
+                {
+                    EDventa.RemoveAt(fila);
+                }
+                DVentadataGridView.DataSource = null;
+                DVentadataGridView.DataSource = EDventa;
+                FormatoGrid();
+                CalcularTotal();
+                Limpiar();
+            }
+        }
+
+        private void CancelarComprabutton_Click(object sender, EventArgs e)
+        {
+            DialogResult rpt = MessageBox.Show("Cancelar Compra?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (rpt == DialogResult.Yes)
+            {
+                //DVentadataGridView.Rows.Clear();
+            }
+
+            if (rpt == DialogResult.No) return;
         }
     }
 }

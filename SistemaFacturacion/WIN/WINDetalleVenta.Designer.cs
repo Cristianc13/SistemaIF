@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Clientebutton = new System.Windows.Forms.Button();
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
@@ -54,8 +54,10 @@
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.CancelarComprabutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -117,7 +119,7 @@
             // 
             // Cancelarbutton
             // 
-            this.Cancelarbutton.Location = new System.Drawing.Point(736, 164);
+            this.Cancelarbutton.Location = new System.Drawing.Point(691, 164);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(86, 30);
             this.Cancelarbutton.TabIndex = 10;
@@ -127,7 +129,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(479, 164);
+            this.Guardarbutton.Location = new System.Drawing.Point(526, 164);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(86, 30);
             this.Guardarbutton.TabIndex = 9;
@@ -137,7 +139,7 @@
             // 
             // Agregarbutton
             // 
-            this.Agregarbutton.Location = new System.Drawing.Point(255, 164);
+            this.Agregarbutton.Location = new System.Drawing.Point(210, 164);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(86, 30);
             this.Agregarbutton.TabIndex = 8;
@@ -162,7 +164,7 @@
             this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(188, 26);
             this.PreciotextBox.TabIndex = 6;
-            this.PreciotextBox.TextChanged += new System.EventHandler(this.PreciotextBox_TextChanged);
+            //this.PreciotextBox.TextChanged += new System.EventHandler(this.PreciotextBox_TextChanged);
             // 
             // CantidadtextBox
             // 
@@ -171,7 +173,7 @@
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(204, 26);
             this.CantidadtextBox.TabIndex = 5;
-            this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
+           // this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
             this.CantidadtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadtextBox_KeyPress);
             // 
             // label4
@@ -241,20 +243,20 @@
             this.DVentadataGridView.AllowUserToDeleteRows = false;
             this.DVentadataGridView.AllowUserToResizeColumns = false;
             this.DVentadataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal;
-            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
+            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DVentadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DVentadataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DVentadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
             this.DVentadataGridView.Name = "DVentadataGridView";
@@ -264,9 +266,9 @@
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DVentadataGridView.Size = new System.Drawing.Size(1203, 277);
             this.DVentadataGridView.TabIndex = 0;
-            this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
-            this.DVentadataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellContentClick);
-            this.DVentadataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DVentadataGridView_CellPainting);
+            //this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
+           // this.DVentadataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellContentClick);
+            //this.DVentadataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DVentadataGridView_CellPainting);
             // 
             // errorProvider1
             // 
@@ -311,6 +313,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.Eliminarbutton);
             this.panel1.Controls.Add(this.Cliente);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.TelefonotextBox);
@@ -333,11 +336,12 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1203, 217);
             this.panel1.TabIndex = 21;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel2.Controls.Add(this.CancelarComprabutton);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.ImportetextBox);
             this.panel2.Controls.Add(this.label4);
@@ -346,16 +350,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1203, 57);
             this.panel2.TabIndex = 22;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.DVentadataGridView);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 217);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1203, 277);
-            this.panel3.TabIndex = 23;
             // 
             // label6
             // 
@@ -367,6 +361,36 @@
             this.label6.Size = new System.Drawing.Size(29, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "C$";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.DVentadataGridView);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 217);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1203, 277);
+            this.panel3.TabIndex = 23;
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Location = new System.Drawing.Point(364, 164);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(86, 30);
+            this.Eliminarbutton.TabIndex = 21;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // CancelarComprabutton
+            // 
+            this.CancelarComprabutton.Location = new System.Drawing.Point(12, 15);
+            this.CancelarComprabutton.Name = "CancelarComprabutton";
+            this.CancelarComprabutton.Size = new System.Drawing.Size(140, 30);
+            this.CancelarComprabutton.TabIndex = 22;
+            this.CancelarComprabutton.Text = "Cancelar Compra";
+            this.CancelarComprabutton.UseVisualStyleBackColor = true;
+            this.CancelarComprabutton.Click += new System.EventHandler(this.CancelarComprabutton_Click);
             // 
             // WINDetalleVenta
             // 
@@ -418,5 +442,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button CancelarComprabutton;
+        private System.Windows.Forms.Button Eliminarbutton;
     }
 }
