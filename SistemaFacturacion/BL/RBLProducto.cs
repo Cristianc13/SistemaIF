@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ENT;
-using CAD;
 using System.Data;
+using CAD;
+using ENT;
 
 namespace BL
 {

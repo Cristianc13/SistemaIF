@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 
@@ -83,7 +77,7 @@ namespace WIN
 
                 //Cambiar iconohome
                 icohome.IconChar = BotonActual.IconChar;
-                icohome.IconColor = Color.FromArgb(21, 30, 41);
+                icohome.IconColor = Color.White;
                 //Texto
                 lbltitulo.Text = BotonActual.Text;
             }
@@ -117,6 +111,7 @@ namespace WIN
         private void btdashboard_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, Color.FromArgb(39, 174, 96));
+            AbrirForm(new Prueba());
         }
 
         private void btproducto_Click(object sender, EventArgs e)
@@ -184,5 +179,10 @@ namespace WIN
         }
 
         #endregion Segundo Codigo
+
+        private void btconfig_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(sender, Color.FromArgb(255, 94, 87));
+        }
     }
 }

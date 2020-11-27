@@ -1,29 +1,19 @@
 ﻿using System;
-using System.Data;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
-using System.Xml.Linq;
 using ENT;
 
 namespace WIN
 {
     public partial class WINProVent : Form
     {
-        BLProducto BProducto = new BLProducto();
-        ENTProducto Eproducto = new ENTProducto();
-
+        private BLProducto BProducto = new BLProducto();
+        private ENTProducto Eproducto = new ENTProducto();
 
         public WINProVent()
         {
             InitializeComponent();
         }
-
 
         public void FormatoGrid()
         {
@@ -57,16 +47,15 @@ namespace WIN
         public void HabilitarBotones(bool p1, bool p2)
         {
             Enviarbutton.Enabled = p1;
-            
         }
 
         public void llenarGrid()
         {
             ProductodataGridView.DataSource = BProducto.MostrarProductoVenta();
         }
-          
+
         private void WINProVent_Load(object sender, EventArgs e)
-        {           
+        {
             HabilitarBotones(false, true);
             llenarGrid();
             FormatoGrid();
@@ -74,7 +63,7 @@ namespace WIN
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-            limpiar();          
+            limpiar();
         }
 
         private void ProductodataGridView_DoubleClick(object sender, EventArgs e)
@@ -113,7 +102,6 @@ namespace WIN
             filtro = BuscartextBox.Text;
             Eproducto.codigopro = filtro;
             ProductodataGridView.DataSource = BProducto.BuscarProdCodigoNombre(Eproducto);
-
         }
 
         private void MarcModeltextBox_KeyUp(object sender, KeyEventArgs e)

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using ENT;
+﻿using System.Data;
 using CAD;
+using ENT;
 
 namespace BL
 {
     public class BLAdministrador
     {
-
         private CADAdministrador ADMIN = new CADAdministrador();
 
         public DataTable MostrarAdmin()

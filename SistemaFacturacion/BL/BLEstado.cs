@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using ENT;
+﻿using System.Data;
 using CAD;
+using ENT;
 
 namespace BL
 {
     public class BLEstado
     {
-
-
         private CADEstado est = new CADEstado();
 
         public DataTable MostrarEstado()
@@ -34,6 +27,5 @@ namespace BL
         {
             est.UpdateEstado(edt);
         }
-
     }
 }

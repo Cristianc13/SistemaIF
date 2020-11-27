@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ENT;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
+using ENT;
 
 namespace CAD
 {
-    public class CADModelo:CADConexion
+    public class CADModelo : CADConexion
     {
-
         private DataTable tabla = new DataTable();
 
         public DataTable MostrarModelo()
@@ -24,9 +18,6 @@ namespace CAD
             CerrarConexion();
             return tabla;
         }
-
-       
-
 
         public void InsertModelo(ENTModelo modelo)
         {
@@ -55,6 +46,5 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
-
     }
 }

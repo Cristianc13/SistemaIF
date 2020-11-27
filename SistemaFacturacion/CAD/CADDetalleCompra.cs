@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ENT;
 using System.Data;
 using System.Data.SqlClient;
+using ENT;
 
 namespace CAD
 {
@@ -13,7 +9,6 @@ namespace CAD
     {
         //private ENTDetalleCompra EdetalleC = new ENTDetalleCompra();
         private DataTable tabla = new DataTable();
-        
 
         public DataTable MostrarDetalleCompra()
         {
@@ -24,7 +19,7 @@ namespace CAD
         {
             SqlCommand cmd = new SqlCommand("InsertDetalleCompra", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
-            
+
             cmd.Parameters.AddWithValue("@cantidadProducto", EdetalleC.cantidadProducto);
             cmd.Parameters.AddWithValue("@costo", EdetalleC.costo);
             cmd.Parameters.AddWithValue("@importe", EdetalleC.importe);
@@ -33,7 +28,7 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
-        
+
         public void DeleteDetalleCompra(ENTDetalleCompra edetallec)
         {
             SqlCommand cmd = new SqlCommand("DeleteDetalleCompra", AbrirConexion());
@@ -65,6 +60,5 @@ namespace CAD
             CerrarConexion();
             return i;
         }
-
     }
 }

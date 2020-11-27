@@ -227,5 +227,27 @@ namespace CAD
             CerrarConexion();
             return i;
         }
+
+        public DataTable ProducCategori()
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("ProductoCategoria", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            var reader = cmd.ExecuteReader();
+            tabla.Load(reader);
+            CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable TopProductos()
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("ProductosPreferidos", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            var reader = cmd.ExecuteReader();
+            tabla.Load(reader);
+            CerrarConexion();
+            return tabla;
+        }
     }
 }

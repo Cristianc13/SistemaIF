@@ -1,7 +1,6 @@
-﻿using CAD;
+﻿using System.Data;
+using CAD;
 using ENT;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace BL
 {
@@ -18,6 +17,7 @@ namespace BL
         {
             CProveedor.InsertProveedor(EProveedor);
         }
+
         public void DeleteProveedor(ENTProveedor EProveedor)
         {
             CProveedor.DeleteProveedor(EProveedor);

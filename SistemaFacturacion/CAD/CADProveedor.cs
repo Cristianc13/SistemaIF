@@ -30,6 +30,7 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
+
         public void DeleteProveedor(ENTProveedor EProvedor)
         {
             SqlCommand cmd = new SqlCommand("DeleteProveedor", AbrirConexion());
@@ -38,6 +39,7 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
+
         public void UpdateProveedor(ENTProveedor EProveedor)
         {
             SqlCommand cmd = new SqlCommand("UpdateProveedor", AbrirConexion());
