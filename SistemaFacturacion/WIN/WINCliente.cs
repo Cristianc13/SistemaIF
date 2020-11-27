@@ -11,6 +11,9 @@ namespace WIN
         private BLCliente cliente = new BLCliente();
         public int n = 0;
         private int id;
+        string nombre;
+        string apellido;
+        string telefono;
 
         public WINCliente()
         {
@@ -55,7 +58,12 @@ namespace WIN
             ECliente.apellidoCliente = ApellidoTextBox.Text;
             ECliente.telefono = TelefonoTextBox.Text;
             cliente.InsertCliente(ECliente);
-            LlenarDataGrid();
+            //LlenarDataGrid();
+
+            WINDetalleVenta dv = Owner as WINDetalleVenta;
+            dv.ClientecomboBox.Text = NombreTextBox.Text;
+            dv.TelefonotextBox.Text = TelefonoTextBox.Text;
+            this.Close();
         }
 
         private void LlenarDataGrid()
@@ -72,11 +80,13 @@ namespace WIN
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            string valor = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
-            DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            string ID = ClienteDataGridView.CurrentRow.Cells[0].Value.ToString();
+            string valor = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();           
+            DialogResult rpt = MessageBox.Show("Eliminar Cliente: " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.No) return;
 
             //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
+            id = Convert.ToInt32(ID);
             ECliente.idCLiente = id;
             cliente.DeleteCliente(ECliente);
             LlenarDataGrid();
@@ -86,6 +96,8 @@ namespace WIN
 
         private void Actualizarbutton_Click(object sender, EventArgs e)
         {
+            string ID = ClienteDataGridView.CurrentRow.Cells[0].Value.ToString();
+            id = Convert.ToInt32(ID);
             ECliente.idCLiente = id;
             ECliente.nombreCliente = NombreTextBox.Text;
             ECliente.apellidoCliente = ApellidoTextBox.Text;
@@ -93,31 +105,37 @@ namespace WIN
             cliente.UpdateCliente(ECliente);
             LlenarDataGrid();
             Limpiar();
-            HabilitarBotones(true, false);
+            //HabilitarBotones(true, false);
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-            HabilitarBotones(true, false);
+            //HabilitarBotones(true, false);
             Limpiar();
         }
 
         private void ClienteDataGridView_DoubleClick(object sender, EventArgs e)
         {
+            //if (ClienteDataGridView.Rows.Count == 0) return;
+            if (ClienteDataGridView.CurrentRow == null) return;
+
             try
             {
-                if (ClienteDataGridView.Rows.Count == 0) return;
-                HabilitarBotones(false, true);
                 id = (int)ClienteDataGridView.CurrentRow.Cells[0].Value;
-                //MessageBox.Show(vIDEquipo.ToString());
-                NombreTextBox.Text = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
-                ApellidoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[2].Value.ToString();
-                TelefonoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[3].Value.ToString();
+                nombre = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
+                apellido = ClienteDataGridView.CurrentRow.Cells[2].Value.ToString();
+                telefono = ClienteDataGridView.CurrentRow.Cells[3].Value.ToString();
                 errorProvider1.Clear();
+
+                WINDetalleVenta dv = Owner as WINDetalleVenta;
+                dv.ClientecomboBox.Text = nombre;
+                dv.TelefonotextBox.Text = telefono;
+                this.Close();
             }
             catch (Exception)
             {
-                MessageBox.Show("Celda Vacia");
+
+                throw;
             }
         }
 
@@ -129,6 +147,11 @@ namespace WIN
             Actualizarbutton.Enabled = p2;
             Eliminarbutton.Enabled = p2;
             //Cancelarbutton.Enabled = p1;
+        }
+        private void Habilitar(bool p1, bool p2)
+        {
+            Eliminarbutton.Enabled = p1;
+            Actualizarbutton.Enabled = p2;
         }
 
         //Formato a la grid
@@ -151,12 +174,13 @@ namespace WIN
             errorProvider1.Clear();
         }
 
-        private void Enviarbutton_Click(object sender, EventArgs e)
+        private void ClienteDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            WINDetalleVenta dv = Owner as WINDetalleVenta;
-            dv.ClientecomboBox.Text = NombreTextBox.Text;
-            dv.TelefonotextBox.Text = TelefonoTextBox.Text;
-            this.Close();
+            NombreTextBox.Text = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
+            ApellidoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[2].Value.ToString();
+            TelefonoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[3].Value.ToString();
+            Habilitar(true, true);
         }
+
     }
 }

@@ -7,8 +7,16 @@ namespace WIN
 {
     public partial class WINProVent : Form
     {
+
         private BLProducto BProducto = new BLProducto();
         private ENTProducto Eproducto = new ENTProducto();
+
+        BLProducto BProducto = new BLProducto();
+        ENTProducto Eproducto = new ENTProducto();
+        string producto;
+        string stock;
+
+
 
         public WINProVent()
         {
@@ -20,16 +28,16 @@ namespace WIN
             ProductodataGridView.Columns[0].Visible = false;
             ProductodataGridView.Columns[1].HeaderText = "Codigo";
             ProductodataGridView.Columns[2].HeaderText = "Producto";
-            ProductodataGridView.Columns[3].HeaderText = "Descripcion";
-            ProductodataGridView.Columns[4].HeaderText = "Costo";
-            ProductodataGridView.Columns[5].HeaderText = "Venta";
+            ProductodataGridView.Columns[3].HeaderText = "Marca";
+            ProductodataGridView.Columns[4].HeaderText = "Modelo";
+            ProductodataGridView.Columns[5].HeaderText = "Categoria";
             ProductodataGridView.Columns[6].HeaderText = "Stock";
-            ProductodataGridView.Columns[7].HeaderText = "Marca";
-            ProductodataGridView.Columns[8].HeaderText = "Modelo";
-            ProductodataGridView.Columns[9].HeaderText = "Categoria";
-            ProductodataGridView.Columns[10].HeaderText = "Estado";
+            ProductodataGridView.Columns[7].HeaderText = "Importe";
+            ProductodataGridView.Columns[8].HeaderText = "Descripcion";
+            ProductodataGridView.Columns[9].HeaderText = "Estado";
             ProductodataGridView.AllowUserToResizeColumns = false;
             ProductodataGridView.AllowUserToResizeRows = false;
+
             //ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             //ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
         }
@@ -47,6 +55,9 @@ namespace WIN
         public void HabilitarBotones(bool p1, bool p2)
         {
             Enviarbutton.Enabled = p1;
+
+            Recursos.DatagridviewDiseño.DiseñoDGV(ref ProductodataGridView);
+
         }
 
         public void llenarGrid()
@@ -55,35 +66,35 @@ namespace WIN
         }
 
         private void WINProVent_Load(object sender, EventArgs e)
+
         {
             HabilitarBotones(false, true);
+
+        {           
+
             llenarGrid();
             FormatoGrid();
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
+
             limpiar();
+
+            BuscartextBox.Text = "";
+            MarcModeltextBox.Text = "";
+            llenarGrid();
+
         }
 
         private void ProductodataGridView_DoubleClick(object sender, EventArgs e)
         {
-            //NombretextBox.Text = ProductodataGridView.CurrentRow.Cells[2].Value.ToString();
-            ProductotextBox.Text = ProductodataGridView.CurrentRow.Cells[2].Value.ToString();
-            CostotextBox.Text = ProductodataGridView.CurrentRow.Cells[4].Value.ToString();
-            PreciotextBox.Text = ProductodataGridView.CurrentRow.Cells[5].Value.ToString();
-            StocktextBox.Text = ProductodataGridView.CurrentRow.Cells[6].Value.ToString();
-            DescripciontextBox.Text = ProductodataGridView.CurrentRow.Cells[3].Value.ToString();
+            if (ProductodataGridView.CurrentRow == null) return;
 
-            BuscartextBox.Text = "";
-            MarcModeltextBox.Text = "";
+            producto = ProductodataGridView.CurrentRow.Cells[2].Value.ToString();
+            stock = ProductodataGridView.CurrentRow.Cells[6].Value.ToString();
 
-            HabilitarBotones(true, false);
-        }
-
-        private void Enviarbutton_Click(object sender, EventArgs e)
-        {
-            decimal x = Convert.ToDecimal(StocktextBox.Text);
+            decimal x = Convert.ToDecimal(stock);
             if (x <= 0)
             {
                 MessageBox.Show("Stock del producto en su minimo valor");
@@ -91,7 +102,7 @@ namespace WIN
             else
             {
                 WINDetalleVenta dx = Owner as WINDetalleVenta;
-                dx.ProductocomboBox.Text = ProductotextBox.Text;
+                dx.ProductocomboBox.Text = producto;
                 this.Close();
             }
         }
