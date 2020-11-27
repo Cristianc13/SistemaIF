@@ -1,22 +1,24 @@
 ﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using System.Xml.Linq;
 using ENT;
 
 namespace WIN
 {
     public partial class WINProVent : Form
     {
-
         private BLProducto BProducto = new BLProducto();
         private ENTProducto Eproducto = new ENTProducto();
-
-        BLProducto BProducto = new BLProducto();
-        ENTProducto Eproducto = new ENTProducto();
-        string producto;
-        string stock;
-
-
+        private string producto;
+        private string stock;
 
         public WINProVent()
         {
@@ -37,27 +39,7 @@ namespace WIN
             ProductodataGridView.Columns[9].HeaderText = "Estado";
             ProductodataGridView.AllowUserToResizeColumns = false;
             ProductodataGridView.AllowUserToResizeRows = false;
-
-            //ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            //ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
-        }
-
-        public void limpiar()
-        {
-            MarcModeltextBox.Text = "";
-            BuscartextBox.Text = "";
-            ProductotextBox.Text = "";
-            CostotextBox.Text = "";
-            PreciotextBox.Text = "";
-            StocktextBox.Text = "";
-        }
-
-        public void HabilitarBotones(bool p1, bool p2)
-        {
-            Enviarbutton.Enabled = p1;
-
             Recursos.DatagridviewDiseño.DiseñoDGV(ref ProductodataGridView);
-
         }
 
         public void llenarGrid()
@@ -66,25 +48,16 @@ namespace WIN
         }
 
         private void WINProVent_Load(object sender, EventArgs e)
-
         {
-            HabilitarBotones(false, true);
-
-        {           
-
             llenarGrid();
             FormatoGrid();
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-
-            limpiar();
-
             BuscartextBox.Text = "";
             MarcModeltextBox.Text = "";
             llenarGrid();
-
         }
 
         private void ProductodataGridView_DoubleClick(object sender, EventArgs e)
