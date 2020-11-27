@@ -1,11 +1,7 @@
-﻿using ENT;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ENT;
 
 namespace CAD
 {
@@ -35,6 +31,7 @@ namespace CAD
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@cantidadProducto", Edetalle.cantidadProducto);
             cmd.Parameters.AddWithValue("@precioSalida", Edetalle.precioSalida);
+
             cmd.Parameters.AddWithValue("@importe", Edetalle.importe);
             cmd.Parameters.AddWithValue("@FK_idProducto", Edetalle.Fk_idProducto);
             cmd.Parameters.AddWithValue("@FK_idVenta", idventa);

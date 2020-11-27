@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CAD;
 using ENT;
 
@@ -11,6 +8,7 @@ namespace BL
     public class RBLVentasCliente
     {
         public List<ENTReporteVentasCliente> ERVC { get; set; }
+
         public void GenerarReporte(int i)
         {
             var reporte = new CADCliente();
@@ -26,7 +24,6 @@ namespace BL
                     fecha = Convert.ToDateTime(fila[2].ToString()),
                     descripcion = fila[3].ToString(),
                     importe = Convert.ToDecimal(fila[4].ToString()),
-
                 };
                 ERVC.Add(DetalleFactura);
             }

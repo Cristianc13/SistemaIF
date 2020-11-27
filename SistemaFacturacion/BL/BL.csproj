@@ -45,6 +45,7 @@
     <Compile Include="BLCategoria.cs" />
     <Compile Include="BLCliente.cs" />
     <Compile Include="BLCompra.cs" />
+    <Compile Include="BLDashboard.cs" />
     <Compile Include="BLDetalleCompra.cs" />
     <Compile Include="BLDetalleVenta.cs" />
     <Compile Include="BLEstado.cs" />

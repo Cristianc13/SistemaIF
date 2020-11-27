@@ -1,31 +1,27 @@
 ﻿using System;
-using System.Data;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
-using System.Xml.Linq;
 using ENT;
 
 namespace WIN
 {
     public partial class WINProVent : Form
     {
+
+        private BLProducto BProducto = new BLProducto();
+        private ENTProducto Eproducto = new ENTProducto();
+
         BLProducto BProducto = new BLProducto();
         ENTProducto Eproducto = new ENTProducto();
         string producto;
         string stock;
 
 
+
         public WINProVent()
         {
             InitializeComponent();
         }
-
 
         public void FormatoGrid()
         {
@@ -41,25 +37,54 @@ namespace WIN
             ProductodataGridView.Columns[9].HeaderText = "Estado";
             ProductodataGridView.AllowUserToResizeColumns = false;
             ProductodataGridView.AllowUserToResizeRows = false;
+
+            //ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            //ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+        }
+
+        public void limpiar()
+        {
+            MarcModeltextBox.Text = "";
+            BuscartextBox.Text = "";
+            ProductotextBox.Text = "";
+            CostotextBox.Text = "";
+            PreciotextBox.Text = "";
+            StocktextBox.Text = "";
+        }
+
+        public void HabilitarBotones(bool p1, bool p2)
+        {
+            Enviarbutton.Enabled = p1;
+
             Recursos.DatagridviewDiseño.DiseñoDGV(ref ProductodataGridView);
+
         }
 
         public void llenarGrid()
         {
             ProductodataGridView.DataSource = BProducto.MostrarProductoVenta();
         }
-          
+
         private void WINProVent_Load(object sender, EventArgs e)
+
+        {
+            HabilitarBotones(false, true);
+
         {           
+
             llenarGrid();
             FormatoGrid();
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
+
+            limpiar();
+
             BuscartextBox.Text = "";
             MarcModeltextBox.Text = "";
             llenarGrid();
+
         }
 
         private void ProductodataGridView_DoubleClick(object sender, EventArgs e)
@@ -88,7 +113,6 @@ namespace WIN
             filtro = BuscartextBox.Text;
             Eproducto.codigopro = filtro;
             ProductodataGridView.DataSource = BProducto.BuscarProdCodigoNombre(Eproducto);
-
         }
 
         private void MarcModeltextBox_KeyUp(object sender, KeyEventArgs e)

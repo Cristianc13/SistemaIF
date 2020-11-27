@@ -46,6 +46,7 @@
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.lbltitulo = new System.Windows.Forms.Label();
             this.salir = new System.Windows.Forms.PictureBox();
+            this.btconfig = new FontAwesome.Sharp.IconButton();
             this.slidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -59,6 +60,7 @@
             // slidebar
             // 
             this.slidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.slidebar.Controls.Add(this.btconfig);
             this.slidebar.Controls.Add(this.btproveedor);
             this.slidebar.Controls.Add(this.btcliente);
             this.slidebar.Controls.Add(this.panel1);
@@ -319,6 +321,28 @@
             this.salir.TabStop = false;
             this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
+            // btconfig
+            // 
+            this.btconfig.FlatAppearance.BorderSize = 0;
+            this.btconfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btconfig.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btconfig.ForeColor = System.Drawing.Color.White;
+            this.btconfig.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.btconfig.IconColor = System.Drawing.Color.White;
+            this.btconfig.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btconfig.IconSize = 38;
+            this.btconfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btconfig.Location = new System.Drawing.Point(0, 785);
+            this.btconfig.Name = "btconfig";
+            this.btconfig.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btconfig.Size = new System.Drawing.Size(250, 46);
+            this.btconfig.TabIndex = 19;
+            this.btconfig.Text = "Configuración";
+            this.btconfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btconfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btconfig.UseVisualStyleBackColor = true;
+            this.btconfig.Click += new System.EventHandler(this.btconfig_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +390,7 @@
         private FontAwesome.Sharp.IconButton btproveedor;
         private FontAwesome.Sharp.IconButton btcliente;
         private FontAwesome.Sharp.IconPictureBox icohome;
+        private FontAwesome.Sharp.IconButton btconfig;
     }
 }
 

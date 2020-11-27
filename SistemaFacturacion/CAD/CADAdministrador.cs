@@ -1,15 +1,10 @@
-﻿using ENT;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
+using ENT;
 
 namespace CAD
 {
-    public class CADAdministrador:CADConexion
+    public class CADAdministrador : CADConexion
     {
         private DataTable tabla = new DataTable();
 
@@ -58,7 +53,6 @@ namespace CAD
             cmd.Parameters.AddWithValue("@clave", admin.clave);
             cmd.ExecuteNonQuery();
             CerrarConexion();
-
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
 using ENT;
@@ -14,10 +7,9 @@ namespace WIN
 {
     public partial class WINAdministrador : Form
     {
-
         public ENTAdministrador EAdmin = new ENTAdministrador();
         public BLAdministrador BAdmin = new BLAdministrador();
-        int id;
+        private int id;
 
         public WINAdministrador()
         {
@@ -33,7 +25,6 @@ namespace WIN
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)

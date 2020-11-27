@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
-using System.Threading.Tasks;
+﻿using System.Data;
 using CAD;
 using ENT;
 
@@ -11,7 +6,6 @@ namespace BL
 {
     public class BLModelo
     {
-
         public CADModelo Mol = new CADModelo();
 
         public DataTable MostrarModelo()
@@ -33,6 +27,5 @@ namespace BL
         {
             Mol.UpdateModelo(mod);
         }
-
     }
 }

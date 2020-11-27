@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WIN
@@ -17,12 +10,14 @@ namespace WIN
             InitializeComponent();
             personalizarDiseño();
         }
+
         private void personalizarDiseño()
         {
             PanelSubMenuCatalogos.Visible = false;
             PanelSubMenuMaestro.Visible = false;
             PanelSubMenuProductos.Visible = false;
         }
+
         private void ocultarSubMenu()
         {
             if (PanelSubMenuCatalogos.Visible == true)
@@ -32,6 +27,7 @@ namespace WIN
             if (PanelSubMenuProductos.Visible == true)
                 PanelSubMenuProductos.Visible = false;
         }
+
         private void mostrarSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -50,7 +46,6 @@ namespace WIN
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-           
             //codigo aqui
             ocultarSubMenu();
         }
@@ -96,22 +91,22 @@ namespace WIN
             //codigo aqui
             ocultarSubMenu();
         }
+
         private Form activeForm = null;
+
         private void openChildForm(Form childForm)
         {
-            if (activeForm!=null)
-            
-                activeForm.Close();
-                activeForm = childForm;
-                childForm.TopLevel = false;
-                childForm.FormBorderStyle = FormBorderStyle.None;
-                childForm.Dock = DockStyle.Fill;
-                Panelchild.Controls.Add(childForm);
-                Panelchild.Tag = childForm;
-                childForm.BringToFront();
-                childForm.Show();
+            if (activeForm != null)
 
-            
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            Panelchild.Controls.Add(childForm);
+            Panelchild.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
@@ -133,7 +128,6 @@ namespace WIN
 
         private void button10_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button11_Click(object sender, EventArgs e)

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ENT
+﻿namespace ENT
 {
     public class ENTDetalleCompra
     {
@@ -15,6 +9,5 @@ namespace ENT
         public decimal cantidadProducto { get; set; }
         public decimal costo { get; set; }
         public decimal importe { get; set; }
-        
     }
 }

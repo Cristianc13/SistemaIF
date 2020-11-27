@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ENT;
 using BL;
+using ENT;
 
 namespace WIN
 {
@@ -66,8 +60,7 @@ namespace WIN
             DetalleCompra2GridView1.Columns[10].HeaderText = "Estado";
             DetalleCompra2GridView1.AllowUserToResizeColumns = false;
             DetalleCompra2GridView1.AllowUserToResizeRows = false;
-            DetalleCompra2GridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            DetalleCompra2GridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            Recursos.DatagridviewDiseño.DiseñoDGV(ref DetalleCompra2GridView1);
         }
 
         private void HabilitarBotones(bool p1, bool p2)

@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using CAD;
 using ENT;
-using System.Data;
 
 namespace BL
 {
     public class BLDetalleVenta
     {
         private CADDetalleVenta CdetalleVenta = new CADDetalleVenta();
-       // private ReporteVenta ERV = new ReporteVenta();
+
+        // private ReporteVenta ERV = new ReporteVenta();
         private ENTReporteListaVentas ELRV = new ENTReporteListaVentas();
+
         //private ENTReporteVentasPorPeriodo ERVPP = new ENTReporteVentasPorPeriodo();
 
         public DataTable MostrarDetalleVenta()
@@ -35,6 +32,5 @@ namespace BL
         {
             CdetalleVenta.GenerarFacturaVenta(idFactura);
         }
-
     }
 }
