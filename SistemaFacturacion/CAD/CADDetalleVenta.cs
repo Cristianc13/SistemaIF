@@ -35,7 +35,6 @@ namespace CAD
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@cantidadProducto", Edetalle.cantidadProducto);
             cmd.Parameters.AddWithValue("@precioSalida", Edetalle.precioSalida);
-            cmd.Parameters.AddWithValue("@IVA", Edetalle.IVA);
             cmd.Parameters.AddWithValue("@importe", Edetalle.importe);
             cmd.Parameters.AddWithValue("@FK_idProducto", Edetalle.Fk_idProducto);
             cmd.Parameters.AddWithValue("@FK_idVenta", idventa);
