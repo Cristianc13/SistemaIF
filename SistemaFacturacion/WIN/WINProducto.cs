@@ -396,6 +396,7 @@ namespace WIN
             }
         }
 
+
         private void LlenarEstado()
         {
             EstadocomboBox.DataSource = BEstado.MostrarEstado();

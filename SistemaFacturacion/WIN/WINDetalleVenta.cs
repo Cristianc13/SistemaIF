@@ -42,6 +42,7 @@ namespace WIN
             LlenaComboProducto();
             Limpiar();
             DescuentotextBox.Text = "0";
+            ClientecomboBox.Focus();
         }
 
         private void FormatoGrid()
@@ -355,6 +356,23 @@ namespace WIN
             }
 
             if (rpt == DialogResult.No) return;
+        }
+
+        private void HabilitarEliminar()
+        {
+            if (DVentadataGridView.Rows.Count == 0)
+            {
+                HabilitarEliminar(false, true);
+            }
+            else
+            {
+                HabilitarEliminar(true, false);
+            }
+        }
+
+        private void HabilitarEliminar(bool p1, bool p2)
+        {
+            Eliminarbutton.Enabled = p1;
         }
     }
 }
