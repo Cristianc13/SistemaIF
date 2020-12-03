@@ -54,6 +54,8 @@ namespace WIN
             MessageBox.Show("Bakcup realizado satisfactoriamente");
         }
 
+        //Mover formulario
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
