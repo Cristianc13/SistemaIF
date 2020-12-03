@@ -117,6 +117,12 @@
     <Compile Include="WINCompra.Designer.cs">
       <DependentUpon>WINCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINDCompracs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINDCompracs.Designer.cs">
+      <DependentUpon>WINDCompracs.cs</DependentUpon>
+    </Compile>
     <Compile Include="WINDetalleCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINCompra.resx">
       <DependentUpon>WINCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINDCompracs.resx">
+      <DependentUpon>WINDCompracs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINDetalleCompra.resx">
       <DependentUpon>WINDetalleCompra.cs</DependentUpon>

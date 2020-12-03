@@ -105,7 +105,7 @@ namespace WIN
         private void btcompra_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, Color.FromArgb(230, 126, 34));
-            AbrirForm(new WINDetalleCompra());
+            AbrirForm(new WINDCompracs());
         }
 
         private void btdashboard_Click(object sender, EventArgs e)
