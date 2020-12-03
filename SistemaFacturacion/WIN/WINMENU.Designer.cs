@@ -46,10 +46,12 @@
             this.btnCatalogo = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.Panelchild = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.PanelMenuLateral.SuspendLayout();
             this.PanelSubMenuMaestro.SuspendLayout();
             this.PanelSubMenuProductos.SuspendLayout();
             this.PanelSubMenuCatalogos.SuspendLayout();
+            this.Panelchild.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenuLateral
@@ -312,11 +314,32 @@
             // Panelchild
             // 
             this.Panelchild.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Panelchild.Controls.Add(this.iconButton1);
             this.Panelchild.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panelchild.Location = new System.Drawing.Point(177, 0);
             this.Panelchild.Name = "Panelchild";
             this.Panelchild.Size = new System.Drawing.Size(957, 511);
             this.Panelchild.TabIndex = 1;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 40;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(301, 288);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(117, 41);
+            this.iconButton1.TabIndex = 0;
+            this.iconButton1.Text = "Guardar";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // WINMENU
             // 
@@ -329,10 +352,12 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WINMENU";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.WINMENU_Load);
             this.PanelMenuLateral.ResumeLayout(false);
             this.PanelSubMenuMaestro.ResumeLayout(false);
             this.PanelSubMenuProductos.ResumeLayout(false);
             this.PanelSubMenuCatalogos.ResumeLayout(false);
+            this.Panelchild.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -357,5 +382,6 @@
         private System.Windows.Forms.Button btnCatalogo;
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.Panel Panelchild;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

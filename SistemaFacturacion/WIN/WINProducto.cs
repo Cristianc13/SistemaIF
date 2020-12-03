@@ -50,8 +50,8 @@ namespace WIN
             DescripciontextBox.Visible = true;
             ObservacionestextBox.Visible = true;
             BuscartextBox.Visible = true;
-            Actualizarbutton.Visible = true;
-            Eliminarbutton.Visible = true;
+            btneliminar.Visible = true;
+            btneditar.Visible = true;
         }
 
         public void Limpiar()
@@ -105,10 +105,41 @@ namespace WIN
 
         private void HabilitarBotones(bool p1, bool p2)
         {
-            Guardarbutton.Enabled = p2;
-            Actualizarbutton.Enabled = p1;
-            Eliminarbutton.Enabled = p1;
-            // Cancelarbutton.Enabled = p1;
+            btnguardar.Enabled = p2;
+
+            if (btnguardar.Enabled == true)
+            {
+                btnguardar.BackColor = Color.FromArgb(21, 30, 41);
+                btnguardar.IconColor = Color.White;
+            }
+            else
+            {
+                btnguardar.BackColor = Color.FromArgb(177, 180, 183);
+                btnguardar.IconColor = Color.Black;
+            }
+
+            btneditar.Enabled = p1;
+            if (btneditar.Enabled == false)
+            {
+                btneditar.BackColor = Color.FromArgb(177, 180, 183);
+                btneditar.IconColor = Color.Black;
+            }
+            else
+            {
+                btneditar.BackColor = Color.FromArgb(21, 30, 41);
+                btneditar.IconColor = Color.White;
+            }
+            btneliminar.Enabled = p1;
+            if (btneditar.Enabled == false)
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
         }
 
         private void LlenarMarca()
@@ -184,49 +215,6 @@ namespace WIN
             }
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
-        {
-            if (!Validar()) return;
-            try
-            {
-                EProducto.nombreProducto = NombretextBox.Text;
-                EProducto.codigopro = CodigotextBox.Text;
-                EProducto.stockProducto = Convert.ToDecimal(StocktextBox.Text);
-                EProducto.costo = Convert.ToDecimal(CostotextBox.Text);
-                EProducto.FK_idMarca = IdMarca;
-                EProducto.precioSalida = int.Parse(PrecioSalidatextBox.Text);
-                EProducto.FK_idModelo = IdModelo;
-                EProducto.FK_idCategoria = IdCategoria;
-                EProducto.FK_idEstado = IdEstado;
-                EProducto.descripcion = DescripciontextBox.Text;
-                EProducto.observacion = ObservacionestextBox.Text;
-
-                int idP = BProducto.InsertarProducto(EProducto);
-                kardex.fecha = DateTime.Now;
-                kardex.concepto = "Inventario Inicial";
-                kardex.entrada = EProducto.stockProducto;
-                kardex.salida = 0;
-                kardex.existencia = 0;//Momento
-                kardex.costeunitario = EProducto.costo;
-                kardex.costepromedio = 0;
-                kardex.FK_idProducto = idP;
-                BKardex.InsertKardex(kardex);
-
-                Limpiar();
-                LlenarGrid();
-                HabilitarBotones(false, true);
-                Tarjetas();
-            }
-            catch (SqlException ex)
-            {
-                if (ex.Message.Contains("IX_CodigoProducto"))
-                {
-                    MessageBox.Show("Codigo de Producto ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    CodigotextBox.Focus();
-                }
-            }
-        }
-
         private void ProductodataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (ProductodataGridView.Rows.Count == 0) return;
@@ -246,24 +234,6 @@ namespace WIN
             EstadocomboBox.Text = ProductodataGridView.CurrentRow.Cells[12].Value.ToString();
 
             HabilitarBotones(true, false);
-        }
-
-        private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
-            DialogResult rpt = MessageBox.Show("Desea eliminar el registro", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-            if (rpt == DialogResult.No) return;
-            EProducto.idProducto = IdProducto;
-            BProducto.EliminarProduto(EProducto);
-            HabilitarBotones(false, true);
-            Limpiar();
-            LlenarGrid();
-            Tarjetas();
-        }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-            HabilitarBotones(false, true);
         }
 
         private void StocktextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -322,7 +292,91 @@ namespace WIN
             ProductodataGridView.DataSource = BProducto.BuscarProducto(EProducto);
         }
 
-        private void Actualizarbutton_Click(object sender, EventArgs e)
+        private void BuscarModbutton_Click(object sender, EventArgs e)
+        {
+            WINModelo WMod = new WINModelo();
+            WMod.ShowDialog();
+            LlenarModelo();
+            Tarjetas();
+        }
+
+        private void BuscarMarbutton_Click(object sender, EventArgs e)
+        {
+            WINMarca WMar = new WINMarca();
+            WMar.ShowDialog();
+            LlenarMarca();
+            Tarjetas();
+        }
+
+        private void Exportarbutton_Click(object sender, EventArgs e)
+        {
+        }
+
+        public void LlenarCategoria()
+        {
+            CategoriacomboBox.DataSource = BCategoria.MostrarCategoria();
+            CategoriacomboBox.DisplayMember = "nombreCategoria";
+            CategoriacomboBox.ValueMember = "idCategoria";
+            CategoriacomboBox.SelectedIndex = -1;
+        }
+
+        private void ProductodataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //Fprmato condicional de la grid
+            if (this.ProductodataGridView.Columns[e.ColumnIndex].Name == "stockProducto")
+            {
+                if (Convert.ToInt32(e.Value) <= 3)
+                {
+                    e.CellStyle.ForeColor = Color.FromArgb(156, 0, 6);
+                    e.CellStyle.BackColor = Color.FromArgb(255, 199, 206);
+                }
+            }
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            if (!Validar()) return;
+            try
+            {
+                EProducto.nombreProducto = NombretextBox.Text;
+                EProducto.codigopro = CodigotextBox.Text;
+                EProducto.stockProducto = Convert.ToDecimal(StocktextBox.Text);
+                EProducto.costo = Convert.ToDecimal(CostotextBox.Text);
+                EProducto.FK_idMarca = IdMarca;
+                EProducto.precioSalida = int.Parse(PrecioSalidatextBox.Text);
+                EProducto.FK_idModelo = IdModelo;
+                EProducto.FK_idCategoria = IdCategoria;
+                EProducto.FK_idEstado = IdEstado;
+                EProducto.descripcion = DescripciontextBox.Text;
+                EProducto.observacion = ObservacionestextBox.Text;
+
+                int idP = BProducto.InsertarProducto(EProducto);
+                kardex.fecha = DateTime.Now;
+                kardex.concepto = "Inventario Inicial";
+                kardex.entrada = EProducto.stockProducto;
+                kardex.salida = 0;
+                kardex.existencia = 0;//Momento
+                kardex.costeunitario = EProducto.costo;
+                kardex.costepromedio = 0;
+                kardex.FK_idProducto = idP;
+                BKardex.InsertKardex(kardex);
+
+                Limpiar();
+                LlenarGrid();
+                HabilitarBotones(false, true);
+                Tarjetas();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("IX_CodigoProducto"))
+                {
+                    MessageBox.Show("Codigo de Producto ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CodigotextBox.Focus();
+                }
+            }
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
         {
             if (!Validar()) return;
             try
@@ -354,48 +408,28 @@ namespace WIN
             }
         }
 
-        private void BuscarModbutton_Click(object sender, EventArgs e)
+        private void btneliminar_Click(object sender, EventArgs e)
         {
-            WINModelo WMod = new WINModelo();
-            WMod.ShowDialog();
-            LlenarModelo();
+            DialogResult rpt = MessageBox.Show("Desea eliminar el registro", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (rpt == DialogResult.No) return;
+            EProducto.idProducto = IdProducto;
+            BProducto.EliminarProduto(EProducto);
+            HabilitarBotones(false, true);
+            Limpiar();
+            LlenarGrid();
             Tarjetas();
         }
 
-        private void BuscarMarbutton_Click(object sender, EventArgs e)
+        private void btncancelar_Click(object sender, EventArgs e)
         {
-            WINMarca WMar = new WINMarca();
-            WMar.ShowDialog();
-            LlenarMarca();
-            Tarjetas();
+            Limpiar();
+            HabilitarBotones(false, true);
         }
 
-        private void Exportarbutton_Click(object sender, EventArgs e)
+        private void btnexportar_Click(object sender, EventArgs e)
         {
             ExportarDatos();
         }
-
-        public void LlenarCategoria()
-        {
-            CategoriacomboBox.DataSource = BCategoria.MostrarCategoria();
-            CategoriacomboBox.DisplayMember = "nombreCategoria";
-            CategoriacomboBox.ValueMember = "idCategoria";
-            CategoriacomboBox.SelectedIndex = -1;
-        }
-
-        private void ProductodataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //Fprmato condicional de la grid
-            if (this.ProductodataGridView.Columns[e.ColumnIndex].Name == "stockProducto")
-            {
-                if (Convert.ToInt32(e.Value) <= 3)
-                {
-                    e.CellStyle.ForeColor = Color.FromArgb(156, 0, 6);
-                    e.CellStyle.BackColor = Color.FromArgb(255, 199, 206);
-                }
-            }
-        }
-
 
         private void LlenarEstado()
         {
@@ -407,16 +441,8 @@ namespace WIN
 
         public bool Validar()
         {
-            //Codigo
-            if (CodigotextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(CodigotextBox, "Debe ingresar un Nombre");
-                CodigotextBox.Focus();
-                return false;
-            }
-            errorProvider1.Clear();
 
-            //Nombre
+                 //Nombre
             if (NombretextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(NombretextBox, "Debe ingresar un Nombre");
@@ -424,11 +450,31 @@ namespace WIN
                 return false;
             }
             errorProvider1.Clear();
+            
+            //Categoria
+            if (CategoriacomboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(CategoriacomboBox, "Debe seleccionar un Categoria");
+                CategoriacomboBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            //Codigo
+            if (CodigotextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(CodigotextBox, "Debe ingresar un Codigo");
+                CodigotextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+       
 
             //Stock
             if (StocktextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(StocktextBox, "Debe ingresar un Numero de Stok");
+                errorProvider1.SetError(StocktextBox, "Debe ingresar un Numero de Stock");
                 StocktextBox.Focus();
                 return false;
             }
@@ -443,7 +489,24 @@ namespace WIN
             }
             errorProvider1.Clear();
 
+                    //Precio Salida
+            if (PrecioSalidatextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(PrecioSalidatextBox, "Debe ingresar un Precio Salida");
+                PrecioSalidatextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+                 //Modelo
+            if (ModelocomboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(ModelocomboBox, "Debe seleccionar un Modelo");
+                ModelocomboBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
             //Marca
+
             if (MarcacomboBox.SelectedIndex == -1)
             {
                 errorProvider1.SetError(MarcacomboBox, "Debe seleccionar una Marca");
@@ -452,32 +515,10 @@ namespace WIN
             }
             errorProvider1.Clear();
 
-            //Precio Salida
-            if (PrecioSalidatextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(PrecioSalidatextBox, "Debe ingresar un Precio Salida");
-                PrecioSalidatextBox.Focus();
-                return false;
-            }
-            errorProvider1.Clear();
+    
 
-            //Modelo
-            if (ModelocomboBox.SelectedIndex == -1)
-            {
-                errorProvider1.SetError(ModelocomboBox, "Debe seleccionar un Modelo");
-                ModelocomboBox.Focus();
-                return false;
-            }
-            errorProvider1.Clear();
+       
 
-            //Categoria
-            if (CategoriacomboBox.SelectedIndex == -1)
-            {
-                errorProvider1.SetError(CategoriacomboBox, "Debe seleccionar un Categoria");
-                CategoriacomboBox.Focus();
-                return false;
-            }
-            errorProvider1.Clear();
 
             //Estado
             if (EstadocomboBox.SelectedIndex == -1)
