@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.slidebar = new System.Windows.Forms.Panel();
+            this.btconfig = new FontAwesome.Sharp.IconButton();
             this.btproveedor = new FontAwesome.Sharp.IconButton();
             this.btcliente = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,7 +47,6 @@
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.lbltitulo = new System.Windows.Forms.Label();
             this.salir = new System.Windows.Forms.PictureBox();
-            this.btconfig = new FontAwesome.Sharp.IconButton();
             this.slidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -71,8 +71,30 @@
             this.slidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.slidebar.Location = new System.Drawing.Point(0, 0);
             this.slidebar.Name = "slidebar";
-            this.slidebar.Size = new System.Drawing.Size(250, 900);
+            this.slidebar.Size = new System.Drawing.Size(250, 752);
             this.slidebar.TabIndex = 0;
+            // 
+            // btconfig
+            // 
+            this.btconfig.FlatAppearance.BorderSize = 0;
+            this.btconfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btconfig.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btconfig.ForeColor = System.Drawing.Color.White;
+            this.btconfig.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.btconfig.IconColor = System.Drawing.Color.White;
+            this.btconfig.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btconfig.IconSize = 38;
+            this.btconfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btconfig.Location = new System.Drawing.Point(0, 556);
+            this.btconfig.Name = "btconfig";
+            this.btconfig.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btconfig.Size = new System.Drawing.Size(250, 46);
+            this.btconfig.TabIndex = 19;
+            this.btconfig.Text = "Configuración";
+            this.btconfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btconfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btconfig.UseVisualStyleBackColor = true;
+            this.btconfig.Click += new System.EventHandler(this.btconfig_Click);
             // 
             // btproveedor
             // 
@@ -255,7 +277,7 @@
             this.wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wrapper.Location = new System.Drawing.Point(250, 60);
             this.wrapper.Name = "wrapper";
-            this.wrapper.Size = new System.Drawing.Size(1251, 840);
+            this.wrapper.Size = new System.Drawing.Size(1100, 692);
             this.wrapper.TabIndex = 1;
             // 
             // header
@@ -268,7 +290,7 @@
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(250, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1251, 60);
+            this.header.Size = new System.Drawing.Size(1100, 60);
             this.header.TabIndex = 1;
             this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.header_MouseDown);
             // 
@@ -289,7 +311,7 @@
             // 
             this.minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
-            this.minimizar.Location = new System.Drawing.Point(1172, 3);
+            this.minimizar.Location = new System.Drawing.Point(1021, 3);
             this.minimizar.Name = "minimizar";
             this.minimizar.Size = new System.Drawing.Size(35, 35);
             this.minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -313,7 +335,7 @@
             // 
             this.salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.salir.Image = global::WIN.Properties.Resources.icerrar;
-            this.salir.Location = new System.Drawing.Point(1213, 3);
+            this.salir.Location = new System.Drawing.Point(1062, 3);
             this.salir.Name = "salir";
             this.salir.Size = new System.Drawing.Size(35, 35);
             this.salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -321,33 +343,11 @@
             this.salir.TabStop = false;
             this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
-            // btconfig
-            // 
-            this.btconfig.FlatAppearance.BorderSize = 0;
-            this.btconfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btconfig.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btconfig.ForeColor = System.Drawing.Color.White;
-            this.btconfig.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.btconfig.IconColor = System.Drawing.Color.White;
-            this.btconfig.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btconfig.IconSize = 38;
-            this.btconfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btconfig.Location = new System.Drawing.Point(0, 785);
-            this.btconfig.Name = "btconfig";
-            this.btconfig.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btconfig.Size = new System.Drawing.Size(250, 46);
-            this.btconfig.TabIndex = 19;
-            this.btconfig.Text = "Configuración";
-            this.btconfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btconfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btconfig.UseVisualStyleBackColor = true;
-            this.btconfig.Click += new System.EventHandler(this.btconfig_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1501, 900);
+            this.ClientSize = new System.Drawing.Size(1350, 752);
             this.ControlBox = false;
             this.Controls.Add(this.wrapper);
             this.Controls.Add(this.header);
