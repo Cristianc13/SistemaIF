@@ -76,6 +76,7 @@
             // 
             // btconfig
             // 
+            this.btconfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btconfig.FlatAppearance.BorderSize = 0;
             this.btconfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btconfig.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,7 +86,7 @@
             this.btconfig.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btconfig.IconSize = 38;
             this.btconfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btconfig.Location = new System.Drawing.Point(0, 556);
+            this.btconfig.Location = new System.Drawing.Point(1, 694);
             this.btconfig.Name = "btconfig";
             this.btconfig.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btconfig.Size = new System.Drawing.Size(250, 46);
