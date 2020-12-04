@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BL;
 using ENT;
@@ -28,10 +29,41 @@ namespace WIN
 
         private void HabilitarBotones(bool p1, bool p2)
         {
-            Guardarbutton.Enabled = p1;
-            Actualizarbutton.Enabled = p2;
-            Eliminarbutton.Enabled = p2;
-            //Cancelarbutton.Enabled = p1;
+            btnguardar.Enabled = p2;
+
+            if (btnguardar.Enabled == true)
+            {
+                btnguardar.BackColor = Color.FromArgb(21, 30, 41);
+                btnguardar.IconColor = Color.White;
+            }
+            else
+            {
+                btnguardar.BackColor = Color.FromArgb(177, 180, 183);
+                btnguardar.IconColor = Color.Black;
+            }
+
+            btneditar.Enabled = p1;
+            if (btneditar.Enabled == false)
+            {
+                btneditar.BackColor = Color.FromArgb(177, 180, 183);
+                btneditar.IconColor = Color.Black;
+            }
+            else
+            {
+                btneditar.BackColor = Color.FromArgb(21, 30, 41);
+                btneditar.IconColor = Color.White;
+            }
+            btneliminar.Enabled = p1;
+            if (btneditar.Enabled == false)
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
         }
 
         public void LlenarGrid()
@@ -56,14 +88,13 @@ namespace WIN
             CategoriadataGridView.Columns[3].HeaderText = "Codigo";
             CategoriadataGridView.AllowUserToResizeColumns = false;
             CategoriadataGridView.AllowUserToResizeRows = false;
-            CategoriadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            CategoriadataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            Recursos.DatagridviewDiseño.DiseñoDGV(ref CategoriadataGridView);
         }
 
         private void CategoriadataGridView_DoubleClick(object sender, EventArgs e)
         {
             if (CategoriadataGridView.Rows.Count == 0) return;
-            HabilitarBotones(false, true);
+            HabilitarBotones(true, false);
             id = (int)CategoriadataGridView.CurrentRow.Cells[0].Value;
             //MessageBox.Show(vIDEquipo.ToString());
             CategoriatextBox.Text = CategoriadataGridView.CurrentRow.Cells[1].Value.ToString();
@@ -74,29 +105,16 @@ namespace WIN
 
         private void Categoria_Load(object sender, EventArgs e)
         {
+            HabilitarBotones(false, true);
             LlenarGrid();
             FormatoGrid();
-        }
-
-        private void Guardarbutton_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Actualizarbutton_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
+            btneditar.Visible = true;
+            btneliminar.Visible = true;
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
             Limpiar();
         }
 
@@ -109,7 +127,7 @@ namespace WIN
             BCat.DeleteCategoria(ECat);
             LlenarGrid();
             Limpiar();
-            HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -121,7 +139,7 @@ namespace WIN
             BCat.UpdateCategoria(ECat);
             LlenarGrid();
             Limpiar();
-            HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -150,6 +168,24 @@ namespace WIN
             Guardar();
             LlenarGrid();
             Limpiar();
+            HabilitarBotones(false, true);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void Header_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
