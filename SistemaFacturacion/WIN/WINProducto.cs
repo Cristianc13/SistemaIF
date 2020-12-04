@@ -277,10 +277,6 @@ namespace WIN
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            WINCategoria WCat = new WINCategoria();
-            WCat.ShowDialog();
-            LlenarCategoria();
-            Tarjetas();
         }
 
         private void BuscartextBox_KeyUp(object sender, KeyEventArgs e)
@@ -302,10 +298,6 @@ namespace WIN
 
         private void BuscarMarbutton_Click(object sender, EventArgs e)
         {
-            WINMarca WMar = new WINMarca();
-            WMar.ShowDialog();
-            LlenarMarca();
-            Tarjetas();
         }
 
         private void Exportarbutton_Click(object sender, EventArgs e)
@@ -431,6 +423,30 @@ namespace WIN
             ExportarDatos();
         }
 
+        private void btncategoria_Click(object sender, EventArgs e)
+        {
+            WINCategoria WCat = new WINCategoria();
+            WCat.ShowDialog();
+            LlenarCategoria();
+            Tarjetas();
+        }
+
+        private void btnmodelo_Click(object sender, EventArgs e)
+        {
+            WINModelo WMod = new WINModelo();
+            WMod.ShowDialog();
+            LlenarModelo();
+            Tarjetas();
+        }
+
+        private void btnmarca_Click(object sender, EventArgs e)
+        {
+            WINMarca WMar = new WINMarca();
+            WMar.ShowDialog();
+            LlenarMarca();
+            Tarjetas();
+        }
+
         private void LlenarEstado()
         {
             EstadocomboBox.DataSource = BEstado.MostrarEstado();
@@ -441,8 +457,7 @@ namespace WIN
 
         public bool Validar()
         {
-
-                 //Nombre
+            //Nombre
             if (NombretextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(NombretextBox, "Debe ingresar un Nombre");
@@ -450,7 +465,7 @@ namespace WIN
                 return false;
             }
             errorProvider1.Clear();
-            
+
             //Categoria
             if (CategoriacomboBox.SelectedIndex == -1)
             {
@@ -468,8 +483,6 @@ namespace WIN
                 return false;
             }
             errorProvider1.Clear();
-
-       
 
             //Stock
             if (StocktextBox.Text == string.Empty)
@@ -489,7 +502,7 @@ namespace WIN
             }
             errorProvider1.Clear();
 
-                    //Precio Salida
+            //Precio Salida
             if (PrecioSalidatextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(PrecioSalidatextBox, "Debe ingresar un Precio Salida");
@@ -497,7 +510,7 @@ namespace WIN
                 return false;
             }
             errorProvider1.Clear();
-                 //Modelo
+            //Modelo
             if (ModelocomboBox.SelectedIndex == -1)
             {
                 errorProvider1.SetError(ModelocomboBox, "Debe seleccionar un Modelo");
@@ -514,11 +527,6 @@ namespace WIN
                 return false;
             }
             errorProvider1.Clear();
-
-    
-
-       
-
 
             //Estado
             if (EstadocomboBox.SelectedIndex == -1)
