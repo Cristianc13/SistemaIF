@@ -80,6 +80,52 @@ namespace WIN
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+        }
+
+        private void Cancelarbutton_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Actualizarbutton_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            HabilitarBotones(true, false);
+            Limpiar();
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            string valor = CategoriadataGridView.CurrentRow.Cells[1].Value.ToString();
+            DialogResult rpt = MessageBox.Show("Eliminar Categoria " + valor, "Categoria", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (rpt == DialogResult.No) return;
+            ECat.idCategoria = id;
+            BCat.DeleteCategoria(ECat);
+            LlenarGrid();
+            Limpiar();
+            HabilitarBotones(true, false);
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            ECat.idCategoria = id;
+            ECat.nombreCategoria = CategoriatextBox.Text;
+            ECat.descripcion = DescripciontextBox.Text;
+            ECat.codigocategoria = CodigotextBox.Text;
+            BCat.UpdateCategoria(ECat);
+            LlenarGrid();
+            Limpiar();
+            HabilitarBotones(true, false);
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
             if (CategoriatextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(CategoriatextBox, "Debe ingresar una Categoria");
@@ -104,36 +150,6 @@ namespace WIN
             Guardar();
             LlenarGrid();
             Limpiar();
-        }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-            HabilitarBotones(true, false);
-            Limpiar();
-        }
-
-        private void Actualizarbutton_Click(object sender, EventArgs e)
-        {
-            ECat.idCategoria = id;
-            ECat.nombreCategoria = CategoriatextBox.Text;
-            ECat.descripcion = DescripciontextBox.Text;
-            ECat.codigocategoria = CodigotextBox.Text;
-            BCat.UpdateCategoria(ECat);
-            LlenarGrid();
-            Limpiar();
-            HabilitarBotones(true, false);
-        }
-
-        private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
-            string valor = CategoriadataGridView.CurrentRow.Cells[1].Value.ToString();
-            DialogResult rpt = MessageBox.Show("Eliminar Categoria " + valor, "Categoria", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (rpt == DialogResult.No) return;
-            ECat.idCategoria = id;
-            BCat.DeleteCategoria(ECat);
-            LlenarGrid();
-            Limpiar();
-            HabilitarBotones(true, false);
         }
     }
 }
