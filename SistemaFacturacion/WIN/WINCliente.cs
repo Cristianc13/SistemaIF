@@ -2,11 +2,13 @@
 using System.Windows.Forms;
 using BL;
 using ENT;
+using BL;
 
 namespace WIN
 {
     public partial class WINCliente : Form
     {
+        private BLCliente BCliente = new BLCliente();
         public ENTCliente ECliente = new ENTCliente();
         private BLCliente cliente = new BLCliente();
         public int n = 0;
@@ -61,8 +63,14 @@ namespace WIN
             //LlenarDataGrid();
 
             WINDetalleVenta dv = Owner as WINDetalleVenta;
+            dv.ClientecomboBox.DataSource = BCliente.MostrarCliente();
+            dv.ClientecomboBox.DisplayMember = "nombreCliente";
+            dv.ClientecomboBox.ValueMember = "idCliente";
+            dv.ClientecomboBox.SelectedIndex = -1;
+
             dv.ClientecomboBox.Text = NombreTextBox.Text;
             dv.TelefonotextBox.Text = TelefonoTextBox.Text;
+
             this.Close();
         }
 

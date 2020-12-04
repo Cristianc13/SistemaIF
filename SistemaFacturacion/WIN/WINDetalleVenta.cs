@@ -205,6 +205,7 @@ namespace WIN
             object idcliente = ClientecomboBox.SelectedValue;
             int cliente = Convert.ToInt32(idcliente);
             idventa = BLDetalle.InsertarVenta(cliente);
+            
 
             foreach (ENTDetalleVenta miDetalle in EDventa)
             {
