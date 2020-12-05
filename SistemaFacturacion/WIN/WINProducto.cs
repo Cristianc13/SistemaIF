@@ -97,10 +97,11 @@ namespace WIN
             ProductodataGridView.Columns[10].HeaderText = "Modelo";
             ProductodataGridView.Columns[11].HeaderText = "Categoria";
             ProductodataGridView.Columns[12].HeaderText = "Estado";
-            ProductodataGridView.AllowUserToResizeColumns = false;
-            ProductodataGridView.AllowUserToResizeRows = false;
-            ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            //ProductodataGridView.AllowUserToResizeColumns = false;
+            //ProductodataGridView.AllowUserToResizeRows = false;
+            //ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            //ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            Recursos.DatagridviewDiseño.DiseñoDGV(ref ProductodataGridView);
         }
 
         private void HabilitarBotones(bool p1, bool p2)
@@ -444,6 +445,14 @@ namespace WIN
             WINMarca WMar = new WINMarca();
             WMar.ShowDialog();
             LlenarMarca();
+            Tarjetas();
+        }
+
+        private void btnestado_Click(object sender, EventArgs e)
+        {
+            WINEstado we = new WINEstado();
+            we.ShowDialog();
+            LlenarModelo();
             Tarjetas();
         }
 

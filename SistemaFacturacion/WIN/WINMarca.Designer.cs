@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINMarca));
             this.MarcadataGridView = new System.Windows.Forms.DataGridView();
             this.MarcatextBox = new System.Windows.Forms.TextBox();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -128,6 +129,7 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.MarcatextBox);
             this.Controls.Add(this.MarcadataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WINMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Marca";

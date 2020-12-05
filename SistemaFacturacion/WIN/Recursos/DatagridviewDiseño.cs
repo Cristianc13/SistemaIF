@@ -11,6 +11,7 @@ namespace WIN.Recursos
 
             //Ajustar Tamaño de columnas
             List.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            List.MultiSelect = false;
 
             //Alinear fuente al centro
             List.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;

@@ -13,7 +13,6 @@ namespace CAD
         {
             SqlCommand cmd = new SqlCommand("ProductoCategoria", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
-
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {

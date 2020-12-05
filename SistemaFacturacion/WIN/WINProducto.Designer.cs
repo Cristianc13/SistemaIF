@@ -35,6 +35,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINProducto));
             this.ProductodataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btncategoria = new FontAwesome.Sharp.IconPictureBox();
+            this.btnmodelo = new FontAwesome.Sharp.IconPictureBox();
+            this.btnmarca = new FontAwesome.Sharp.IconPictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CantidadProduLabel = new System.Windows.Forms.Label();
@@ -90,7 +93,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btncategoria = new FontAwesome.Sharp.IconPictureBox();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.btneditar = new FontAwesome.Sharp.IconButton();
@@ -99,10 +101,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnexportar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnmodelo = new FontAwesome.Sharp.IconPictureBox();
-            this.btnmarca = new FontAwesome.Sharp.IconPictureBox();
+            this.btnestado = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmodelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmarca)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
@@ -124,12 +128,10 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btncategoria)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmodelo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnestado)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductodataGridView
@@ -179,6 +181,57 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // btncategoria
+            // 
+            this.btncategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncategoria.BackColor = System.Drawing.Color.White;
+            this.btncategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btncategoria, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btncategoria.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btncategoria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btncategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btncategoria.IconSize = 30;
+            this.btncategoria.Location = new System.Drawing.Point(300, 57);
+            this.btncategoria.Name = "btncategoria";
+            this.btncategoria.Size = new System.Drawing.Size(30, 30);
+            this.btncategoria.TabIndex = 38;
+            this.btncategoria.TabStop = false;
+            this.btncategoria.Click += new System.EventHandler(this.btncategoria_Click);
+            // 
+            // btnmodelo
+            // 
+            this.btnmodelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmodelo.BackColor = System.Drawing.Color.White;
+            this.btnmodelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btnmodelo, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnmodelo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnmodelo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnmodelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnmodelo.IconSize = 30;
+            this.btnmodelo.Location = new System.Drawing.Point(212, 108);
+            this.btnmodelo.Name = "btnmodelo";
+            this.btnmodelo.Size = new System.Drawing.Size(30, 30);
+            this.btnmodelo.TabIndex = 39;
+            this.btnmodelo.TabStop = false;
+            this.btnmodelo.Click += new System.EventHandler(this.btnmodelo_Click);
+            // 
+            // btnmarca
+            // 
+            this.btnmarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmarca.BackColor = System.Drawing.Color.White;
+            this.btnmarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btnmarca, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnmarca.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnmarca.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnmarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnmarca.IconSize = 30;
+            this.btnmarca.Location = new System.Drawing.Point(212, 149);
+            this.btnmarca.Name = "btnmarca";
+            this.btnmarca.Size = new System.Drawing.Size(30, 30);
+            this.btnmarca.TabIndex = 40;
+            this.btnmarca.TabStop = false;
+            this.btnmarca.Click += new System.EventHandler(this.btnmarca_Click);
             // 
             // panel8
             // 
@@ -441,7 +494,7 @@
             this.BuscartextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscartextBox.Location = new System.Drawing.Point(184, 219);
             this.BuscartextBox.Name = "BuscartextBox";
-            this.BuscartextBox.Size = new System.Drawing.Size(153, 20);
+            this.BuscartextBox.Size = new System.Drawing.Size(143, 20);
             this.BuscartextBox.TabIndex = 27;
             this.BuscartextBox.Visible = false;
             this.BuscartextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BuscartextBox_KeyUp);
@@ -518,7 +571,7 @@
             this.DescripciontextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescripciontextBox.Location = new System.Drawing.Point(147, 69);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(192, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(180, 20);
             this.DescripciontextBox.TabIndex = 9;
             this.DescripciontextBox.Visible = false;
             // 
@@ -530,7 +583,7 @@
             this.EstadocomboBox.FormattingEnabled = true;
             this.EstadocomboBox.Location = new System.Drawing.Point(142, 18);
             this.EstadocomboBox.Name = "EstadocomboBox";
-            this.EstadocomboBox.Size = new System.Drawing.Size(204, 28);
+            this.EstadocomboBox.Size = new System.Drawing.Size(192, 28);
             this.EstadocomboBox.TabIndex = 8;
             this.EstadocomboBox.SelectedIndexChanged += new System.EventHandler(this.EstadocomboBox_SelectedIndexChanged);
             // 
@@ -584,7 +637,7 @@
             this.ObservacionestextBox.Location = new System.Drawing.Point(148, 126);
             this.ObservacionestextBox.Multiline = true;
             this.ObservacionestextBox.Name = "ObservacionestextBox";
-            this.ObservacionestextBox.Size = new System.Drawing.Size(193, 59);
+            this.ObservacionestextBox.Size = new System.Drawing.Size(181, 59);
             this.ObservacionestextBox.TabIndex = 10;
             this.ObservacionestextBox.Visible = false;
             // 
@@ -776,7 +829,7 @@
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(177, 212);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(167, 35);
+            this.pictureBox9.Size = new System.Drawing.Size(155, 35);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 34;
             this.pictureBox9.TabStop = false;
@@ -818,7 +871,7 @@
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
             this.pictureBox12.Location = new System.Drawing.Point(142, 61);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(204, 35);
+            this.pictureBox12.Size = new System.Drawing.Size(192, 35);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 37;
             this.pictureBox12.TabStop = false;
@@ -833,7 +886,7 @@
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.Location = new System.Drawing.Point(141, 119);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(205, 75);
+            this.pictureBox13.Size = new System.Drawing.Size(193, 75);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 38;
             this.pictureBox13.TabStop = false;
@@ -908,23 +961,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(456, 257);
             this.panel1.TabIndex = 0;
-            // 
-            // btncategoria
-            // 
-            this.btncategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncategoria.BackColor = System.Drawing.Color.White;
-            this.btncategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.errorProvider1.SetIconAlignment(this.btncategoria, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.btncategoria.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btncategoria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btncategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btncategoria.IconSize = 33;
-            this.btncategoria.Location = new System.Drawing.Point(300, 57);
-            this.btncategoria.Name = "btncategoria";
-            this.btncategoria.Size = new System.Drawing.Size(30, 30);
-            this.btncategoria.TabIndex = 38;
-            this.btncategoria.TabStop = false;
-            this.btncategoria.Click += new System.EventHandler(this.btncategoria_Click);
             // 
             // btncancelar
             // 
@@ -1028,6 +1064,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.btnestado);
             this.panel4.Controls.Add(this.btnexportar);
             this.panel4.Controls.Add(this.EstadocomboBox);
             this.panel4.Controls.Add(this.label6);
@@ -1048,7 +1085,6 @@
             // 
             // btnexportar
             // 
-            this.btnexportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnexportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnexportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -1076,39 +1112,22 @@
             this.panel2.Size = new System.Drawing.Size(1100, 355);
             this.panel2.TabIndex = 41;
             // 
-            // btnmodelo
+            // btnestado
             // 
-            this.btnmodelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnmodelo.BackColor = System.Drawing.Color.White;
-            this.btnmodelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.errorProvider1.SetIconAlignment(this.btnmodelo, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.btnmodelo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnmodelo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnmodelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnmodelo.IconSize = 30;
-            this.btnmodelo.Location = new System.Drawing.Point(212, 108);
-            this.btnmodelo.Name = "btnmodelo";
-            this.btnmodelo.Size = new System.Drawing.Size(30, 30);
-            this.btnmodelo.TabIndex = 39;
-            this.btnmodelo.TabStop = false;
-            this.btnmodelo.Click += new System.EventHandler(this.btnmodelo_Click);
-            // 
-            // btnmarca
-            // 
-            this.btnmarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnmarca.BackColor = System.Drawing.Color.White;
-            this.btnmarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.errorProvider1.SetIconAlignment(this.btnmarca, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.btnmarca.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnmarca.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnmarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnmarca.IconSize = 30;
-            this.btnmarca.Location = new System.Drawing.Point(212, 149);
-            this.btnmarca.Name = "btnmarca";
-            this.btnmarca.Size = new System.Drawing.Size(30, 30);
-            this.btnmarca.TabIndex = 40;
-            this.btnmarca.TabStop = false;
-            this.btnmarca.Click += new System.EventHandler(this.btnmarca_Click);
+            this.btnestado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnestado.BackColor = System.Drawing.Color.White;
+            this.btnestado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btnestado, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnestado.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnestado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnestado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnestado.IconSize = 30;
+            this.btnestado.Location = new System.Drawing.Point(334, 18);
+            this.btnestado.Name = "btnestado";
+            this.btnestado.Size = new System.Drawing.Size(30, 30);
+            this.btnestado.TabIndex = 41;
+            this.btnestado.TabStop = false;
+            this.btnestado.Click += new System.EventHandler(this.btnestado_Click);
             // 
             // WINProducto
             // 
@@ -1127,6 +1146,9 @@
             this.Load += new System.EventHandler(this.WINProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmodelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmarca)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1154,14 +1176,12 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btncategoria)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnmodelo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnestado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1235,5 +1255,6 @@
         private FontAwesome.Sharp.IconPictureBox btncategoria;
         private FontAwesome.Sharp.IconPictureBox btnmarca;
         private FontAwesome.Sharp.IconPictureBox btnmodelo;
+        private FontAwesome.Sharp.IconPictureBox btnestado;
     }
 }
