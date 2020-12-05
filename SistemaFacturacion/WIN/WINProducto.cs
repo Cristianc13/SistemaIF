@@ -424,6 +424,11 @@ namespace WIN
             ExportarDatos();
         }
 
+
+        private void BuscartextBox_TextChanged(object sender, EventArgs e)
+        {
+
+}
         private void btncategoria_Click(object sender, EventArgs e)
         {
             WINCategoria WCat = new WINCategoria();
@@ -454,6 +459,7 @@ namespace WIN
             we.ShowDialog();
             LlenarModelo();
             Tarjetas();
+
         }
 
         private void LlenarEstado()

@@ -7,5 +7,8 @@
         public string telefonoProv { get; set; }
         public string nombreCompañia { get; set; }
         public string numeroCompañia { get; set; }
+        public string ruc { get; set; }
+        public string filtro { get; set; }
     }
+    
 }

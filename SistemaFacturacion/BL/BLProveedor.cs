@@ -27,5 +27,10 @@ namespace BL
         {
             CProveedor.UpdateProveedor(EProveedor);
         }
+
+        public DataTable SelectProveedorNombre(ENTProveedor Eproveedor)
+        {
+          return CProveedor.BuscarProveedor(Eproveedor);
+        }
     }
 }

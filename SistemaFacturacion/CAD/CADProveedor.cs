@@ -27,6 +27,7 @@ namespace CAD
             cmd.Parameters.AddWithValue("@telefonoProv", EProveedor.telefonoProv);
             cmd.Parameters.AddWithValue("@nombreCompañia", EProveedor.nombreCompañia);
             cmd.Parameters.AddWithValue("@numeroCompañia", EProveedor.numeroCompañia);
+            cmd.Parameters.AddWithValue("@ruc", EProveedor.ruc);
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
@@ -49,8 +50,21 @@ namespace CAD
             cmd.Parameters.AddWithValue("@telefonoProv", EProveedor.telefonoProv);
             cmd.Parameters.AddWithValue("@nombreCompañia", EProveedor.nombreCompañia);
             cmd.Parameters.AddWithValue("@numeroCompañia", EProveedor.numeroCompañia);
+            cmd.Parameters.AddWithValue("@ruc", EProveedor.ruc);
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
+        public DataTable BuscarProveedor(ENTProveedor Eproveedor)
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("SelectProveedorNombre", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ruc", Eproveedor.filtro);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
+
     }
 }
