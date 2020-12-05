@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Data;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
-using System.Xml.Linq;
 using ENT;
+using System.Runtime.InteropServices;
+using FontAwesome.Sharp;
 
 namespace WIN
 {
@@ -55,9 +49,7 @@ namespace WIN
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-            BuscartextBox.Text = "";
-            MarcModeltextBox.Text = "";
-            llenarGrid();
+
         }
 
         private void ProductodataGridView_DoubleClick(object sender, EventArgs e)
@@ -94,6 +86,24 @@ namespace WIN
             filtro = MarcModeltextBox.Text;
             Eproducto.codigopro = filtro;
             ProductodataGridView.DataSource = BProducto.BusarProdMarcaModelo(Eproducto);
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            BuscartextBox.Text = "";
+            MarcModeltextBox.Text = "";
+            llenarGrid();
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //ReleaseCapture();
+            //SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINDetalleVenta));
-            this.Clientebutton = new System.Windows.Forms.Button();
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
             this.Cliente = new System.Windows.Forms.Label();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.ImportetextBox = new System.Windows.Forms.TextBox();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
@@ -70,6 +68,8 @@
             this.CancelarComprabutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCliente = new FontAwesome.Sharp.IconPictureBox();
+            this.btnProducto = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,18 +83,9 @@
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProducto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Clientebutton
-            // 
-            this.Clientebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Clientebutton.Location = new System.Drawing.Point(501, 24);
-            this.Clientebutton.Name = "Clientebutton";
-            this.Clientebutton.Size = new System.Drawing.Size(30, 30);
-            this.Clientebutton.TabIndex = 16;
-            this.Clientebutton.Text = "+";
-            this.Clientebutton.UseVisualStyleBackColor = true;
-            this.Clientebutton.Click += new System.EventHandler(this.Clientebutton_Click);
             // 
             // TelefonotextBox
             // 
@@ -132,17 +123,6 @@
             this.Cliente.TabIndex = 12;
             this.Cliente.Text = "Cliente:";
             // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscarbutton.Location = new System.Drawing.Point(501, 85);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(30, 30);
-            this.Buscarbutton.TabIndex = 11;
-            this.Buscarbutton.Text = "+";
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
             // ImportetextBox
             // 
             this.ImportetextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -161,7 +141,7 @@
             this.PreciotextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PreciotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PreciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreciotextBox.Location = new System.Drawing.Point(115, 90);
+            this.PreciotextBox.Location = new System.Drawing.Point(115, 87);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(401, 20);
@@ -173,7 +153,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CantidadtextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CantidadtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantidadtextBox.Location = new System.Drawing.Point(116, 133);
+            this.CantidadtextBox.Location = new System.Drawing.Point(116, 135);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(350, 20);
             this.CantidadtextBox.TabIndex = 5;
@@ -249,20 +229,20 @@
             this.DVentadataGridView.AllowUserToDeleteRows = false;
             this.DVentadataGridView.AllowUserToResizeColumns = false;
             this.DVentadataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
-            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
+            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DVentadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DVentadataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DVentadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
             this.DVentadataGridView.Name = "DVentadataGridView";
@@ -294,7 +274,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DescuentotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescuentotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescuentotextBox.Location = new System.Drawing.Point(115, 133);
+            this.DescuentotextBox.Location = new System.Drawing.Point(115, 134);
             this.DescuentotextBox.Name = "DescuentotextBox";
             this.DescuentotextBox.Size = new System.Drawing.Size(401, 20);
             this.DescuentotextBox.TabIndex = 19;
@@ -349,14 +329,14 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnProducto);
+            this.panel4.Controls.Add(this.btnCliente);
             this.panel4.Controls.Add(this.ClientecomboBox);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.Cliente);
-            this.panel4.Controls.Add(this.Clientebutton);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.ProductocomboBox);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.Buscarbutton);
             this.panel4.Controls.Add(this.CantidadtextBox);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox6);
@@ -393,9 +373,9 @@
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(111, 123);
+            this.pictureBox6.Location = new System.Drawing.Point(111, 125);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(365, 39);
+            this.pictureBox6.Size = new System.Drawing.Size(365, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 32;
             this.pictureBox6.TabStop = false;
@@ -405,8 +385,8 @@
             this.panel5.Controls.Add(this.DescuentotextBox);
             this.panel5.Controls.Add(this.PreciotextBox);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.TelefonotextBox);
             this.panel5.Controls.Add(this.Telefono);
@@ -425,9 +405,9 @@
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(110, 80);
+            this.pictureBox2.Location = new System.Drawing.Point(109, 80);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(413, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(413, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
@@ -439,9 +419,9 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(109, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(109, 125);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(413, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(413, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
@@ -475,6 +455,7 @@
             // btncancelar
             // 
             this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btncancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btncancelar.ForeColor = System.Drawing.Color.White;
@@ -495,6 +476,7 @@
             // btnagregar
             // 
             this.btnagregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnagregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnagregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnagregar.ForeColor = System.Drawing.Color.White;
@@ -515,6 +497,7 @@
             // btnguardar
             // 
             this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnguardar.ForeColor = System.Drawing.Color.White;
@@ -535,6 +518,7 @@
             // btneliminar
             // 
             this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btneliminar.ForeColor = System.Drawing.Color.White;
@@ -605,6 +589,42 @@
             this.panel3.Size = new System.Drawing.Size(1100, 411);
             this.panel3.TabIndex = 23;
             // 
+            // btnCliente
+            // 
+            this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCliente.BackColor = System.Drawing.Color.White;
+            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btnCliente, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnCliente.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCliente.IconSize = 30;
+            this.btnCliente.Location = new System.Drawing.Point(478, 28);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(30, 30);
+            this.btnCliente.TabIndex = 40;
+            this.btnCliente.TabStop = false;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProducto.BackColor = System.Drawing.Color.White;
+            this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btnProducto, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnProducto.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnProducto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProducto.IconSize = 30;
+            this.btnProducto.Location = new System.Drawing.Point(478, 89);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(30, 30);
+            this.btnProducto.TabIndex = 41;
+            this.btnProducto.TabStop = false;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            // 
             // WINDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,6 +654,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -647,10 +669,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button Buscarbutton;
         public System.Windows.Forms.ComboBox ProductocomboBox;
         public System.Windows.Forms.TextBox PreciotextBox;
-        private System.Windows.Forms.Button Clientebutton;
         private System.Windows.Forms.Label Telefono;
         private System.Windows.Forms.Label Cliente;
         public System.Windows.Forms.TextBox TelefonotextBox;
@@ -677,5 +697,7 @@
         private FontAwesome.Sharp.IconButton btncancelar;
         private FontAwesome.Sharp.IconButton btnguardar;
         private FontAwesome.Sharp.IconButton btneliminar;
+        private FontAwesome.Sharp.IconPictureBox btnCliente;
+        private FontAwesome.Sharp.IconPictureBox btnProducto;
     }
 }
