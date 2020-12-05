@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINModelo));
             this.label1 = new System.Windows.Forms.Label();
             this.ModelotextBox = new System.Windows.Forms.TextBox();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.ModelotextBox);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WINModelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

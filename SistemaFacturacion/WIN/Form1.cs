@@ -28,7 +28,7 @@ namespace WIN
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // PantallaOk();
+            AbrirForm(new Prueba());
         }
 
         #region Controles basicos
@@ -183,6 +183,14 @@ namespace WIN
         private void btconfig_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, Color.FromArgb(255, 94, 87));
+        }
+
+        private void btnrespaldo_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(sender, Color.FromArgb(0, 148, 50));
+            Backup bc = new Backup();
+            bc.ShowDialog();
+            btdashboard_Click(sender, e);
         }
     }
 }

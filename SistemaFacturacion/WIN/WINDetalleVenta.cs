@@ -90,64 +90,7 @@ namespace WIN
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
-            if (ProductocomboBox.SelectedIndex == -1)
-            {
-                errorProvider1.SetError(ProductocomboBox, "Debe ingresar un Producto");
-                return;
-            }
-            errorProvider1.Clear();
-
-            if (CantidadtextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(CantidadtextBox, "Debe ingresar una Cantidad");
-                return;
-            }
-            errorProvider1.Clear();
-
-            decimal cantidad = Convert.ToDecimal(CantidadtextBox.Text);
-
-            decimal precio = Convert.ToDecimal(PreciotextBox.Text);
-            decimal descuento = Convert.ToDecimal(DescuentotextBox.Text);
-            decimal NuevoPrecio = precio - descuento;
-
-            if (NuevoPrecio <= costo)
-            {
-                MessageBox.Show("No puedes aplicar este descuento porque no hay ninguna ganancia");
-            }
-            else if (stock == 0)
-            {
-                MessageBox.Show("No Hay existencia de este producto");
-                CantidadtextBox.Text = "";
-                PreciotextBox.Text = "";
-                ProductocomboBox.SelectedIndex = -1;
-                ProductocomboBox.Focus();
-            }
-            else if (cantidad == 0)
-            {
-                MessageBox.Show("Para realizar la venta debes agregar la cantidad a vender");
-            }
-            else if (cantidad > stock)
-            {
-                MessageBox.Show("No puedes venter mas de:" + " " + stock + " " + "Productos");
-                CantidadtextBox.Focus();
-            }
-            else
-            {
-                //ENTDetalleVenta miDetalle = new ENTDetalleVenta();
-                miDetalle.Fk_idProducto = idProducto;
-                miDetalle.producto = ProductocomboBox.Text;
-                miDetalle.cantidadProducto = Convert.ToDecimal(CantidadtextBox.Text);
-                miDetalle.precioSalida = NuevoPrecio;
-                miDetalle.importe = miDetalle.cantidadProducto * miDetalle.precioSalida;
-                EDventa.Add(miDetalle);
-                DVentadataGridView.DataSource = null;
-                DVentadataGridView.DataSource = EDventa;
-                FormatoGrid();
-                CalcularTotal();
-                HabilitarBotones(true, false);
-                Limpiar();
-                DescuentotextBox.Text = "0";
-            }
+            
         }
 
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -195,35 +138,12 @@ namespace WIN
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            if (ClientecomboBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(ClientecomboBox, "Debe ingresar un Cliente para realizar su venta");
-                return;
-            }
-            errorProvider1.Clear();
-
-            object idcliente = ClientecomboBox.SelectedValue;
-            int cliente = Convert.ToInt32(idcliente);
-            idventa = BLDetalle.InsertarVenta(cliente);
-
-            foreach (ENTDetalleVenta miDetalle in EDventa)
-            {
-                BLDetalle.InsertDetalleVenta(idventa, miDetalle);
-            }
-            MessageBox.Show("Venta realizada con exito");
-            DVentadataGridView.DataSource = null;
-            ImportetextBox.Text = "0";
-            ClientecomboBox.SelectedIndex = -1;
-            TelefonotextBox.Text = "";
-            HabilitarBotones(false, true);
-            Limpiar();
-            EnviarID();
-            EDventa.Clear();
+           
         }
 
         private void HabilitarBotones(bool p1, bool p2)
         {
-            Guardarbutton.Enabled = p1;
+            btnguardar.Enabled = p1;
         }
 
         public void HabilitarGuardar()
@@ -240,7 +160,7 @@ namespace WIN
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-            Limpiar();
+            
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -333,18 +253,7 @@ namespace WIN
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < EDventa.Count; i++)
-            {
-                if (i == fila)
-                {
-                    EDventa.RemoveAt(fila);
-                }
-                DVentadataGridView.DataSource = null;
-                DVentadataGridView.DataSource = EDventa;
-                FormatoGrid();
-                CalcularTotal();
-                Limpiar();
-            }
+
         }
 
         private void CancelarComprabutton_Click(object sender, EventArgs e)
@@ -372,7 +281,120 @@ namespace WIN
 
         private void HabilitarEliminar(bool p1, bool p2)
         {
-            Eliminarbutton.Enabled = p1;
+            btneliminar.Enabled = p1;
+        }
+
+        private void btnagregar_Click(object sender, EventArgs e)
+        {
+            if (ProductocomboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(ProductocomboBox, "Debe ingresar un Producto");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (CantidadtextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(CantidadtextBox, "Debe ingresar una Cantidad");
+                return;
+            }
+            errorProvider1.Clear();
+
+            decimal cantidad = Convert.ToDecimal(CantidadtextBox.Text);
+
+            decimal precio = Convert.ToDecimal(PreciotextBox.Text);
+            decimal descuento = Convert.ToDecimal(DescuentotextBox.Text);
+            decimal NuevoPrecio = precio - descuento;
+
+            if (NuevoPrecio <= costo)
+            {
+                MessageBox.Show("No puedes aplicar este descuento porque no hay ninguna ganancia");
+            }
+            else if (stock == 0)
+            {
+                MessageBox.Show("No Hay existencia de este producto");
+                CantidadtextBox.Text = "";
+                PreciotextBox.Text = "";
+                ProductocomboBox.SelectedIndex = -1;
+                ProductocomboBox.Focus();
+            }
+            else if (cantidad == 0)
+            {
+                MessageBox.Show("Para realizar la venta debes agregar la cantidad a vender");
+            }
+            else if (cantidad > stock)
+            {
+                MessageBox.Show("No puedes venter mas de:" + " " + stock + " " + "Productos");
+                CantidadtextBox.Focus();
+            }
+            else
+            {
+                ENTDetalleVenta miDetalle = new ENTDetalleVenta();
+                miDetalle.Fk_idProducto = idProducto;
+                miDetalle.producto = ProductocomboBox.Text;
+                miDetalle.cantidadProducto = Convert.ToDecimal(CantidadtextBox.Text);
+
+                miDetalle.precioSalida = NuevoPrecio;
+                miDetalle.importe = miDetalle.cantidadProducto * miDetalle.precioSalida;
+                EDventa.Add(miDetalle);
+                DVentadataGridView.DataSource = null;
+                DVentadataGridView.DataSource = EDventa;
+                FormatoGrid();
+                CalcularTotal();
+                HabilitarBotones(true, false);
+                Limpiar();
+                DescuentotextBox.Text = "0";
+            }
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < EDventa.Count; i++)
+            {
+                if (i == fila)
+                {
+                    EDventa.RemoveAt(fila);
+                }
+                DVentadataGridView.DataSource = null;
+                DVentadataGridView.DataSource = EDventa;
+                FormatoGrid();
+                CalcularTotal();
+                Limpiar();
+            }
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            if (ClientecomboBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(ClientecomboBox, "Debe ingresar un Cliente para realizar su venta");
+                return;
+            }
+            errorProvider1.Clear();
+
+            object idcliente = ClientecomboBox.SelectedValue;
+            int cliente = Convert.ToInt32(idcliente);
+            idventa = BLDetalle.InsertarVenta(cliente);
+
+
+            foreach (ENTDetalleVenta miDetalle in EDventa)
+            {
+                BLDetalle.InsertDetalleVenta(idventa, miDetalle);
+            }
+            MessageBox.Show("Venta realizada con exito");
+            DVentadataGridView.DataSource = null;
+            ImportetextBox.Text = "0";
+            ClientecomboBox.SelectedIndex = -1;
+            TelefonotextBox.Text = "";
+            HabilitarBotones(false, true);
+            Limpiar();
+            EnviarID();
+            EDventa.Clear();
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }
