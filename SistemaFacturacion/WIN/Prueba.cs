@@ -24,8 +24,16 @@ namespace WIN
             BLDash.Dashboard(obj);
             //RECUPERAMOS DATOS DE LA ENTIDAD PARA CARGAR LOS DATOS DEL DASHBOARD
             chartopproductos.Series[0].Points.DataBindXY(obj.Producto1, obj.Cant1);
-
             chartproductosCat.Series[0].Points.DataBindXY(obj.Categoria1, obj.CantProd1);
+
+            lbproduc.Text = obj.CantProductos;
+            lbmarca.Text = obj.CantMarcas;
+            lbmodel.Text = obj.CantModelo;
+            lbcat.Text = obj.CantCat;
+            lbclient.Text = obj.CantClientes;
+            lbprovee.Text = obj.CantProveedores;
+            lbvent.Text = obj.CantVenta;
+            lbcompr.Text = obj.CantCompra;
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINEstado));
             this.lblestado = new System.Windows.Forms.Label();
             this.txtestados = new System.Windows.Forms.TextBox();
             this.EstadodataGridView1 = new System.Windows.Forms.DataGridView();
@@ -126,6 +127,7 @@
             this.Controls.Add(this.EstadodataGridView1);
             this.Controls.Add(this.txtestados);
             this.Controls.Add(this.lblestado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WINEstado";
             this.Text = "WINEstado";
             this.Load += new System.EventHandler(this.WINEstado_Load);

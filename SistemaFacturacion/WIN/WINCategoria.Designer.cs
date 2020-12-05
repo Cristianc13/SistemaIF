@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINCategoria));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.CategoriadataGridView = new System.Windows.Forms.DataGridView();
             this.Header = new System.Windows.Forms.Panel();
+            this.btnclose = new FontAwesome.Sharp.IconPictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
@@ -45,13 +47,12 @@
             this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnclose = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriadataGridView)).BeginInit();
             this.Header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -89,6 +90,20 @@
             this.Header.Size = new System.Drawing.Size(465, 32);
             this.Header.TabIndex = 10;
             this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
+            // 
+            // btnclose
+            // 
+            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnclose.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnclose.IconColor = System.Drawing.Color.White;
+            this.btnclose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnclose.Location = new System.Drawing.Point(433, 1);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(32, 32);
+            this.btnclose.TabIndex = 43;
+            this.btnclose.TabStop = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // label4
             // 
@@ -273,20 +288,6 @@
             this.panel2.Size = new System.Drawing.Size(465, 217);
             this.panel2.TabIndex = 11;
             // 
-            // btnclose
-            // 
-            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnclose.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnclose.IconColor = System.Drawing.Color.White;
-            this.btnclose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnclose.Location = new System.Drawing.Point(433, 1);
-            this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(32, 32);
-            this.btnclose.TabIndex = 43;
-            this.btnclose.TabStop = false;
-            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
-            // 
             // WINCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +297,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WINCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -305,10 +307,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.CategoriadataGridView)).EndInit();
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
             this.ResumeLayout(false);
 
         }

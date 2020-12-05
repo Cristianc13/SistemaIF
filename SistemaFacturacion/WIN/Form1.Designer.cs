@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.slidebar = new System.Windows.Forms.Panel();
+            this.btnrespaldo = new FontAwesome.Sharp.IconButton();
             this.btconfig = new FontAwesome.Sharp.IconButton();
             this.btproveedor = new FontAwesome.Sharp.IconButton();
             this.btcliente = new FontAwesome.Sharp.IconButton();
@@ -47,7 +48,6 @@
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.lbltitulo = new System.Windows.Forms.Label();
             this.salir = new System.Windows.Forms.PictureBox();
-            this.btnrespaldo = new FontAwesome.Sharp.IconButton();
             this.slidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,6 +75,29 @@
             this.slidebar.Name = "slidebar";
             this.slidebar.Size = new System.Drawing.Size(250, 752);
             this.slidebar.TabIndex = 0;
+            // 
+            // btnrespaldo
+            // 
+            this.btnrespaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnrespaldo.FlatAppearance.BorderSize = 0;
+            this.btnrespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrespaldo.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrespaldo.ForeColor = System.Drawing.Color.White;
+            this.btnrespaldo.IconChar = FontAwesome.Sharp.IconChar.Database;
+            this.btnrespaldo.IconColor = System.Drawing.Color.White;
+            this.btnrespaldo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnrespaldo.IconSize = 38;
+            this.btnrespaldo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrespaldo.Location = new System.Drawing.Point(0, 642);
+            this.btnrespaldo.Name = "btnrespaldo";
+            this.btnrespaldo.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnrespaldo.Size = new System.Drawing.Size(250, 46);
+            this.btnrespaldo.TabIndex = 20;
+            this.btnrespaldo.Text = "Respaldo";
+            this.btnrespaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrespaldo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnrespaldo.UseVisualStyleBackColor = true;
+            this.btnrespaldo.Click += new System.EventHandler(this.btnrespaldo_Click);
             // 
             // btconfig
             // 
@@ -346,29 +369,6 @@
             this.salir.TabStop = false;
             this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
-            // btnrespaldo
-            // 
-            this.btnrespaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnrespaldo.FlatAppearance.BorderSize = 0;
-            this.btnrespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrespaldo.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrespaldo.ForeColor = System.Drawing.Color.White;
-            this.btnrespaldo.IconChar = FontAwesome.Sharp.IconChar.Database;
-            this.btnrespaldo.IconColor = System.Drawing.Color.White;
-            this.btnrespaldo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnrespaldo.IconSize = 38;
-            this.btnrespaldo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrespaldo.Location = new System.Drawing.Point(0, 642);
-            this.btnrespaldo.Name = "btnrespaldo";
-            this.btnrespaldo.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnrespaldo.Size = new System.Drawing.Size(250, 46);
-            this.btnrespaldo.TabIndex = 20;
-            this.btnrespaldo.Text = "Respaldo";
-            this.btnrespaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrespaldo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnrespaldo.UseVisualStyleBackColor = true;
-            this.btnrespaldo.Click += new System.EventHandler(this.btnrespaldo_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +379,7 @@
             this.Controls.Add(this.header);
             this.Controls.Add(this.slidebar);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
