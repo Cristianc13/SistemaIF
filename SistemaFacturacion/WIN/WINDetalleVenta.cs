@@ -130,7 +130,7 @@ namespace WIN
             decimal total = 0;
             foreach (DataGridViewRow dr in DVentadataGridView.Rows)
             {
-                decimal importe = decimal.Parse(dr.Cells[4].Value.ToString());
+                decimal importe = decimal.Parse(dr.Cells[5].Value.ToString());
                 total += importe;
             }
             ImportetextBox.Text = total.ToString();
@@ -175,20 +175,6 @@ namespace WIN
             {
                 e.Handled = true;
             }
-        }
-
-        private void Buscarbutton_Click(object sender, EventArgs e)
-        {
-            WINProVent pv = new WINProVent();
-            AddOwnedForm(pv);
-            pv.ShowDialog();
-        }
-
-        private void Clientebutton_Click(object sender, EventArgs e)
-        {
-            WINCliente cl = new WINCliente();
-            AddOwnedForm(cl);
-            cl.ShowDialog();
         }
 
         private void ClientecomboBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -395,6 +381,20 @@ namespace WIN
         private void btncancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            WINCliente cl = new WINCliente();
+            AddOwnedForm(cl);
+            cl.ShowDialog();
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            WINProVent pv = new WINProVent();
+            AddOwnedForm(pv);
+            pv.ShowDialog();
         }
     }
 }
