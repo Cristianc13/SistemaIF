@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using BL;
 using ENT;
+using System.Runtime.InteropServices;
+
 
 namespace WIN
 {
@@ -11,19 +13,32 @@ namespace WIN
         private BLProveedor BProveedor = new BLProveedor();
         public int n = 0;
         private int id;
+        public string nombre;
+        public string telefono;
 
         public WINProveedor()
         {
             InitializeComponent();
         }
+        private const int EM_SETCUEBANNER = 0x1501;
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
+[MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
         private void WINProveedor_Load(object sender, EventArgs e)
         {
+           
+
             HabilitarBotones(true, false);
             LlenarDataGrid();
             FormatoGrid();
             Limpiar();
+        SendMessage(textBox1.Handle, EM_SETCUEBANNER,0,"Nombre o RUC");
+
+
         }
+
+
 
         private void GuardarProv_Click(object sender, EventArgs e)
         {
@@ -64,6 +79,7 @@ namespace WIN
             EProveedor.telefonoProv = txttelefonoProv.Text;
             EProveedor.nombreCompañia = txtnombreCompañia.Text;
             EProveedor.numeroCompañia = txtnumeroCompañia.Text;
+            EProveedor.ruc = txtruc.Text;
             BProveedor.InsertProveedor(EProveedor);
             LlenarDataGrid();
         }
@@ -93,6 +109,7 @@ namespace WIN
             dataGridProovedor.Columns[2].HeaderText = "Telefono";
             dataGridProovedor.Columns[3].HeaderText = "Nombre de la Empresa";
             dataGridProovedor.Columns[4].HeaderText = "Numero de la Empresa";
+            dataGridProovedor.Columns[5].HeaderText = "RUC";
 
             dataGridProovedor.AllowUserToResizeColumns = false;
             dataGridProovedor.AllowUserToResizeRows = false;
@@ -107,30 +124,38 @@ namespace WIN
             txttelefonoProv.Text = string.Empty;
             txtnombreCompañia.Text = string.Empty;
             txtnumeroCompañia.Text = string.Empty;
+            txtruc.Text = string.Empty;
             errorProvider1.Clear();
         }
 
         private void dataGridProovedor_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridProovedor.Rows.Count == 0) return;
+            if (dataGridProovedor.CurrentRow == null) return;
 
             try
             {
-                HabilitarBotones(false, true);
                 id = (int)dataGridProovedor.CurrentRow.Cells[0].Value;
-                txtnombreProv.Text = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
-                txttelefonoProv.Text = dataGridProovedor.CurrentRow.Cells[2].Value.ToString();
-                txtnombreCompañia.Text = dataGridProovedor.CurrentRow.Cells[3].Value.ToString();
-                txtnumeroCompañia.Text = dataGridProovedor.CurrentRow.Cells[4].Value.ToString();
+                nombre = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
+                
+                telefono = dataGridProovedor.CurrentRow.Cells[3].Value.ToString();
                 errorProvider1.Clear();
+
+                WINDCompracs dv = Owner as WINDCompracs;
+                dv.CmbProveedor.Text = nombre;
+                dv.txtnombreCompañia.Text = telefono;
+                this.Close();
             }
             catch (Exception)
             {
-                MessageBox.Show("Celda Vacia");
+
+                throw;
             }
         }
 
-        private void EliminarProv_Click(object sender, EventArgs e)
+
+
+
+private void EliminarProv_Click(object sender, EventArgs e)
         {
             string valor = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
             DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -151,6 +176,7 @@ namespace WIN
             EProveedor.telefonoProv = txttelefonoProv.Text;
             EProveedor.nombreCompañia = txtnombreCompañia.Text;
             EProveedor.numeroCompañia = txtnumeroCompañia.Text;
+            EProveedor.ruc = txtruc.Text;
             BProveedor.UpdateProveedor(EProveedor);
             LlenarDataGrid();
             Limpiar();
@@ -165,6 +191,25 @@ namespace WIN
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            string filtro;
+            filtro = textBox1.Text;
+            EProveedor.filtro = filtro;
+            dataGridProovedor.DataSource = BProveedor.SelectProveedorNombre(EProveedor);
+        }
+
+        private void dataGridProovedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombreProv.Text = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
+            txttelefonoProv.Text = dataGridProovedor.CurrentRow.Cells[2].Value.ToString();
+            txtnombreCompañia.Text = dataGridProovedor.CurrentRow.Cells[3].Value.ToString();
+            txtnumeroCompañia.Text = dataGridProovedor.CurrentRow.Cells[4].Value.ToString();
+            txtruc.Text = dataGridProovedor.CurrentRow.Cells[5].Value.ToString();
+
+            HabilitarBotones(true, true);
         }
     }
 }

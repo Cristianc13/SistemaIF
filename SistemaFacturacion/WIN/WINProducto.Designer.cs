@@ -465,6 +465,7 @@
             this.BuscartextBox.Size = new System.Drawing.Size(148, 20);
             this.BuscartextBox.TabIndex = 27;
             this.BuscartextBox.Visible = false;
+            this.BuscartextBox.TextChanged += new System.EventHandler(this.BuscartextBox_TextChanged);
             this.BuscartextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BuscartextBox_KeyUp);
             // 
             // BuscarCatbutton

@@ -431,6 +431,11 @@ namespace WIN
             ExportarDatos();
         }
 
+        private void BuscartextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void LlenarEstado()
         {
             EstadocomboBox.DataSource = BEstado.MostrarEstado();
