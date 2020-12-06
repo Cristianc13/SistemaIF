@@ -117,6 +117,12 @@
     <Compile Include="WINCliente.Designer.cs">
       <DependentUpon>WINCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINClientePrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINClientePrincipal.Designer.cs">
+      <DependentUpon>WINClientePrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="WINCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINCliente.resx">
       <DependentUpon>WINCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINClientePrincipal.resx">
+      <DependentUpon>WINClientePrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINCompra.resx">
       <DependentUpon>WINCompra.cs</DependentUpon>

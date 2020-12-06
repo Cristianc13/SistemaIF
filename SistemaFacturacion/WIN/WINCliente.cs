@@ -107,6 +107,7 @@ namespace WIN
             ApellidoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[2].Value.ToString();
             TelefonoTextBox.Text = ClienteDataGridView.CurrentRow.Cells[3].Value.ToString();
             Habilitar(true, true);
+            HabilitarBotones(false, true);
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
