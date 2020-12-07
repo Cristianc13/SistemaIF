@@ -84,7 +84,6 @@ namespace WIN
             ProductocomboBox.Focus();
         }
 
-
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
         }
@@ -132,11 +131,9 @@ namespace WIN
             ImportetextBox.Text = total.ToString();
         }
 
-
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
         }
-
 
         private void HabilitarBotones(bool p1, bool p2)
         {
@@ -152,7 +149,6 @@ namespace WIN
                 btnguardar.IconColor = Color.Black;
             }
 
-
             btneliminar.Enabled = p2;
             if (btneliminar.Enabled == true)
             {
@@ -164,10 +160,10 @@ namespace WIN
                 btneliminar.BackColor = Color.FromArgb(177, 180, 183);
                 btneliminar.IconColor = Color.Black;
             }
+        }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -244,11 +240,9 @@ namespace WIN
             GenerarFactura.ShowDialog();
         }
 
-
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
         }
-
 
         private void CancelarComprabutton_Click(object sender, EventArgs e)
         {
@@ -400,15 +394,14 @@ namespace WIN
             pv.ShowDialog();
         }
 
-
         private void DVentadataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HabilitarBotones(true, true);
+        }
 
         private void DVentadataGridView_Click(object sender, EventArgs e)
         {
             fila = DVentadataGridView.CurrentRow.Index;
-
         }
     }
 }
