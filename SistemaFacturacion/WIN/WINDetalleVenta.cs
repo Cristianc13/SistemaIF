@@ -30,14 +30,10 @@ namespace WIN
         private BLDetalleVenta BLDetalle = new BLDetalleVenta();
         private BLCliente BCliente = new BLCliente();
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void WINDetalleVenta_Load(object sender, EventArgs e)
         {
             ImportetextBox.Text = "0";
-            HabilitarBotones(false, true);
+            HabilitarBotones(false, false);
             LlenarComboCliente();
             LlenaComboProducto();
             Limpiar();
@@ -88,11 +84,6 @@ namespace WIN
             ProductocomboBox.Focus();
         }
 
-        private void Agregarbutton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -136,31 +127,31 @@ namespace WIN
             ImportetextBox.Text = total.ToString();
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void HabilitarBotones(bool p1, bool p2)
         {
             btnguardar.Enabled = p1;
-        }
-
-        public void HabilitarGuardar()
-        {
-            if (DVentadataGridView.Rows.Count == 0)
+            if (btnguardar.Enabled == true)
             {
-                HabilitarBotones(false, true);
+                btnguardar.BackColor = Color.FromArgb(21, 30, 41);
+                btnguardar.IconColor = Color.White;
             }
             else
             {
-                HabilitarBotones(true, false);
+                btnguardar.BackColor = Color.FromArgb(177, 180, 183);
+                btnguardar.IconColor = Color.Black;
             }
-        }
 
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-            
+            btneliminar.Enabled = p2;
+            if (btneliminar.Enabled == true)
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
+            }
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -237,10 +228,6 @@ namespace WIN
             GenerarFactura.ShowDialog();
         }
 
-        private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void CancelarComprabutton_Click(object sender, EventArgs e)
         {
@@ -253,21 +240,16 @@ namespace WIN
             if (rpt == DialogResult.No) return;
         }
 
-        private void HabilitarEliminar()
+        private void Eliminar()
         {
             if (DVentadataGridView.Rows.Count == 0)
             {
-                HabilitarEliminar(false, true);
+                HabilitarBotones(false, false);
             }
             else
             {
-                HabilitarEliminar(true, false);
+                HabilitarBotones(true, true);
             }
-        }
-
-        private void HabilitarEliminar(bool p1, bool p2)
-        {
-            btneliminar.Enabled = p1;
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
@@ -346,6 +328,7 @@ namespace WIN
                 FormatoGrid();
                 CalcularTotal();
                 Limpiar();
+                Eliminar();
             }
         }
 
@@ -372,7 +355,7 @@ namespace WIN
             ImportetextBox.Text = "0";
             ClientecomboBox.SelectedIndex = -1;
             TelefonotextBox.Text = "";
-            HabilitarBotones(false, true);
+            HabilitarBotones(false, false);
             Limpiar();
             EnviarID();
             EDventa.Clear();
@@ -395,6 +378,11 @@ namespace WIN
             WINProVent pv = new WINProVent();
             AddOwnedForm(pv);
             pv.ShowDialog();
+        }
+
+        private void DVentadataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HabilitarBotones(true, true);
         }
     }
 }

@@ -162,5 +162,13 @@ namespace WIN
                 throw;
             }
         }
+
+        private void textBoxBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            string filtro;
+            filtro = textBoxBuscar.Text;
+            ECliente.Filtro = filtro;
+            ClientedataGridView.DataSource = BCliente.FiltarClientes(ECliente);
+        }
     }
 }
