@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using ENT;
 
@@ -17,20 +18,6 @@ namespace CAD
             da.Fill(tabla);
             CerrarConexion();
             return tabla;
-        }
-
-        public void InsertCompra(ENTCompra Ecompra)
-        {
-            SqlCommand cmd = new SqlCommand("InsertCompra", AbrirConexion());
-            cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.AddWithValue("@idCompra", Ecompra.idCompra);
-            cmd.Parameters.AddWithValue("@numeroFactura", Ecompra.numeroFactura);
-            //cmd.Parameters.AddWithValue("@fechaCompra", Ecompra.fechaCompra);
-            cmd.Parameters.AddWithValue("@descripcion", Ecompra.descripcion);
-            cmd.Parameters.AddWithValue("@IVA", Ecompra.IVA);
-            cmd.Parameters.AddWithValue("@FK_idProveedor", Ecompra.FK_idProveedor);
-            cmd.ExecuteNonQuery();
-            CerrarConexion();
         }
 
         public void DeleteCompra(ENTCompra Ecompra)
@@ -53,6 +40,22 @@ namespace CAD
             cmd.Parameters.AddWithValue("@FK_idProveedor", Ecompra.FK_idProveedor);
             cmd.ExecuteNonQuery();
             CerrarConexion();
+        }
+
+        //Nuevo codigo
+        public int InsertarCompra(ENTCompra Ecompra)
+        {
+            SqlCommand cmd = new SqlCommand("InsertarCompra", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@numeroFactura", Ecompra.numeroFactura);
+            cmd.Parameters.AddWithValue("@descripcion", Ecompra.descripcion);
+            cmd.Parameters.AddWithValue("@IVA", Ecompra.IVA);
+            cmd.Parameters.AddWithValue("@fecha", Ecompra.fechaCompra);
+            cmd.Parameters.AddWithValue("@FK_idProveedor", Ecompra.FK_idProveedor);
+            int g = (int)cmd.ExecuteScalar();
+            int a = Convert.ToInt32(g);
+            CerrarConexion();
+            return a;
         }
     }
 }

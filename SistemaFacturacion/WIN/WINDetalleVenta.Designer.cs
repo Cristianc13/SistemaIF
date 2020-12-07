@@ -251,7 +251,11 @@
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DVentadataGridView.Size = new System.Drawing.Size(1100, 411);
             this.DVentadataGridView.TabIndex = 0;
+
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
+
+            this.DVentadataGridView.Click += new System.EventHandler(this.DVentadataGridView_Click);
+
             // 
             // errorProvider1
             // 

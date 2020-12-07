@@ -19,7 +19,7 @@ namespace WIN
         private decimal costo;
         private int idCl = 0;
         public int idventa;
-        int fila;
+        private int fila;
 
         private List<ENTVenta> Eventa = new List<ENTVenta>();
         private List<ENTDetalleVenta> EDventa = new List<ENTDetalleVenta>();
@@ -84,6 +84,11 @@ namespace WIN
             ProductocomboBox.Focus();
         }
 
+
+        private void Agregarbutton_Click(object sender, EventArgs e)
+        {
+        }
+
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -127,6 +132,12 @@ namespace WIN
             ImportetextBox.Text = total.ToString();
         }
 
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+        }
+
+
         private void HabilitarBotones(bool p1, bool p2)
         {
             btnguardar.Enabled = p1;
@@ -141,6 +152,7 @@ namespace WIN
                 btnguardar.IconColor = Color.Black;
             }
 
+
             btneliminar.Enabled = p2;
             if (btneliminar.Enabled == true)
             {
@@ -152,6 +164,10 @@ namespace WIN
                 btneliminar.BackColor = Color.FromArgb(177, 180, 183);
                 btneliminar.IconColor = Color.Black;
             }
+
+        private void Cancelarbutton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -226,6 +242,11 @@ namespace WIN
             WINReportes.RReporteVenta GenerarFactura = new WINReportes.RReporteVenta();
             GenerarFactura.Factura = idventa;
             GenerarFactura.ShowDialog();
+        }
+
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
         }
 
 
@@ -345,7 +366,6 @@ namespace WIN
             int cliente = Convert.ToInt32(idcliente);
             idventa = BLDetalle.InsertarVenta(cliente);
 
-
             foreach (ENTDetalleVenta miDetalle in EDventa)
             {
                 BLDetalle.InsertDetalleVenta(idventa, miDetalle);
@@ -380,9 +400,15 @@ namespace WIN
             pv.ShowDialog();
         }
 
+
         private void DVentadataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HabilitarBotones(true, true);
+
+        private void DVentadataGridView_Click(object sender, EventArgs e)
+        {
+            fila = DVentadataGridView.CurrentRow.Index;
+
         }
     }
 }

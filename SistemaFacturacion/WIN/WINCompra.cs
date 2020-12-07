@@ -115,7 +115,7 @@ namespace WIN
             Ecompra.descripcion = txtdescrip.Text;
             Ecompra.IVA = decimal.Parse(txtIVA.Text);
             Ecompra.FK_idProveedor = idProveedor;
-            Bcompra.InsertCompra(Ecompra);
+            // Bcompra.InsertCompra(Ecompra);
             Limpiar();
             LlenarGrid();
             HabilitarBotones(false, true);
