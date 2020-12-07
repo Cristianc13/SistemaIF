@@ -4,7 +4,6 @@ using BL;
 using ENT;
 using System.Runtime.InteropServices;
 
-
 namespace WIN
 {
     public partial class WINProveedor : Form
@@ -20,25 +19,21 @@ namespace WIN
         {
             InitializeComponent();
         }
+
         private const int EM_SETCUEBANNER = 0x1501;
+
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
 [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
         private void WINProveedor_Load(object sender, EventArgs e)
         {
-           
-
             HabilitarBotones(true, false);
             LlenarDataGrid();
             FormatoGrid();
             Limpiar();
-        SendMessage(textBox1.Handle, EM_SETCUEBANNER,0,"Nombre o RUC");
-
-
+            SendMessage(textBox1.Handle, EM_SETCUEBANNER, 0, "Nombre o RUC");
         }
-
-
 
         private void GuardarProv_Click(object sender, EventArgs e)
         {
@@ -82,6 +77,12 @@ namespace WIN
             EProveedor.ruc = txtruc.Text;
             BProveedor.InsertProveedor(EProveedor);
             LlenarDataGrid();
+
+            WINDCompracs dc = Owner as WINDCompracs;
+            dc.CmbProveedor.DataSource = BProveedor.MostrarProveedor();
+            dc.CmbProveedor.DisplayMember = "nombreProv";
+            dc.CmbProveedor.ValueMember = "idProveedor";
+            dc.CmbProveedor.SelectedIndex = -1;
         }
 
         private void LlenarDataGrid()
@@ -136,7 +137,7 @@ namespace WIN
             {
                 id = (int)dataGridProovedor.CurrentRow.Cells[0].Value;
                 nombre = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
-                
+
                 telefono = dataGridProovedor.CurrentRow.Cells[3].Value.ToString();
                 errorProvider1.Clear();
 
@@ -147,15 +148,11 @@ namespace WIN
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
-
-
-
-private void EliminarProv_Click(object sender, EventArgs e)
+        private void EliminarProv_Click(object sender, EventArgs e)
         {
             string valor = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
             DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);

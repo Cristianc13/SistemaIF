@@ -41,12 +41,6 @@ namespace WIN
         public ENTProveedor EProveedor = new ENTProveedor();
         private BLProveedor BProveedor = new BLProveedor();
 
-
-
-
-
-
-
         private void LlenaComboProducto()
         {
             bmbproducto.DataSource = BProducto.MostrarProducto();
@@ -55,13 +49,6 @@ namespace WIN
             bmbproducto.SelectedIndex = -1;
         }
 
-        private void LlenaComboFractura()
-        {
-            cmbNFactura.DataSource = BCompra.MostrarCompra();
-            cmbNFactura.DisplayMember = "numeroFactura";
-            cmbNFactura.ValueMember = "idCompra";
-            cmbNFactura.SelectedIndex = -1;
-        }
         private void LlenaComboProveedor()
         {
             CmbProveedor.DataSource = BProveedor.MostrarProveedor();
@@ -70,18 +57,17 @@ namespace WIN
             CmbProveedor.SelectedIndex = -1;
         }
 
-
         public void CalcularTotal()
         {
             decimal subtotal = 0;
             decimal total = 0;
-            decimal iva2 = 0;
+            decimal iva2 = Convert.ToDecimal(txtIVAdetalleC.Text);
 
             foreach (DataGridViewRow dr in DetalleCompraGridView1.Rows)
             {
                 decimal importe = decimal.Parse(dr.Cells[6].Value.ToString());
                 subtotal += importe;
-                iva2 = IVA / 100;
+                iva2 = iva2 / 100;
 
                 iva2 = subtotal * iva2;
 
@@ -97,14 +83,12 @@ namespace WIN
 
         private void Limpiar()
         {
-            cmbNFactura.Text = string.Empty;
             bmbproducto.Text = string.Empty;
             txtcantidad.Text = string.Empty;
             txtcosto.Text = string.Empty;
             errorProvider1.Clear();
-            cmbNFactura.SelectedIndex = -1;
+
             bmbproducto.SelectedIndex = -1;
-            cmbNFactura.Focus();
         }
 
         private void limpiar2()
@@ -127,13 +111,8 @@ namespace WIN
             txtsubtotal.Text = string.Empty;
             txtIVA.Text = string.Empty;
             txtTotal.Text = string.Empty;
-            cmbNFactura.Text = string.Empty;
 
             bmbproducto.SelectedIndex = -1;
-
-            cmbNFactura.SelectedIndex = -1;
-
-            cmbNFactura.Focus();
         }
 
         private void limpiar3()
@@ -187,9 +166,8 @@ namespace WIN
 
         private void WINDCompracs_Load(object sender, EventArgs e)
         {
-            
             HabilitarBotones(false, true);
-            LlenaComboFractura();
+
             LlenaComboProducto();
             LlenaComboProveedor();
         }
@@ -220,9 +198,9 @@ namespace WIN
                 }
                 errorProvider1.Clear();
 
-                if (cmbNFactura.SelectedIndex == -1)
+                if (txtnfactura.Text == string.Empty)
                 {
-                    errorProvider1.SetError(cmbNFactura, "Debe ingresar un N° de Factura");
+                    errorProvider1.SetError(txtnfactura, "Debe ingresar un N° de Factura");
                     return;
                 }
                 errorProvider1.Clear();
@@ -256,38 +234,41 @@ namespace WIN
                 CalcularTotal();
                 HabilitarBotones(true, false);
                 limpiar2();
-                cmbNFactura.Enabled = false;
             }
             else
             {
-                cmbNFactura.Enabled = true;
                 bloqueo = true;
             }
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            Ecompra.FK_idProveedor = idProveedor;
+            Ecompra.numeroFactura = txtnfactura.Text;
+            Ecompra.descripcion = txtdescr.Text;
+            Ecompra.fechaCompra = dtfechacompra.Value;
+            Ecompra.IVA = Convert.ToDecimal(txtIVAdetalleC.Text);
+            //id
+            idCompra = BCompra.InsertarCompra(Ecompra);
+
             foreach (ENTDetalleCompra miDetalle in EDetalleC)
             {
                 Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
             }
-
-            Ecompra.idCompra = idCompra;
-            Ecompra.realizada = false;
-            Bldetallec.UpdateDetalleCompra(Ecompra);
+            //Ecompra.idCompra = idCompra;
+            //Ecompra.realizada = false;
+            //Bldetallec.UpdateDetalleCompra(Ecompra);
             MessageBox.Show("Compra realizada con exito");
             DetalleCompraGridView1.DataSource = null;
             EDetalleC.Clear();
             HabilitarBotones(false, true);
-            LlenaComboFractura();
-            limpiar4();
-            cmbNFactura.Enabled = true;
+
+            //limpiar4();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
-            cmbNFactura.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -358,7 +339,6 @@ namespace WIN
 
         private void bmbproducto_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -396,5 +376,4 @@ namespace WIN
             }
         }
     }
-    }
-
+}
