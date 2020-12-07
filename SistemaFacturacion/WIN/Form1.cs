@@ -140,7 +140,7 @@ namespace WIN
         {
             //Cliente
             ActivarBoton(sender, Color.FromArgb(61, 193, 211));
-            AbrirForm(new WINCliente());
+            AbrirForm(new WINClientePrincipal());
         }
 
         #region MoverFormulario
