@@ -67,6 +67,18 @@ namespace CAD
             return i;
         }
 
+        public DataTable FiltrarCliente(ENTCliente ECliente)
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("BuscarClienteNumeroNombreApellido", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@codigo", ECliente.Filtro);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
+
         /*===============================Reporte=============================================*/
 
         public DataTable GenerarVentasCliente(int idCliente)

@@ -32,5 +32,11 @@ namespace BL
         {
             cliente.UpdateCliente(ECliente);
         }
+
+        public DataTable FiltarClientes (ENTCliente ECliente)
+        {
+            return cliente.FiltrarCliente(ECliente);
+        }
+
     }
 }

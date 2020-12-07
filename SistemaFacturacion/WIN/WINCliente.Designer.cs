@@ -306,6 +306,7 @@
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(196, 20);
             this.textBoxBuscar.TabIndex = 43;
+            this.textBoxBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxBuscar_KeyUp);
             // 
             // btncancelar
             // 
