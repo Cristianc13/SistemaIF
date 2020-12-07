@@ -13,9 +13,10 @@ namespace BL
             return compras.MostrarCompra();
         }
 
-        public void InsertCompra(ENTCompra compra)
+        //Nuevo codigo
+        public int InsertarCompra(ENTCompra Ecompra)
         {
-            compras.InsertCompra(compra);
+            return compras.InsertarCompra(Ecompra);
         }
 
         //public void DeleteCompra(ENTCompra compra)

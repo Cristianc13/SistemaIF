@@ -43,16 +43,13 @@
             this.txtnombreCompañia = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.cmbNFactura = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Comprabutton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtdescr = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtIVAdetalleC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtfechacompra = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -78,6 +75,8 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.DetalleCompraGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtnfactura = new System.Windows.Forms.TextBox();
+            this.dtfechacompra = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -146,7 +145,7 @@
             // ProveedorButoon
             // 
             this.ProveedorButoon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProveedorButoon.Location = new System.Drawing.Point(378, 40);
+            this.ProveedorButoon.Location = new System.Drawing.Point(348, 37);
             this.ProveedorButoon.Name = "ProveedorButoon";
             this.ProveedorButoon.Size = new System.Drawing.Size(33, 28);
             this.ProveedorButoon.TabIndex = 29;
@@ -213,10 +212,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtnfactura);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.cmbNFactura);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.Comprabutton);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.txtdescr);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -236,49 +234,23 @@
             this.label11.TabIndex = 28;
             this.label11.Text = "Detalles de la compra:";
             // 
-            // cmbNFactura
-            // 
-            this.cmbNFactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbNFactura.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbNFactura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbNFactura.DropDownHeight = 115;
-            this.cmbNFactura.DropDownWidth = 240;
-            this.cmbNFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNFactura.FormattingEnabled = true;
-            this.cmbNFactura.IntegralHeight = false;
-            this.cmbNFactura.Location = new System.Drawing.Point(118, 44);
-            this.cmbNFactura.Name = "cmbNFactura";
-            this.cmbNFactura.Size = new System.Drawing.Size(224, 28);
-            this.cmbNFactura.TabIndex = 23;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 45);
+            this.label1.Location = new System.Drawing.Point(27, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 24;
             this.label1.Text = "N° Factura:";
-            // 
-            // Comprabutton
-            // 
-            this.Comprabutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Comprabutton.Location = new System.Drawing.Point(378, 44);
-            this.Comprabutton.Name = "Comprabutton";
-            this.Comprabutton.Size = new System.Drawing.Size(33, 28);
-            this.Comprabutton.TabIndex = 25;
-            this.Comprabutton.Text = "+";
-            this.Comprabutton.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 85);
+            this.label9.Location = new System.Drawing.Point(19, 80);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 20);
             this.label9.TabIndex = 27;
@@ -288,7 +260,8 @@
             // 
             this.txtdescr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtdescr.Location = new System.Drawing.Point(118, 84);
+            this.txtdescr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtdescr.Location = new System.Drawing.Point(118, 80);
             this.txtdescr.Multiline = true;
             this.txtdescr.Name = "txtdescr";
             this.txtdescr.Size = new System.Drawing.Size(224, 25);
@@ -297,10 +270,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.dtfechacompra);
             this.panel4.Controls.Add(this.txtIVAdetalleC);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.txtfechacompra);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(545, 115);
             this.panel4.Name = "panel4";
@@ -311,6 +284,7 @@
             // 
             this.txtIVAdetalleC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIVAdetalleC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtIVAdetalleC.Location = new System.Drawing.Point(220, 80);
             this.txtIVAdetalleC.Multiline = true;
             this.txtIVAdetalleC.Name = "txtIVAdetalleC";
@@ -343,16 +317,6 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Fecha de Compra:";
             // 
-            // txtfechacompra
-            // 
-            this.txtfechacompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtfechacompra.Location = new System.Drawing.Point(220, 45);
-            this.txtfechacompra.Multiline = true;
-            this.txtfechacompra.Name = "txtfechacompra";
-            this.txtfechacompra.Size = new System.Drawing.Size(226, 28);
-            this.txtfechacompra.TabIndex = 23;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
@@ -375,7 +339,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(9, 0);
+            this.label17.Location = new System.Drawing.Point(9, 6);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(182, 20);
             this.label17.TabIndex = 40;
@@ -441,7 +405,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(378, 35);
+            this.button1.Location = new System.Drawing.Point(348, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 28);
             this.button1.TabIndex = 35;
@@ -477,7 +441,7 @@
             // 
             this.txtcosto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtcosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtcosto.Location = new System.Drawing.Point(220, 76);
             this.txtcosto.Name = "txtcosto";
             this.txtcosto.Size = new System.Drawing.Size(231, 26);
@@ -500,7 +464,7 @@
             // 
             this.txtcantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtcantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtcantidad.Location = new System.Drawing.Point(220, 39);
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(231, 26);
@@ -664,6 +628,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtnfactura
+            // 
+            this.txtnfactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtnfactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtnfactura.Location = new System.Drawing.Point(118, 40);
+            this.txtnfactura.Multiline = true;
+            this.txtnfactura.Name = "txtnfactura";
+            this.txtnfactura.Size = new System.Drawing.Size(224, 25);
+            this.txtnfactura.TabIndex = 29;
+            // 
+            // dtfechacompra
+            // 
+            this.dtfechacompra.Location = new System.Drawing.Point(220, 43);
+            this.dtfechacompra.Name = "dtfechacompra";
+            this.dtfechacompra.Size = new System.Drawing.Size(231, 20);
+            this.dtfechacompra.TabIndex = 26;
+            // 
             // WINDCompracs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -715,15 +697,12 @@
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.TextBox txtnombreCompañia;
         private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.ComboBox cmbNFactura;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Comprabutton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtdescr;
         private System.Windows.Forms.TextBox txtIVAdetalleC;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtfechacompra;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnactualizar;
@@ -747,5 +726,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button ProveedorButoon;
         public System.Windows.Forms.ComboBox CmbProveedor;
+        private System.Windows.Forms.TextBox txtnfactura;
+        private System.Windows.Forms.DateTimePicker dtfechacompra;
     }
 }

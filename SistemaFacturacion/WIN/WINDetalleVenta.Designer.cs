@@ -45,6 +45,8 @@
             this.ProductocomboBox = new System.Windows.Forms.ComboBox();
             this.DVentadataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnCliente = new FontAwesome.Sharp.IconPictureBox();
+            this.btnProducto = new FontAwesome.Sharp.IconPictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.DescuentotextBox = new System.Windows.Forms.TextBox();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
@@ -55,8 +57,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
@@ -68,23 +70,21 @@
             this.CancelarComprabutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCliente = new FontAwesome.Sharp.IconPictureBox();
-            this.btnProducto = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProducto)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // TelefonotextBox
@@ -252,10 +252,47 @@
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DVentadataGridView.Size = new System.Drawing.Size(1100, 411);
             this.DVentadataGridView.TabIndex = 0;
+            this.DVentadataGridView.Click += new System.EventHandler(this.DVentadataGridView_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCliente.BackColor = System.Drawing.Color.White;
+            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btnCliente, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnCliente.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCliente.IconSize = 30;
+            this.btnCliente.Location = new System.Drawing.Point(478, 28);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(30, 30);
+            this.btnCliente.TabIndex = 40;
+            this.btnCliente.TabStop = false;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProducto.BackColor = System.Drawing.Color.White;
+            this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btnProducto, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnProducto.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnProducto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProducto.IconSize = 30;
+            this.btnProducto.Location = new System.Drawing.Point(478, 89);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(30, 30);
+            this.btnProducto.TabIndex = 41;
+            this.btnProducto.TabStop = false;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // label5
             // 
@@ -397,6 +434,20 @@
             this.panel5.Size = new System.Drawing.Size(544, 169);
             this.panel5.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(109, 125);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(413, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -411,20 +462,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(109, 125);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(413, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -589,42 +626,6 @@
             this.panel3.Size = new System.Drawing.Size(1100, 411);
             this.panel3.TabIndex = 23;
             // 
-            // btnCliente
-            // 
-            this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCliente.BackColor = System.Drawing.Color.White;
-            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.errorProvider1.SetIconAlignment(this.btnCliente, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.btnCliente.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCliente.IconSize = 30;
-            this.btnCliente.Location = new System.Drawing.Point(478, 28);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(30, 30);
-            this.btnCliente.TabIndex = 40;
-            this.btnCliente.TabStop = false;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProducto.BackColor = System.Drawing.Color.White;
-            this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.errorProvider1.SetIconAlignment(this.btnProducto, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.btnProducto.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnProducto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnProducto.IconSize = 30;
-            this.btnProducto.Location = new System.Drawing.Point(478, 89);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(30, 30);
-            this.btnProducto.TabIndex = 41;
-            this.btnProducto.TabStop = false;
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
-            // 
             // WINDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -640,6 +641,8 @@
             this.Load += new System.EventHandler(this.WINDetalleVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProducto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -647,15 +650,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProducto)).EndInit();
             this.ResumeLayout(false);
 
         }

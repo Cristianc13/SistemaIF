@@ -19,7 +19,7 @@ namespace WIN
         private decimal costo;
         private int idCl = 0;
         public int idventa;
-        int fila;
+        private int fila;
 
         private List<ENTVenta> Eventa = new List<ENTVenta>();
         private List<ENTDetalleVenta> EDventa = new List<ENTDetalleVenta>();
@@ -90,7 +90,6 @@ namespace WIN
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,7 +137,6 @@ namespace WIN
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-           
         }
 
         private void HabilitarBotones(bool p1, bool p2)
@@ -160,7 +158,6 @@ namespace WIN
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -239,7 +236,6 @@ namespace WIN
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-
         }
 
         private void CancelarComprabutton_Click(object sender, EventArgs e)
@@ -362,7 +358,6 @@ namespace WIN
             int cliente = Convert.ToInt32(idcliente);
             idventa = BLDetalle.InsertarVenta(cliente);
 
-
             foreach (ENTDetalleVenta miDetalle in EDventa)
             {
                 BLDetalle.InsertDetalleVenta(idventa, miDetalle);
@@ -395,6 +390,11 @@ namespace WIN
             WINProVent pv = new WINProVent();
             AddOwnedForm(pv);
             pv.ShowDialog();
+        }
+
+        private void DVentadataGridView_Click(object sender, EventArgs e)
+        {
+            fila = DVentadataGridView.CurrentRow.Index;
         }
     }
 }

@@ -56,8 +56,8 @@ namespace WIN
             DetalleCompra2GridView1.Columns[6].HeaderText = "Observacion";
             DetalleCompra2GridView1.Columns[7].HeaderText = "Marca";
             DetalleCompra2GridView1.Columns[8].HeaderText = "Modelo";
-            DetalleCompra2GridView1.Columns[9].HeaderText = "Categoria";
-            DetalleCompra2GridView1.Columns[10].HeaderText = "Estado";
+            DetalleCompra2GridView1.Columns[9].HeaderText = "Estado";
+            DetalleCompra2GridView1.Columns[10].HeaderText = "Categoria";
             DetalleCompra2GridView1.AllowUserToResizeColumns = false;
             DetalleCompra2GridView1.AllowUserToResizeRows = false;
             Recursos.DatagridviewDiseño.DiseñoDGV(ref DetalleCompra2GridView1);
@@ -248,7 +248,7 @@ namespace WIN
             if (DetalleCompra2GridView1.Rows.Count == 0) return;
             //HabilitarBotones(true, false);
             IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
-            txtcodigo.Text = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
+
             txtnombre.Text = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
             txtdescripcion.Text = DetalleCompra2GridView1.CurrentRow.Cells[3].Value.ToString();
             //4 fecha
@@ -256,9 +256,8 @@ namespace WIN
             txtobservacion.Text = DetalleCompra2GridView1.CurrentRow.Cells[6].Value.ToString();
             cmbMarca.Text = DetalleCompra2GridView1.CurrentRow.Cells[7].Value.ToString();
             cmbModelo.Text = DetalleCompra2GridView1.CurrentRow.Cells[8].Value.ToString();
-            cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
-            cmbEstado.Text = DetalleCompra2GridView1.CurrentRow.Cells[10].Value.ToString();
-
+            cmbEstado.Text = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
+            cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[10].Value.ToString(); txtcodigo.Text = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
             //HabilitarBotones(true, false);
         }
     }

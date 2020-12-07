@@ -282,7 +282,7 @@ namespace WIN
 
             Ecompra.idCompra = idCompra;
             Ecompra.realizada = false;
-            Bldetallec.UpdateDetalleCompra(Ecompra);
+            // Bldetallec.UpdateDetalleCompra(Ecompra);
             MessageBox.Show("Compra realizada con exito");
             DetalleCompraGridView1.DataSource = null;
             EDetalleC.Clear();

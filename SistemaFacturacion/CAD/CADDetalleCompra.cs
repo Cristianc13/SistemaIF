@@ -38,16 +38,6 @@ namespace CAD
             CerrarConexion();
         }
 
-        public void UpdateDetalleCompra(ENTCompra Ecompra)
-        {
-            SqlCommand cmd = new SqlCommand("UpdateCompraRealizada", AbrirConexion());
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idCompra", Ecompra.idCompra);
-            cmd.Parameters.AddWithValue("@realizada", Ecompra.realizada);
-            cmd.ExecuteNonQuery();
-            CerrarConexion();
-        }
-
         public string ObtenerIVA(int idCompra)
         {
             decimal a;
