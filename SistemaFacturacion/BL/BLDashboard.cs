@@ -11,6 +11,7 @@ namespace BL
             CADDashboard.ProdPorCategoria(obj);
             CADDashboard.ProdPreferidos(obj);
             CADDashboard.SumarioDatos(obj);
+            CADDashboard.VentaMes(obj);
         }
     }
 }
