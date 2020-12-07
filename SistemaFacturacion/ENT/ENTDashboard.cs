@@ -5,10 +5,13 @@ namespace ENT
     public class ENTDashboard
     {
         public ArrayList Categoria = new ArrayList();
-
         public ArrayList CantProd = new ArrayList();
         public ArrayList Producto = new ArrayList();
         public ArrayList Cant = new ArrayList();
+
+        public ArrayList Cantvent = new ArrayList();
+        public ArrayList Meses = new ArrayList();
+
         public string totalVentas { get; set; }
         public string CantModelo { get; set; }
         public string CantMarcas { get; set; }
@@ -19,6 +22,31 @@ namespace ENT
 
         public string CantVenta { get; set; }
         public string CantCompra { get; set; }
+
+        //
+        public ArrayList Cantvent1
+        {
+            get
+            {
+                return Cantvent;
+            }
+            set
+            {
+                Cantvent = value;
+            }
+        }
+
+        public ArrayList Meses1
+        {
+            get
+            {
+                return Meses;
+            }
+            set
+            {
+                Meses = value;
+            }
+        }
 
         //
         public ArrayList Categoria1
