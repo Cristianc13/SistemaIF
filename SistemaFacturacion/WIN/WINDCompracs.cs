@@ -50,6 +50,11 @@ namespace WIN
             bmbproducto.ValueMember = "idProducto";
             bmbproducto.SelectedIndex = -1;
         }
+        private void Botones()
+        {
+            iconButton3.Visible = true;
+            iconButton4.Visible = true;
+        }
 
         private void LlenaComboProveedor()
         {
@@ -85,12 +90,20 @@ namespace WIN
 
         private void Limpiar()
         {
+            CmbProveedor.Text = string.Empty;
+            CmbProveedor.SelectedIndex = -1;
+            txtnombreCompañia.Text = string.Empty;
+            txtIVAdetalleC.Text = "0";
+            txtnfactura.Text = string.Empty;
+            txtdescr.Text = string.Empty;
+            
             bmbproducto.Text = string.Empty;
             txtcantidad.Text = string.Empty;
             txtcosto.Text = string.Empty;
             errorProvider1.Clear();
             
             bmbproducto.SelectedIndex = -1;
+            CmbProveedor.Focus();
         }
 
         private void limpiar2()
@@ -151,9 +164,29 @@ namespace WIN
 
         private void HabilitarBotones(bool p1, bool p2)
         {
-            btnguardar.Enabled = p1;
-            btnactualizar.Enabled = p1;
-            btnEliminar.Enabled = p1;
+            iconButton4.Enabled = p1;
+            if (iconButton4.Enabled == true)
+            {
+                iconButton4.BackColor = Color.FromArgb(21, 30, 41);
+                iconButton4.IconColor = Color.White;
+            }
+            else
+            {
+                iconButton4.BackColor = Color.FromArgb(177, 180, 183);
+                iconButton4.IconColor = Color.Black;
+            }
+
+            iconButton3.Enabled = p1;
+            if (iconButton3.Enabled == true)
+            {
+                iconButton3.BackColor = Color.FromArgb(21, 30, 41);
+                iconButton3.IconColor = Color.White;
+            }
+            else
+            {
+                iconButton3.BackColor = Color.FromArgb(177, 180, 183);
+                iconButton3.IconColor = Color.Black;
+            }
 
             //Cancelarbutton.Enabled = p1;
         }
@@ -181,7 +214,26 @@ namespace WIN
             LlenaComboProducto();
             LlenaComboProveedor();
             txtIVAdetalleC.Text = "0";
+            Botones();
+            cajasdetextotrue();
         }
+
+        public void cajasdetextotrue()
+        {
+            txtnfactura.Visible = true;
+            txtdescr.Visible = true;
+            txtnombreCompañia.Visible = true;
+            txtIVAdetalleC.Visible = true;
+            txtcantidad.Visible = true;
+            txtcosto.Visible = true;
+            dtfecha.Visible = true;
+            txtsubtotal.Visible = true;
+            txtTotal.Visible = true;
+            txtIVA.Visible = true;
+
+        }
+
+
 
         private void bmbproducto_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -202,7 +254,13 @@ namespace WIN
             bloqueo = false;
             if (bloqueo == false)
             {
-               
+                if (CmbProveedor.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(CmbProveedor, "Debe Asignar un Proveedor a la compra");
+                    return;
+                }
+                errorProvider1.Clear();
+
                 if (bmbproducto.SelectedIndex == -1)
                 {
                     errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
@@ -258,7 +316,7 @@ namespace WIN
             Ecompra.FK_idProveedor = idProveedor;
             Ecompra.numeroFactura = txtnfactura.Text;
             Ecompra.descripcion = txtdescr.Text;
-            Ecompra.fechaCompra = dtfechacompra.Value;
+            Ecompra.fechaCompra = dtfecha.Value;
             Ecompra.IVA = Convert.ToDecimal(txtIVAdetalleC.Text);
             //id
             idCompra = BCompra.InsertarCompra(Ecompra);
@@ -393,15 +451,15 @@ namespace WIN
 
         private void txtnfactura_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '-'))
             {
                 e.Handled = true;
             }
 
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            //{
+            //    e.Handled = true;
+            //}
         }
 
         private void txtIVAdetalleC_KeyPress(object sender, KeyPressEventArgs e)
@@ -420,6 +478,200 @@ namespace WIN
         private void DetalleCompraGridView1_Click(object sender, EventArgs e)
         {
             fila = DetalleCompraGridView1.CurrentRow.Index;
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            WINProveedor cl = new WINProveedor();
+            AddOwnedForm(cl);
+            cl.ShowDialog();
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            WINDetalleCompra2 WCd2 = new WINDetalleCompra2();
+            AddOwnedForm(WCd2);
+            WCd2.ShowDialog();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            bloqueo = false;
+            if (bloqueo == false)
+            {
+                if (CmbProveedor.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(CmbProveedor, "Debe ingresar un Proveedor a la compra");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (bmbproducto.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (txtnfactura.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txtnfactura, "Debe ingresar un N° de Factura");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (txtcantidad.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (txtcosto.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txtcosto, "Debe ingresar un Costo");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                ENTDetalleCompra miDetalle = new ENTDetalleCompra();
+                miDetalle.FK_idCompra = idCompra;
+                miDetalle.FK_idProducto = idProducto;
+                miDetalle.Producto = bmbproducto.Text;
+                miDetalle.cantidadProducto = Convert.ToDecimal(txtcantidad.Text);
+                miDetalle.costo = Convert.ToDecimal(txtcosto.Text);
+
+                miDetalle.importe = miDetalle.cantidadProducto * miDetalle.costo;
+                EDetalleC.Add(miDetalle);
+                DetalleCompraGridView1.DataSource = null;
+                DetalleCompraGridView1.DataSource = EDetalleC;
+                FormatoGrid();
+                CalcularTotal();
+                HabilitarBotones(true, false);
+                limpiar2();
+            }
+            else
+            {
+                bloqueo = true;
+            }
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < EDetalleC.Count; i++)
+            {
+                //COMPROBAMOS QUE LA FILA SELECCIONADA ES IGUAL AL DE LA LISTA
+                if (i == fila)
+                {
+                    EDetalleC.RemoveAt(fila);
+                }
+
+                //ACTUALIZAMOS LA LISTA Y EL DATAGRIDVIEW
+                DetalleCompraGridView1.DataSource = null;
+                DetalleCompraGridView1.DataSource = EDetalleC;
+                FormatoGrid();
+                CalcularTotal();
+                limpiar3();
+            }
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            Ecompra.FK_idProveedor = idProveedor;
+            Ecompra.numeroFactura = txtnfactura.Text;
+            Ecompra.descripcion = txtdescr.Text;
+            Ecompra.fechaCompra = dtfecha.Value;
+            Ecompra.IVA = Convert.ToDecimal(txtIVAdetalleC.Text);
+            //id
+            idCompra = BCompra.InsertarCompra(Ecompra);
+
+            foreach (ENTDetalleCompra miDetalle in EDetalleC)
+            {
+                Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
+            }
+            //Ecompra.idCompra = idCompra;
+            //Ecompra.realizada = false;
+            //Bldetallec.UpdateDetalleCompra(Ecompra);
+            MessageBox.Show("Compra realizada con exito");
+            DetalleCompraGridView1.DataSource = null;
+            EDetalleC.Clear();
+            HabilitarBotones(false, true);
+
+            limpiar4();
+            txtIVAdetalleC.Text = "0";
+            dtfecha.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            dtfecha.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HabilitarBotones(false, true);
+            fila = DetalleCompraGridView1.CurrentRow.Index;
+        }
+
+        private void CmbProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcantidad_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    e.Handled = true;
+            //}
+        }
+
+        private void txtcosto_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    e.Handled = true;
+            //}
         }
     }
 }

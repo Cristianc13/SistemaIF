@@ -38,6 +38,7 @@
             this.btncategoria = new FontAwesome.Sharp.IconPictureBox();
             this.btnmodelo = new FontAwesome.Sharp.IconPictureBox();
             this.btnmarca = new FontAwesome.Sharp.IconPictureBox();
+            this.btnestado = new FontAwesome.Sharp.IconPictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CantidadProduLabel = new System.Windows.Forms.Label();
@@ -101,12 +102,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnexportar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnestado = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmodelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnestado)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
@@ -131,7 +132,6 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnestado)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductodataGridView
@@ -186,6 +186,7 @@
             // 
             this.btncategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncategoria.BackColor = System.Drawing.Color.White;
+            this.btncategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.errorProvider1.SetIconAlignment(this.btncategoria, System.Windows.Forms.ErrorIconAlignment.TopLeft);
             this.btncategoria.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -203,6 +204,7 @@
             // 
             this.btnmodelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnmodelo.BackColor = System.Drawing.Color.White;
+            this.btnmodelo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmodelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.errorProvider1.SetIconAlignment(this.btnmodelo, System.Windows.Forms.ErrorIconAlignment.TopLeft);
             this.btnmodelo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -220,6 +222,7 @@
             // 
             this.btnmarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnmarca.BackColor = System.Drawing.Color.White;
+            this.btnmarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.errorProvider1.SetIconAlignment(this.btnmarca, System.Windows.Forms.ErrorIconAlignment.TopLeft);
             this.btnmarca.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -232,6 +235,24 @@
             this.btnmarca.TabIndex = 40;
             this.btnmarca.TabStop = false;
             this.btnmarca.Click += new System.EventHandler(this.btnmarca_Click);
+            // 
+            // btnestado
+            // 
+            this.btnestado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnestado.BackColor = System.Drawing.Color.White;
+            this.btnestado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnestado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.btnestado, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnestado.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnestado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnestado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnestado.IconSize = 30;
+            this.btnestado.Location = new System.Drawing.Point(334, 18);
+            this.btnestado.Name = "btnestado";
+            this.btnestado.Size = new System.Drawing.Size(30, 30);
+            this.btnestado.TabIndex = 41;
+            this.btnestado.TabStop = false;
+            this.btnestado.Click += new System.EventHandler(this.btnestado_Click);
             // 
             // panel8
             // 
@@ -966,6 +987,7 @@
             // btncancelar
             // 
             this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btncancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btncancelar.ForeColor = System.Drawing.Color.White;
@@ -986,6 +1008,7 @@
             // btneliminar
             // 
             this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btneliminar.ForeColor = System.Drawing.Color.White;
@@ -1007,6 +1030,7 @@
             // btneditar
             // 
             this.btneditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btneditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btneditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btneditar.ForeColor = System.Drawing.Color.White;
@@ -1028,6 +1052,7 @@
             // btnguardar
             // 
             this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnguardar.ForeColor = System.Drawing.Color.White;
@@ -1087,6 +1112,7 @@
             // btnexportar
             // 
             this.btnexportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnexportar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnexportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnexportar.ForeColor = System.Drawing.Color.White;
@@ -1113,23 +1139,6 @@
             this.panel2.Size = new System.Drawing.Size(1100, 355);
             this.panel2.TabIndex = 41;
             // 
-            // btnestado
-            // 
-            this.btnestado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnestado.BackColor = System.Drawing.Color.White;
-            this.btnestado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.errorProvider1.SetIconAlignment(this.btnestado, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.btnestado.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnestado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnestado.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnestado.IconSize = 30;
-            this.btnestado.Location = new System.Drawing.Point(334, 18);
-            this.btnestado.Name = "btnestado";
-            this.btnestado.Size = new System.Drawing.Size(30, 30);
-            this.btnestado.TabIndex = 41;
-            this.btnestado.TabStop = false;
-            this.btnestado.Click += new System.EventHandler(this.btnestado_Click);
-            // 
             // WINProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1150,6 +1159,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btncategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmodelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnestado)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1182,7 +1192,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnestado)).EndInit();
             this.ResumeLayout(false);
 
         }

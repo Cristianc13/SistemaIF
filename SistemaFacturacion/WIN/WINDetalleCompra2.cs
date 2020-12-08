@@ -78,7 +78,7 @@ namespace WIN
         {
             btnAgregar.Enabled = p2;
             btnActualizar.Enabled = p1;
-            btnEliminar.Enabled = p1;
+            
             // Cancelarbutton.Enabled = p1;
         }
 
@@ -141,7 +141,7 @@ namespace WIN
             EProducto.nombreProducto = txtnombre.Text;
             EProducto.codigopro = txtcodigo.Text;
             EProducto.FK_idMarca = IdMarca;
-            EProducto.precioSalida = int.Parse(txtpreciosalida.Text);
+            EProducto.precioSalida = Convert.ToDecimal(txtpreciosalida.Text);
             EProducto.costo = 0;
             EProducto.stockProducto = 0;
             EProducto.FK_idModelo = IdModelo;
@@ -157,10 +157,39 @@ namespace WIN
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            string ID = DetalleCompra2GridView1.CurrentRow.Cells[0].Value.ToString();
+            IdProducto = Convert.ToInt32(ID);
+            EProducto.idProducto = IdProducto;
+            EProducto.nombreProducto = txtnombre.Text;
+            EProducto.codigopro = txtcodigo.Text;
+            EProducto.FK_idMarca = IdMarca;
+            EProducto.precioSalida = Convert.ToDecimal(txtpreciosalida.Text);
+            EProducto.costo = 0;
+            EProducto.stockProducto = 0;
+            EProducto.FK_idModelo = IdModelo;
+            EProducto.FK_idCategoria = IdCategoria;
+            EProducto.FK_idEstado = IdEstado;
+            EProducto.descripcion = txtdescripcion.Text;
+            EProducto.observacion = txtobservacion.Text;
+            BProducto.UpdateProducto(EProducto);
+            LlenarGrid();
+            Limpiar();
+            HabilitarBotones(true, false);
+
+
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            DialogResult rpt = MessageBox.Show("Desea eliminar el registro", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (rpt == DialogResult.No) return;
+            EProducto.idProducto = IdProducto;
+            BProducto.EliminarProduto(EProducto);
+            HabilitarBotones(false, true);
+            Limpiar();
+            LlenarGrid();
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -271,6 +300,11 @@ namespace WIN
             EProducto.codigopro = filtro;
             //  ProductodataGridView.Columns.Clear();
             DetalleCompra2GridView1.DataSource = BProducto.BuscarProducto(EProducto);
+        }
+
+        private void DetalleCompra2GridView1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
