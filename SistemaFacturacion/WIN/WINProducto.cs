@@ -105,10 +105,16 @@ namespace WIN
             ProductodataGridView.Columns[10].HeaderText = "Modelo";
             ProductodataGridView.Columns[11].HeaderText = "Categoria";
             ProductodataGridView.Columns[12].HeaderText = "Estado";
-            //ProductodataGridView.AllowUserToResizeColumns = false;
-            //ProductodataGridView.AllowUserToResizeRows = false;
-            //ProductodataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            //ProductodataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+
+            //Alinear texto a la derecha
+            ProductodataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            ProductodataGridView.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            ProductodataGridView.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            ProductodataGridView.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             Recursos.DatagridviewDiseño.DiseñoDGV(ref ProductodataGridView);
         }
 
