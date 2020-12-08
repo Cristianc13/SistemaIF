@@ -149,7 +149,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btncancelar);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
@@ -239,6 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(711, 405);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

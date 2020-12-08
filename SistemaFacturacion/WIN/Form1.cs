@@ -133,7 +133,7 @@ namespace WIN
         {
             //Proveedor
             ActivarBoton(sender, Color.FromArgb(196, 229, 56));
-            AbrirForm(new WINProveedor());
+            AbrirForm(new WinProveedorPrincipal());
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

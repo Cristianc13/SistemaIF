@@ -252,13 +252,7 @@ namespace WIN
 
         private void CancelarComprabutton_Click(object sender, EventArgs e)
         {
-            DialogResult rpt = MessageBox.Show("Cancelar Compra?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (rpt == DialogResult.Yes)
-            {
-                //DVentadataGridView.Rows.Clear();
-            }
 
-            if (rpt == DialogResult.No) return;
         }
 
         private void Eliminar()
@@ -356,12 +350,14 @@ namespace WIN
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (ClientecomboBox.Text == string.Empty)
+
+            if (ClientecomboBox.SelectedIndex == -1)
             {
                 errorProvider1.SetError(ClientecomboBox, "Debe ingresar un Cliente para realizar su venta");
                 return;
             }
             errorProvider1.Clear();
+
 
             object idcliente = ClientecomboBox.SelectedValue;
             int cliente = Convert.ToInt32(idcliente);
@@ -371,6 +367,7 @@ namespace WIN
             {
                 BLDetalle.InsertDetalleVenta(idventa, miDetalle);
             }
+
             MessageBox.Show("Venta realizada con exito");
             DVentadataGridView.DataSource = null;
             ImportetextBox.Text = "0";
@@ -431,5 +428,15 @@ namespace WIN
             }
         }
 
+        private void btnCancelarVenta_Click(object sender, EventArgs e)
+        {
+            DialogResult rpt = MessageBox.Show("Cancelar Compra?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (rpt == DialogResult.Yes)
+            {
+                //DVentadataGridView.Rows.Clear();
+            }
+
+            if (rpt == DialogResult.No) return;
+        }
     }
 }
