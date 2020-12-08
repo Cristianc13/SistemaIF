@@ -114,7 +114,7 @@ namespace WIN
             DialogResult rpt = MessageBox.Show("Eliminar Modelo " + valor, "Modelo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.No) return;
 
-            //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
+            //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR
             EMod.idModelo = id;
             EMod.nombreModelo = ModelotextBox.Text;
             BModelo.DeleteModelo(EMod);
@@ -161,7 +161,7 @@ namespace WIN
 
         private void header_MouseDown(object sender, MouseEventArgs e)
         {
-             ReleaseCapture();
+            ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
