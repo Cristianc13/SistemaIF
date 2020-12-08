@@ -35,10 +35,41 @@ namespace WIN
 
         private void HabilitarBotones(bool p1, bool p2)
         {
-            Guardarbutton.Enabled = p1;
-            Actualizarbutton.Enabled = p2;
-            Eliminarbutton.Enabled = p2;
-            //Cancelarbutton.Enabled = p1;
+            btnguardar.Enabled = p2;
+
+            if (btnguardar.Enabled == true)
+            {
+                btnguardar.BackColor = Color.FromArgb(21, 30, 41);
+                btnguardar.IconColor = Color.White;
+            }
+            else
+            {
+                btnguardar.BackColor = Color.FromArgb(177, 180, 183);
+                btnguardar.IconColor = Color.Black;
+            }
+
+            btneditar.Enabled = p1;
+            if (btneditar.Enabled == false)
+            {
+                btneditar.BackColor = Color.FromArgb(177, 180, 183);
+                btneditar.IconColor = Color.Black;
+            }
+            else
+            {
+                btneditar.BackColor = Color.FromArgb(21, 30, 41);
+                btneditar.IconColor = Color.White;
+            }
+            btneliminar.Enabled = p1;
+            if (btneditar.Enabled == false)
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
         }
 
         //Formato a la grid
@@ -72,13 +103,13 @@ namespace WIN
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-               HabilitarBotones(true, false);
+            HabilitarBotones(true, false);
             Limpiar();
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-                        string valor = MarcadataGridView.CurrentRow.Cells[1].Value.ToString();
+            string valor = MarcadataGridView.CurrentRow.Cells[1].Value.ToString();
             DialogResult rpt = MessageBox.Show("Eliminar Marca " + valor, "Marca", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.No) return;
 
@@ -93,7 +124,7 @@ namespace WIN
 
         private void btneditar_Click(object sender, EventArgs e)
         {
-                 EMarca.idMarca = id;
+            EMarca.idMarca = id;
             EMarca.nombreMarca = MarcatextBox.Text;
             BLMarca.UpdateMarca(EMarca);
             LlenarDataGrid();
@@ -103,7 +134,7 @@ namespace WIN
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-                        if (MarcatextBox.Text == string.Empty)
+            if (MarcatextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(MarcatextBox, "Debe ingresar un Nombre");
                 MarcatextBox.Focus();
