@@ -35,7 +35,7 @@ namespace WIN
 
         private void LlenarDataGrid()
         {
-            ClientedataGridView.DataSource = cliente.MostrarCliente();
+            ClientedataGridView.DataSource = cliente.MostrarClientes();
             Limpiar();
             textBoxnombre.Focus();
         }

@@ -32,14 +32,9 @@ namespace WIN
 
         private void LlenarDataGrid()
         {
-            ClienteDataGridView.DataSource = cliente.MostrarCliente();
+            ClienteDataGridView.DataSource = cliente.MostrarClientes();
             Limpiar();
             NombreTextBox.Focus();
-        }
-
-        private void ClienteDataGridView_Click(object sender, EventArgs e)
-        {
-            //Anterior Metodo de seleccion.
         }
 
         private void ClienteDataGridView_DoubleClick(object sender, EventArgs e)
@@ -56,8 +51,9 @@ namespace WIN
                 errorProvider1.Clear();
 
                 WINDetalleVenta dv = Owner as WINDetalleVenta;
-                dv.ClientecomboBox.Text = nombre;
+                dv.ClientecomboBox.Text = nombre +" "+ apellido;
                 dv.TelefonotextBox.Text = telefono;
+                dv.ClientecomboBox.Enabled = false;
                 this.Close();
             }
             catch (Exception)
@@ -213,8 +209,9 @@ namespace WIN
             dv.ClientecomboBox.ValueMember = "idCliente";
             dv.ClientecomboBox.SelectedIndex = -1;
 
-            dv.ClientecomboBox.Text = NombreTextBox.Text;
+            dv.ClientecomboBox.Text = NombreTextBox.Text +" "+ ApellidoTextBox.Text;
             dv.TelefonotextBox.Text = TelefonoTextBox.Text;
+            dv.ClientecomboBox.Enabled = false;
 
             this.Close();
         }

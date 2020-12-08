@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINDetalleVenta));
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
@@ -67,9 +67,9 @@
             this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancelarVenta = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCancelarVenta = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).BeginInit();
@@ -222,7 +222,6 @@
             this.ProductocomboBox.Size = new System.Drawing.Size(366, 28);
             this.ProductocomboBox.TabIndex = 0;
             this.ProductocomboBox.SelectedIndexChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
-            this.ProductocomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductocomboBox_KeyPress);
             // 
             // DVentadataGridView
             // 
@@ -230,20 +229,20 @@
             this.DVentadataGridView.AllowUserToDeleteRows = false;
             this.DVentadataGridView.AllowUserToResizeColumns = false;
             this.DVentadataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Teal;
-            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal;
+            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.DVentadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DVentadataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DVentadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle12;
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
             this.DVentadataGridView.Name = "DVentadataGridView";
@@ -270,7 +269,7 @@
             this.btnCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCliente.IconSize = 30;
-            this.btnCliente.Location = new System.Drawing.Point(493, 28);
+            this.btnCliente.Location = new System.Drawing.Point(491, 28);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(30, 30);
             this.btnCliente.TabIndex = 40;
@@ -288,7 +287,7 @@
             this.btnProducto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProducto.IconSize = 30;
-            this.btnProducto.Location = new System.Drawing.Point(493, 89);
+            this.btnProducto.Location = new System.Drawing.Point(491, 89);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(30, 30);
             this.btnProducto.TabIndex = 41;
@@ -597,6 +596,27 @@
             this.panel2.Size = new System.Drawing.Size(1100, 43);
             this.panel2.TabIndex = 22;
             // 
+            // btnCancelarVenta
+            // 
+            this.btnCancelarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnCancelarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnCancelarVenta.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarVenta.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            this.btnCancelarVenta.IconColor = System.Drawing.Color.White;
+            this.btnCancelarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelarVenta.IconSize = 30;
+            this.btnCancelarVenta.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCancelarVenta.Location = new System.Drawing.Point(17, 4);
+            this.btnCancelarVenta.Name = "btnCancelarVenta";
+            this.btnCancelarVenta.Size = new System.Drawing.Size(157, 35);
+            this.btnCancelarVenta.TabIndex = 37;
+            this.btnCancelarVenta.Text = "Cancelar Venta";
+            this.btnCancelarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelarVenta.UseVisualStyleBackColor = false;
+            this.btnCancelarVenta.Click += new System.EventHandler(this.btnCancelarVenta_Click);
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -618,27 +638,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1100, 425);
             this.panel3.TabIndex = 23;
-            // 
-            // btnCancelarVenta
-            // 
-            this.btnCancelarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnCancelarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnCancelarVenta.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarVenta.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
-            this.btnCancelarVenta.IconColor = System.Drawing.Color.White;
-            this.btnCancelarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelarVenta.IconSize = 30;
-            this.btnCancelarVenta.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnCancelarVenta.Location = new System.Drawing.Point(17, 4);
-            this.btnCancelarVenta.Name = "btnCancelarVenta";
-            this.btnCancelarVenta.Size = new System.Drawing.Size(157, 35);
-            this.btnCancelarVenta.TabIndex = 37;
-            this.btnCancelarVenta.Text = "Cancelar Venta";
-            this.btnCancelarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelarVenta.UseVisualStyleBackColor = false;
-            this.btnCancelarVenta.Click += new System.EventHandler(this.btnCancelarVenta_Click);
             // 
             // WINDetalleVenta
             // 

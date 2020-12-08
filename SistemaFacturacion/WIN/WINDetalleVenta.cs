@@ -67,7 +67,7 @@ namespace WIN
         private void LlenaComboProducto()
         {
             ProductocomboBox.DataSource = BProducto.MostrarProducto();
-            ProductocomboBox.DisplayMember = "nombreProducto";
+            ProductocomboBox.DisplayMember = "Producto";
             ProductocomboBox.ValueMember = "idProducto";
             ProductocomboBox.SelectedIndex = -1;
         }
@@ -75,7 +75,7 @@ namespace WIN
         private void LlenarComboCliente()
         {
             ClientecomboBox.DataSource = BCliente.MostrarCliente();
-            ClientecomboBox.DisplayMember = "nombreCliente";
+            ClientecomboBox.DisplayMember = "cliente";
             ClientecomboBox.ValueMember = "idCliente";
             ClientecomboBox.SelectedIndex = -1;
         }
@@ -88,10 +88,6 @@ namespace WIN
             errorProvider1.Clear();
             ProductocomboBox.SelectedIndex = -1;
             ProductocomboBox.Focus();
-        }
-
-        private void Agregarbutton_Click(object sender, EventArgs e)
-        {
         }
 
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,10 +133,6 @@ namespace WIN
             ImportetextBox.Text = total.ToString();
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
-        {
-        }
-
         private void HabilitarBotones(bool p1, bool p2)
         {
             btnguardar.Enabled = p1;
@@ -166,10 +158,6 @@ namespace WIN
                 btneliminar.BackColor = Color.FromArgb(177, 180, 183);
                 btneliminar.IconColor = Color.Black;
             }
-        }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -206,33 +194,13 @@ namespace WIN
             }
         }
 
-        private void ProductocomboBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
         private void DescuentotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
-
+            
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
@@ -244,15 +212,6 @@ namespace WIN
             WINReportes.RReporteVenta GenerarFactura = new WINReportes.RReporteVenta();
             GenerarFactura.Factura = idventa;
             GenerarFactura.ShowDialog();
-        }
-
-        private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CancelarComprabutton_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Eliminar()
@@ -329,7 +288,6 @@ namespace WIN
                 DescuentotextBox.Text = "0";
             }
         }
-
         private void btneliminar_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < EDventa.Count; i++)
@@ -357,7 +315,6 @@ namespace WIN
                 return;
             }
             errorProvider1.Clear();
-
 
             object idcliente = ClientecomboBox.SelectedValue;
             int cliente = Convert.ToInt32(idcliente);
@@ -430,7 +387,7 @@ namespace WIN
 
         private void btnCancelarVenta_Click(object sender, EventArgs e)
         {
-            DialogResult rpt = MessageBox.Show("Cancelar Compra?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            DialogResult rpt = MessageBox.Show("¿Cancelar Venta?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.Yes)
             {
                 //DVentadataGridView.Rows.Clear();
