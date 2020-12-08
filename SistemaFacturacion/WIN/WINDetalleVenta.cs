@@ -39,8 +39,14 @@ namespace WIN
             Limpiar();
             DescuentotextBox.Text = "0";
             ClientecomboBox.Focus();
+            Botones();
         }
 
+        private void Botones()
+        {
+            btneliminar.Visible = true;
+            btnguardar.Visible = true;
+        }
         private void FormatoGrid()
         {
             DVentadataGridView.Columns[0].Visible = false;
@@ -263,7 +269,7 @@ namespace WIN
             }
             else
             {
-                HabilitarBotones(true, true);
+                HabilitarBotones(true, false);
             }
         }
 
@@ -283,8 +289,8 @@ namespace WIN
             }
             errorProvider1.Clear();
 
+            Cero();
             decimal cantidad = Convert.ToDecimal(CantidadtextBox.Text);
-
             decimal precio = Convert.ToDecimal(PreciotextBox.Text);
             decimal descuento = Convert.ToDecimal(DescuentotextBox.Text);
             decimal NuevoPrecio = precio - descuento;
@@ -311,7 +317,7 @@ namespace WIN
                 CantidadtextBox.Focus();
             }
             else
-            {
+            {               
                 ENTDetalleVenta miDetalle = new ENTDetalleVenta();
                 miDetalle.Fk_idProducto = idProducto;
                 miDetalle.producto = ProductocomboBox.Text;
@@ -343,6 +349,7 @@ namespace WIN
                 FormatoGrid();
                 CalcularTotal();
                 Limpiar();
+                HabilitarBotones(true, false);
                 Eliminar();
             }
         }
@@ -375,8 +382,24 @@ namespace WIN
             EDventa.Clear();
         }
 
+        private void HabilitarEliminar(bool p1)
+        {
+            btneliminar.Enabled = p1;
+            if (btneliminar.Enabled == true)
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
+            }
+        }
+
         private void btncancelar_Click(object sender, EventArgs e)
         {
+            HabilitarEliminar(false);
             Limpiar();
         }
 
@@ -397,11 +420,16 @@ namespace WIN
         private void DVentadataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HabilitarBotones(true, true);
-        }
-
-        private void DVentadataGridView_Click(object sender, EventArgs e)
-        {
             fila = DVentadataGridView.CurrentRow.Index;
         }
+
+        private void Cero()
+        {
+            if (DescuentotextBox.Text == "")
+            {
+                DescuentotextBox.Text = "0";
+            }
+        }
+
     }
 }
