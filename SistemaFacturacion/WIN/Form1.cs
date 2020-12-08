@@ -192,5 +192,19 @@ namespace WIN
             bc.ShowDialog();
             btdashboard_Click(sender, e);
         }
+
+        private void btnmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnmaximizar.Visible = false;
+            btnrestaurar.Visible = true;
+        }
+
+        private void btnrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
+        }
     }
 }

@@ -37,6 +37,20 @@ namespace CAD
             CerrarConexion();
         }
 
+        public void CompraMes(ENTDashboard obj)
+        {
+            SqlCommand cmd = new SqlCommand("ComprasMes", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                obj.MesesCompras1.Add(dr.GetString(0));
+                obj.CantCompras1.Add(dr.GetDecimal(1));
+            }
+            dr.Close();
+            CerrarConexion();
+        }
+
         public void ProdPreferidos(ENTDashboard obj)
         {
             SqlCommand cmd = new SqlCommand("ProductosPreferidos", AbrirConexion());

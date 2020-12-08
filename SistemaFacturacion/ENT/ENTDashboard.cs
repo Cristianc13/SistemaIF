@@ -12,6 +12,8 @@ namespace ENT
         public ArrayList Cantvent = new ArrayList();
         public ArrayList Meses = new ArrayList();
 
+        public ArrayList CantCompras = new ArrayList();
+        public ArrayList MesesCompras = new ArrayList();
         public string totalVentas { get; set; }
         public string CantModelo { get; set; }
         public string CantMarcas { get; set; }
@@ -22,6 +24,32 @@ namespace ENT
 
         public string CantVenta { get; set; }
         public string CantCompra { get; set; }
+
+        //
+
+        public ArrayList CantCompras1
+        {
+            get
+            {
+                return CantCompras;
+            }
+            set
+            {
+                CantCompras = value;
+            }
+        }
+
+        public ArrayList MesesCompras1
+        {
+            get
+            {
+                return MesesCompras;
+            }
+            set
+            {
+                MesesCompras = value;
+            }
+        }
 
         //
         public ArrayList Cantvent1
