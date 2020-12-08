@@ -217,5 +217,7 @@ namespace WIN
 
             HabilitarBotones(true, true);
         }
+
+
     }
 }

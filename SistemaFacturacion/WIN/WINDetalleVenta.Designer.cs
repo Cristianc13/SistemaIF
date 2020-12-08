@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINDetalleVenta));
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
@@ -67,9 +67,9 @@
             this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.CancelarComprabutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCancelarVenta = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.DVentadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).BeginInit();
@@ -126,13 +126,15 @@
             // ImportetextBox
             // 
             this.ImportetextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImportetextBox.BackColor = System.Drawing.Color.SpringGreen;
-            this.ImportetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ImportetextBox.Location = new System.Drawing.Point(875, 15);
+            this.ImportetextBox.BackColor = System.Drawing.Color.White;
+            this.ImportetextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ImportetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImportetextBox.Location = new System.Drawing.Point(981, 12);
             this.ImportetextBox.Name = "ImportetextBox";
             this.ImportetextBox.ReadOnly = true;
-            this.ImportetextBox.Size = new System.Drawing.Size(107, 27);
+            this.ImportetextBox.Size = new System.Drawing.Size(107, 20);
             this.ImportetextBox.TabIndex = 7;
+            this.ImportetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // PreciotextBox
             // 
@@ -163,9 +165,9 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(875, 18);
+            this.label4.Location = new System.Drawing.Point(883, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 4;
@@ -228,20 +230,20 @@
             this.DVentadataGridView.AllowUserToDeleteRows = false;
             this.DVentadataGridView.AllowUserToResizeColumns = false;
             this.DVentadataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
-            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Teal;
+            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.DVentadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DVentadataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DVentadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
             this.DVentadataGridView.Name = "DVentadataGridView";
@@ -249,7 +251,7 @@
             this.DVentadataGridView.RowHeadersVisible = false;
             this.DVentadataGridView.RowHeadersWidth = 51;
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DVentadataGridView.Size = new System.Drawing.Size(1100, 411);
+            this.DVentadataGridView.Size = new System.Drawing.Size(1100, 425);
             this.DVentadataGridView.TabIndex = 0;
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
             // 
@@ -268,7 +270,7 @@
             this.btnCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCliente.IconSize = 30;
-            this.btnCliente.Location = new System.Drawing.Point(483, 28);
+            this.btnCliente.Location = new System.Drawing.Point(493, 28);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(30, 30);
             this.btnCliente.TabIndex = 40;
@@ -286,7 +288,7 @@
             this.btnProducto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProducto.IconSize = 30;
-            this.btnProducto.Location = new System.Drawing.Point(483, 89);
+            this.btnProducto.Location = new System.Drawing.Point(493, 89);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(30, 30);
             this.btnProducto.TabIndex = 41;
@@ -584,34 +586,24 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panel2.Controls.Add(this.CancelarComprabutton);
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnCancelarVenta);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.ImportetextBox);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 635);
+            this.panel2.Location = new System.Drawing.Point(0, 649);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1100, 57);
+            this.panel2.Size = new System.Drawing.Size(1100, 43);
             this.panel2.TabIndex = 22;
-            // 
-            // CancelarComprabutton
-            // 
-            this.CancelarComprabutton.Location = new System.Drawing.Point(12, 15);
-            this.CancelarComprabutton.Name = "CancelarComprabutton";
-            this.CancelarComprabutton.Size = new System.Drawing.Size(140, 30);
-            this.CancelarComprabutton.TabIndex = 22;
-            this.CancelarComprabutton.Text = "Cancelar Compra";
-            this.CancelarComprabutton.UseVisualStyleBackColor = true;
-            this.CancelarComprabutton.Click += new System.EventHandler(this.CancelarComprabutton_Click);
             // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(840, 19);
+            this.label6.Location = new System.Drawing.Point(946, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 20);
             this.label6.TabIndex = 8;
@@ -624,8 +616,29 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 224);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1100, 411);
+            this.panel3.Size = new System.Drawing.Size(1100, 425);
             this.panel3.TabIndex = 23;
+            // 
+            // btnCancelarVenta
+            // 
+            this.btnCancelarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnCancelarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnCancelarVenta.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarVenta.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            this.btnCancelarVenta.IconColor = System.Drawing.Color.White;
+            this.btnCancelarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelarVenta.IconSize = 30;
+            this.btnCancelarVenta.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCancelarVenta.Location = new System.Drawing.Point(17, 4);
+            this.btnCancelarVenta.Name = "btnCancelarVenta";
+            this.btnCancelarVenta.Size = new System.Drawing.Size(157, 35);
+            this.btnCancelarVenta.TabIndex = 37;
+            this.btnCancelarVenta.Text = "Cancelar Venta";
+            this.btnCancelarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelarVenta.UseVisualStyleBackColor = false;
+            this.btnCancelarVenta.Click += new System.EventHandler(this.btnCancelarVenta_Click);
             // 
             // WINDetalleVenta
             // 
@@ -683,7 +696,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button CancelarComprabutton;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -701,5 +713,6 @@
         private FontAwesome.Sharp.IconButton btneliminar;
         private FontAwesome.Sharp.IconPictureBox btnCliente;
         private FontAwesome.Sharp.IconPictureBox btnProducto;
+        private FontAwesome.Sharp.IconButton btnCancelarVenta;
     }
 }
