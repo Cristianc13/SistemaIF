@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BL;
 using ENT;
@@ -26,6 +27,12 @@ namespace WIN
         private ENTProducto EProducto = new ENTProducto();
         private BLKardex BKardex = new BLKardex();
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
+        [MarshalAs(UnmanagedType.LPWStr)] string lParam);
+
+        private const int EM_SETCUEBANNER = 0x1501;
+
         private void WINProducto_Load(object sender, EventArgs e)
         {
             HabilitarBotones(false, true);
@@ -38,6 +45,7 @@ namespace WIN
             Limpiar();
             Tarjetas();
             IniciarTextbox();
+            SendMessage(BuscartextBox.Handle, EM_SETCUEBANNER, 0, "Codigo o Producto");
         }
 
         public void IniciarTextbox()
@@ -424,11 +432,10 @@ namespace WIN
             ExportarDatos();
         }
 
-
         private void BuscartextBox_TextChanged(object sender, EventArgs e)
         {
+        }
 
-}
         private void btncategoria_Click(object sender, EventArgs e)
         {
             WINCategoria WCat = new WINCategoria();
@@ -459,7 +466,6 @@ namespace WIN
             we.ShowDialog();
             LlenarModelo();
             Tarjetas();
-
         }
 
         private void LlenarEstado()
