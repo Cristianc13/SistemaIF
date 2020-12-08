@@ -70,19 +70,15 @@ namespace WIN
             errorProvider1.Clear();
         }
 
-        private void Actualizarbutton_Click(object sender, EventArgs e)
+        private void btncancelar_Click(object sender, EventArgs e)
         {
-            EMarca.idMarca = id;
-            EMarca.nombreMarca = MarcatextBox.Text;
-            BLMarca.UpdateMarca(EMarca);
-            LlenarDataGrid();
+               HabilitarBotones(true, false);
             Limpiar();
-            HabilitarBotones(true, false);
         }
 
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void btneliminar_Click(object sender, EventArgs e)
         {
-            string valor = MarcadataGridView.CurrentRow.Cells[1].Value.ToString();
+                        string valor = MarcadataGridView.CurrentRow.Cells[1].Value.ToString();
             DialogResult rpt = MessageBox.Show("Eliminar Marca " + valor, "Marca", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.No) return;
 
@@ -95,9 +91,19 @@ namespace WIN
             HabilitarBotones(true, false);
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
+        private void btneditar_Click(object sender, EventArgs e)
         {
-            if (MarcatextBox.Text == string.Empty)
+                 EMarca.idMarca = id;
+            EMarca.nombreMarca = MarcatextBox.Text;
+            BLMarca.UpdateMarca(EMarca);
+            LlenarDataGrid();
+            Limpiar();
+            HabilitarBotones(true, false);
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+                        if (MarcatextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(MarcatextBox, "Debe ingresar un Nombre");
                 MarcatextBox.Focus();
@@ -110,12 +116,6 @@ namespace WIN
 
             BLMarca.InsertMarca(EMarca);
             LlenarDataGrid();
-        }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-            HabilitarBotones(true, false);
-            Limpiar();
         }
     }
 }

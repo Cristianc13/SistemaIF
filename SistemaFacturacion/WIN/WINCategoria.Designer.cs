@@ -47,12 +47,16 @@
             this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriadataGridView)).BeginInit();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -133,7 +137,7 @@
             this.DescripciontextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DescripciontextBox.Multiline = true;
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(214, 57);
+            this.DescripciontextBox.Size = new System.Drawing.Size(266, 57);
             this.DescripciontextBox.TabIndex = 2;
             // 
             // label3
@@ -149,20 +153,22 @@
             // 
             // CategoriatextBox
             // 
+            this.CategoriatextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CategoriatextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            this.CategoriatextBox.Location = new System.Drawing.Point(139, 19);
+            this.CategoriatextBox.Location = new System.Drawing.Point(150, 25);
             this.CategoriatextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CategoriatextBox.Name = "CategoriatextBox";
-            this.CategoriatextBox.Size = new System.Drawing.Size(214, 27);
+            this.CategoriatextBox.Size = new System.Drawing.Size(243, 20);
             this.CategoriatextBox.TabIndex = 0;
             // 
             // CodigotextBox
             // 
+            this.CodigotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CodigotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            this.CodigotextBox.Location = new System.Drawing.Point(139, 59);
+            this.CodigotextBox.Location = new System.Drawing.Point(144, 65);
             this.CodigotextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CodigotextBox.Name = "CodigotextBox";
-            this.CodigotextBox.Size = new System.Drawing.Size(214, 27);
+            this.CodigotextBox.Size = new System.Drawing.Size(249, 20);
             this.CodigotextBox.TabIndex = 1;
             // 
             // label2
@@ -282,11 +288,41 @@
             this.panel2.Controls.Add(this.CategoriatextBox);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.DescripciontextBox);
+            this.panel2.Controls.Add(this.pictureBox10);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(465, 217);
             this.panel2.TabIndex = 11;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(139, 18);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(266, 35);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 47;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(139, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(266, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 48;
+            this.pictureBox1.TabStop = false;
             // 
             // WINCategoria
             // 
@@ -311,6 +347,8 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,5 +371,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox DescripciontextBox;
         private FontAwesome.Sharp.IconPictureBox btnclose;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
