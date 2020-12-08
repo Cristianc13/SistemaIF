@@ -29,7 +29,8 @@ namespace WIN
             
             HabilitarBotones(true, false);
             LlenarDataGrid();
-            FormatoGrid();        
+            FormatoGrid();
+            Botones();
         }
 
         private void LlenarDataGrid()
@@ -42,8 +43,40 @@ namespace WIN
         private void HabilitarBotones(bool p1, bool p2)
         {
             btnguardar.Enabled = p1;
+            if (btnguardar.Enabled == true)
+            {
+                btnguardar.BackColor = Color.FromArgb(21, 30, 41);
+                btnguardar.IconColor = Color.White;
+            }
+            else
+            {
+                btnguardar.BackColor = Color.FromArgb(177, 180, 183);
+                btnguardar.IconColor = Color.Black;
+            }
+
             btnEditar.Enabled = p2;
+            if (btnEditar.Enabled == true)
+            {
+                btnEditar.BackColor = Color.FromArgb(21, 30, 41);
+                btnEditar.IconColor = Color.White;
+            }
+            else
+            {
+                btnEditar.BackColor = Color.FromArgb(177, 180, 183);
+                btnEditar.IconColor = Color.Black;
+            }
+
             btneliminar.Enabled = p2;
+            if (btneliminar.Enabled == true)
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
+            }
             //Cancelarbutton.Enabled = p1;
         }
         private void Habilitar(bool p1, bool p2)
@@ -161,6 +194,12 @@ namespace WIN
 
                 throw;
             }
+        }
+
+        private void Botones()
+        {
+            btneliminar.Visible = true;
+            btnEditar.Visible = true;
         }
 
         private void textBoxBuscar_KeyUp(object sender, KeyEventArgs e)

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using BL;
 using ENT;
 using BL;
+using System.Drawing;
 
 namespace WIN
 {
@@ -71,8 +72,40 @@ namespace WIN
         private void HabilitarBotones(bool p1, bool p2)
         {
             btnguardar.Enabled = p1;
+            if (btnguardar.Enabled == true)
+            {
+                btnguardar.BackColor = Color.FromArgb(21, 30, 41);
+                btnguardar.IconColor = Color.White;
+            }
+            else
+            {
+                btnguardar.BackColor = Color.FromArgb(177, 180, 183);
+                btnguardar.IconColor = Color.Black;
+            }
+
             btnagregar.Enabled = p2;
+            if (btnagregar.Enabled == true)
+            {
+                btnagregar.BackColor = Color.FromArgb(21, 30, 41);
+                btnagregar.IconColor = Color.White;
+            }
+            else
+            {
+                btnagregar.BackColor = Color.FromArgb(177, 180, 183);
+                btnagregar.IconColor = Color.Black;
+            }
+
             btneliminar.Enabled = p2;
+            if (btneliminar.Enabled == true)
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
+            }
             //Cancelarbutton.Enabled = p1;
         }
         private void Habilitar(bool p1, bool p2)

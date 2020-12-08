@@ -52,10 +52,9 @@
             this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.ClientedataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,16 +65,13 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientedataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -84,7 +80,8 @@
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.52475F));
@@ -93,7 +90,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1084, 246);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1100, 246);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -106,7 +103,7 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(536, 41);
+            this.panel1.Size = new System.Drawing.Size(544, 41);
             this.panel1.TabIndex = 0;
             // 
             // label3
@@ -128,7 +125,7 @@
             this.textBoxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxBuscar.Location = new System.Drawing.Point(87, 12);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(435, 20);
+            this.textBoxBuscar.Size = new System.Drawing.Size(443, 20);
             this.textBoxBuscar.TabIndex = 41;
             this.textBoxBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxBuscar_KeyUp);
             // 
@@ -141,7 +138,7 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(81, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(451, 37);
+            this.pictureBox3.Size = new System.Drawing.Size(459, 37);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 42;
             this.pictureBox3.TabStop = false;
@@ -155,7 +152,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(536, 47);
+            this.panel2.Size = new System.Drawing.Size(544, 47);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -177,7 +174,7 @@
             this.textBoxnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxnombre.Location = new System.Drawing.Point(88, 13);
             this.textBoxnombre.Name = "textBoxnombre";
-            this.textBoxnombre.Size = new System.Drawing.Size(435, 20);
+            this.textBoxnombre.Size = new System.Drawing.Size(443, 20);
             this.textBoxnombre.TabIndex = 38;
             // 
             // pictureBox1
@@ -189,7 +186,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(82, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(451, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(459, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
@@ -202,7 +199,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 103);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(536, 43);
+            this.panel3.Size = new System.Drawing.Size(544, 43);
             this.panel3.TabIndex = 4;
             // 
             // label5
@@ -224,7 +221,7 @@
             this.TextBoxApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxApellido.Location = new System.Drawing.Point(88, 11);
             this.TextBoxApellido.Name = "TextBoxApellido";
-            this.TextBoxApellido.Size = new System.Drawing.Size(434, 20);
+            this.TextBoxApellido.Size = new System.Drawing.Size(442, 20);
             this.TextBoxApellido.TabIndex = 38;
             // 
             // pictureBox6
@@ -236,7 +233,7 @@
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(82, 3);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(450, 37);
+            this.pictureBox6.Size = new System.Drawing.Size(458, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 39;
             this.pictureBox6.TabStop = false;
@@ -249,7 +246,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 152);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(536, 42);
+            this.panel4.Size = new System.Drawing.Size(544, 42);
             this.panel4.TabIndex = 5;
             // 
             // label2
@@ -271,7 +268,7 @@
             this.textboxTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxTelefono.Location = new System.Drawing.Point(88, 11);
             this.textboxTelefono.Name = "textboxTelefono";
-            this.textboxTelefono.Size = new System.Drawing.Size(434, 20);
+            this.textboxTelefono.Size = new System.Drawing.Size(442, 20);
             this.textboxTelefono.TabIndex = 41;
             // 
             // pictureBox2
@@ -283,7 +280,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(82, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(450, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(458, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 42;
             this.pictureBox2.TabStop = false;
@@ -297,7 +294,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 200);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(536, 43);
+            this.panel5.Size = new System.Drawing.Size(544, 43);
             this.panel5.TabIndex = 6;
             // 
             // btncancelar
@@ -340,6 +337,7 @@
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Visible = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnguardar
@@ -382,16 +380,8 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Visible = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.ClientedataGridView);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1084, 402);
-            this.panel6.TabIndex = 3;
             // 
             // ClientedataGridView
             // 
@@ -401,7 +391,7 @@
             this.ClientedataGridView.Name = "ClientedataGridView";
             this.ClientedataGridView.ReadOnly = true;
             this.ClientedataGridView.RowHeadersVisible = false;
-            this.ClientedataGridView.Size = new System.Drawing.Size(1084, 402);
+            this.ClientedataGridView.Size = new System.Drawing.Size(1100, 446);
             this.ClientedataGridView.TabIndex = 0;
             this.ClientedataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientedataGridView_CellDoubleClick);
             // 
@@ -409,22 +399,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // panel8
+            // panel6
             // 
-            this.panel8.Controls.Add(this.panel6);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 251);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1084, 402);
-            this.panel8.TabIndex = 5;
+            this.panel6.Controls.Add(this.ClientedataGridView);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 246);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1100, 446);
+            this.panel6.TabIndex = 1;
             // 
             // WINClientePrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 653);
+            this.ClientSize = new System.Drawing.Size(1100, 692);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.panel8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WINClientePrincipal";
             this.Text = "WINClientePrincipal";
@@ -443,10 +433,9 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ClientedataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.panel8.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -469,15 +458,14 @@
         private FontAwesome.Sharp.IconButton btnguardar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btneliminar;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView ClientedataGridView;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
     }
 }

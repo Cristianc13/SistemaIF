@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINDetalleVenta));
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
@@ -228,20 +228,20 @@
             this.DVentadataGridView.AllowUserToDeleteRows = false;
             this.DVentadataGridView.AllowUserToResizeColumns = false;
             this.DVentadataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
-            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DVentadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DVentadataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DVentadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
             this.DVentadataGridView.Name = "DVentadataGridView";
@@ -251,11 +251,7 @@
             this.DVentadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DVentadataGridView.Size = new System.Drawing.Size(1100, 411);
             this.DVentadataGridView.TabIndex = 0;
-
             this.DVentadataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVentadataGridView_CellClick);
-
-            this.DVentadataGridView.Click += new System.EventHandler(this.DVentadataGridView_Click);
-
             // 
             // errorProvider1
             // 
@@ -272,7 +268,7 @@
             this.btnCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCliente.IconSize = 30;
-            this.btnCliente.Location = new System.Drawing.Point(478, 28);
+            this.btnCliente.Location = new System.Drawing.Point(483, 28);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(30, 30);
             this.btnCliente.TabIndex = 40;
@@ -290,7 +286,7 @@
             this.btnProducto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProducto.IconSize = 30;
-            this.btnProducto.Location = new System.Drawing.Point(478, 89);
+            this.btnProducto.Location = new System.Drawing.Point(483, 89);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(30, 30);
             this.btnProducto.TabIndex = 41;
@@ -553,6 +549,7 @@
             this.btnguardar.Text = "Guardar";
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Visible = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btneliminar
@@ -574,6 +571,7 @@
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Visible = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // panel7
