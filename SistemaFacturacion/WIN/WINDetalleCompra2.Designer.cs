@@ -50,26 +50,25 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.DetalleCompra2GridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtobservacion = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnMarca = new FontAwesome.Sharp.IconPictureBox();
-            this.btnModelo = new FontAwesome.Sharp.IconPictureBox();
-            this.btnCategoria = new FontAwesome.Sharp.IconPictureBox();
-            this.btnEstado = new FontAwesome.Sharp.IconPictureBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtfiltrar = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnEstado = new FontAwesome.Sharp.IconPictureBox();
+            this.btnCategoria = new FontAwesome.Sharp.IconPictureBox();
+            this.btnModelo = new FontAwesome.Sharp.IconPictureBox();
+            this.btnMarca = new FontAwesome.Sharp.IconPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCompra2GridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMarca)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnModelo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEstado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnModelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMarca)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -259,21 +258,10 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(331, 181);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(110, 33);
-            this.btnEliminar.TabIndex = 11;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(460, 181);
+            this.btnCancelar.Location = new System.Drawing.Point(333, 181);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(110, 33);
             this.btnCancelar.TabIndex = 12;
@@ -317,6 +305,7 @@
             this.DetalleCompra2GridView1.TabIndex = 14;
             this.DetalleCompra2GridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCompra2GridView1_CellClick);
             this.DetalleCompra2GridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCompra2GridView1_CellDoubleClick);
+            this.DetalleCompra2GridView1.Click += new System.EventHandler(this.DetalleCompra2GridView1_Click);
             // 
             // label2
             // 
@@ -356,7 +345,6 @@
             this.panel1.Controls.Add(this.txtnombre);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.txtdescripcion);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.label4);
@@ -376,78 +364,14 @@
             this.panel1.Size = new System.Drawing.Size(989, 279);
             this.panel1.TabIndex = 22;
             // 
-            // panel2
+            // txtfiltrar
             // 
-            this.panel2.Controls.Add(this.DetalleCompra2GridView1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 279);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(989, 340);
-            this.panel2.TabIndex = 23;
-            // 
-            // btnMarca
-            // 
-            this.btnMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMarca.BackColor = System.Drawing.Color.White;
-            this.btnMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnMarca.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnMarca.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMarca.IconSize = 30;
-            this.btnMarca.Location = new System.Drawing.Point(701, 20);
-            this.btnMarca.Name = "btnMarca";
-            this.btnMarca.Size = new System.Drawing.Size(30, 30);
-            this.btnMarca.TabIndex = 39;
-            this.btnMarca.TabStop = false;
-            this.btnMarca.Click += new System.EventHandler(this.btnMarca_Click);
-            // 
-            // btnModelo
-            // 
-            this.btnModelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModelo.BackColor = System.Drawing.Color.White;
-            this.btnModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnModelo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnModelo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModelo.IconSize = 30;
-            this.btnModelo.Location = new System.Drawing.Point(701, 55);
-            this.btnModelo.Name = "btnModelo";
-            this.btnModelo.Size = new System.Drawing.Size(30, 30);
-            this.btnModelo.TabIndex = 40;
-            this.btnModelo.TabStop = false;
-            this.btnModelo.Click += new System.EventHandler(this.btnModelo_Click);
-            // 
-            // btnCategoria
-            // 
-            this.btnCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCategoria.BackColor = System.Drawing.Color.White;
-            this.btnCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnCategoria.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnCategoria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCategoria.IconSize = 30;
-            this.btnCategoria.Location = new System.Drawing.Point(333, 56);
-            this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(30, 30);
-            this.btnCategoria.TabIndex = 41;
-            this.btnCategoria.TabStop = false;
-            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
-            // 
-            // btnEstado
-            // 
-            this.btnEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEstado.BackColor = System.Drawing.Color.White;
-            this.btnEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnEstado.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnEstado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnEstado.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEstado.IconSize = 30;
-            this.btnEstado.Location = new System.Drawing.Point(701, 125);
-            this.btnEstado.Name = "btnEstado";
-            this.btnEstado.Size = new System.Drawing.Size(30, 30);
-            this.btnEstado.TabIndex = 42;
-            this.btnEstado.TabStop = false;
-            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
+            this.txtfiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfiltrar.Location = new System.Drawing.Point(752, 181);
+            this.txtfiltrar.Name = "txtfiltrar";
+            this.txtfiltrar.Size = new System.Drawing.Size(186, 26);
+            this.txtfiltrar.TabIndex = 45;
+            this.txtfiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtfiltrar_KeyUp);
             // 
             // label9
             // 
@@ -460,14 +384,82 @@
             this.label9.TabIndex = 44;
             this.label9.Text = "Filtrar:";
             // 
-            // txtfiltrar
+            // btnEstado
             // 
-            this.txtfiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfiltrar.Location = new System.Drawing.Point(752, 181);
-            this.txtfiltrar.Name = "txtfiltrar";
-            this.txtfiltrar.Size = new System.Drawing.Size(186, 26);
-            this.txtfiltrar.TabIndex = 45;
-            this.txtfiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtfiltrar_KeyUp);
+            this.btnEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEstado.BackColor = System.Drawing.Color.White;
+            this.btnEstado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnEstado.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnEstado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnEstado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEstado.IconSize = 30;
+            this.btnEstado.Location = new System.Drawing.Point(701, 125);
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.Size = new System.Drawing.Size(30, 30);
+            this.btnEstado.TabIndex = 42;
+            this.btnEstado.TabStop = false;
+            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCategoria.BackColor = System.Drawing.Color.White;
+            this.btnCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnCategoria.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnCategoria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCategoria.IconSize = 30;
+            this.btnCategoria.Location = new System.Drawing.Point(333, 56);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(30, 30);
+            this.btnCategoria.TabIndex = 41;
+            this.btnCategoria.TabStop = false;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            // 
+            // btnModelo
+            // 
+            this.btnModelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModelo.BackColor = System.Drawing.Color.White;
+            this.btnModelo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnModelo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnModelo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModelo.IconSize = 30;
+            this.btnModelo.Location = new System.Drawing.Point(701, 55);
+            this.btnModelo.Name = "btnModelo";
+            this.btnModelo.Size = new System.Drawing.Size(30, 30);
+            this.btnModelo.TabIndex = 40;
+            this.btnModelo.TabStop = false;
+            this.btnModelo.Click += new System.EventHandler(this.btnModelo_Click);
+            // 
+            // btnMarca
+            // 
+            this.btnMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMarca.BackColor = System.Drawing.Color.White;
+            this.btnMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnMarca.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnMarca.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMarca.IconSize = 30;
+            this.btnMarca.Location = new System.Drawing.Point(701, 20);
+            this.btnMarca.Name = "btnMarca";
+            this.btnMarca.Size = new System.Drawing.Size(30, 30);
+            this.btnMarca.TabIndex = 39;
+            this.btnMarca.TabStop = false;
+            this.btnMarca.Click += new System.EventHandler(this.btnMarca_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.DetalleCompra2GridView1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 279);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(989, 340);
+            this.panel2.TabIndex = 23;
             // 
             // WINDetalleCompra2
             // 
@@ -483,11 +475,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCompra2GridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMarca)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnModelo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEstado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnModelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMarca)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -512,7 +504,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView DetalleCompra2GridView1;
         private System.Windows.Forms.Label label2;
