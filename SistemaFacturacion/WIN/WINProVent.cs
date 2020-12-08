@@ -4,6 +4,7 @@ using BL;
 using ENT;
 using System.Runtime.InteropServices;
 using FontAwesome.Sharp;
+using System.Drawing;
 
 namespace WIN
 {
@@ -11,7 +12,10 @@ namespace WIN
     {
         private BLProducto BProducto = new BLProducto();
         private ENTProducto Eproducto = new ENTProducto();
-        private string producto;
+        private string codigo;
+        private string marca;
+        private string modelo;
+        private string estado;
         private string stock;
 
         public WINProVent()
@@ -41,22 +45,29 @@ namespace WIN
             ProductodataGridView.DataSource = BProducto.MostrarProductoVenta();
         }
 
+        private const int EM_SETCUEBANNER = 0x1501;
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
+        [MarshalAs(UnmanagedType.LPWStr)] string lParam);
+
         private void WINProVent_Load(object sender, EventArgs e)
         {
             llenarGrid();
             FormatoGrid();
-        }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-
+            SendMessage(BuscartextBox.Handle, EM_SETCUEBANNER, 0, "Codigo o Nombre");
+            SendMessage(MarcModeltextBox.Handle, EM_SETCUEBANNER, 0, "Marca o Modelo");
         }
 
         private void ProductodataGridView_DoubleClick(object sender, EventArgs e)
         {
             if (ProductodataGridView.CurrentRow == null) return;
 
-            producto = ProductodataGridView.CurrentRow.Cells[2].Value.ToString();
+            codigo = ProductodataGridView.CurrentRow.Cells[1].Value.ToString(); /*1 3 4 9*/
+            marca = ProductodataGridView.CurrentRow.Cells[3].Value.ToString();
+            modelo = ProductodataGridView.CurrentRow.Cells[4].Value.ToString();
+            estado = ProductodataGridView.CurrentRow.Cells[9].Value.ToString();
+
             stock = ProductodataGridView.CurrentRow.Cells[6].Value.ToString();
 
             decimal x = Convert.ToDecimal(stock);
@@ -67,7 +78,7 @@ namespace WIN
             else
             {
                 WINDetalleVenta dx = Owner as WINDetalleVenta;
-                dx.ProductocomboBox.Text = producto;
+                dx.ProductocomboBox.Text = codigo + " " + marca +" "+ modelo +" - "+ estado;
                 this.Close();
             }
         }
@@ -100,10 +111,16 @@ namespace WIN
             this.Close();
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void ProductodataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //ReleaseCapture();
-            //SendMessage(this.Handle, 0x112, 0xf012, 0);
+            if (this.ProductodataGridView.Columns[e.ColumnIndex].Name == "stockProducto")
+            {
+                if (Convert.ToInt32(e.Value) <= 3)
+                {
+                    e.CellStyle.ForeColor = Color.FromArgb(156, 0, 6);
+                    e.CellStyle.BackColor = Color.FromArgb(255, 199, 206);
+                }
+            }
         }
     }
 }

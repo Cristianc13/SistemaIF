@@ -13,6 +13,11 @@ namespace BL
             return cliente.MostrarCliente();
         }
 
+        public DataTable MostrarClientes()
+        {
+            return cliente.SeleccionarCliente();
+        }
+
         public string ObtenerNumeroCliente(int idCliente)
         {
             return cliente.ObtenerNumeroCliente(idCliente);

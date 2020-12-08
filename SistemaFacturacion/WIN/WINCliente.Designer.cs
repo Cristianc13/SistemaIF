@@ -110,7 +110,6 @@
             this.ClienteDataGridView.Size = new System.Drawing.Size(615, 183);
             this.ClienteDataGridView.TabIndex = 6;
             this.ClienteDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClienteDataGridView_CellClick);
-            this.ClienteDataGridView.Click += new System.EventHandler(this.ClienteDataGridView_Click);
             this.ClienteDataGridView.DoubleClick += new System.EventHandler(this.ClienteDataGridView_DoubleClick);
             // 
             // Agregarbutton

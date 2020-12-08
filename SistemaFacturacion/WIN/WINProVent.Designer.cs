@@ -55,10 +55,10 @@
             // 
             this.BuscartextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BuscartextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscartextBox.Location = new System.Drawing.Point(156, 21);
+            this.BuscartextBox.Location = new System.Drawing.Point(71, 21);
             this.BuscartextBox.Margin = new System.Windows.Forms.Padding(2);
             this.BuscartextBox.Name = "BuscartextBox";
-            this.BuscartextBox.Size = new System.Drawing.Size(134, 20);
+            this.BuscartextBox.Size = new System.Drawing.Size(223, 20);
             this.BuscartextBox.TabIndex = 1;
             this.BuscartextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BuscartextBox_KeyUp);
             // 
@@ -96,16 +96,17 @@
             this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductodataGridView.Size = new System.Drawing.Size(695, 310);
             this.ProductodataGridView.TabIndex = 15;
+            this.ProductodataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ProductodataGridView_CellFormatting);
             this.ProductodataGridView.DoubleClick += new System.EventHandler(this.ProductodataGridView_DoubleClick);
             // 
             // MarcModeltextBox
             // 
             this.MarcModeltextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MarcModeltextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MarcModeltextBox.Location = new System.Drawing.Point(438, 21);
+            this.MarcModeltextBox.Location = new System.Drawing.Point(366, 21);
             this.MarcModeltextBox.Margin = new System.Windows.Forms.Padding(2);
             this.MarcModeltextBox.Name = "MarcModeltextBox";
-            this.MarcModeltextBox.Size = new System.Drawing.Size(133, 20);
+            this.MarcModeltextBox.Size = new System.Drawing.Size(208, 20);
             this.MarcModeltextBox.TabIndex = 17;
             this.MarcModeltextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MarcModeltextBox_KeyUp);
             // 
@@ -119,7 +120,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(711, 32);
             this.panel1.TabIndex = 18;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // label1
             // 
@@ -192,9 +192,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(305, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 20);
+            this.label4.Size = new System.Drawing.Size(53, 20);
             this.label4.TabIndex = 35;
-            this.label4.Text = "Marca y Modelo:";
+            this.label4.Text = "Filtrar:";
             // 
             // label2
             // 
@@ -203,9 +203,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 20);
+            this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 33;
-            this.label2.Text = "Codigo y Nombre:";
+            this.label2.Text = "Filtrar:";
             // 
             // pictureBox6
             // 
@@ -214,9 +214,9 @@
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(148, 12);
+            this.pictureBox6.Location = new System.Drawing.Point(67, 12);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(151, 37);
+            this.pictureBox6.Size = new System.Drawing.Size(232, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 34;
             this.pictureBox6.TabStop = false;
@@ -228,9 +228,9 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(429, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(359, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(222, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
