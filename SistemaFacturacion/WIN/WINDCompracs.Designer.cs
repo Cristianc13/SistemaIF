@@ -42,11 +42,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtnombreCompañia = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtnfactura = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtdescr = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dtfechacompra = new System.Windows.Forms.DateTimePicker();
             this.txtIVAdetalleC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.DetalleCompraGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtnfactura = new System.Windows.Forms.TextBox();
-            this.dtfechacompra = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -106,9 +106,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.43478F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.79348F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.1087F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.42391F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.19565F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1084, 368);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -122,7 +122,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(536, 106);
+            this.panel1.Size = new System.Drawing.Size(536, 68);
             this.panel1.TabIndex = 0;
             // 
             // CmbProveedor
@@ -148,7 +148,7 @@
             this.ProveedorButoon.Location = new System.Drawing.Point(348, 37);
             this.ProveedorButoon.Name = "ProveedorButoon";
             this.ProveedorButoon.Size = new System.Drawing.Size(33, 28);
-            this.ProveedorButoon.TabIndex = 29;
+            this.ProveedorButoon.TabIndex = 30;
             this.ProveedorButoon.Text = "+";
             this.ProveedorButoon.UseVisualStyleBackColor = true;
             this.ProveedorButoon.Click += new System.EventHandler(this.ProveedorButoon_Click);
@@ -183,7 +183,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(545, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(536, 106);
+            this.panel2.Size = new System.Drawing.Size(536, 68);
             this.panel2.TabIndex = 1;
             // 
             // label16
@@ -203,6 +203,7 @@
             // 
             this.txtnombreCompañia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtnombreCompañia.Enabled = false;
             this.txtnombreCompañia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombreCompañia.Location = new System.Drawing.Point(220, 34);
             this.txtnombreCompañia.Name = "txtnombreCompañia";
@@ -218,10 +219,22 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.txtdescr);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 115);
+            this.panel3.Location = new System.Drawing.Point(3, 77);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(536, 111);
+            this.panel3.Size = new System.Drawing.Size(536, 117);
             this.panel3.TabIndex = 2;
+            // 
+            // txtnfactura
+            // 
+            this.txtnfactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtnfactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtnfactura.Location = new System.Drawing.Point(118, 40);
+            this.txtnfactura.Multiline = true;
+            this.txtnfactura.Name = "txtnfactura";
+            this.txtnfactura.Size = new System.Drawing.Size(224, 25);
+            this.txtnfactura.TabIndex = 31;
+            this.txtnfactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnfactura_KeyPress);
             // 
             // label11
             // 
@@ -265,7 +278,7 @@
             this.txtdescr.Multiline = true;
             this.txtdescr.Name = "txtdescr";
             this.txtdescr.Size = new System.Drawing.Size(224, 25);
-            this.txtdescr.TabIndex = 26;
+            this.txtdescr.TabIndex = 34;
             // 
             // panel4
             // 
@@ -275,10 +288,17 @@
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(545, 115);
+            this.panel4.Location = new System.Drawing.Point(545, 77);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(536, 111);
+            this.panel4.Size = new System.Drawing.Size(536, 117);
             this.panel4.TabIndex = 3;
+            // 
+            // dtfechacompra
+            // 
+            this.dtfechacompra.Location = new System.Drawing.Point(220, 43);
+            this.dtfechacompra.Name = "dtfechacompra";
+            this.dtfechacompra.Size = new System.Drawing.Size(231, 20);
+            this.dtfechacompra.TabIndex = 33;
             // 
             // txtIVAdetalleC
             // 
@@ -289,7 +309,8 @@
             this.txtIVAdetalleC.Multiline = true;
             this.txtIVAdetalleC.Name = "txtIVAdetalleC";
             this.txtIVAdetalleC.Size = new System.Drawing.Size(226, 28);
-            this.txtIVAdetalleC.TabIndex = 25;
+            this.txtIVAdetalleC.TabIndex = 35;
+            this.txtIVAdetalleC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVAdetalleC_KeyPress);
             // 
             // label10
             // 
@@ -329,9 +350,9 @@
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 232);
+            this.panel5.Location = new System.Drawing.Point(3, 200);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(536, 133);
+            this.panel5.Size = new System.Drawing.Size(536, 165);
             this.panel5.TabIndex = 4;
             // 
             // label17
@@ -350,7 +371,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(9, 76);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(109, 33);
-            this.btnAgregar.TabIndex = 36;
+            this.btnAgregar.TabIndex = 40;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -360,7 +381,7 @@
             this.btnactualizar.Location = new System.Drawing.Point(141, 76);
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(109, 33);
-            this.btnactualizar.TabIndex = 37;
+            this.btnactualizar.TabIndex = 41;
             this.btnactualizar.Text = "Actualizar";
             this.btnactualizar.UseVisualStyleBackColor = true;
             // 
@@ -369,7 +390,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(263, 76);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 33);
-            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.TabIndex = 42;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -379,7 +400,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(400, 76);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(109, 33);
-            this.btnEliminar.TabIndex = 39;
+            this.btnEliminar.TabIndex = 43;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -398,7 +419,7 @@
             this.bmbproducto.Location = new System.Drawing.Point(118, 35);
             this.bmbproducto.Name = "bmbproducto";
             this.bmbproducto.Size = new System.Drawing.Size(224, 28);
-            this.bmbproducto.TabIndex = 33;
+            this.bmbproducto.TabIndex = 36;
             this.bmbproducto.SelectedIndexChanged += new System.EventHandler(this.bmbproducto_SelectedIndexChanged);
             this.bmbproducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmbproducto_KeyPress);
             // 
@@ -408,7 +429,7 @@
             this.button1.Location = new System.Drawing.Point(348, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 28);
-            this.button1.TabIndex = 35;
+            this.button1.TabIndex = 37;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -432,9 +453,9 @@
             this.panel6.Controls.Add(this.txtcantidad);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(545, 232);
+            this.panel6.Location = new System.Drawing.Point(545, 200);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(536, 133);
+            this.panel6.Size = new System.Drawing.Size(536, 165);
             this.panel6.TabIndex = 5;
             // 
             // txtcosto
@@ -445,7 +466,7 @@
             this.txtcosto.Location = new System.Drawing.Point(220, 76);
             this.txtcosto.Name = "txtcosto";
             this.txtcosto.Size = new System.Drawing.Size(231, 26);
-            this.txtcosto.TabIndex = 14;
+            this.txtcosto.TabIndex = 39;
             // 
             // label4
             // 
@@ -468,7 +489,7 @@
             this.txtcantidad.Location = new System.Drawing.Point(220, 39);
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(231, 26);
-            this.txtcantidad.TabIndex = 12;
+            this.txtcantidad.TabIndex = 38;
             // 
             // label3
             // 
@@ -505,7 +526,7 @@
             this.btnguardar.Location = new System.Drawing.Point(762, 32);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(83, 30);
-            this.btnguardar.TabIndex = 28;
+            this.btnguardar.TabIndex = 45;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
@@ -623,28 +644,11 @@
             this.DetalleCompraGridView1.Size = new System.Drawing.Size(1084, 195);
             this.DetalleCompraGridView1.TabIndex = 16;
             this.DetalleCompraGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCompraGridView1_CellDoubleClick);
+            this.DetalleCompraGridView1.Click += new System.EventHandler(this.DetalleCompraGridView1_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // txtnfactura
-            // 
-            this.txtnfactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtnfactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtnfactura.Location = new System.Drawing.Point(118, 40);
-            this.txtnfactura.Multiline = true;
-            this.txtnfactura.Name = "txtnfactura";
-            this.txtnfactura.Size = new System.Drawing.Size(224, 25);
-            this.txtnfactura.TabIndex = 29;
-            // 
-            // dtfechacompra
-            // 
-            this.dtfechacompra.Location = new System.Drawing.Point(220, 43);
-            this.dtfechacompra.Name = "dtfechacompra";
-            this.dtfechacompra.Size = new System.Drawing.Size(231, 20);
-            this.dtfechacompra.TabIndex = 26;
             // 
             // WINDCompracs
             // 
@@ -700,7 +704,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtdescr;
-        private System.Windows.Forms.TextBox txtIVAdetalleC;
+        public System.Windows.Forms.TextBox txtIVAdetalleC;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label17;
@@ -711,9 +715,9 @@
         public System.Windows.Forms.ComboBox bmbproducto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtcosto;
+        public System.Windows.Forms.TextBox txtcosto;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtcantidad;
+        public System.Windows.Forms.TextBox txtcantidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView DetalleCompraGridView1;
         private System.Windows.Forms.Label label5;
@@ -722,11 +726,11 @@
         private System.Windows.Forms.TextBox txtIVA;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnguardar;
+        public System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button ProveedorButoon;
+        public System.Windows.Forms.Button ProveedorButoon;
         public System.Windows.Forms.ComboBox CmbProveedor;
-        private System.Windows.Forms.TextBox txtnfactura;
-        private System.Windows.Forms.DateTimePicker dtfechacompra;
+        public System.Windows.Forms.TextBox txtnfactura;
+        public System.Windows.Forms.DateTimePicker dtfechacompra;
     }
 }

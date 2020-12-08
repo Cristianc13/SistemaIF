@@ -83,6 +83,9 @@ namespace WIN
             dc.CmbProveedor.DisplayMember = "nombreProv";
             dc.CmbProveedor.ValueMember = "idProveedor";
             dc.CmbProveedor.SelectedIndex = -1;
+
+            
+            
         }
 
         private void LlenarDataGrid()
@@ -126,6 +129,8 @@ namespace WIN
             txtnombreCompañia.Text = string.Empty;
             txtnumeroCompañia.Text = string.Empty;
             txtruc.Text = string.Empty;
+            textBox1.Text = string.Empty;
+            
             errorProvider1.Clear();
         }
 
@@ -154,6 +159,8 @@ namespace WIN
 
         private void EliminarProv_Click(object sender, EventArgs e)
         {
+            string ID = dataGridProovedor.CurrentRow.Cells[0].Value.ToString();
+            id = Convert.ToInt32(ID);
             string valor = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
             DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.No) return;
@@ -168,6 +175,8 @@ namespace WIN
 
         private void ActualizarProv_Click(object sender, EventArgs e)
         {
+            string ID = dataGridProovedor.CurrentRow.Cells[0].Value.ToString();
+            id = Convert.ToInt32(ID);
             EProveedor.idProveedor = id;
             EProveedor.nombreProv = txtnombreProv.Text;
             EProveedor.telefonoProv = txttelefonoProv.Text;

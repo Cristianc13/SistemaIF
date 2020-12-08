@@ -66,5 +66,18 @@ namespace CAD
             return tabla;
         }
 
+        public string SelectProveedorNombreCom(int idProveedor)
+        {
+            string a;
+            string i;
+            SqlCommand cmd = new SqlCommand("SelectProveedorNombreCom", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProveedor", idProveedor);
+            a = (string)cmd.ExecuteScalar();
+           
+            CerrarConexion();
+            return a;
+        }
+
     }
 }
