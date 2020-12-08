@@ -32,5 +32,10 @@ namespace BL
         {
           return CProveedor.BuscarProveedor(Eproveedor);
         }
+
+        public string SelectProveedorNombreCom(int idProveedor)
+        {
+            return CProveedor.SelectProveedorNombreCom(idProveedor);
+        }
     }
 }

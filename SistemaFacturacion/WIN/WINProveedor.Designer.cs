@@ -265,7 +265,7 @@
             this.txtruc.Location = new System.Drawing.Point(514, 101);
             this.txtruc.Name = "txtruc";
             this.txtruc.Size = new System.Drawing.Size(205, 26);
-            this.txtruc.TabIndex = 36;
+            this.txtruc.TabIndex = 8;
             // 
             // label5
             // 
@@ -284,7 +284,7 @@
             this.textBox1.Location = new System.Drawing.Point(514, 144);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(205, 26);
-            this.textBox1.TabIndex = 33;
+            this.textBox1.TabIndex = 13;
             this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // panel2

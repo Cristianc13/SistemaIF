@@ -19,6 +19,8 @@ namespace WIN
             InitializeComponent();
         }
 
+        public string comboprov;
+
         public bool bloqueo;
         public int fila = 0;
 
@@ -87,7 +89,7 @@ namespace WIN
             txtcantidad.Text = string.Empty;
             txtcosto.Text = string.Empty;
             errorProvider1.Clear();
-
+            
             bmbproducto.SelectedIndex = -1;
         }
 
@@ -111,6 +113,14 @@ namespace WIN
             txtsubtotal.Text = string.Empty;
             txtIVA.Text = string.Empty;
             txtTotal.Text = string.Empty;
+            CmbProveedor.Text = string.Empty;
+            txtnombreCompañia.Text = string.Empty;
+            errorProvider1.Clear();
+            txtnfactura.Text = string.Empty;
+            txtdescr.Text = string.Empty;
+            txtIVAdetalleC.Text = string.Empty;
+
+
 
             bmbproducto.SelectedIndex = -1;
         }
@@ -170,6 +180,7 @@ namespace WIN
 
             LlenaComboProducto();
             LlenaComboProveedor();
+            txtIVAdetalleC.Text = "0";
         }
 
         private void bmbproducto_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,6 +202,7 @@ namespace WIN
             bloqueo = false;
             if (bloqueo == false)
             {
+               
                 if (bmbproducto.SelectedIndex == -1)
                 {
                     errorProvider1.SetError(bmbproducto, "Debe ingresar un Producto");
@@ -263,7 +275,7 @@ namespace WIN
             EDetalleC.Clear();
             HabilitarBotones(false, true);
 
-            //limpiar4();
+            limpiar4();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -274,8 +286,10 @@ namespace WIN
         private void button1_Click(object sender, EventArgs e)
         {
             WINDetalleCompra2 WCd2 = new WINDetalleCompra2();
+            AddOwnedForm(WCd2);
             WCd2.ShowDialog();
-            LlenaComboProducto();
+            //LlenaComboProducto();
+            
         }
 
         private void DetalleCompraGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -369,11 +383,43 @@ namespace WIN
                 if (CmbProveedor.SelectedValue != null)
                 {
                     idProveedor = (int)CmbProveedor.SelectedValue;
+                    txtnombreCompañia.Text = Convert.ToString(BProveedor.SelectProveedorNombreCom(idProveedor));
                 }
             }
             catch (Exception)
             {
             }
+        }
+
+        private void txtnfactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtIVAdetalleC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DetalleCompraGridView1_Click(object sender, EventArgs e)
+        {
+            fila = DetalleCompraGridView1.CurrentRow.Index;
         }
     }
 }

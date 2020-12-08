@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using BL;
 using ENT;
+using System.Runtime.InteropServices;
 
 namespace WIN
 {
@@ -12,6 +13,16 @@ namespace WIN
         {
             InitializeComponent();
         }
+        public string nombrep;
+      
+
+
+        private const int EM_SETCUEBANNER = 0x1501;
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
+        [MarshalAs(UnmanagedType.LPWStr)] string lParam);
+
 
         private int IdCategoria, IdMarca, IdModelo, IdEstado, IdProducto;
         private BLMarca BMarca = new BLMarca();
@@ -108,8 +119,12 @@ namespace WIN
             DetalleCompra2GridView1.DataSource = BProducto.MostrarDetallesProd();
         }
 
+
+       
+
         private void WINDetalleCompra2_Load(object sender, EventArgs e)
         {
+           
             //HabilitarBotones(false, true);
             LlenarEstado();
             LlenarGrid();
@@ -118,6 +133,7 @@ namespace WIN
             LlenarCategoria();
             LlenarModelo();
             Limpiar();
+            SendMessage(txtfiltrar.Handle, EM_SETCUEBANNER, 0, "Codigo o Nombre");
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -210,6 +226,53 @@ namespace WIN
             }
         }
 
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            WINCategoria WCat = new WINCategoria();
+            WCat.ShowDialog();
+            LlenarCategoria();
+            
+        }
+
+        private void btnModelo_Click(object sender, EventArgs e)
+        {
+            WINModelo WMod = new WINModelo();
+            WMod.ShowDialog();
+            LlenarModelo();
+        }
+
+        private void btnMarca_Click(object sender, EventArgs e)
+        {
+            WINMarca WMar = new WINMarca();
+            WMar.ShowDialog();
+            LlenarMarca();
+        }
+
+        private void btnEstado_Click(object sender, EventArgs e)
+        {
+            WINEstado we = new WINEstado();
+            we.ShowDialog();
+            LlenarModelo();
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            string filtro;
+            filtro = txtfiltrar.Text;
+            EProducto.codigopro = filtro;
+            //  ProductodataGridView.Columns.Clear();
+            DetalleCompra2GridView1.DataSource = BProducto.BuscarProducto(EProducto);
+        }
+
+        private void txtfiltrar_KeyUp(object sender, KeyEventArgs e)
+        {
+            string filtro;
+            filtro = txtfiltrar.Text;
+            EProducto.codigopro = filtro;
+            //  ProductodataGridView.Columns.Clear();
+            DetalleCompra2GridView1.DataSource = BProducto.BuscarProducto(EProducto);
+        }
+
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -241,10 +304,6 @@ namespace WIN
 
         private void DetalleCompra2GridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-        }
-
-        private void DetalleCompra2GridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
             if (DetalleCompra2GridView1.Rows.Count == 0) return;
             //HabilitarBotones(true, false);
             IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
@@ -258,7 +317,35 @@ namespace WIN
             cmbModelo.Text = DetalleCompra2GridView1.CurrentRow.Cells[8].Value.ToString();
             cmbEstado.Text = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
             cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[10].Value.ToString(); txtcodigo.Text = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
-            //HabilitarBotones(true, false);
+
+        }
+
+        private void DetalleCompra2GridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DetalleCompra2GridView1.CurrentRow == null) return;
+
+            try
+            {
+                //HabilitarBotones(true, false);
+                IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
+
+                nombrep = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
+
+                //HabilitarBotones(true, false);
+
+                
+                WINDCompracs dv = Owner as WINDCompracs;
+               
+                    dv.bmbproducto.Text = nombrep;    
+                    this.Close();
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }
