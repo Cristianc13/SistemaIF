@@ -101,7 +101,6 @@ namespace WIN
                 iconButton2.Enabled = true;
                 iconButton2.BackColor = Color.FromArgb(21, 30, 41);
                 iconButton2.IconColor = Color.White;
-                
             }
 
         }
