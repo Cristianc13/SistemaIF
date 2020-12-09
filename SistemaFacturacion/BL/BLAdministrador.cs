@@ -8,9 +8,9 @@ namespace BL
     {
         private CADAdministrador ADMIN = new CADAdministrador();
 
-        public DataTable MostrarAdmin()
+        public int Login(ENTAdministrador administrador)
         {
-            return ADMIN.MostrarAdministrador();
+            return ADMIN.Login(administrador);
         }
 
         public void InsertAdmin(ENTAdministrador ECliente)
