@@ -86,16 +86,36 @@ namespace WIN
             txtTotal.Text = total.ToString();
         }
 
+        private void HabilitarEliminar(bool p1)
+        {
+            iconButton4.Enabled = p1;
+            if (iconButton4.Enabled == true)
+            {
+                iconButton4.BackColor = Color.FromArgb(21, 30, 41);
+                iconButton4.IconColor = Color.White;
+            }
+            else
+            {
+                iconButton4.BackColor = Color.FromArgb(177, 180, 183);
+                iconButton4.IconColor = Color.Black;
+                iconButton2.Enabled = true;
+                iconButton2.BackColor = Color.FromArgb(21, 30, 41);
+                iconButton2.IconColor = Color.White;
+                
+            }
+
+        }
+
         #region Limpiar
 
         private void Limpiar()
         {
-            CmbProveedor.Text = string.Empty;
-            CmbProveedor.SelectedIndex = -1;
-            txtnombreCompañia.Text = string.Empty;
-            txtIVAdetalleC.Text = "0";
-            txtnfactura.Text = string.Empty;
-            txtdescr.Text = string.Empty;
+            //CmbProveedor.Text = string.Empty;
+            //CmbProveedor.SelectedIndex = -1;
+            //txtnombreCompañia.Text = string.Empty;
+            //txtIVAdetalleC.Text = "0";
+            //txtnfactura.Text = string.Empty;
+            //txtdescr.Text = string.Empty;
             
             bmbproducto.Text = string.Empty;
             txtcantidad.Text = string.Empty;
@@ -103,7 +123,7 @@ namespace WIN
             errorProvider1.Clear();
             
             bmbproducto.SelectedIndex = -1;
-            CmbProveedor.Focus();
+            bmbproducto.Focus();
         }
 
         private void limpiar2()
@@ -150,17 +170,7 @@ namespace WIN
 
         #endregion Limpiar
 
-        public void HabilitarGuardar()
-        {
-            if (DetalleCompraGridView1.Rows.Count == 0)
-            {
-                HabilitarBotones(false, true);
-            }
-            else
-            {
-                HabilitarBotones(true, false);
-            }
-        }
+        
 
         private void HabilitarBotones(bool p1, bool p2)
         {
@@ -176,17 +186,31 @@ namespace WIN
                 iconButton4.IconColor = Color.Black;
             }
 
-            iconButton3.Enabled = p1;
-            if (iconButton3.Enabled == true)
+            //iconButton3.Enabled = p1;
+            //if (iconButton3.Enabled == true)
+            //{
+            //    iconButton3.BackColor = Color.FromArgb(21, 30, 41);
+            //    iconButton3.IconColor = Color.White;
+            //}
+            //else
+            //{
+            //    iconButton3.BackColor = Color.FromArgb(177, 180, 183);
+            //    iconButton3.IconColor = Color.Black;
+            //}
+
+            iconButton2.Enabled = p2;
+            if (iconButton2.Enabled == true)
             {
-                iconButton3.BackColor = Color.FromArgb(21, 30, 41);
-                iconButton3.IconColor = Color.White;
+                iconButton2.BackColor = Color.FromArgb(21, 30, 41);
+                iconButton2.IconColor = Color.White;
             }
             else
             {
-                iconButton3.BackColor = Color.FromArgb(177, 180, 183);
-                iconButton3.IconColor = Color.Black;
+                iconButton2.BackColor = Color.FromArgb(177, 180, 183);
+                iconButton2.IconColor = Color.Black;
             }
+
+
 
             //Cancelarbutton.Enabled = p1;
         }
@@ -547,7 +571,7 @@ namespace WIN
                 DetalleCompraGridView1.DataSource = EDetalleC;
                 FormatoGrid();
                 CalcularTotal();
-                HabilitarBotones(true, false);
+                HabilitarBotones(false, true);
                 limpiar2();
             }
             else
@@ -572,7 +596,9 @@ namespace WIN
                 FormatoGrid();
                 CalcularTotal();
                 limpiar3();
+                HabilitarBotones(false, true);
             }
+            
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -607,6 +633,7 @@ namespace WIN
         {
             Limpiar();
             dtfecha.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            HabilitarEliminar(false);
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
@@ -616,7 +643,7 @@ namespace WIN
 
         private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            HabilitarBotones(false, true);
+            HabilitarBotones(true, false);
             fila = DetalleCompraGridView1.CurrentRow.Index;
         }
 

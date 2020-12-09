@@ -71,15 +71,51 @@ namespace WIN
             DetalleCompra2GridView1.Columns[10].HeaderText = "Categoria";
             DetalleCompra2GridView1.AllowUserToResizeColumns = false;
             DetalleCompra2GridView1.AllowUserToResizeRows = false;
+
+            DetalleCompra2GridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            DetalleCompra2GridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             Recursos.DatagridviewDiseño.DiseñoDGV(ref DetalleCompra2GridView1);
         }
 
         private void HabilitarBotones(bool p1, bool p2)
         {
-            btnAgregar.Enabled = p2;
-            btnActualizar.Enabled = p1;
-            
-            // Cancelarbutton.Enabled = p1;
+            btnEditar.Enabled = p2;
+            if (btnEditar.Enabled == true)
+            {
+                btnEditar.BackColor = Color.FromArgb(21, 30, 41);
+                btnEditar.IconColor = Color.White;
+            }
+            else
+            {
+                btnEditar.BackColor = Color.FromArgb(177, 180, 183);
+                btnEditar.IconColor = Color.Black;
+            }
+
+            //btneliminar.Enabled = p2;
+            //if (btneliminar.Enabled == true)
+            //{
+            //    btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+            //    btneliminar.IconColor = Color.White;
+            //}
+            //else
+            //{
+            //    btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+            //    btneliminar.IconColor = Color.Black;
+            //}
+
+            btnguardar.Enabled = p1;
+            if (btnguardar.Enabled == true)
+            {
+                btnguardar.BackColor = Color.FromArgb(21, 30, 41);
+                btnguardar.IconColor = Color.White;
+            }
+            else
+            {
+                btnguardar.BackColor = Color.FromArgb(177, 180, 183);
+                btnguardar.IconColor = Color.Black;
+            }
         }
 
         private void LlenarMarca()
@@ -119,13 +155,23 @@ namespace WIN
             DetalleCompra2GridView1.DataSource = BProducto.MostrarDetallesProd();
         }
 
+        public void IniciarTextbox()
+        {
+            txtnombre.Visible = true;
+            txtcodigo.Visible = true;
+            txtpreciosalida.Visible = true;
+            txtdescripcion.Visible = true;
+            txtobservacion.Visible = true;
+            txtfiltrar.Visible = true;
+            btnEditar.Visible = true;
+            iconPictureBox1.Visible = true;
+        }
 
-       
 
         private void WINDetalleCompra2_Load(object sender, EventArgs e)
         {
-           
-            //HabilitarBotones(false, true);
+
+            HabilitarBotones(true, false);
             LlenarEstado();
             LlenarGrid();
             FormatoGrid();
@@ -133,6 +179,7 @@ namespace WIN
             LlenarCategoria();
             LlenarModelo();
             Limpiar();
+            IniciarTextbox();
             SendMessage(txtfiltrar.Handle, EM_SETCUEBANNER, 0, "Codigo o Nombre");
         }
 
@@ -194,6 +241,7 @@ namespace WIN
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+
         }
 
         private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
@@ -307,6 +355,83 @@ namespace WIN
 
         }
 
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            EProducto.nombreProducto = txtnombre.Text;
+            EProducto.codigopro = txtcodigo.Text;
+            EProducto.FK_idMarca = IdMarca;
+            EProducto.precioSalida = Convert.ToDecimal(txtpreciosalida.Text);
+            EProducto.costo = 0;
+            EProducto.stockProducto = 0;
+            EProducto.FK_idModelo = IdModelo;
+            EProducto.FK_idCategoria = IdCategoria;
+            EProducto.FK_idEstado = IdEstado;
+            EProducto.descripcion = txtdescripcion.Text;
+            EProducto.observacion = txtobservacion.Text;
+            BProducto.InsertarProducto(EProducto);
+            Limpiar();
+            LlenarGrid();
+            HabilitarBotones(false, true);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            string ID = DetalleCompra2GridView1.CurrentRow.Cells[0].Value.ToString();
+            IdProducto = Convert.ToInt32(ID);
+            EProducto.idProducto = IdProducto;
+            EProducto.nombreProducto = txtnombre.Text;
+            EProducto.codigopro = txtcodigo.Text;
+            EProducto.FK_idMarca = IdMarca;
+            EProducto.precioSalida = Convert.ToDecimal(txtpreciosalida.Text);
+            EProducto.costo = 0;
+            EProducto.stockProducto = 0;
+            EProducto.FK_idModelo = IdModelo;
+            EProducto.FK_idCategoria = IdCategoria;
+            EProducto.FK_idEstado = IdEstado;
+            EProducto.descripcion = txtdescripcion.Text;
+            EProducto.observacion = txtobservacion.Text;
+            BProducto.UpdateProducto(EProducto);
+            LlenarGrid();
+            Limpiar();
+            HabilitarBotones(true, false);
+        }
+
+        private void btnCancelar2_Click(object sender, EventArgs e)
+        {
+            txtnombre.Text = string.Empty;
+            txtpreciosalida.Text = string.Empty;
+            txtdescripcion.Text = string.Empty;
+            txtobservacion.Text = string.Empty;
+            txtcodigo.Text = string.Empty;
+            cmbMarca.SelectedIndex = -1;
+            cmbMarca.Text = string.Empty;
+            cmbModelo.SelectedIndex = -1;
+            cmbModelo.Text = string.Empty;
+            cmbCategoria.SelectedIndex = -1;
+            cmbCategoria.Text = string.Empty;
+            cmbEstado.SelectedIndex = -1;
+            cmbEstado.Text = string.Empty;
+            txtfiltrar.Text = string.Empty;
+            LlenarGrid();
+            txtnombre.Focus();
+            errorProvider1.Clear();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbEstado_CursorChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -339,7 +464,7 @@ namespace WIN
         private void DetalleCompra2GridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DetalleCompra2GridView1.Rows.Count == 0) return;
-            //HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
             IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
 
             txtnombre.Text = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
