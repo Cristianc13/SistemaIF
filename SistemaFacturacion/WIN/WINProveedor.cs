@@ -183,9 +183,15 @@ namespace WIN
                 telefono = dataGridProovedor.CurrentRow.Cells[3].Value.ToString();
                 errorProvider1.Clear();
 
-                WINDCompracs dv = Owner as WINDCompracs;
-                dv.CmbProveedor.Text = nombre;
-                dv.txtnombreCompañia.Text = telefono;
+                WINDCompracs dc = Owner as WINDCompracs;
+                dc.CmbProveedor.DataSource = BProveedor.MostrarProveedorCombo();
+                dc.CmbProveedor.DisplayMember = "proveedor";
+                dc.CmbProveedor.ValueMember = "idProveedor";
+                dc.CmbProveedor.SelectedIndex = -1;
+
+                dc.CmbProveedor.Text = txtnombreProv.Text + " - " + txttelefonoProv.Text;
+                dc.txtnombreCompañia.Text = txtnombreCompañia.Text;
+                //dc.CmbProveedor.Enabled = false;
                 this.Close();
             }
             catch (Exception)
@@ -304,13 +310,14 @@ namespace WIN
             //LlenarDataGrid();
 
             WINDCompracs dc = Owner as WINDCompracs;
-            dc.CmbProveedor.DataSource = BProveedor.MostrarProveedor();
+            dc.CmbProveedor.DataSource = BProveedor.MostrarProveedorCombo();
             dc.CmbProveedor.DisplayMember = "nombreProv";
             dc.CmbProveedor.ValueMember = "idProveedor";
             dc.CmbProveedor.SelectedIndex = -1;
 
-            dc.CmbProveedor.Text = txtnombreProv.Text;
+            dc.CmbProveedor.Text = txtnombreProv.Text + " - " + txttelefonoProv.Text;
             dc.txtnombreCompañia.Text = txtnombreCompañia.Text;
+            //dc.CmbProveedor.Enabled = false;
 
             this.Close();
         }

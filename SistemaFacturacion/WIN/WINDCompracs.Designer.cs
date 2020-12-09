@@ -378,13 +378,13 @@
             this.dtfecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dtfecha.BorderRadius = 12;
             this.dtfecha.ForeColor = System.Drawing.Color.White;
-            this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtfecha.FormatCustom = null;
             this.dtfecha.Location = new System.Drawing.Point(172, 24);
             this.dtfecha.Name = "dtfecha";
             this.dtfecha.Size = new System.Drawing.Size(260, 34);
             this.dtfecha.TabIndex = 36;
-            this.dtfecha.Value = new System.DateTime(2020, 12, 8, 12, 41, 25, 500);
+            this.dtfecha.Value = new System.DateTime(2020, 12, 9, 10, 31, 53, 0);
             this.dtfecha.Visible = false;
             // 
             // txtIVAdetalleC

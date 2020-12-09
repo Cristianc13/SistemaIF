@@ -37,5 +37,10 @@ namespace BL
         {
             return CProveedor.SelectProveedorNombreCom(idProveedor);
         }
+        public DataTable MostrarProveedorCombo()
+        {
+            return CProveedor.SelectProveedorCombo();
+        }
+
     }
 }
