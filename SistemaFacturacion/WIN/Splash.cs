@@ -16,7 +16,7 @@ namespace WIN
             if (panel2.Width >= 682)
             {
                 timer1.Stop();
-                Form1 frm = new Form1();
+                WINAdministrador frm = new WINAdministrador();
                 frm.Show();
                 this.Hide();
             }

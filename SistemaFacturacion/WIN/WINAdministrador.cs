@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BL;
 using ENT;
@@ -9,7 +10,6 @@ namespace WIN
     {
         public ENTAdministrador EAdmin = new ENTAdministrador();
         public BLAdministrador BAdmin = new BLAdministrador();
-        private int id;
 
         public WINAdministrador()
         {
@@ -18,148 +18,62 @@ namespace WIN
 
         private void WINAdministrador_Load(object sender, EventArgs e)
         {
-            HabilitarBotones(true, false);
-            LlenarDataGrid();
-            FormatoGrid();
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void btnclose_Click(object sender, EventArgs e)
         {
+            Application.Exit();
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void header_MouseDown(object sender, MouseEventArgs e)
         {
-            if (NombretextBox.Text == string.Empty)
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnojo_Click(object sender, EventArgs e)
+        {
+            if (ClavetextBox.PasswordChar == '*')
             {
-                errorProvider1.SetError(NombretextBox, "Debe ingresar un Nombre");
-                NombretextBox.Focus();
-                return;
+                ClavetextBox.PasswordChar = '\0'; ;
+                btnojo.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             }
-
-            errorProvider1.Clear();
-
-            if (ApellidotextBox.Text == string.Empty)
+            else
             {
-                errorProvider1.SetError(ApellidotextBox, "Debe ingresar un Apellido");
-                ApellidotextBox.Focus();
-                return;
+                ClavetextBox.PasswordChar = '*';
+                btnojo.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
-            errorProvider1.Clear();
+            ClavetextBox.Focus();
+        }
 
-            if (TelefonotextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(TelefonotextBox, "Debe ingresar un Telefono");
-                TelefonotextBox.Focus();
-                return;
-            }
-            errorProvider1.Clear();
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
 
-            if (UsuariotextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(UsuariotextBox, "Debe ingresar un Usuario");
-                UsuariotextBox.Focus();
-                return;
-            }
-            errorProvider1.Clear();
-
-            if (ClavetextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(ClavetextBox, "Debe ingresar unA cLAVE");
-                ClavetextBox.Focus();
-                return;
-            }
-            errorProvider1.Clear();
-
-            EAdmin.nombreAdmin = NombretextBox.Text;
-            EAdmin.apellidoAdmin = ApellidotextBox.Text;
-            EAdmin.telefonoAdmin = TelefonotextBox.Text;
+        private void btniniciarsesion_Click(object sender, EventArgs e)
+        {
             EAdmin.usuario = UsuariotextBox.Text;
+
             EAdmin.clave = ClavetextBox.Text;
-            BAdmin.InsertAdmin(EAdmin);
-            LlenarDataGrid();
-        }
-
-        private void LlenarDataGrid()
-        {
-            AdministradordataGridView.DataSource = BAdmin.MostrarAdmin();
-            Limpiar();
-            NombretextBox.Focus();
-        }
-
-        private void Limpiar()
-        {
-            NombretextBox.Text = string.Empty;
-            ApellidotextBox.Text = string.Empty;
-            TelefonotextBox.Text = string.Empty;
-            UsuariotextBox.Text = string.Empty;
-            ClavetextBox.Text = string.Empty;
-            errorProvider1.Clear();
-        }
-
-        private void FormatoGrid()
-        {
-            AdministradordataGridView.Columns[0].Visible = false;
-            AdministradordataGridView.Columns[1].HeaderText = "Nombre";
-            AdministradordataGridView.Columns[2].HeaderText = "Apellido";
-            AdministradordataGridView.Columns[3].HeaderText = "Telefono";
-            AdministradordataGridView.Columns[4].HeaderText = "Usuario";
-            AdministradordataGridView.Columns[5].HeaderText = "Clave";
-        }
-
-        private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
-            string valor = AdministradordataGridView.CurrentRow.Cells[1].Value.ToString();
-            DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (rpt == DialogResult.No) return;
-
-            //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
-            EAdmin.idAdmin = id;
-            BAdmin.DeleteAdmin(EAdmin);
-            LlenarDataGrid();
-            Limpiar();
-            HabilitarBotones(true, false);
-        }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-            HabilitarBotones(true, false);
-            Limpiar();
-        }
-
-        private void Actualizarbutton_Click(object sender, EventArgs e)
-        {
-            EAdmin.idAdmin = id;
-            EAdmin.nombreAdmin = NombretextBox.Text;
-            EAdmin.apellidoAdmin = ApellidotextBox.Text;
-            EAdmin.telefonoAdmin = TelefonotextBox.Text;
-            EAdmin.usuario = UsuariotextBox.Text;
-            EAdmin.clave = ClavetextBox.Text;
-            BAdmin.UpdateAdmin(EAdmin);
-            LlenarDataGrid();
-            Limpiar();
-            HabilitarBotones(true, false);
-        }
-
-        private void HabilitarBotones(bool p1, bool p2)
-        {
-            Guardarbutton.Enabled = p1;
-            Actualizarbutton.Enabled = p2;
-            Eliminarbutton.Enabled = p2;
-            //Cancelarbutton.Enabled = p1;
-        }
-
-        private void AdministradordataGridView_DoubleClick(object sender, EventArgs e)
-        {
-            if (AdministradordataGridView.Rows.Count == 0) return;
-            HabilitarBotones(false, true);
-            id = (int)AdministradordataGridView.CurrentRow.Cells[0].Value;
-            //MessageBox.Show(vIDEquipo.ToString());
-            NombretextBox.Text = AdministradordataGridView.CurrentRow.Cells[1].Value.ToString();
-            ApellidotextBox.Text = AdministradordataGridView.CurrentRow.Cells[2].Value.ToString();
-            TelefonotextBox.Text = AdministradordataGridView.CurrentRow.Cells[3].Value.ToString();
-            UsuariotextBox.Text = AdministradordataGridView.CurrentRow.Cells[4].Value.ToString();
-            ClavetextBox.Text = AdministradordataGridView.CurrentRow.Cells[5].Value.ToString();
-            errorProvider1.Clear();
+            int resultado = BAdmin.Login(EAdmin);
+            if (resultado == 1)
+            {
+                Form1 fr = new Form1();
+                fr.Show();
+                this.Hide();
+            }
+            else if (resultado == 0)
+            {
+                MessageBox.Show("Usuario o Contraseña Incorrectos");
+            }
         }
     }
 }

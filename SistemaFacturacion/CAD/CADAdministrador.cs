@@ -8,15 +8,16 @@ namespace CAD
     {
         private DataTable tabla = new DataTable();
 
-        public DataTable MostrarAdministrador()
+        public int Login(ENTAdministrador admin)
         {
-            tabla.Clear();
-            SqlCommand cmd = new SqlCommand("SelectAdministrador", AbrirConexion());
+            int c;
+
+            SqlCommand cmd = new SqlCommand("LoginValidacion", AbrirConexion());
             cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(tabla);
-            CerrarConexion();
-            return tabla;
+            cmd.Parameters.AddWithValue("@usuario", admin.usuario);
+            cmd.Parameters.AddWithValue("@clave", admin.clave);
+            c = (int)cmd.ExecuteScalar();
+            return c;
         }
 
         public void InsertAdministrador(ENTAdministrador admin)
