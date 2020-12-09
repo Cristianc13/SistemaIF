@@ -247,10 +247,11 @@ namespace WIN
             decimal precio = Convert.ToDecimal(PreciotextBox.Text);
             decimal descuento = Convert.ToDecimal(DescuentotextBox.Text);
             decimal NuevoPrecio = precio - descuento;
+            int N = 1;
 
             if (NuevoPrecio <= costo)
             {
-                MessageBox.Show("No puedes aplicar este descuento porque no hay ninguna ganancia");
+                MessageBox.Show("No puedes Vender este porducto por menos de: " + "C$" + (Convert.ToDecimal(N) + costo), "Advertencia");
             }
             else if (stock == 0)
             {
@@ -391,7 +392,7 @@ namespace WIN
             DialogResult rpt = MessageBox.Show("¿Cancelar Venta?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.Yes)
             {
-                //DVentadataGridView.Rows.Clear();
+
                 ClientecomboBox.Enabled = true;
                 Limpiar();
                 TelefonotextBox.Text = "";

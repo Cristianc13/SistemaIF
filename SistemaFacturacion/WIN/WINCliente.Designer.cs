@@ -54,7 +54,6 @@
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.btnagregar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
-            this.btneliminar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,6 +72,7 @@
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(196, 20);
             this.NombreTextBox.TabIndex = 2;
+            this.NombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
             // 
             // ApellidoTextBox
             // 
@@ -82,6 +82,7 @@
             this.ApellidoTextBox.Name = "ApellidoTextBox";
             this.ApellidoTextBox.Size = new System.Drawing.Size(196, 20);
             this.ApellidoTextBox.TabIndex = 4;
+            this.ApellidoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoTextBox_KeyPress);
             // 
             // TelefonoTextBox
             // 
@@ -91,6 +92,7 @@
             this.TelefonoTextBox.Name = "TelefonoTextBox";
             this.TelefonoTextBox.Size = new System.Drawing.Size(196, 20);
             this.TelefonoTextBox.TabIndex = 5;
+            this.TelefonoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoTextBox_KeyPress);
             // 
             // ClienteDataGridView
             // 
@@ -319,7 +321,7 @@
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 30;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btncancelar.Location = new System.Drawing.Point(501, 126);
+            this.btncancelar.Location = new System.Drawing.Point(433, 126);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(109, 35);
             this.btncancelar.TabIndex = 47;
@@ -340,7 +342,7 @@
             this.btnagregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnagregar.IconSize = 30;
             this.btnagregar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnagregar.Location = new System.Drawing.Point(185, 126);
+            this.btnagregar.Location = new System.Drawing.Point(261, 127);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(104, 35);
             this.btnagregar.TabIndex = 44;
@@ -361,7 +363,7 @@
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 30;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnguardar.Location = new System.Drawing.Point(15, 126);
+            this.btnguardar.Location = new System.Drawing.Point(93, 127);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(104, 35);
             this.btnguardar.TabIndex = 45;
@@ -369,27 +371,6 @@
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btneliminar.IconColor = System.Drawing.Color.White;
-            this.btneliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btneliminar.IconSize = 30;
-            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btneliminar.Location = new System.Drawing.Point(353, 126);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(104, 35);
-            this.btneliminar.TabIndex = 46;
-            this.btneliminar.Text = "Eliminar";
-            this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btneliminar.UseVisualStyleBackColor = false;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // WINCliente
             // 
@@ -400,7 +381,6 @@
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.btnguardar);
-            this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);
@@ -464,6 +444,5 @@
         private FontAwesome.Sharp.IconButton btncancelar;
         private FontAwesome.Sharp.IconButton btnagregar;
         private FontAwesome.Sharp.IconButton btnguardar;
-        private FontAwesome.Sharp.IconButton btneliminar;
     }
 }
