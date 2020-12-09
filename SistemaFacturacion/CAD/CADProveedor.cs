@@ -19,6 +19,18 @@ namespace CAD
             return tabla;
         }
 
+        public DataTable SelectProveedorCombo()
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("SelectProveedorCombo", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
+
         public void InsertProveedor(ENTProveedor EProveedor)
         {
             SqlCommand cmd = new SqlCommand("InsertProveedor", AbrirConexion());
