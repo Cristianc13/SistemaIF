@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINDetalleCompra2));
             this.label1 = new System.Windows.Forms.Label();
             this.txtcodigo = new System.Windows.Forms.TextBox();
@@ -53,42 +53,42 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtobservacion = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.txtfiltrar = new System.Windows.Forms.TextBox();
+            this.btnCancelar2 = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.label9 = new System.Windows.Forms.Label();
             this.btnEstado = new FontAwesome.Sharp.IconPictureBox();
             this.btnCategoria = new FontAwesome.Sharp.IconPictureBox();
             this.btnModelo = new FontAwesome.Sharp.IconPictureBox();
             this.btnMarca = new FontAwesome.Sharp.IconPictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCancelar2 = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.btnguardar = new FontAwesome.Sharp.IconButton();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCompra2GridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMarca)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,6 +110,7 @@
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(207, 19);
             this.txtcodigo.TabIndex = 3;
+            this.txtcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodigo_KeyPress);
             // 
             // txtnombre
             // 
@@ -266,28 +267,28 @@
             // 
             this.DetalleCompra2GridView1.AllowUserToAddRows = false;
             this.DetalleCompra2GridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Teal;
-            this.DetalleCompra2GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            this.DetalleCompra2GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DetalleCompra2GridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DetalleCompra2GridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DetalleCompra2GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DetalleCompra2GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DetalleCompra2GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DetalleCompra2GridView1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DetalleCompra2GridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.DetalleCompra2GridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DetalleCompra2GridView1.Location = new System.Drawing.Point(0, 0);
             this.DetalleCompra2GridView1.Name = "DetalleCompra2GridView1";
@@ -365,6 +366,45 @@
             this.panel1.Size = new System.Drawing.Size(989, 281);
             this.panel1.TabIndex = 22;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.iconPictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(989, 43);
+            this.panel3.TabIndex = 64;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(26, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 18);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Productos";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 34;
+            this.iconPictureBox1.Location = new System.Drawing.Point(948, 0);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(41, 34);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBox1.TabIndex = 46;
+            this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
+            // 
             // txtfiltrar
             // 
             this.txtfiltrar.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -374,6 +414,69 @@
             this.txtfiltrar.Size = new System.Drawing.Size(201, 19);
             this.txtfiltrar.TabIndex = 45;
             this.txtfiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtfiltrar_KeyUp);
+            // 
+            // btnCancelar2
+            // 
+            this.btnCancelar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnCancelar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnCancelar2.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar2.IconChar = FontAwesome.Sharp.IconChar.Ban;
+            this.btnCancelar2.IconColor = System.Drawing.Color.White;
+            this.btnCancelar2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar2.IconSize = 30;
+            this.btnCancelar2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCancelar2.Location = new System.Drawing.Point(396, 231);
+            this.btnCancelar2.Name = "btnCancelar2";
+            this.btnCancelar2.Size = new System.Drawing.Size(109, 35);
+            this.btnCancelar2.TabIndex = 54;
+            this.btnCancelar2.Text = "Cancelar";
+            this.btnCancelar2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar2.UseVisualStyleBackColor = false;
+            this.btnCancelar2.Click += new System.EventHandler(this.btnCancelar2_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditar.IconColor = System.Drawing.Color.White;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 30;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnEditar.Location = new System.Drawing.Point(218, 231);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(96, 35);
+            this.btnEditar.TabIndex = 52;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnguardar.IconColor = System.Drawing.Color.White;
+            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnguardar.IconSize = 30;
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnguardar.Location = new System.Drawing.Point(17, 229);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(107, 35);
+            this.btnguardar.TabIndex = 53;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // label9
             // 
@@ -453,82 +556,6 @@
             this.btnMarca.TabIndex = 39;
             this.btnMarca.TabStop = false;
             this.btnMarca.Click += new System.EventHandler(this.btnMarca_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.DetalleCompra2GridView1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 281);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(989, 338);
-            this.panel2.TabIndex = 23;
-            // 
-            // btnCancelar2
-            // 
-            this.btnCancelar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnCancelar2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnCancelar2.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar2.IconChar = FontAwesome.Sharp.IconChar.Ban;
-            this.btnCancelar2.IconColor = System.Drawing.Color.White;
-            this.btnCancelar2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar2.IconSize = 30;
-            this.btnCancelar2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnCancelar2.Location = new System.Drawing.Point(396, 231);
-            this.btnCancelar2.Name = "btnCancelar2";
-            this.btnCancelar2.Size = new System.Drawing.Size(109, 35);
-            this.btnCancelar2.TabIndex = 54;
-            this.btnCancelar2.Text = "Cancelar";
-            this.btnCancelar2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar2.UseVisualStyleBackColor = false;
-            this.btnCancelar2.Click += new System.EventHandler(this.btnCancelar2_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnEditar.IconColor = System.Drawing.Color.White;
-            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.IconSize = 30;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnEditar.Location = new System.Drawing.Point(218, 231);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(96, 35);
-            this.btnEditar.TabIndex = 52;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnguardar.IconColor = System.Drawing.Color.White;
-            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnguardar.IconSize = 30;
-            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnguardar.Location = new System.Drawing.Point(17, 229);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(107, 35);
-            this.btnguardar.TabIndex = 53;
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // pictureBox7
             // 
@@ -615,44 +642,18 @@
             this.pictureBox5.TabIndex = 63;
             this.pictureBox5.TabStop = false;
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.iconPictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(989, 43);
-            this.panel3.TabIndex = 64;
+            this.panel2.Controls.Add(this.DetalleCompra2GridView1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 281);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(989, 338);
+            this.panel2.TabIndex = 23;
             // 
-            // label10
+            // errorProvider1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(37, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 18);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "Productos";
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 34;
-            this.iconPictureBox1.Location = new System.Drawing.Point(948, 0);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(41, 34);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox1.TabIndex = 46;
-            this.iconPictureBox1.TabStop = false;
-            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // WINDetalleCompra2
             // 
@@ -669,21 +670,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCompra2GridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMarca)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

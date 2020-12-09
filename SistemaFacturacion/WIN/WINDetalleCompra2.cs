@@ -23,6 +23,8 @@ namespace WIN
         private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
         [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
+        public string codigo, marca, modelo, estado;
+
 
         private int IdCategoria, IdMarca, IdModelo, IdEstado, IdProducto;
         private BLMarca BMarca = new BLMarca();
@@ -292,7 +294,7 @@ namespace WIN
 
         private void txtpreciosalida_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
@@ -417,6 +419,19 @@ namespace WIN
             errorProvider1.Clear();
         }
 
+        private void txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void pictureBox7_Click(object sender, EventArgs e)
         {
 
@@ -475,7 +490,8 @@ namespace WIN
             cmbMarca.Text = DetalleCompra2GridView1.CurrentRow.Cells[7].Value.ToString();
             cmbModelo.Text = DetalleCompra2GridView1.CurrentRow.Cells[8].Value.ToString();
             cmbEstado.Text = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
-            cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[10].Value.ToString(); txtcodigo.Text = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
+            cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[10].Value.ToString(); 
+            txtcodigo.Text = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
 
         }
 
@@ -483,28 +499,17 @@ namespace WIN
         {
             if (DetalleCompra2GridView1.CurrentRow == null) return;
 
-            try
-            {
-                //HabilitarBotones(true, false);
                 IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
+            codigo = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
+            //nombrep = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
+            marca = DetalleCompra2GridView1.CurrentRow.Cells[7].Value.ToString();
+            modelo = DetalleCompra2GridView1.CurrentRow.Cells[8].Value.ToString();
+            estado = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
 
-                nombrep = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
-
-                //HabilitarBotones(true, false);
-
-                
-                WINDCompracs dv = Owner as WINDCompracs;
-               
-                    dv.bmbproducto.Text = nombrep;    
-                    this.Close();
-                
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
+            WINDCompracs dv = Owner as WINDCompracs;
+            dv.bmbproducto.Text = codigo + " " + marca + " " + modelo + " - " + estado;
+            this.Close();
+              
         }
     }
 }
