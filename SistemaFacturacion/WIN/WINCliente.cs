@@ -205,7 +205,7 @@ namespace WIN
 
             WINDetalleVenta dv = Owner as WINDetalleVenta;
             dv.ClientecomboBox.DataSource = BCliente.MostrarCliente();
-            dv.ClientecomboBox.DisplayMember = "nombreCliente";
+            dv.ClientecomboBox.DisplayMember = "cliente";
             dv.ClientecomboBox.ValueMember = "idCliente";
             dv.ClientecomboBox.SelectedIndex = -1;
 
