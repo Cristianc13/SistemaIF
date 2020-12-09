@@ -22,11 +22,10 @@ namespace WIN
         private BLCliente BCliente = new BLCliente();
         public ENTCliente ECliente = new ENTCliente();
         private BLCliente cliente = new BLCliente();
-        int id;
+        private int id;
 
         private void WINClientePrincipal_Load(object sender, EventArgs e)
         {
-            
             HabilitarBotones(true, false);
             LlenarDataGrid();
             FormatoGrid();
@@ -79,6 +78,7 @@ namespace WIN
             }
             //Cancelarbutton.Enabled = p1;
         }
+
         private void Habilitar(bool p1, bool p2)
         {
             btneliminar.Enabled = p1;
@@ -186,12 +186,9 @@ namespace WIN
                 errorProvider1.Clear();
                 Habilitar(true, true);
                 HabilitarBotones(false, true);
-
-
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
