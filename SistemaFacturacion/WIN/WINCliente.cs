@@ -91,22 +91,9 @@ namespace WIN
                 btnagregar.IconColor = Color.Black;
             }
 
-            btneliminar.Enabled = p2;
-            if (btneliminar.Enabled == true)
-            {
-                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
-                btneliminar.IconColor = Color.White;
-            }
-            else
-            {
-                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
-                btneliminar.IconColor = Color.Black;
-            }
-            //Cancelarbutton.Enabled = p1;
         }
         private void Habilitar(bool p1, bool p2)
         {
-            btneliminar.Enabled = p1;
             btnagregar.Enabled = p2;
         }
 
@@ -141,6 +128,31 @@ namespace WIN
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
+            if (NombreTextBox.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(NombreTextBox, "Debe ingresar un Nombre");
+                NombreTextBox.Focus();
+                return;
+            }
+
+            errorProvider1.Clear();
+
+            if (ApellidoTextBox.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(ApellidoTextBox, "Debe ingresar un Apellido");
+                ApellidoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (TelefonoTextBox.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(TelefonoTextBox, "Debe ingresar un Telefono");
+                TelefonoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
             string ID = ClienteDataGridView.CurrentRow.Cells[0].Value.ToString();
             id = Convert.ToInt32(ID);
             ECliente.idCLiente = id;
@@ -150,8 +162,7 @@ namespace WIN
             cliente.UpdateCliente(ECliente);
             LlenarDataGrid();
             Limpiar();
-            //HabilitarBotones(true, false);
-         
+            //HabilitarBotones(true, false);        
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -172,7 +183,7 @@ namespace WIN
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (NombreTextBox.Text == string.Empty)
+            if (NombreTextBox.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(NombreTextBox, "Debe ingresar un Nombre");
                 NombreTextBox.Focus();
@@ -181,7 +192,7 @@ namespace WIN
 
             errorProvider1.Clear();
 
-            if (ApellidoTextBox.Text == string.Empty)
+            if (ApellidoTextBox.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(ApellidoTextBox, "Debe ingresar un Apellido");
                 ApellidoTextBox.Focus();
@@ -189,7 +200,7 @@ namespace WIN
             }
             errorProvider1.Clear();
 
-            if (TelefonoTextBox.Text == string.Empty)
+            if (TelefonoTextBox.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(TelefonoTextBox, "Debe ingresar un Telefono");
                 TelefonoTextBox.Focus();
@@ -233,6 +244,40 @@ namespace WIN
             filtro = textBoxBuscar.Text;
             ECliente.Filtro = filtro;
             ClienteDataGridView.DataSource = BCliente.FiltarClientes(ECliente);
+        }
+
+        private void TelefonoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void NombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ApellidoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

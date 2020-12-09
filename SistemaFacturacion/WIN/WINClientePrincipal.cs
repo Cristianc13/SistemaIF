@@ -65,23 +65,11 @@ namespace WIN
                 btnEditar.IconColor = Color.Black;
             }
 
-            btneliminar.Enabled = p2;
-            if (btneliminar.Enabled == true)
-            {
-                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
-                btneliminar.IconColor = Color.White;
-            }
-            else
-            {
-                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
-                btneliminar.IconColor = Color.Black;
-            }
             //Cancelarbutton.Enabled = p1;
         }
 
         private void Habilitar(bool p1, bool p2)
         {
-            btneliminar.Enabled = p1;
             btnEditar.Enabled = p2;
         }
 
@@ -107,7 +95,7 @@ namespace WIN
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (textBoxnombre.Text == string.Empty)
+            if (textBoxnombre.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(textBoxnombre, "Debe ingresar un Nombre");
                 textBoxnombre.Focus();
@@ -116,7 +104,7 @@ namespace WIN
 
             errorProvider1.Clear();
 
-            if (TextBoxApellido.Text == string.Empty)
+            if (TextBoxApellido.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(TextBoxApellido, "Debe ingresar un Apellido");
                 TextBoxApellido.Focus();
@@ -124,7 +112,7 @@ namespace WIN
             }
             errorProvider1.Clear();
 
-            if (textboxTelefono.Text == string.Empty)
+            if (textboxTelefono.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(textboxTelefono, "Debe ingresar un Telefono");
                 textboxTelefono.Focus();
@@ -142,6 +130,31 @@ namespace WIN
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (textBoxnombre.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(textBoxnombre, "Debe ingresar un Nombre");
+                textBoxnombre.Focus();
+                return;
+            }
+
+            errorProvider1.Clear();
+
+            if (TextBoxApellido.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(TextBoxApellido, "Debe ingresar un Apellido");
+                TextBoxApellido.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (textboxTelefono.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(textboxTelefono, "Debe ingresar un Telefono");
+                textboxTelefono.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
             string ID = ClientedataGridView.CurrentRow.Cells[0].Value.ToString();
             id = Convert.ToInt32(ID);
             ECliente.idCLiente = id;
@@ -195,7 +208,6 @@ namespace WIN
 
         private void Botones()
         {
-            btneliminar.Visible = true;
             btnEditar.Visible = true;
         }
 
@@ -205,6 +217,40 @@ namespace WIN
             filtro = textBoxBuscar.Text;
             ECliente.Filtro = filtro;
             ClientedataGridView.DataSource = BCliente.FiltarClientes(ECliente);
+        }
+
+        private void textboxTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
