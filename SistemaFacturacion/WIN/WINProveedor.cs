@@ -116,17 +116,17 @@ namespace WIN
                 btnagregar.IconColor = Color.Black;
             }
 
-            btneliminar.Enabled = p2;
-            if (btneliminar.Enabled == true)
-            {
-                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
-                btneliminar.IconColor = Color.White;
-            }
-            else
-            {
-                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
-                btneliminar.IconColor = Color.Black;
-            }
+            //btneliminar.Enabled = p2;
+            //if (btneliminar.Enabled == true)
+            //{
+            //    btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+            //    btneliminar.IconColor = Color.White;
+            //}
+            //else
+            //{
+            //    btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+            //    btneliminar.IconColor = Color.Black;
+            //}
 
             btnguardar.Enabled = p1;
             if (btnguardar.Enabled == true)
@@ -355,7 +355,7 @@ namespace WIN
         private void Botones()
         {
             btnguardar.Visible = true;
-            btneliminar.Visible = true;
+           
         }
 
 
