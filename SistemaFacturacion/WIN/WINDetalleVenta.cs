@@ -162,7 +162,7 @@ namespace WIN
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
@@ -196,7 +196,7 @@ namespace WIN
 
         private void DescuentotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
@@ -334,6 +334,7 @@ namespace WIN
             Limpiar();
             EnviarID();
             EDventa.Clear();
+            ClientecomboBox.Enabled = true;
         }
 
         private void HabilitarEliminar(bool p1)
@@ -391,6 +392,13 @@ namespace WIN
             if (rpt == DialogResult.Yes)
             {
                 //DVentadataGridView.Rows.Clear();
+                ClientecomboBox.Enabled = true;
+                Limpiar();
+                TelefonotextBox.Text = "";
+                ClientecomboBox.SelectedIndex = -1;
+                DescuentotextBox.Text = "";
+                DescuentotextBox.Text = "0";
+
             }
 
             if (rpt == DialogResult.No) return;
