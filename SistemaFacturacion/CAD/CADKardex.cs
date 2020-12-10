@@ -15,8 +15,6 @@ namespace CAD
             cmd.Parameters.AddWithValue("@entrada", kardex.entrada);
             cmd.Parameters.AddWithValue("@salida", kardex.salida);
             cmd.Parameters.AddWithValue("@existencia", kardex.existencia);
-            cmd.Parameters.AddWithValue("@costounitario", kardex.costeunitario);
-            cmd.Parameters.AddWithValue("@costopromedio", kardex.costepromedio);
             cmd.Parameters.AddWithValue("@FK_idProducto", kardex.FK_idProducto);
             cmd.ExecuteNonQuery();
             CerrarConexion();

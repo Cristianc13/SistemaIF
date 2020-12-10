@@ -44,6 +44,27 @@ namespace WIN
             Tarjetas();
             IniciarTextbox();
             SendMessage(BuscartextBox.Handle, EM_SETCUEBANNER, 0, "Codigo o Producto");
+
+            ContextMenu _blankContextMenu = new ContextMenu();
+            NombretextBox.ContextMenu = _blankContextMenu;
+            CodigotextBox.ContextMenu = _blankContextMenu;
+            StocktextBox.ContextMenu = _blankContextMenu;
+        }
+
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
+        private const Keys CutKeys = Keys.Control | Keys.X;
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys) || (keyData == CutKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
         }
 
         public void IniciarTextbox()
@@ -309,14 +330,6 @@ namespace WIN
             Tarjetas();
         }
 
-        private void BuscarMarbutton_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Exportarbutton_Click(object sender, EventArgs e)
-        {
-        }
-
         public void LlenarCategoria()
         {
             CategoriacomboBox.DataSource = BCategoria.MostrarCategoria();
@@ -356,20 +369,19 @@ namespace WIN
                 EProducto.observacion = ObservacionestextBox.Text;
 
                 int idP = BProducto.InsertarProducto(EProducto);
-                kardex.fecha = DateTime.Now;
-                kardex.concepto = "Inventario Inicial";
-                kardex.entrada = EProducto.stockProducto;
-                kardex.salida = 0;
-                kardex.existencia = 0;//Momento
-                kardex.costeunitario = EProducto.costo;
-                kardex.costepromedio = 0;
-                kardex.FK_idProducto = idP;
-                BKardex.InsertKardex(kardex);
-
                 Limpiar();
                 LlenarGrid();
                 HabilitarBotones(false, true);
                 Tarjetas();
+
+                kardex.fecha = DateTime.Now;
+                kardex.concepto = "Inventario Inicial";
+                kardex.entrada = EProducto.stockProducto;
+                kardex.salida = 0;
+                kardex.existencia = EProducto.stockProducto;//Momento
+                kardex.costeunitario = EProducto.costo;
+                kardex.FK_idProducto = idP;
+                BKardex.InsertKardex(kardex);
             }
             catch (SqlException ex)
             {
@@ -480,9 +492,39 @@ namespace WIN
             EstadocomboBox.SelectedIndex = -1;
         }
 
+        private void NombretextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            NombretextBox.Text = ReducirEspaciado(NombretextBox.Text);
+            NombretextBox.SelectionStart = NombretextBox.Text.Length;
+        }
+
+        private void DescripciontextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            DescripciontextBox.Text = ReducirEspaciado(DescripciontextBox.Text);
+            DescripciontextBox.SelectionStart = DescripciontextBox.Text.Length;
+        }
+
+        private void ObservacionestextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            ObservacionestextBox.Text = ReducirEspaciado(ObservacionestextBox.Text);
+            ObservacionestextBox.SelectionStart = ObservacionestextBox.Text.Length;
+        }
+
+        //Evitar espacios en blanco
+        public static string ReducirEspaciado(string Cadena)
+        {
+            while (Cadena.Contains("  "))
+            {
+                Cadena = Cadena.Replace("  ", " ");
+            }
+
+            return Cadena.TrimStart();
+        }
+
         public bool Validar()
         {
             //Nombre
+
             if (NombretextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(NombretextBox, "Debe ingresar un Nombre");
@@ -518,10 +560,18 @@ namespace WIN
             }
             errorProvider1.Clear();
 
-            //Costo
-            if (CostotextBox.Text == string.Empty)
+            if (StocktextBox.Text == Convert.ToString(0))
             {
-                errorProvider1.SetError(CostotextBox, "Debe ingresar un Numero de Costo");
+                errorProvider1.SetError(StocktextBox, "Debe ingresar un Numero de Stock Mayor a 0");
+                StocktextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            //Costo
+            if (CostotextBox.Text == Convert.ToString(0))
+            {
+                errorProvider1.SetError(CostotextBox, "Debe ingresar un Numero de Costo mayor a 0");
                 CostotextBox.Focus();
                 return false;
             }
@@ -535,6 +585,15 @@ namespace WIN
                 return false;
             }
             errorProvider1.Clear();
+
+            if (PrecioSalidatextBox.Text == Convert.ToString(0))
+            {
+                errorProvider1.SetError(PrecioSalidatextBox, "Debe ingresar un Numero de Precio salida mayor a 0");
+                CostotextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
             //Modelo
             if (ModelocomboBox.SelectedIndex == -1)
             {
