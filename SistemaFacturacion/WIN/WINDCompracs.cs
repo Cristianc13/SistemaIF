@@ -240,6 +240,7 @@ namespace WIN
             Botones();
             cajasdetextotrue();
             dtfecha.Value = DateTime.Now;
+            txtIVAdetalleC.MaxLength = 2;
         }
 
         public void cajasdetextotrue()
@@ -501,7 +502,17 @@ namespace WIN
 
         private void DetalleCompraGridView1_Click(object sender, EventArgs e)
         {
-            fila = DetalleCompraGridView1.CurrentRow.Index;
+            if (DetalleCompraGridView1.CurrentRow == null) return;
+            try
+            {
+                HabilitarBotones(true, false);
+                fila = DetalleCompraGridView1.CurrentRow.Index;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -544,19 +555,29 @@ namespace WIN
                 }
                 errorProvider1.Clear();
 
-                if (txtcantidad.Text == string.Empty)
+                if (txtcantidad.Text == string.Empty || Convert.ToDecimal(txtcantidad.Text) <= 0)
                 {
-                    errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad");
+                    errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad mayor a 0");
                     return;
                 }
                 errorProvider1.Clear();
 
-                if (txtcosto.Text == string.Empty)
+                if (txtcosto.Text == string.Empty || Convert.ToDecimal(txtcosto.Text) <= 0)
                 {
-                    errorProvider1.SetError(txtcosto, "Debe ingresar un Costo");
+                    errorProvider1.SetError(txtcosto, "Debe ingresar un Costo mayor a 0");
                     return;
                 }
                 errorProvider1.Clear();
+
+                if (txtIVAdetalleC.Text == string.Empty || Convert.ToDecimal(txtcosto.Text) <= 0)
+                {
+                    errorProvider1.SetError(txtcosto, "Debe ingresar un IVA ");
+                    return;
+                }
+                errorProvider1.Clear();
+
+
+                
 
                 ENTDetalleCompra miDetalle = new ENTDetalleCompra();
                 miDetalle.FK_idCompra = idCompra;
@@ -573,6 +594,7 @@ namespace WIN
                 CalcularTotal();
                 HabilitarBotones(false, true);
                 limpiar2();
+                txtIVAdetalleC.Enabled = false;
             }
             else
             {
@@ -596,7 +618,9 @@ namespace WIN
                 FormatoGrid();
                 CalcularTotal();
                 limpiar3();
+                txtIVA.Text = Convert.ToString(0);
                 HabilitarBotones(false, true);
+                txtIVAdetalleC.Enabled = true;
             }
             
         }
@@ -643,8 +667,18 @@ namespace WIN
 
         private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            HabilitarBotones(true, false);
-            fila = DetalleCompraGridView1.CurrentRow.Index;
+            if (DetalleCompraGridView1.CurrentRow == null) return;
+            try
+            {
+                HabilitarBotones(true, false);
+                fila = DetalleCompraGridView1.CurrentRow.Index;
+                txtIVA.Enabled = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void CmbProveedor_KeyPress(object sender, KeyPressEventArgs e)
