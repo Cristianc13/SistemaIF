@@ -324,6 +324,39 @@ namespace WIN
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
+            if (txtnombreProv.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(txtnombreProv, "Debe ingresar un Nombre");
+                txtnombreProv.Focus();
+                return;
+            }
+
+            errorProvider1.Clear();
+
+            if (txttelefonoProv.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(txttelefonoProv, "Debe ingresar un Numero Telefonico");
+                txttelefonoProv.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (txtnombreCompañia.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(txtnombreCompañia, "Debe ingresar un Nombre de la Empresa");
+                txtnombreCompañia.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (txtnumeroCompañia.Text.Trim() == string.Empty)
+            {
+                errorProvider1.SetError(txtnumeroCompañia, "Debe ingresar un Numero de la Empresa");
+                txtnumeroCompañia.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
             string ID = dataGridProovedor.CurrentRow.Cells[0].Value.ToString();
             id = Convert.ToInt32(ID);
             EProveedor.idProveedor = id;
