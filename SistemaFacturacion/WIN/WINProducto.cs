@@ -49,6 +49,15 @@ namespace WIN
             NombretextBox.ContextMenu = _blankContextMenu;
             CodigotextBox.ContextMenu = _blankContextMenu;
             StocktextBox.ContextMenu = _blankContextMenu;
+            CostotextBox.ContextMenu = _blankContextMenu;
+            PrecioSalidatextBox.ContextMenu = _blankContextMenu;
+            DescripciontextBox.ContextMenu = _blankContextMenu;
+            ObservacionestextBox.ContextMenu = _blankContextMenu;
+            BuscartextBox.ContextMenu = _blankContextMenu;
+            EstadocomboBox.ContextMenu = _blankContextMenu;
+            ModelocomboBox.ContextMenu = _blankContextMenu;
+            MarcacomboBox.ContextMenu = _blankContextMenu;
+            CategoriacomboBox.ContextMenu = _blankContextMenu;
         }
 
         private const Keys CopyKeys = Keys.Control | Keys.C;
@@ -307,10 +316,6 @@ namespace WIN
             {
                 e.Handled = true;
             }
-        }
-
-        private void Buscarbutton_Click(object sender, EventArgs e)
-        {
         }
 
         private void BuscartextBox_KeyUp(object sender, KeyEventArgs e)
