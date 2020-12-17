@@ -174,6 +174,7 @@
             this.txtnombreProv.Name = "txtnombreProv";
             this.txtnombreProv.Size = new System.Drawing.Size(413, 20);
             this.txtnombreProv.TabIndex = 45;
+            this.txtnombreProv.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreProv_KeyUp);
             // 
             // pictureBox1
             // 
@@ -220,6 +221,7 @@
             this.txtnombreCompañia.Name = "txtnombreCompañia";
             this.txtnombreCompañia.Size = new System.Drawing.Size(413, 20);
             this.txtnombreCompañia.TabIndex = 45;
+            this.txtnombreCompañia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreCompañia_KeyUp);
             // 
             // pictureBox2
             // 
@@ -266,6 +268,7 @@
             this.txtruc.Name = "txtruc";
             this.txtruc.Size = new System.Drawing.Size(413, 20);
             this.txtruc.TabIndex = 45;
+            this.txtruc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtruc_KeyUp);
             // 
             // pictureBox4
             // 
@@ -407,10 +410,11 @@
             // 
             this.txttelefonoProv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttelefonoProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelefonoProv.Location = new System.Drawing.Point(102, 12);
+            this.txttelefonoProv.Location = new System.Drawing.Point(195, 12);
             this.txttelefonoProv.Name = "txttelefonoProv";
-            this.txttelefonoProv.Size = new System.Drawing.Size(422, 20);
+            this.txttelefonoProv.Size = new System.Drawing.Size(329, 20);
             this.txttelefonoProv.TabIndex = 45;
+            this.txttelefonoProv.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txttelefonoProv_KeyUp);
             // 
             // pictureBox5
             // 
@@ -419,9 +423,9 @@
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(89, 3);
+            this.pictureBox5.Location = new System.Drawing.Point(185, 3);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(446, 37);
+            this.pictureBox5.Size = new System.Drawing.Size(350, 37);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 45;
             this.pictureBox5.TabStop = false;
@@ -431,7 +435,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 14);
+            this.label2.Location = new System.Drawing.Point(104, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 2;
@@ -453,10 +457,11 @@
             // 
             this.txtnumeroCompañia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtnumeroCompañia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnumeroCompañia.Location = new System.Drawing.Point(102, 11);
+            this.txtnumeroCompañia.Location = new System.Drawing.Point(195, 11);
             this.txtnumeroCompañia.Name = "txtnumeroCompañia";
-            this.txtnumeroCompañia.Size = new System.Drawing.Size(422, 20);
+            this.txtnumeroCompañia.Size = new System.Drawing.Size(329, 20);
             this.txtnumeroCompañia.TabIndex = 46;
+            this.txtnumeroCompañia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnumeroCompañia_KeyUp);
             // 
             // pictureBox6
             // 
@@ -465,9 +470,9 @@
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(89, 2);
+            this.pictureBox6.Location = new System.Drawing.Point(185, 2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(446, 37);
+            this.pictureBox6.Size = new System.Drawing.Size(350, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 45;
             this.pictureBox6.TabStop = false;
@@ -477,11 +482,11 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 11);
+            this.label4.Location = new System.Drawing.Point(28, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.Size = new System.Drawing.Size(151, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Telefono:";
+            this.label4.Text = "Telefono Compañia:";
             // 
             // panel8
             // 

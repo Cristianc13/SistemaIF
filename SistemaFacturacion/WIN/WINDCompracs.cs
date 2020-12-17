@@ -43,6 +43,32 @@ namespace WIN
         public ENTProveedor EProveedor = new ENTProveedor();
         private BLProveedor BProveedor = new BLProveedor();
 
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
+        private const Keys CutKeys = Keys.Control | Keys.X;
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys) || (keyData == CutKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
+
+        public static string ReducirEspaciado(string Cadena)
+        {
+            while (Cadena.Contains("  "))
+            {
+                Cadena = Cadena.Replace("  ", " ");
+            }
+
+            return Cadena.TrimStart();
+        }
+
         private void LlenaComboProducto()
         {
             bmbproducto.DataSource = BProducto.MostrarProducto();
@@ -58,8 +84,8 @@ namespace WIN
 
         private void LlenaComboProveedor()
         {
-            CmbProveedor.DataSource = BProveedor.MostrarProveedor();
-            CmbProveedor.DisplayMember = "nombreProv";
+            CmbProveedor.DataSource = BProveedor.MostrarProveedorCombo();
+            CmbProveedor.DisplayMember = "proveedor";
             CmbProveedor.ValueMember = "idProveedor";
             CmbProveedor.SelectedIndex = -1;
         }
@@ -241,6 +267,18 @@ namespace WIN
             cajasdetextotrue();
             dtfecha.Value = DateTime.Now;
             txtIVAdetalleC.MaxLength = 2;
+
+            ContextMenu _blankContextMenu = new ContextMenu();
+            CmbProveedor.ContextMenu = _blankContextMenu;
+            txtnombreCompañia.ContextMenu = _blankContextMenu;
+            txtnfactura.ContextMenu = _blankContextMenu;
+            txtdescr.ContextMenu = _blankContextMenu;
+            txtIVA.ContextMenu = _blankContextMenu;
+            bmbproducto.ContextMenu = _blankContextMenu;
+            txtIVAdetalleC.ContextMenu = _blankContextMenu;
+            txtcantidad.ContextMenu = _blankContextMenu;
+            txtcosto.ContextMenu = _blankContextMenu;
+
         }
 
         public void cajasdetextotrue()
@@ -733,6 +771,24 @@ namespace WIN
             //{
             //    e.Handled = true;
             //}
+        }
+
+        private void CmbProveedor_KeyUp(object sender, KeyEventArgs e)
+        {
+            CmbProveedor.Text = ReducirEspaciado(CmbProveedor.Text);
+            CmbProveedor.SelectionStart = CmbProveedor.Text.Length;
+        }
+
+        private void txtdescr_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtdescr.Text = ReducirEspaciado(txtdescr.Text);
+            txtdescr.SelectionStart = txtdescr.Text.Length;
+        }
+
+        private void bmbproducto_KeyUp(object sender, KeyEventArgs e)
+        {
+            bmbproducto.Text = ReducirEspaciado(bmbproducto.Text);
+            bmbproducto.SelectionStart = bmbproducto.Text.Length;
         }
     }
 }
