@@ -40,6 +40,31 @@ namespace WIN
             DescuentotextBox.Text = "0";
             ClientecomboBox.Focus();
             Botones();
+
+            ContextMenu _blankContextMenu = new ContextMenu();
+            ProductocomboBox.ContextMenu = _blankContextMenu;
+            ClientecomboBox.ContextMenu = _blankContextMenu;
+            TelefonotextBox.ContextMenu = _blankContextMenu;
+            DescuentotextBox.ContextMenu = _blankContextMenu;
+            PreciotextBox.ContextMenu = _blankContextMenu;
+            CantidadtextBox.ContextMenu = _blankContextMenu;
+            ImportetextBox.ContextMenu = _blankContextMenu;
+        }
+
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
+        private const Keys CutKeys = Keys.Control | Keys.X;
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys) || (keyData == CutKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
         }
 
         private void Botones()
@@ -403,6 +428,28 @@ namespace WIN
             }
 
             if (rpt == DialogResult.No) return;
+        }
+
+        public static string ReducirEspaciado(string Cadena)
+        {
+            while (Cadena.Contains("  "))
+            {
+                Cadena = Cadena.Replace("  ", " ");
+            }
+
+            return Cadena.TrimStart();
+        }
+
+        private void ClientecomboBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            ClientecomboBox.Text = ReducirEspaciado(ClientecomboBox.Text);
+            ClientecomboBox.SelectionStart = ClientecomboBox.Text.Length;
+        }
+
+        private void ProductocomboBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            ProductocomboBox.Text = ReducirEspaciado(ProductocomboBox.Text);
+            ProductocomboBox.SelectionStart = ProductocomboBox.Text.Length;
         }
     }
 }
