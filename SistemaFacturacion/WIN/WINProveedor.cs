@@ -27,6 +27,34 @@ namespace WIN
         private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
 [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
+        private const Keys CutKeys = Keys.Control | Keys.X;
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys) || (keyData == CutKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
+
+        public static string ReducirEspaciado(string Cadena)
+        {
+            while (Cadena.Contains("  "))
+            {
+                Cadena = Cadena.Replace("  ", " ");
+            }
+
+            return Cadena.TrimStart();
+        }
+
+
+
         private void WINProveedor_Load(object sender, EventArgs e)
         {
             HabilitarBotones(true, false);
@@ -35,6 +63,16 @@ namespace WIN
             Limpiar();
             SendMessage(textBox1.Handle, EM_SETCUEBANNER, 0, "Nombre o RUC");
             Botones();
+
+            ContextMenu _blankContextMenu = new ContextMenu();
+            txtnombreProv.ContextMenu = _blankContextMenu;
+            txtnombreCompañia.ContextMenu = _blankContextMenu;
+            txttelefonoProv.ContextMenu = _blankContextMenu;
+            txtnumeroCompañia.ContextMenu = _blankContextMenu;
+            txtruc.ContextMenu = _blankContextMenu;
+            textBox1.ContextMenu = _blankContextMenu;
+
+
         }
 
         private void GuardarProv_Click(object sender, EventArgs e)
@@ -398,6 +436,34 @@ namespace WIN
            
         }
 
+        private void txtnombreProv_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtnombreProv.Text = ReducirEspaciado(txtnombreProv.Text);
+            txtnombreProv.SelectionStart = txtnombreProv.Text.Length;
+        }
 
+        private void txttelefonoProv_KeyUp(object sender, KeyEventArgs e)
+        {
+            txttelefonoProv.Text = ReducirEspaciado(txttelefonoProv.Text);
+            txttelefonoProv.SelectionStart = txttelefonoProv.Text.Length;
+        }
+
+        private void txtnombreCompañia_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtnombreCompañia.Text = ReducirEspaciado(txtnombreCompañia.Text);
+            txtnombreCompañia.SelectionStart = txtnombreCompañia.Text.Length;
+        }
+
+        private void txtnumeroCompañia_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtnumeroCompañia.Text = ReducirEspaciado(txtnumeroCompañia.Text);
+            txtnumeroCompañia.SelectionStart = txtnumeroCompañia.Text.Length;
+        }
+
+        private void txtruc_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtruc.Text = ReducirEspaciado(txtruc.Text);
+            txtruc.SelectionStart = txtruc.Text.Length;
+        }
     }
 }
