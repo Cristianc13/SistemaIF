@@ -4,6 +4,7 @@ using BL;
 using ENT;
 using BL;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace WIN
 {
@@ -23,11 +24,39 @@ namespace WIN
             InitializeComponent();
         }
 
+        private const int EM_SETCUEBANNER = 0x1501;
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
+        [MarshalAs(UnmanagedType.LPWStr)] string lParam);
+
         private void WINCliente_Load(object sender, EventArgs e)
         {
             HabilitarBotones(true, false);
             LlenarDataGrid();
             FormatoGrid();
+            SendMessage(textBoxBuscar.Handle, EM_SETCUEBANNER, 0, "Nombre, Apellido o Telefono");
+            ContextMenu _blankContextMenu = new ContextMenu();
+            NombreTextBox.ContextMenu = _blankContextMenu;
+            ApellidoTextBox.ContextMenu = _blankContextMenu;
+            TelefonoTextBox.ContextMenu = _blankContextMenu;
+            textBoxBuscar.ContextMenu = _blankContextMenu;
+        }
+
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
+        private const Keys CutKeys = Keys.Control | Keys.X;
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys) || (keyData == CutKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
         }
 
         private void LlenarDataGrid()
@@ -240,6 +269,9 @@ namespace WIN
 
         private void textBoxBuscar_KeyUp(object sender, KeyEventArgs e)
         {
+            textBoxBuscar.Text = ReducirEspaciado(textBoxBuscar.Text);
+            textBoxBuscar.SelectionStart = textBoxBuscar.Text.Length;
+
             string filtro;
             filtro = textBoxBuscar.Text;
             ECliente.Filtro = filtro;
@@ -279,5 +311,29 @@ namespace WIN
                 e.Handled = true;
             }
         }
+
+        public static string ReducirEspaciado(string Cadena)
+        {
+            while (Cadena.Contains("  "))
+            {
+                Cadena = Cadena.Replace("  ", " ");
+            }
+
+            return Cadena.TrimStart();
+        }
+
+        private void NombreTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            NombreTextBox.Text = ReducirEspaciado(NombreTextBox.Text);
+            NombreTextBox.SelectionStart = NombreTextBox.Text.Length;
+        }
+
+        private void ApellidoTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            ApellidoTextBox.Text = ReducirEspaciado(ApellidoTextBox.Text);
+            ApellidoTextBox.SelectionStart = ApellidoTextBox.Text.Length;
+        }
+
+
     }
 }

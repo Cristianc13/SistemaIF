@@ -73,6 +73,7 @@
             this.NombreTextBox.Size = new System.Drawing.Size(196, 20);
             this.NombreTextBox.TabIndex = 2;
             this.NombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
+            this.NombreTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NombreTextBox_KeyUp);
             // 
             // ApellidoTextBox
             // 
@@ -83,6 +84,7 @@
             this.ApellidoTextBox.Size = new System.Drawing.Size(196, 20);
             this.ApellidoTextBox.TabIndex = 4;
             this.ApellidoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoTextBox_KeyPress);
+            this.ApellidoTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ApellidoTextBox_KeyUp);
             // 
             // TelefonoTextBox
             // 

@@ -23,6 +23,33 @@ namespace WIN
             InitializeComponent();
         }
 
+        private void WINProVent_Load(object sender, EventArgs e)
+        {
+            llenarGrid();
+            FormatoGrid();
+            SendMessage(BuscartextBox.Handle, EM_SETCUEBANNER, 0, "Codigo o Nombre");
+            SendMessage(MarcModeltextBox.Handle, EM_SETCUEBANNER, 0, "Marca o Modelo");
+            ContextMenu _blankContextMenu = new ContextMenu();
+            BuscartextBox.ContextMenu = _blankContextMenu;
+            MarcModeltextBox.ContextMenu = _blankContextMenu;
+        }
+
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
+        private const Keys CutKeys = Keys.Control | Keys.X;
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys) || (keyData == CutKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
+
         public void FormatoGrid()
         {
             ProductodataGridView.Columns[0].Visible = false;
@@ -51,13 +78,6 @@ namespace WIN
         private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
         [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
-        private void WINProVent_Load(object sender, EventArgs e)
-        {
-            llenarGrid();
-            FormatoGrid();
-            SendMessage(BuscartextBox.Handle, EM_SETCUEBANNER, 0, "Codigo o Nombre");
-            SendMessage(MarcModeltextBox.Handle, EM_SETCUEBANNER, 0, "Marca o Modelo");
-        }
 
         private void ProductodataGridView_DoubleClick(object sender, EventArgs e)
         {
@@ -85,6 +105,9 @@ namespace WIN
 
         private void BuscartextBox_KeyUp(object sender, KeyEventArgs e)
         {
+            BuscartextBox.Text = ReducirEspaciado(BuscartextBox.Text);
+            BuscartextBox.SelectionStart = BuscartextBox.Text.Length;
+
             string filtro;
             filtro = BuscartextBox.Text;
             Eproducto.codigopro = filtro;
@@ -93,11 +116,25 @@ namespace WIN
 
         private void MarcModeltextBox_KeyUp(object sender, KeyEventArgs e)
         {
+            MarcModeltextBox.Text = ReducirEspaciado(MarcModeltextBox.Text);
+            MarcModeltextBox.SelectionStart = MarcModeltextBox.Text.Length;
+
             string filtro;
             filtro = MarcModeltextBox.Text;
             Eproducto.codigopro = filtro;
             ProductodataGridView.DataSource = BProducto.BusarProdMarcaModelo(Eproducto);
         }
+
+        public static string ReducirEspaciado(string Cadena)
+        {
+            while (Cadena.Contains("  "))
+            {
+                Cadena = Cadena.Replace("  ", " ");
+            }
+
+            return Cadena.TrimStart();
+        }
+
 
         private void btncancelar_Click(object sender, EventArgs e)
         {

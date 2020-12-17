@@ -177,6 +177,7 @@
             this.textBoxnombre.Size = new System.Drawing.Size(443, 20);
             this.textBoxnombre.TabIndex = 38;
             this.textBoxnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxnombre_KeyPress);
+            this.textBoxnombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxnombre_KeyUp);
             // 
             // pictureBox1
             // 
@@ -225,6 +226,7 @@
             this.TextBoxApellido.Size = new System.Drawing.Size(442, 20);
             this.TextBoxApellido.TabIndex = 38;
             this.TextBoxApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxApellido_KeyPress);
+            this.TextBoxApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBoxApellido_KeyUp);
             // 
             // pictureBox6
             // 
