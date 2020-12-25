@@ -18,11 +18,11 @@ namespace WIN.WINReportes
 
         private void GenerarInforme()
         {
-            RBLProducto informeProducto = new RBLProducto();
-            informeProducto.GenerarReporte(0);
+            //RBLProducto informeProducto = new RBLProducto();
+            //informeProducto.GenerarReporte(0);
 
-            RBLProductoBindingSource.DataSource = informeProducto.EReportePro;
-            this.reportViewer1.RefreshReport();
+            //RBLProductoBindingSource.DataSource = informeProducto.EReportePro;
+            //// this.reportViewer1.RefreshReport();
         }
     }
 }
