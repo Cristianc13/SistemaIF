@@ -208,6 +208,12 @@
     <Compile Include="WINProVent.Designer.cs">
       <DependentUpon>WINProVent.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINReportes\RCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RCompra.Designer.cs">
+      <DependentUpon>RCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="WINReportes\RDetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,11 +224,19 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Producto.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WINReportes\Reportes\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WINReportes\Reportes\RCompraCristal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RCompraCristal.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WINReportes\RProducto.cs">
       <SubType>Form</SubType>
@@ -315,6 +329,9 @@
     <EmbeddedResource Include="WINProVent.resx">
       <DependentUpon>WINProVent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\RCompra.resx">
+      <DependentUpon>RCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\RDetalleVenta.resx">
       <DependentUpon>RDetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +342,10 @@
     <EmbeddedResource Include="WINReportes\Reportes\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\Reportes\RCompraCristal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RCompraCristal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\Reportes\RDetalleVenta.rdlc" />
     <EmbeddedResource Include="WINReportes\Reportes\ReporteVentasCliente1.rdlc" />
