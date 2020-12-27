@@ -220,6 +220,12 @@
     <Compile Include="WINReportes\RDetalleVenta.Designer.cs">
       <DependentUpon>RDetalleVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINReportes\ReporteCristal\DetalleVenta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetalleVenta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WINReportes\ReporteCristal\Producto.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -249,6 +255,12 @@
     </Compile>
     <Compile Include="WINReportes\RReporteVenta.Designer.cs">
       <DependentUpon>RReporteVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WINReportes\RVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RVenta.Designer.cs">
+      <DependentUpon>RVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="WINReportes\RVentasCliente.cs">
       <SubType>Form</SubType>
@@ -335,6 +347,10 @@
     <EmbeddedResource Include="WINReportes\RDetalleVenta.resx">
       <DependentUpon>RDetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\ReporteCristal\DetalleVenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DetalleVenta.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\ReporteCristal\Producto.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Producto.cs</LastGenOutput>
@@ -356,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\RReporteVenta.resx">
       <DependentUpon>RReporteVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\RVenta.resx">
+      <DependentUpon>RVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\RVentasCliente.resx">
       <DependentUpon>RVentasCliente.cs</DependentUpon>
