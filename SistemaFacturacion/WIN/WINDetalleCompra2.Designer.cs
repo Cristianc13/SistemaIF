@@ -376,6 +376,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(989, 43);
             this.panel3.TabIndex = 64;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // label10
             // 
@@ -667,6 +668,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.WINDetalleCompra2_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WINDetalleCompra2_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCompra2GridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
