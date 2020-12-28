@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BL;
 using ENT;
@@ -19,7 +20,7 @@ namespace WIN
 
         private void WINMarca_Load(object sender, EventArgs e)
         {
-            HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
             LlenarDataGrid();
             FormatoGrid();
         }
@@ -59,17 +60,6 @@ namespace WIN
                 btneditar.BackColor = Color.FromArgb(21, 30, 41);
                 btneditar.IconColor = Color.White;
             }
-            btneliminar.Enabled = p1;
-            if (btneditar.Enabled == false)
-            {
-                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
-                btneliminar.IconColor = Color.Black;
-            }
-            else
-            {
-                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
-                btneliminar.IconColor = Color.White;
-            }
         }
 
         //Formato a la grid
@@ -77,10 +67,7 @@ namespace WIN
         {
             MarcadataGridView.Columns[0].Visible = false;
             MarcadataGridView.Columns[1].HeaderText = "Marca";
-            MarcadataGridView.AllowUserToResizeColumns = false;
-            MarcadataGridView.AllowUserToResizeRows = false;
-            MarcadataGridView.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            MarcadataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            Recursos.DatagridviewDiseño.DiseñoDGV(ref MarcadataGridView);
         }
 
         //Limpiar Cajas
@@ -94,7 +81,7 @@ namespace WIN
         private void MarcadataGridView_DoubleClick(object sender, EventArgs e)
         {
             if (MarcadataGridView.Rows.Count == 0) return;
-            HabilitarBotones(false, true);
+            HabilitarBotones(true, false);
             id = (int)MarcadataGridView.CurrentRow.Cells[0].Value;
             //MessageBox.Show(vIDEquipo.ToString());
             MarcatextBox.Text = MarcadataGridView.CurrentRow.Cells[1].Value.ToString();
@@ -147,6 +134,28 @@ namespace WIN
 
             BLMarca.InsertMarca(EMarca);
             LlenarDataGrid();
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnclose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
