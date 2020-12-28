@@ -61,6 +61,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btneliminar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProovedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -205,6 +206,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.btneliminar);
             this.panel1.Controls.Add(this.txttelefonoProv);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.txtruc);
@@ -266,9 +268,9 @@
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 30;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btncancelar.Location = new System.Drawing.Point(295, 144);
+            this.btncancelar.Location = new System.Drawing.Point(324, 149);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(109, 35);
+            this.btncancelar.Size = new System.Drawing.Size(107, 35);
             this.btncancelar.TabIndex = 51;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -286,6 +288,7 @@
             this.panel3.Size = new System.Drawing.Size(735, 37);
             this.panel3.TabIndex = 36;
             this.panel3.Tag = "Proveedor";
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // label7
             // 
@@ -327,9 +330,9 @@
             this.btnagregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnagregar.IconSize = 30;
             this.btnagregar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnagregar.Location = new System.Drawing.Point(160, 144);
+            this.btnagregar.Location = new System.Drawing.Point(123, 149);
             this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(96, 35);
+            this.btnagregar.Size = new System.Drawing.Size(85, 35);
             this.btnagregar.TabIndex = 48;
             this.btnagregar.Text = "Editar";
             this.btnagregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -359,9 +362,9 @@
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 30;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnguardar.Location = new System.Drawing.Point(19, 144);
+            this.btnguardar.Location = new System.Drawing.Point(15, 149);
             this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(107, 35);
+            this.btnguardar.Size = new System.Drawing.Size(102, 35);
             this.btnguardar.TabIndex = 49;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -472,6 +475,27 @@
             this.panel2.Size = new System.Drawing.Size(735, 241);
             this.panel2.TabIndex = 14;
             // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btneliminar.IconColor = System.Drawing.Color.White;
+            this.btneliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btneliminar.IconSize = 30;
+            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btneliminar.Location = new System.Drawing.Point(214, 149);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(104, 35);
+            this.btneliminar.TabIndex = 63;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click_1);
+            // 
             // WINProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,7 +506,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WINProveedor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedor";
             this.Load += new System.EventHandler(this.WINProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProovedor)).EndInit();
@@ -533,5 +557,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private FontAwesome.Sharp.IconButton btneliminar;
     }
 }
