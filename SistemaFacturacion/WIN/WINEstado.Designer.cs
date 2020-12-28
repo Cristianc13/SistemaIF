@@ -38,6 +38,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.EstadodataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +46,7 @@
             // lblestado
             // 
             this.lblestado.AutoSize = true;
-            this.lblestado.Location = new System.Drawing.Point(27, 31);
+            this.lblestado.Location = new System.Drawing.Point(48, 68);
             this.lblestado.Name = "lblestado";
             this.lblestado.Size = new System.Drawing.Size(43, 13);
             this.lblestado.TabIndex = 0;
@@ -53,7 +54,7 @@
             // 
             // txtestados
             // 
-            this.txtestados.Location = new System.Drawing.Point(105, 30);
+            this.txtestados.Location = new System.Drawing.Point(126, 67);
             this.txtestados.Name = "txtestados";
             this.txtestados.Size = new System.Drawing.Size(123, 20);
             this.txtestados.TabIndex = 1;
@@ -63,17 +64,17 @@
             this.EstadodataGridView1.AllowUserToAddRows = false;
             this.EstadodataGridView1.AllowUserToDeleteRows = false;
             this.EstadodataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EstadodataGridView1.Location = new System.Drawing.Point(20, 84);
+            this.EstadodataGridView1.Location = new System.Drawing.Point(51, 161);
             this.EstadodataGridView1.Name = "EstadodataGridView1";
             this.EstadodataGridView1.ReadOnly = true;
             this.EstadodataGridView1.RowHeadersVisible = false;
-            this.EstadodataGridView1.Size = new System.Drawing.Size(671, 224);
+            this.EstadodataGridView1.Size = new System.Drawing.Size(311, 122);
             this.EstadodataGridView1.TabIndex = 2;
             this.EstadodataGridView1.DoubleClick += new System.EventHandler(this.EstadodataGridView1_DoubleClick);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(30, 355);
+            this.btnGuardar.Location = new System.Drawing.Point(30, 118);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 3;
@@ -83,7 +84,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(209, 355);
+            this.btnActualizar.Location = new System.Drawing.Point(115, 118);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 4;
@@ -93,7 +94,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(425, 355);
+            this.btnEliminar.Location = new System.Drawing.Point(201, 118);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 5;
@@ -103,7 +104,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(598, 355);
+            this.btnCancelar.Location = new System.Drawing.Point(287, 118);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 6;
@@ -115,11 +116,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(465, 32);
+            this.panel1.TabIndex = 7;
+            // 
             // WINEstado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 472);
+            this.ClientSize = new System.Drawing.Size(465, 412);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
@@ -127,6 +137,7 @@
             this.Controls.Add(this.EstadodataGridView1);
             this.Controls.Add(this.txtestados);
             this.Controls.Add(this.lblestado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WINEstado";
             this.Text = "WINEstado";
@@ -148,5 +159,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

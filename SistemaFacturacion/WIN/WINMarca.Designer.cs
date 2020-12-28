@@ -38,20 +38,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnclose = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
-            this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.btneditar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.MarcadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // MarcadataGridView
@@ -104,6 +102,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(465, 32);
             this.panel1.TabIndex = 7;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // label2
             // 
@@ -128,13 +127,12 @@
             this.btnclose.Size = new System.Drawing.Size(32, 32);
             this.btnclose.TabIndex = 45;
             this.btnclose.TabStop = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click_1);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.btncancelar);
-            this.panel2.Controls.Add(this.btneliminar);
             this.panel2.Controls.Add(this.btneditar);
             this.panel2.Controls.Add(this.btnguardar);
             this.panel2.Controls.Add(this.label1);
@@ -145,13 +143,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(465, 136);
             this.panel2.TabIndex = 8;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(107, 208);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 42);
-            this.panel3.TabIndex = 9;
             // 
             // btncancelar
             // 
@@ -164,7 +155,7 @@
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 30;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btncancelar.Location = new System.Drawing.Point(345, 79);
+            this.btncancelar.Location = new System.Drawing.Point(233, 79);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(109, 35);
             this.btncancelar.TabIndex = 49;
@@ -172,27 +163,6 @@
             this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btncancelar.UseVisualStyleBackColor = false;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btneliminar.IconColor = System.Drawing.Color.White;
-            this.btneliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btneliminar.IconSize = 30;
-            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btneliminar.Location = new System.Drawing.Point(234, 79);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(104, 35);
-            this.btneliminar.TabIndex = 48;
-            this.btneliminar.Text = "Eliminar";
-            this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btneliminar.UseVisualStyleBackColor = false;
-            this.btneliminar.Visible = false;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btneditar
             // 
@@ -212,7 +182,6 @@
             this.btneditar.Text = "Editar";
             this.btneditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btneditar.UseVisualStyleBackColor = false;
-            this.btneditar.Visible = false;
             this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnguardar
@@ -235,15 +204,6 @@
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.MarcadataGridView);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 168);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(465, 165);
-            this.panel4.TabIndex = 9;
-            // 
             // pictureBox10
             // 
             this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -257,6 +217,15 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 50;
             this.pictureBox10.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.MarcadataGridView);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 168);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(465, 165);
+            this.panel4.TabIndex = 9;
             // 
             // WINMarca
             // 
@@ -278,8 +247,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -293,10 +262,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btncancelar;
-        private FontAwesome.Sharp.IconButton btneliminar;
         private FontAwesome.Sharp.IconButton btneditar;
         private FontAwesome.Sharp.IconButton btnguardar;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconPictureBox btnclose;

@@ -57,17 +57,6 @@ namespace WIN
                 btneditar.BackColor = Color.FromArgb(21, 30, 41);
                 btneditar.IconColor = Color.White;
             }
-            btneliminar.Enabled = p1;
-            if (btneditar.Enabled == false)
-            {
-                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
-                btneliminar.IconColor = Color.Black;
-            }
-            else
-            {
-                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
-                btneliminar.IconColor = Color.White;
-            }
         }
 
         public void Limpiar()
@@ -85,7 +74,7 @@ namespace WIN
         private void ModelodataGridView_DoubleClick(object sender, EventArgs e)
         {
             if (ModelodataGridView.Rows.Count == 0) return;
-            HabilitarBotones(false, true);
+            HabilitarBotones(true, false);
             id = (int)ModelodataGridView.CurrentRow.Cells[0].Value;
             //MessageBox.Show(vIDEquipo.ToString());
             ModelotextBox.Text = ModelodataGridView.CurrentRow.Cells[1].Value.ToString();
@@ -96,6 +85,7 @@ namespace WIN
         {
             LlenarGrid();
             FormatoGrid();
+            btneditar.Visible = true;
         }
 
         private void btneditar_Click(object sender, EventArgs e)

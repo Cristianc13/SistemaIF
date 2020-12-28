@@ -53,17 +53,6 @@ namespace WIN
                 btneditar.BackColor = Color.FromArgb(21, 30, 41);
                 btneditar.IconColor = Color.White;
             }
-            btneliminar.Enabled = p1;
-            if (btneditar.Enabled == false)
-            {
-                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
-                btneliminar.IconColor = Color.Black;
-            }
-            else
-            {
-                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
-                btneliminar.IconColor = Color.White;
-            }
         }
 
         public void LlenarGrid()
@@ -109,7 +98,6 @@ namespace WIN
             LlenarGrid();
             FormatoGrid();
             btneditar.Visible = true;
-            btneliminar.Visible = true;
         }
 
         private void btncancelar_Click(object sender, EventArgs e)

@@ -86,7 +86,6 @@ namespace WIN
             DescripciontextBox.Visible = true;
             ObservacionestextBox.Visible = true;
             BuscartextBox.Visible = true;
-            btneliminar.Visible = true;
             btneditar.Visible = true;
         }
 
@@ -171,17 +170,6 @@ namespace WIN
             {
                 btneditar.BackColor = Color.FromArgb(21, 30, 41);
                 btneditar.IconColor = Color.White;
-            }
-            btneliminar.Enabled = p1;
-            if (btneditar.Enabled == false)
-            {
-                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
-                btneliminar.IconColor = Color.Black;
-            }
-            else
-            {
-                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
-                btneliminar.IconColor = Color.White;
             }
         }
 
@@ -432,14 +420,18 @@ namespace WIN
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            DialogResult rpt = MessageBox.Show("Desea eliminar el registro", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-            if (rpt == DialogResult.No) return;
-            EProducto.idProducto = IdProducto;
-            BProducto.EliminarProduto(EProducto);
-            HabilitarBotones(false, true);
-            Limpiar();
-            LlenarGrid();
-            Tarjetas();
+            //    DialogResult rpt = MessageBox.Show("Desea eliminar el registro", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            //    if (rpt == DialogResult.No) return;
+            //    EProducto.idProducto = IdProducto;
+            //    BProducto.EliminarProduto(EProducto);
+            //    HabilitarBotones(false, true);
+            //    Limpiar();
+            //    LlenarGrid();
+            //    Tarjetas();
+            //    if (ex.Message.Contains("FK_detalleCompra_producto"))
+            //    {
+            //    MessageBox.Show("Este Producto Esta sujeto a Transacciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
         }
 
         private void btncancelar_Click(object sender, EventArgs e)

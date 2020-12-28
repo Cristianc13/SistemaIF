@@ -44,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.btneditar = new FontAwesome.Sharp.IconButton();
-            this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -234,27 +233,6 @@
             this.btneditar.Visible = false;
             this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btneliminar.IconColor = System.Drawing.Color.White;
-            this.btneliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btneliminar.IconSize = 30;
-            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btneliminar.Location = new System.Drawing.Point(236, 171);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(104, 35);
-            this.btneliminar.TabIndex = 40;
-            this.btneliminar.Text = "Eliminar";
-            this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btneliminar.UseVisualStyleBackColor = false;
-            this.btneliminar.Visible = false;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
             // btncancelar
             // 
             this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
@@ -266,7 +244,7 @@
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 30;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btncancelar.Location = new System.Drawing.Point(347, 171);
+            this.btncancelar.Location = new System.Drawing.Point(235, 171);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(109, 35);
             this.btncancelar.TabIndex = 41;
@@ -279,7 +257,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btncancelar);
-            this.panel2.Controls.Add(this.btneliminar);
             this.panel2.Controls.Add(this.btneditar);
             this.panel2.Controls.Add(this.btnguardar);
             this.panel2.Controls.Add(this.label1);
@@ -361,7 +338,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btncancelar;
-        private FontAwesome.Sharp.IconButton btneliminar;
         private FontAwesome.Sharp.IconButton btneditar;
         private FontAwesome.Sharp.IconButton btnguardar;
         private System.Windows.Forms.Label label1;
