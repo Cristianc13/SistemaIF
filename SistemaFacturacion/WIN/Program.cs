@@ -14,7 +14,7 @@ namespace WIN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new WINReportes.RCompra());
+            Application.Run(new Form1());
         }
     }
 }
