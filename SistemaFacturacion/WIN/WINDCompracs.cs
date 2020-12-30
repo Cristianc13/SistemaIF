@@ -812,5 +812,11 @@ namespace WIN
         {
 
         }
+
+        private void btnexportar_Click(object sender, EventArgs e)
+        {
+            WINReportes.RCompra RCompra = new WINReportes.RCompra();
+            RCompra.ShowDialog();
+        }
     }
 }
