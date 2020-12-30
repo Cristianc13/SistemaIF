@@ -141,7 +141,7 @@ namespace WIN
             //txtIVAdetalleC.Text = "0";
             //txtnfactura.Text = string.Empty;
             //txtdescr.Text = string.Empty;
-            
+
             bmbproducto.Text = string.Empty;
             txtcantidad.Text = string.Empty;
             txtcosto.Text = string.Empty;
@@ -149,6 +149,7 @@ namespace WIN
             
             bmbproducto.SelectedIndex = -1;
             bmbproducto.Focus();
+            
         }
 
         private void limpiar2()
@@ -419,12 +420,18 @@ namespace WIN
 
             if (DetalleCompraGridView1.Rows.Count == 0) return;
             HabilitarBotones(true, false);
+            
+            if (iconButton4.Enabled == true)
+            {
+                iconButton4.BackColor = Color.FromArgb(21, 30, 41);
+                iconButton4.IconColor = Color.White;
+            }
+            else
+            {
+                iconButton4.BackColor = Color.FromArgb(177, 180, 183);
+                iconButton4.IconColor = Color.Black;
+            }
 
-            //cmbNFactura.Text = DetalleCompraGridView1.CurrentRow.Cells[0].Value.ToString();
-            bmbproducto.Text = DetalleCompraGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtcantidad.Text = DetalleCompraGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtcosto.Text = DetalleCompraGridView1.CurrentRow.Cells[5].Value.ToString();
-            HabilitarBotones(true, false);
         }
 
         private void txtcantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -540,17 +547,17 @@ namespace WIN
 
         private void DetalleCompraGridView1_Click(object sender, EventArgs e)
         {
-            if (DetalleCompraGridView1.CurrentRow == null) return;
-            try
-            {
-                HabilitarBotones(true, false);
-                fila = DetalleCompraGridView1.CurrentRow.Index;
-            }
-            catch (Exception)
-            {
+            //if (DetalleCompraGridView1.CurrentRow == null) return;
+            //try
+            //{
+            //    HabilitarBotones(true, false);
+            //    fila = DetalleCompraGridView1.CurrentRow.Index;
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -569,6 +576,8 @@ namespace WIN
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+            
+
             bloqueo = false;
             if (bloqueo == false)
             {
@@ -638,6 +647,12 @@ namespace WIN
             {
                 bloqueo = true;
             }
+
+            CmbProveedor.Enabled = false;
+            txtnfactura.Enabled = false;
+            txtdescr.Enabled = false;
+            
+
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
@@ -688,6 +703,7 @@ namespace WIN
             limpiar4();
             txtIVAdetalleC.Text = "0";
             dtfecha.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            txtIVAdetalleC.Enabled = true;
 
         }
 
@@ -696,6 +712,7 @@ namespace WIN
             Limpiar();
             dtfecha.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             HabilitarEliminar(false);
+            
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
@@ -705,18 +722,18 @@ namespace WIN
 
         private void DetalleCompraGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (DetalleCompraGridView1.CurrentRow == null) return;
-            try
-            {
-                HabilitarBotones(true, false);
-                fila = DetalleCompraGridView1.CurrentRow.Index;
-                txtIVA.Enabled = true;
-            }
-            catch (Exception)
-            {
+            //if (DetalleCompraGridView1.CurrentRow == null) return;
+            //try
+            //{
+            //    HabilitarBotones(true, false);
+            //    fila = DetalleCompraGridView1.CurrentRow.Index;
+            //    txtIVA.Enabled = true;
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
         }
 
         private void CmbProveedor_KeyPress(object sender, KeyPressEventArgs e)
@@ -789,6 +806,17 @@ namespace WIN
         {
             bmbproducto.Text = ReducirEspaciado(bmbproducto.Text);
             bmbproducto.SelectionStart = bmbproducto.Text.Length;
+        }
+
+        private void DetalleCompraGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnexportar_Click(object sender, EventArgs e)
+        {
+            WINReportes.RCompra RCompra = new WINReportes.RCompra();
+            RCompra.ShowDialog();
         }
     }
 }

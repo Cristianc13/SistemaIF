@@ -4,6 +4,7 @@ using BL;
 using ENT;
 using System.Runtime.InteropServices;
 using System.Drawing;
+using System.Data.SqlClient;
 
 namespace WIN
 {
@@ -411,18 +412,7 @@ namespace WIN
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            string ID = dataGridProovedor.CurrentRow.Cells[0].Value.ToString();
-            id = Convert.ToInt32(ID);
-            string valor = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
-            DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (rpt == DialogResult.No) return;
 
-            //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
-            EProveedor.idProveedor = id;
-            BProveedor.DeleteProveedor(EProveedor);
-            LlenarDataGrid();
-            Limpiar();
-            HabilitarBotones(true, false);
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
@@ -464,6 +454,46 @@ namespace WIN
         {
             txtruc.Text = ReducirEspaciado(txtruc.Text);
             txtruc.SelectionStart = txtruc.Text.Length;
+        }
+
+        private void btneliminar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string ID = dataGridProovedor.CurrentRow.Cells[0].Value.ToString();
+                id = Convert.ToInt32(ID);
+                string valor = dataGridProovedor.CurrentRow.Cells[1].Value.ToString();
+                DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (rpt == DialogResult.No) return;
+
+                //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
+                EProveedor.idProveedor = id;
+                BProveedor.DeleteProveedor(EProveedor);
+                LlenarDataGrid();
+                Limpiar();
+                HabilitarBotones(true, false);
+        }
+
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("FK_compra_proveedor"))
+                {
+                    MessageBox.Show("Este Proveedor Esta sujeto a Transacciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+}
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

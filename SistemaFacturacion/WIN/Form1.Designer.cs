@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.slidebar = new System.Windows.Forms.Panel();
+            this.btnReporteVentas = new FontAwesome.Sharp.IconButton();
             this.btnrespaldo = new FontAwesome.Sharp.IconButton();
             this.btconfig = new FontAwesome.Sharp.IconButton();
             this.btproveedor = new FontAwesome.Sharp.IconButton();
@@ -65,6 +66,7 @@
             // slidebar
             // 
             this.slidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.slidebar.Controls.Add(this.btnReporteVentas);
             this.slidebar.Controls.Add(this.btnrespaldo);
             this.slidebar.Controls.Add(this.btconfig);
             this.slidebar.Controls.Add(this.btproveedor);
@@ -79,6 +81,28 @@
             this.slidebar.Name = "slidebar";
             this.slidebar.Size = new System.Drawing.Size(250, 752);
             this.slidebar.TabIndex = 0;
+            // 
+            // btnReporteVentas
+            // 
+            this.btnReporteVentas.FlatAppearance.BorderSize = 0;
+            this.btnReporteVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteVentas.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteVentas.ForeColor = System.Drawing.Color.White;
+            this.btnReporteVentas.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.btnReporteVentas.IconColor = System.Drawing.Color.White;
+            this.btnReporteVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReporteVentas.IconSize = 38;
+            this.btnReporteVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteVentas.Location = new System.Drawing.Point(-1, 547);
+            this.btnReporteVentas.Name = "btnReporteVentas";
+            this.btnReporteVentas.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnReporteVentas.Size = new System.Drawing.Size(250, 46);
+            this.btnReporteVentas.TabIndex = 21;
+            this.btnReporteVentas.Text = "Reporte Ventas";
+            this.btnReporteVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporteVentas.UseVisualStyleBackColor = true;
+            this.btnReporteVentas.Click += new System.EventHandler(this.btnReporteVentas_Click);
             // 
             // btnrespaldo
             // 
@@ -314,11 +338,11 @@
             // 
             this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.header.Controls.Add(this.btnmaximizar);
+            this.header.Controls.Add(this.btnrestaurar);
             this.header.Controls.Add(this.icohome);
             this.header.Controls.Add(this.minimizar);
             this.header.Controls.Add(this.lbltitulo);
             this.header.Controls.Add(this.salir);
-            this.header.Controls.Add(this.btnrestaurar);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(250, 0);
             this.header.Name = "header";
@@ -454,6 +478,7 @@
         private FontAwesome.Sharp.IconButton btnrespaldo;
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox btnrestaurar;
+        private FontAwesome.Sharp.IconButton btnReporteVentas;
     }
 }
 

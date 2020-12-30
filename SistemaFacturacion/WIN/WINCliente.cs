@@ -5,6 +5,7 @@ using ENT;
 using BL;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace WIN
 {
@@ -22,6 +23,11 @@ namespace WIN
         public WINCliente()
         {
             InitializeComponent();
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MinimumSize = this.Size;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private const int EM_SETCUEBANNER = 0x1501;
@@ -106,6 +112,18 @@ namespace WIN
             {
                 btnguardar.BackColor = Color.FromArgb(177, 180, 183);
                 btnguardar.IconColor = Color.Black;
+            }
+
+            btneliminar.Enabled = p2;
+            if (btneliminar.Enabled == true)
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
             }
 
             btnagregar.Enabled = p2;
@@ -196,18 +214,7 @@ namespace WIN
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            string ID = ClienteDataGridView.CurrentRow.Cells[0].Value.ToString();
-            string valor = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
-            DialogResult rpt = MessageBox.Show("Eliminar Cliente: " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (rpt == DialogResult.No) return;
 
-            //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
-            id = Convert.ToInt32(ID);
-            ECliente.idCLiente = id;
-            cliente.DeleteCliente(ECliente);
-            LlenarDataGrid();
-            Limpiar();
-            HabilitarBotones(true, false);
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -334,6 +341,42 @@ namespace WIN
             ApellidoTextBox.SelectionStart = ApellidoTextBox.Text.Length;
         }
 
+        private void btneliminar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string ID = ClienteDataGridView.CurrentRow.Cells[0].Value.ToString();
+                id = Convert.ToInt32(ID);
+                string Cliente = ClienteDataGridView.CurrentRow.Cells[1].Value.ToString();
+                string Apellido = ClienteDataGridView.CurrentRow.Cells[2].Value.ToString();
 
+                DialogResult rpt = MessageBox.Show("Desea eliminar el Cliente: " + Cliente + " " + Apellido, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+                if (rpt == DialogResult.No) return;
+                ECliente.idCLiente = id;
+                BCliente.DeleteCliente(ECliente);
+                HabilitarBotones(false, true);
+                Limpiar();
+                LlenarDataGrid();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("FK_venta_cliente"))
+                {
+                    MessageBox.Show("Este ClienteEsta sujeto a Transacciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ENT;
 using BL;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace WIN
 {
@@ -215,18 +216,28 @@ namespace WIN
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            string ID = ProveedorGridView.CurrentRow.Cells[0].Value.ToString();
-            id = Convert.ToInt32(ID);
-            string valor = ProveedorGridView.CurrentRow.Cells[1].Value.ToString();
-            DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (rpt == DialogResult.No) return;
+            try
+            {
+                string ID = ProveedorGridView.CurrentRow.Cells[0].Value.ToString();
+                id = Convert.ToInt32(ID);
+                string valor = ProveedorGridView.CurrentRow.Cells[1].Value.ToString();
+                DialogResult rpt = MessageBox.Show("Eliminar Nombre " + valor, "Ubicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (rpt == DialogResult.No) return;
 
-            //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
-            EProveedor.idProveedor = id;
-            BProveedor.DeleteProveedor(EProveedor);
-            LlenarDataGrid();
-            Limpiar();
-            HabilitarBotones(true, false);
+                //VERIFICAR SI NO HAY INFORMACIÓN EN EL Ubicacion A BORRAR ************************
+                EProveedor.idProveedor = id;
+                BProveedor.DeleteProveedor(EProveedor);
+                LlenarDataGrid();
+                Limpiar();
+                HabilitarBotones(true, false);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("FK_compra_proveedor"))
+                {
+                    MessageBox.Show("Este Proveedor Esta sujeto a Transacciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
