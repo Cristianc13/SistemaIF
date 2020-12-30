@@ -312,7 +312,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WINAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Administrador";
             this.Load += new System.EventHandler(this.WINAdministrador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

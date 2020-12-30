@@ -36,14 +36,14 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartopproductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartproductosCat = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -80,8 +80,8 @@
             this.lbproduc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.chartventasmes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartcompras = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartventasmes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartopproductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartproductosCat)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -102,8 +102,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartventasmes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartcompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartventasmes)).BeginInit();
             this.SuspendLayout();
             // 
             // chartopproductos
@@ -652,39 +652,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1100, 592);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
-            // chartventasmes
-            // 
-            chartArea4.AxisX.IsLabelAutoFit = false;
-            chartArea4.AxisX.LabelStyle.Angle = -30;
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisY.LabelStyle.Format = "{C$}";
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.Name = "ChartArea1";
-            this.chartventasmes.ChartAreas.Add(chartArea4);
-            this.chartventasmes.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chartventasmes.Legends.Add(legend4);
-            this.chartventasmes.Location = new System.Drawing.Point(553, 328);
-            this.chartventasmes.Name = "chartventasmes";
-            this.chartventasmes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            series4.BorderWidth = 3;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.Transparent;
-            series4.IsValueShownAsLabel = true;
-            series4.Legend = "Legend1";
-            series4.MarkerBorderColor = System.Drawing.Color.White;
-            series4.Name = "Series1";
-            series4.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
-            this.chartventasmes.Series.Add(series4);
-            this.chartventasmes.Size = new System.Drawing.Size(544, 261);
-            this.chartventasmes.TabIndex = 2;
-            this.chartventasmes.Text = "chart1";
-            title4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.Name = "Title1";
-            title4.Text = "Total ventas por mes";
-            this.chartventasmes.Titles.Add(title4);
-            // 
             // chartcompras
             // 
             chartArea3.AxisX.IsLabelAutoFit = false;
@@ -718,6 +685,39 @@
             title3.Text = "Total compras por mes";
             this.chartcompras.Titles.Add(title3);
             // 
+            // chartventasmes
+            // 
+            chartArea4.AxisX.IsLabelAutoFit = false;
+            chartArea4.AxisX.LabelStyle.Angle = -30;
+            chartArea4.AxisX.MajorGrid.Enabled = false;
+            chartArea4.AxisY.LabelStyle.Format = "{C$}";
+            chartArea4.AxisY.MajorGrid.Enabled = false;
+            chartArea4.Name = "ChartArea1";
+            this.chartventasmes.ChartAreas.Add(chartArea4);
+            this.chartventasmes.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.Name = "Legend1";
+            this.chartventasmes.Legends.Add(legend4);
+            this.chartventasmes.Location = new System.Drawing.Point(553, 328);
+            this.chartventasmes.Name = "chartventasmes";
+            this.chartventasmes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            series4.BorderWidth = 3;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Color = System.Drawing.Color.Transparent;
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.MarkerBorderColor = System.Drawing.Color.White;
+            series4.Name = "Series1";
+            series4.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+            this.chartventasmes.Series.Add(series4);
+            this.chartventasmes.Size = new System.Drawing.Size(544, 261);
+            this.chartventasmes.TabIndex = 2;
+            this.chartventasmes.Text = "chart1";
+            title4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.Name = "Title1";
+            title4.Text = "Total ventas por mes";
+            this.chartventasmes.Titles.Add(title4);
+            // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,6 +728,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Prueba";
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Prueba_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartopproductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartproductosCat)).EndInit();
@@ -757,8 +758,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartventasmes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartcompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartventasmes)).EndInit();
             this.ResumeLayout(false);
 
         }

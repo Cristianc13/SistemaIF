@@ -63,7 +63,7 @@ namespace WIN.WINReportes
 
         private void salir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnrestaurar_Click(object sender, EventArgs e)
