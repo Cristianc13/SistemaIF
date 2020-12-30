@@ -90,7 +90,7 @@ namespace WIN
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
             Limpiar();
         }
 

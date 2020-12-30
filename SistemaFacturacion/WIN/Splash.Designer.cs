@@ -71,7 +71,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Splash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Splash";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

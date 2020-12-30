@@ -263,7 +263,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(214, 68);
+            this.panel8.Size = new System.Drawing.Size(234, 68);
             this.panel8.TabIndex = 1;
             // 
             // pictureBox1
@@ -283,7 +283,7 @@
             this.CantidadProduLabel.BackColor = System.Drawing.Color.Transparent;
             this.CantidadProduLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CantidadProduLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(67)))));
-            this.CantidadProduLabel.Location = new System.Drawing.Point(175, 20);
+            this.CantidadProduLabel.Location = new System.Drawing.Point(174, 20);
             this.CantidadProduLabel.Name = "CantidadProduLabel";
             this.CantidadProduLabel.Size = new System.Drawing.Size(29, 31);
             this.CantidadProduLabel.TabIndex = 2;
@@ -295,7 +295,7 @@
             this.TotalProductoslabel.AutoSize = true;
             this.TotalProductoslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalProductoslabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(67)))));
-            this.TotalProductoslabel.Location = new System.Drawing.Point(57, 21);
+            this.TotalProductoslabel.Location = new System.Drawing.Point(56, 21);
             this.TotalProductoslabel.Name = "TotalProductoslabel";
             this.TotalProductoslabel.Size = new System.Drawing.Size(134, 29);
             this.TotalProductoslabel.TabIndex = 1;
@@ -309,9 +309,9 @@
             this.panel9.Controls.Add(this.label13);
             this.panel9.Controls.Add(this.pictureBox2);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(223, 3);
+            this.panel9.Location = new System.Drawing.Point(243, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(214, 68);
+            this.panel9.Size = new System.Drawing.Size(209, 68);
             this.panel9.TabIndex = 2;
             // 
             // lbcantcate
@@ -357,9 +357,9 @@
             this.panel10.Controls.Add(this.label14);
             this.panel10.Controls.Add(this.pictureBox3);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(443, 3);
+            this.panel10.Location = new System.Drawing.Point(458, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(214, 68);
+            this.panel10.Size = new System.Drawing.Size(198, 68);
             this.panel10.TabIndex = 2;
             // 
             // lbcantmarca
@@ -405,7 +405,7 @@
             this.panel11.Controls.Add(this.label16);
             this.panel11.Controls.Add(this.pictureBox4);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(663, 3);
+            this.panel11.Location = new System.Drawing.Point(662, 3);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(214, 68);
             this.panel11.TabIndex = 2;
@@ -453,9 +453,9 @@
             this.panel13.Controls.Add(this.label15);
             this.panel13.Controls.Add(this.pictureBox5);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(883, 3);
+            this.panel13.Location = new System.Drawing.Point(882, 3);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(214, 68);
+            this.panel13.Size = new System.Drawing.Size(215, 68);
             this.panel13.TabIndex = 2;
             // 
             // lbcantestado
@@ -923,9 +923,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.81818F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.54545F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.54545F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.panel8, 0, 0);
