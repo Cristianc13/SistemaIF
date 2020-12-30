@@ -206,5 +206,11 @@ namespace WIN
             btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
         }
+
+        private void btnReporteVentas_Click(object sender, EventArgs e)
+        {
+            WINReportes.RVenta RVenta = new WINReportes.RVenta();
+            RVenta.ShowDialog();
+        }
     }
 }

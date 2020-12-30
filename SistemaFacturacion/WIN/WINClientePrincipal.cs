@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -79,6 +80,18 @@ namespace WIN
             {
                 btnguardar.BackColor = Color.FromArgb(177, 180, 183);
                 btnguardar.IconColor = Color.Black;
+            }
+
+            btneliminar.Enabled = p2;
+            if (btneliminar.Enabled == true)
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
             }
 
             btnEditar.Enabled = p2;
@@ -304,6 +317,32 @@ namespace WIN
         {
             TextBoxApellido.Text = ReducirEspaciado(TextBoxApellido.Text);
             TextBoxApellido.SelectionStart = TextBoxApellido.Text.Length;
+        }
+
+        private void btneliminar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string ID = ClientedataGridView.CurrentRow.Cells[0].Value.ToString();
+                id = Convert.ToInt32(ID);
+                string Cliente = ClientedataGridView.CurrentRow.Cells[1].Value.ToString();
+                string Apellido = ClientedataGridView.CurrentRow.Cells[2].Value.ToString();
+
+                DialogResult rpt = MessageBox.Show("Desea eliminar el Cliente: " + Cliente + " " + Apellido, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+                if (rpt == DialogResult.No) return;
+                ECliente.idCLiente = id;
+                BCliente.DeleteCliente(ECliente);
+                HabilitarBotones(false, true);
+                Limpiar();
+                LlenarDataGrid();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("FK_venta_cliente"))
+                {
+                    MessageBox.Show("Este ClienteEsta sujeto a Transacciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

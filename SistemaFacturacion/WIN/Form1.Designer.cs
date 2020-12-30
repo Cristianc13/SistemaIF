@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.slidebar = new System.Windows.Forms.Panel();
+            this.btnReporteVentas = new FontAwesome.Sharp.IconButton();
             this.btnrespaldo = new FontAwesome.Sharp.IconButton();
             this.btconfig = new FontAwesome.Sharp.IconButton();
             this.btproveedor = new FontAwesome.Sharp.IconButton();
@@ -44,27 +45,28 @@
             this.btproducto = new FontAwesome.Sharp.IconButton();
             this.wrapper = new System.Windows.Forms.Panel();
             this.header = new System.Windows.Forms.Panel();
+            this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.icohome = new FontAwesome.Sharp.IconPictureBox();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.lbltitulo = new System.Windows.Forms.Label();
             this.salir = new System.Windows.Forms.PictureBox();
-            this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.slidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictreinicio)).BeginInit();
             this.header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icohome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             this.SuspendLayout();
             // 
             // slidebar
             // 
             this.slidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.slidebar.Controls.Add(this.btnReporteVentas);
             this.slidebar.Controls.Add(this.btnrespaldo);
             this.slidebar.Controls.Add(this.btconfig);
             this.slidebar.Controls.Add(this.btproveedor);
@@ -79,6 +81,28 @@
             this.slidebar.Name = "slidebar";
             this.slidebar.Size = new System.Drawing.Size(250, 752);
             this.slidebar.TabIndex = 0;
+            // 
+            // btnReporteVentas
+            // 
+            this.btnReporteVentas.FlatAppearance.BorderSize = 0;
+            this.btnReporteVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteVentas.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteVentas.ForeColor = System.Drawing.Color.White;
+            this.btnReporteVentas.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.btnReporteVentas.IconColor = System.Drawing.Color.White;
+            this.btnReporteVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReporteVentas.IconSize = 38;
+            this.btnReporteVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteVentas.Location = new System.Drawing.Point(-1, 547);
+            this.btnReporteVentas.Name = "btnReporteVentas";
+            this.btnReporteVentas.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnReporteVentas.Size = new System.Drawing.Size(250, 46);
+            this.btnReporteVentas.TabIndex = 21;
+            this.btnReporteVentas.Text = "Reporte Ventas";
+            this.btnReporteVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporteVentas.UseVisualStyleBackColor = true;
+            this.btnReporteVentas.Click += new System.EventHandler(this.btnReporteVentas_Click);
             // 
             // btnrespaldo
             // 
@@ -314,17 +338,29 @@
             // 
             this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.header.Controls.Add(this.btnmaximizar);
+            this.header.Controls.Add(this.btnrestaurar);
             this.header.Controls.Add(this.icohome);
             this.header.Controls.Add(this.minimizar);
             this.header.Controls.Add(this.lbltitulo);
             this.header.Controls.Add(this.salir);
-            this.header.Controls.Add(this.btnrestaurar);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(250, 0);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1100, 60);
             this.header.TabIndex = 1;
             this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.header_MouseDown);
+            // 
+            // btnmaximizar
+            // 
+            this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximizar.Image")));
+            this.btnmaximizar.Location = new System.Drawing.Point(1028, 1);
+            this.btnmaximizar.Name = "btnmaximizar";
+            this.btnmaximizar.Size = new System.Drawing.Size(35, 35);
+            this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnmaximizar.TabIndex = 4;
+            this.btnmaximizar.TabStop = false;
+            this.btnmaximizar.Click += new System.EventHandler(this.btnmaximizar_Click);
             // 
             // icohome
             // 
@@ -375,18 +411,6 @@
             this.salir.TabStop = false;
             this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
-            // btnmaximizar
-            // 
-            this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximizar.Image")));
-            this.btnmaximizar.Location = new System.Drawing.Point(1028, 1);
-            this.btnmaximizar.Name = "btnmaximizar";
-            this.btnmaximizar.Size = new System.Drawing.Size(35, 35);
-            this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnmaximizar.TabIndex = 4;
-            this.btnmaximizar.TabStop = false;
-            this.btnmaximizar.Click += new System.EventHandler(this.btnmaximizar_Click);
-            // 
             // btnrestaurar
             // 
             this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -421,10 +445,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictreinicio)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.icohome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             this.ResumeLayout(false);
 
@@ -453,6 +477,7 @@
         private FontAwesome.Sharp.IconButton btnrespaldo;
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox btnrestaurar;
+        private FontAwesome.Sharp.IconButton btnReporteVentas;
     }
 }
 

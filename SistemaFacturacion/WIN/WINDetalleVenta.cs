@@ -381,6 +381,7 @@ namespace WIN
         private void btncancelar_Click(object sender, EventArgs e)
         {
             HabilitarEliminar(false);
+            Guardar(true);
             Limpiar();
         }
 
@@ -396,12 +397,6 @@ namespace WIN
             WINProVent pv = new WINProVent();
             AddOwnedForm(pv);
             pv.ShowDialog();
-        }
-
-        private void DVentadataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            HabilitarBotones(true, true);
-            fila = DVentadataGridView.CurrentRow.Index;
         }
 
         private void Cero()
@@ -450,6 +445,28 @@ namespace WIN
         {
             ProductocomboBox.Text = ReducirEspaciado(ProductocomboBox.Text);
             ProductocomboBox.SelectionStart = ProductocomboBox.Text.Length;
+        }
+
+        private void Guardar(bool p1)
+        {
+            btnagregar.Enabled = p1;
+            if (btnagregar.Enabled == true)
+            {
+                btnagregar.BackColor = Color.FromArgb(21, 30, 41);
+                btnagregar.IconColor = Color.White;
+            }
+            else
+            {
+                btnagregar.BackColor = Color.FromArgb(177, 180, 183);
+                btnagregar.IconColor = Color.Black;
+            }
+        }
+
+        private void DVentadataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HabilitarBotones(true, true);
+            Guardar(false);
+            fila = DVentadataGridView.CurrentRow.Index;
         }
     }
 }

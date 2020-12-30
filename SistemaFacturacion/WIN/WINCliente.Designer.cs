@@ -54,6 +54,7 @@
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.btnagregar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
+            this.btneliminar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -105,13 +106,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClienteDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ClienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClienteDataGridView.Location = new System.Drawing.Point(3, 166);
+            this.ClienteDataGridView.Location = new System.Drawing.Point(0, 166);
             this.ClienteDataGridView.Name = "ClienteDataGridView";
             this.ClienteDataGridView.ReadOnly = true;
             this.ClienteDataGridView.RowHeadersVisible = false;
             this.ClienteDataGridView.RowHeadersWidth = 51;
             this.ClienteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ClienteDataGridView.Size = new System.Drawing.Size(615, 183);
+            this.ClienteDataGridView.Size = new System.Drawing.Size(622, 188);
             this.ClienteDataGridView.TabIndex = 6;
             this.ClienteDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClienteDataGridView_CellClick);
             this.ClienteDataGridView.DoubleClick += new System.EventHandler(this.ClienteDataGridView_DoubleClick);
@@ -174,6 +175,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(622, 32);
             this.panel1.TabIndex = 11;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // btnclose
             // 
@@ -234,7 +236,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 55);
+            this.label5.Location = new System.Drawing.Point(15, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 37;
@@ -245,7 +247,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 98);
+            this.label6.Location = new System.Drawing.Point(15, 94);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 38;
@@ -270,7 +272,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(319, 57);
+            this.label7.Location = new System.Drawing.Point(322, 53);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 20);
             this.label7.TabIndex = 40;
@@ -281,7 +283,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(319, 98);
+            this.label1.Location = new System.Drawing.Point(334, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 41;
@@ -323,7 +325,7 @@
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 30;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btncancelar.Location = new System.Drawing.Point(433, 126);
+            this.btncancelar.Location = new System.Drawing.Point(493, 126);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(109, 35);
             this.btncancelar.TabIndex = 47;
@@ -344,7 +346,7 @@
             this.btnagregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnagregar.IconSize = 30;
             this.btnagregar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnagregar.Location = new System.Drawing.Point(261, 127);
+            this.btnagregar.Location = new System.Drawing.Point(185, 125);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(104, 35);
             this.btnagregar.TabIndex = 44;
@@ -365,7 +367,7 @@
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 30;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnguardar.Location = new System.Drawing.Point(93, 127);
+            this.btnguardar.Location = new System.Drawing.Point(31, 125);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(104, 35);
             this.btnguardar.TabIndex = 45;
@@ -374,12 +376,34 @@
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btneliminar.IconColor = System.Drawing.Color.White;
+            this.btneliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btneliminar.IconSize = 30;
+            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btneliminar.Location = new System.Drawing.Point(335, 126);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(104, 35);
+            this.btneliminar.TabIndex = 48;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click_1);
+            // 
             // WINCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 352);
+            this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.btnguardar);
@@ -401,7 +425,8 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(622, 350);
             this.Name = "WINCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -446,5 +471,6 @@
         private FontAwesome.Sharp.IconButton btncancelar;
         private FontAwesome.Sharp.IconButton btnagregar;
         private FontAwesome.Sharp.IconButton btnguardar;
+        private FontAwesome.Sharp.IconButton btneliminar;
     }
 }
