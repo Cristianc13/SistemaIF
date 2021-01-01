@@ -583,6 +583,16 @@ namespace WIN
             }
             errorProvider1.Clear();
 
+            decimal a = Convert.ToDecimal(PrecioSalidatextBox.Text);
+            decimal b = Convert.ToDecimal(CostotextBox.Text);
+            if (a <= b)
+            {
+                errorProvider1.SetError(CostotextBox, "El precio de salida debe ser mayor al costo");
+                PrecioSalidatextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
             if (PrecioSalidatextBox.Text == Convert.ToString(0))
             {
                 errorProvider1.SetError(PrecioSalidatextBox, "Debe ingresar un Numero de Precio salida mayor a 0");

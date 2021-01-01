@@ -674,7 +674,7 @@
             this.PrecioSalidatextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PrecioSalidatextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrecioSalidatextBox.Location = new System.Drawing.Point(8, 64);
-            this.PrecioSalidatextBox.MaxLength = 5;
+            this.PrecioSalidatextBox.MaxLength = 10;
             this.PrecioSalidatextBox.Name = "PrecioSalidatextBox";
             this.PrecioSalidatextBox.Size = new System.Drawing.Size(193, 20);
             this.PrecioSalidatextBox.TabIndex = 5;
@@ -688,6 +688,7 @@
             this.CostotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CostotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CostotextBox.Location = new System.Drawing.Point(8, 20);
+            this.CostotextBox.MaxLength = 10;
             this.CostotextBox.Name = "CostotextBox";
             this.CostotextBox.Size = new System.Drawing.Size(193, 20);
             this.CostotextBox.TabIndex = 4;
@@ -702,7 +703,7 @@
             this.StocktextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.StocktextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StocktextBox.Location = new System.Drawing.Point(101, 151);
-            this.StocktextBox.MaxLength = 5;
+            this.StocktextBox.MaxLength = 10;
             this.StocktextBox.Name = "StocktextBox";
             this.StocktextBox.Size = new System.Drawing.Size(184, 20);
             this.StocktextBox.TabIndex = 3;
