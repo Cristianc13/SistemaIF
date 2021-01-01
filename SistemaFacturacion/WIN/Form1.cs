@@ -212,5 +212,12 @@ namespace WIN
             WINReportes.RVenta RVenta = new WINReportes.RVenta();
             RVenta.ShowDialog();
         }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            //Boton de Reporte Compras
+            WINReportes.RCompra Rc = new WINReportes.RCompra();
+            Rc.ShowDialog();
+        }
     }
 }
