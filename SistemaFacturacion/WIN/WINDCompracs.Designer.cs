@@ -557,7 +557,7 @@
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 30;
-            this.iconPictureBox1.Location = new System.Drawing.Point(429, 35);
+            this.iconPictureBox1.Location = new System.Drawing.Point(502, 35);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(30, 30);
             this.iconPictureBox1.TabIndex = 42;
@@ -588,7 +588,7 @@
             this.bmbproducto.IntegralHeight = false;
             this.bmbproducto.Location = new System.Drawing.Point(118, 35);
             this.bmbproducto.Name = "bmbproducto";
-            this.bmbproducto.Size = new System.Drawing.Size(302, 28);
+            this.bmbproducto.Size = new System.Drawing.Size(378, 28);
             this.bmbproducto.TabIndex = 36;
             this.bmbproducto.SelectedIndexChanged += new System.EventHandler(this.bmbproducto_SelectedIndexChanged);
             this.bmbproducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmbproducto_KeyPress);
