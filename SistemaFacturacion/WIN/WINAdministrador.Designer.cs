@@ -48,6 +48,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.configuracion = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnojo)).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.configuracion)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -98,12 +100,13 @@
             // 
             this.ClavetextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ClavetextBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClavetextBox.Location = new System.Drawing.Point(416, 235);
+            this.ClavetextBox.Location = new System.Drawing.Point(410, 235);
             this.ClavetextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClavetextBox.Name = "ClavetextBox";
             this.ClavetextBox.PasswordChar = '*';
-            this.ClavetextBox.Size = new System.Drawing.Size(139, 22);
+            this.ClavetextBox.Size = new System.Drawing.Size(148, 22);
             this.ClavetextBox.TabIndex = 9;
+            this.ClavetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClavetextBox_KeyPress);
             // 
             // errorProvider1
             // 
@@ -233,12 +236,12 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(241, 8);
+            this.label1.Location = new System.Drawing.Point(241, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.Size = new System.Drawing.Size(122, 24);
             this.label1.TabIndex = 45;
             this.label1.Text = "Iniciar Sesion";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
@@ -283,12 +286,27 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(50, 92);
+            this.pictureBox3.Location = new System.Drawing.Point(39, 92);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(199, 199);
+            this.pictureBox3.Size = new System.Drawing.Size(224, 199);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
+            // 
+            // configuracion
+            // 
+            this.configuracion.BackColor = System.Drawing.Color.White;
+            this.configuracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.configuracion.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.configuracion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.configuracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.configuracion.IconSize = 45;
+            this.configuracion.Location = new System.Drawing.Point(561, 438);
+            this.configuracion.Name = "configuracion";
+            this.configuracion.Size = new System.Drawing.Size(45, 45);
+            this.configuracion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.configuracion.TabIndex = 53;
+            this.configuracion.TabStop = false;
             // 
             // WINAdministrador
             // 
@@ -296,6 +314,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(606, 483);
+            this.Controls.Add(this.configuracion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnojo);
             this.Controls.Add(this.iconPictureBox1);
@@ -326,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.configuracion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +370,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox configuracion;
     }
 }
