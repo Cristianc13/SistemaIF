@@ -100,14 +100,14 @@ namespace WIN
             {
                 decimal importe = decimal.Parse(dr.Cells[6].Value.ToString());
                 subtotal += importe;
-                iva2 = iva2 / 100;
-
-                iva2 = subtotal * iva2;
-
-                txtIVA.Text = iva2.ToString();
-                total = subtotal + iva2;
+               
             }
+            iva2 = iva2 / 100;
 
+            iva2 = subtotal * iva2;
+
+            txtIVA.Text = iva2.ToString();
+            total = subtotal + iva2;
             txtsubtotal.Text = subtotal.ToString();
             txtTotal.Text = total.ToString();
         }
@@ -671,7 +671,7 @@ namespace WIN
                 FormatoGrid();
                 CalcularTotal();
                 limpiar3();
-                txtIVA.Text = Convert.ToString(0);
+                //txtIVA.Text = Convert.ToString(0);
                 HabilitarBotones(false, true);
                 txtIVAdetalleC.Enabled = true;
             }
@@ -704,6 +704,9 @@ namespace WIN
             txtIVAdetalleC.Text = "0";
             dtfecha.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             txtIVAdetalleC.Enabled = true;
+            CmbProveedor.Enabled = true;
+            txtnfactura.Enabled = true;
+            txtdescr.Enabled = true;
 
         }
 
