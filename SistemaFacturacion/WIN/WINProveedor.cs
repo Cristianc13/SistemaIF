@@ -350,7 +350,7 @@ namespace WIN
 
             WINDCompracs dc = Owner as WINDCompracs;
             dc.CmbProveedor.DataSource = BProveedor.MostrarProveedorCombo();
-            dc.CmbProveedor.DisplayMember = "nombreProv";
+            dc.CmbProveedor.DisplayMember = "proveedor";
             dc.CmbProveedor.ValueMember = "idProveedor";
             dc.CmbProveedor.SelectedIndex = -1;
 
