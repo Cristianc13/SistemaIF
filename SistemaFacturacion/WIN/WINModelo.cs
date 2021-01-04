@@ -96,7 +96,7 @@ namespace WIN
             BModelo.UpdateModelo(EMod);
             LlenarGrid();
             Limpiar();
-            HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
