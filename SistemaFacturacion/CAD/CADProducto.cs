@@ -66,6 +66,19 @@ namespace CAD
             return i;
         }
 
+        public string ObtenerCantidad(int idProducto)
+        {
+            decimal a;
+            string i;
+            SqlCommand cmd = new SqlCommand("ObtenerCantidadProducto", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+            a = (decimal)cmd.ExecuteScalar();
+            i = Convert.ToString(a);
+            CerrarConexion();
+            return i;
+        }
+
         public string ObtenerCosto(int idProducto)
         {
             decimal a;

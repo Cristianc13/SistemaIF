@@ -43,6 +43,9 @@ namespace WIN
         public ENTProveedor EProveedor = new ENTProveedor();
         private BLProveedor BProveedor = new BLProveedor();
 
+        private ENTKardex kardex = new ENTKardex();
+        private BLKardex BKardex = new BLKardex();
+
         private const Keys CopyKeys = Keys.Control | Keys.C;
         private const Keys PasteKeys = Keys.Control | Keys.V;
         private const Keys CutKeys = Keys.Control | Keys.X;
@@ -729,7 +732,19 @@ namespace WIN
 
             foreach (ENTDetalleCompra miDetalle in EDetalleC)
             {
-                Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
+                
+                 Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
+
+               
+                kardex.fecha = DateTime.Now;
+                kardex.concepto = "Compra";
+                kardex.entrada = miDetalle.cantidadProducto;
+                kardex.salida = 0;
+                kardex.existencia = Eproducto.stockProducto;//Momento
+                kardex.costeunitario = Eproducto.costo;
+                kardex.FK_idProducto = miDetalle.FK_idProducto;
+                BKardex.InsertKardex(kardex);
+
             }
             //Ecompra.idCompra = idCompra;
             //Ecompra.realizada = false;
@@ -746,6 +761,8 @@ namespace WIN
             CmbProveedor.Enabled = true;
             txtnfactura.Enabled = true;
             txtdescr.Enabled = true;
+
+            
 
         }
 
