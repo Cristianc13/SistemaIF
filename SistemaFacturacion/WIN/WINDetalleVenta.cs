@@ -328,9 +328,25 @@ namespace WIN
                 CalcularTotal();
                 Limpiar();
                 HabilitarBotones(true, false);
+                habilitarAgregar(true);
                 Eliminar();
             }
         }
+        private void habilitarAgregar(bool p1)
+        {
+            btnagregar.Enabled = p1;
+            if (btnagregar.Enabled == true)
+            {
+                btnagregar.BackColor = Color.FromArgb(21, 30, 41);
+                btnagregar.IconColor = Color.White;
+            }
+            else
+            {
+                btnagregar.BackColor = Color.FromArgb(177, 180, 183);
+                btnagregar.IconColor = Color.Black;
+            }
+        }
+            
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -412,16 +428,15 @@ namespace WIN
             DialogResult rpt = MessageBox.Show("¿Cancelar Venta?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (rpt == DialogResult.Yes)
             {
-
                 ClientecomboBox.Enabled = true;
                 Limpiar();
                 TelefonotextBox.Text = "";
                 ClientecomboBox.SelectedIndex = -1;
                 DescuentotextBox.Text = "";
                 DescuentotextBox.Text = "0";
-
+                EDventa.Clear();
+                DVentadataGridView.DataSource = null;
             }
-
             if (rpt == DialogResult.No) return;
         }
 

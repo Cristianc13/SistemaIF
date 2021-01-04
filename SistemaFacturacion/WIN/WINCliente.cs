@@ -209,7 +209,8 @@ namespace WIN
             cliente.UpdateCliente(ECliente);
             LlenarDataGrid();
             Limpiar();
-            //HabilitarBotones(true, false);        
+            HabilitarBotones(true, false);
+
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -354,15 +355,22 @@ namespace WIN
                 if (rpt == DialogResult.No) return;
                 ECliente.idCLiente = id;
                 BCliente.DeleteCliente(ECliente);
-                HabilitarBotones(false, true);
+                HabilitarBotones(true, false);
                 Limpiar();
                 LlenarDataGrid();
+                NombreTextBox.Text = "";
+                ApellidoTextBox.Text = "";
+                TelefonoTextBox.Text = "";
             }
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("FK_venta_cliente"))
                 {
                     MessageBox.Show("Este ClienteEsta sujeto a Transacciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    HabilitarBotones(true, false);
+                    NombreTextBox.Text = "";
+                    ApellidoTextBox.Text = "";
+                    TelefonoTextBox.Text = "";
                 }
             }
         }
