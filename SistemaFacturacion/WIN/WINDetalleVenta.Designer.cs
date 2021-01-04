@@ -94,10 +94,10 @@
             this.TelefonotextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TelefonotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TelefonotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonotextBox.Location = new System.Drawing.Point(119, 24);
+            this.TelefonotextBox.Location = new System.Drawing.Point(152, 24);
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.ReadOnly = true;
-            this.TelefonotextBox.Size = new System.Drawing.Size(387, 20);
+            this.TelefonotextBox.Size = new System.Drawing.Size(354, 20);
             this.TelefonotextBox.TabIndex = 15;
             this.TelefonotextBox.TextChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
             // 
@@ -106,7 +106,7 @@
             this.Telefono.AutoSize = true;
             this.Telefono.BackColor = System.Drawing.Color.White;
             this.Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telefono.Location = new System.Drawing.Point(32, 29);
+            this.Telefono.Location = new System.Drawing.Point(62, 29);
             this.Telefono.Name = "Telefono";
             this.Telefono.Size = new System.Drawing.Size(75, 20);
             this.Telefono.TabIndex = 14;
@@ -143,10 +143,10 @@
             this.PreciotextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PreciotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PreciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreciotextBox.Location = new System.Drawing.Point(115, 87);
+            this.PreciotextBox.Location = new System.Drawing.Point(152, 87);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.ReadOnly = true;
-            this.PreciotextBox.Size = new System.Drawing.Size(401, 20);
+            this.PreciotextBox.Size = new System.Drawing.Size(364, 20);
             this.PreciotextBox.TabIndex = 6;
             // 
             // CantidadtextBox
@@ -178,7 +178,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 90);
+            this.label3.Location = new System.Drawing.Point(80, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 3;
@@ -219,7 +219,7 @@
             this.ProductocomboBox.IntegralHeight = false;
             this.ProductocomboBox.Location = new System.Drawing.Point(110, 87);
             this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(366, 28);
+            this.ProductocomboBox.Size = new System.Drawing.Size(420, 28);
             this.ProductocomboBox.TabIndex = 0;
             this.ProductocomboBox.SelectedIndexChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
             this.ProductocomboBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProductocomboBox_KeyUp);
@@ -261,7 +261,6 @@
             // 
             // btnCliente
             // 
-            this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCliente.BackColor = System.Drawing.Color.White;
             this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
@@ -270,7 +269,7 @@
             this.btnCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCliente.IconSize = 30;
-            this.btnCliente.Location = new System.Drawing.Point(491, 28);
+            this.btnCliente.Location = new System.Drawing.Point(0, 29);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(30, 30);
             this.btnCliente.TabIndex = 40;
@@ -279,7 +278,6 @@
             // 
             // btnProducto
             // 
-            this.btnProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProducto.BackColor = System.Drawing.Color.White;
             this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
@@ -288,7 +286,7 @@
             this.btnProducto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProducto.IconSize = 30;
-            this.btnProducto.Location = new System.Drawing.Point(491, 89);
+            this.btnProducto.Location = new System.Drawing.Point(0, 87);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(30, 30);
             this.btnProducto.TabIndex = 41;
@@ -300,7 +298,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 138);
+            this.label5.Location = new System.Drawing.Point(46, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 20);
             this.label5.TabIndex = 20;
@@ -312,9 +310,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DescuentotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescuentotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescuentotextBox.Location = new System.Drawing.Point(115, 134);
+            this.DescuentotextBox.Location = new System.Drawing.Point(152, 134);
             this.DescuentotextBox.Name = "DescuentotextBox";
-            this.DescuentotextBox.Size = new System.Drawing.Size(401, 20);
+            this.DescuentotextBox.Size = new System.Drawing.Size(364, 20);
             this.DescuentotextBox.TabIndex = 19;
             this.DescuentotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescuentotextBox_KeyPress);
             // 
@@ -331,7 +329,7 @@
             this.ClientecomboBox.IntegralHeight = false;
             this.ClientecomboBox.Location = new System.Drawing.Point(110, 26);
             this.ClientecomboBox.Name = "ClientecomboBox";
-            this.ClientecomboBox.Size = new System.Drawing.Size(366, 28);
+            this.ClientecomboBox.Size = new System.Drawing.Size(420, 28);
             this.ClientecomboBox.TabIndex = 18;
             this.ClientecomboBox.SelectedIndexChanged += new System.EventHandler(this.ClientecomboBox_SelectedIndexChanged);
             this.ClientecomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClientecomboBox_KeyPress);
@@ -368,8 +366,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnProducto);
-            this.panel4.Controls.Add(this.btnCliente);
             this.panel4.Controls.Add(this.ClientecomboBox);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.Cliente);
@@ -421,6 +417,8 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnCliente);
+            this.panel5.Controls.Add(this.btnProducto);
             this.panel5.Controls.Add(this.DescuentotextBox);
             this.panel5.Controls.Add(this.PreciotextBox);
             this.panel5.Controls.Add(this.label3);
@@ -443,9 +441,9 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(109, 125);
+            this.pictureBox1.Location = new System.Drawing.Point(143, 125);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(413, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(379, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
@@ -458,9 +456,9 @@
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(109, 80);
+            this.pictureBox2.Location = new System.Drawing.Point(143, 80);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(413, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(379, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
@@ -472,9 +470,9 @@
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(110, 15);
+            this.pictureBox3.Location = new System.Drawing.Point(143, 15);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(413, 39);
+            this.pictureBox3.Size = new System.Drawing.Size(380, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;

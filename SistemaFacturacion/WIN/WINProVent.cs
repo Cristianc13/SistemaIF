@@ -16,7 +16,9 @@ namespace WIN
         private string marca;
         private string modelo;
         private string estado;
+        string descripcion;
         private string stock;
+        string producto;
 
         public WINProVent()
         {
@@ -89,7 +91,9 @@ namespace WIN
             if (ProductodataGridView.CurrentRow == null) return;
 
             codigo = ProductodataGridView.CurrentRow.Cells[1].Value.ToString(); /*1 3 4 9*/
+            producto = ProductodataGridView.CurrentRow.Cells[2].Value.ToString();
             marca = ProductodataGridView.CurrentRow.Cells[3].Value.ToString();
+            descripcion = ProductodataGridView.CurrentRow.Cells[8].Value.ToString();
             modelo = ProductodataGridView.CurrentRow.Cells[4].Value.ToString();
             estado = ProductodataGridView.CurrentRow.Cells[9].Value.ToString();
 
@@ -103,7 +107,7 @@ namespace WIN
             else
             {
                 WINDetalleVenta dx = Owner as WINDetalleVenta;
-                dx.ProductocomboBox.Text = codigo + " " + marca +" "+ modelo +" - "+ estado;
+                dx.ProductocomboBox.Text = codigo + " " + producto +" "+ marca +" "+ descripcion +" "+ modelo +" - "+ estado;
                 this.Close();
             }
         }
