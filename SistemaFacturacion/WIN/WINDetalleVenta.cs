@@ -436,6 +436,7 @@ namespace WIN
                 DescuentotextBox.Text = "0";
                 EDventa.Clear();
                 DVentadataGridView.DataSource = null;
+                HabilitarBotones(false, false);
             }
             if (rpt == DialogResult.No) return;
         }
