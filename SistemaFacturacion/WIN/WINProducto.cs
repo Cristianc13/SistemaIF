@@ -43,7 +43,7 @@ namespace WIN
             Limpiar();
             Tarjetas();
             IniciarTextbox();
-            SendMessage(BuscartextBox.Handle, EM_SETCUEBANNER, 0, "Codigo o Producto");
+            SendMessage(BuscartextBox.Handle, EM_SETCUEBANNER, 0, "Codigo, Producto o Descripción");
 
             ContextMenu _blankContextMenu = new ContextMenu();
             NombretextBox.ContextMenu = _blankContextMenu;
@@ -122,12 +122,12 @@ namespace WIN
             ProductodataGridView.Columns[0].Visible = false;
             ProductodataGridView.Columns[1].HeaderText = "Codigo";
             ProductodataGridView.Columns[2].HeaderText = "Producto";
-            ProductodataGridView.Columns[3].HeaderText = "Descripcion";
+            ProductodataGridView.Columns[3].HeaderText = "Descripción";
             ProductodataGridView.Columns[4].HeaderText = "Fecha";
             ProductodataGridView.Columns[5].HeaderText = "Costo";
             ProductodataGridView.Columns[6].HeaderText = "Precio Salida";
             ProductodataGridView.Columns[7].HeaderText = "Stock";
-            ProductodataGridView.Columns[8].HeaderText = "Observacion";
+            ProductodataGridView.Columns[8].HeaderText = "Observación";
             ProductodataGridView.Columns[9].HeaderText = "Marca";
             ProductodataGridView.Columns[10].HeaderText = "Modelo";
             ProductodataGridView.Columns[11].HeaderText = "Categoria";
