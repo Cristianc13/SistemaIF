@@ -86,6 +86,7 @@ namespace WIN
             LlenarGrid();
             FormatoGrid();
             btneditar.Visible = true;
+            HabilitarBotones(false, true);
         }
 
         private void btneditar_Click(object sender, EventArgs e)

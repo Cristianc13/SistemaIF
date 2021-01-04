@@ -75,5 +75,27 @@ namespace WIN
                 MessageBox.Show("Usuario o Contraseña Incorrectos");
             }
         }
+
+        private void ClavetextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                e.Handled = true;
+                EAdmin.usuario = UsuariotextBox.Text;
+
+                EAdmin.clave = ClavetextBox.Text;
+                int resultado = BAdmin.Login(EAdmin);
+                if (resultado == 1)
+                {
+                    Form1 fr = new Form1();
+                    fr.Show();
+                    this.Hide();
+                }
+                else if (resultado == 0)
+                {
+                    MessageBox.Show("Usuario o Contraseña Incorrectos");
+                }
+            }
+        }
     }
 }

@@ -164,7 +164,7 @@
             // 
             this.CodigotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CodigotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            this.CodigotextBox.Location = new System.Drawing.Point(144, 65);
+            this.CodigotextBox.Location = new System.Drawing.Point(148, 65);
             this.CodigotextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CodigotextBox.Name = "CodigotextBox";
             this.CodigotextBox.Size = new System.Drawing.Size(249, 20);

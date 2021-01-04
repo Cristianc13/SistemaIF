@@ -455,6 +455,7 @@ namespace WIN
             WCat.ShowDialog();
             LlenarCategoria();
             Tarjetas();
+            LlenarGrid();
         }
 
         private void btnmodelo_Click(object sender, EventArgs e)
@@ -463,6 +464,7 @@ namespace WIN
             WMod.ShowDialog();
             LlenarModelo();
             Tarjetas();
+            LlenarGrid();
         }
 
         private void btnmarca_Click(object sender, EventArgs e)
@@ -471,6 +473,7 @@ namespace WIN
             WMar.ShowDialog();
             LlenarMarca();
             Tarjetas();
+            LlenarGrid();
         }
 
         private void btnestado_Click(object sender, EventArgs e)
@@ -479,6 +482,7 @@ namespace WIN
             we.ShowDialog();
             LlenarModelo();
             Tarjetas();
+            LlenarGrid();
         }
 
         private void LlenarEstado()
