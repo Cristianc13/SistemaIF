@@ -200,7 +200,12 @@ namespace WIN
 
         private void HabilitarBotones(bool p1, bool p2)
         {
-            iconButton4.Enabled = p1;
+            //iconbuton2 = btnagregar
+            //iconbutton4 = btneliminar
+            //iconbutton3 = btnguardar
+            //iconbuton1 = btncancelar
+
+            iconButton4.Enabled = p2;
             if (iconButton4.Enabled == true)
             {
                 iconButton4.BackColor = Color.FromArgb(21, 30, 41);
@@ -212,29 +217,29 @@ namespace WIN
                 iconButton4.IconColor = Color.Black;
             }
 
-            //iconButton3.Enabled = p1;
-            //if (iconButton3.Enabled == true)
-            //{
-            //    iconButton3.BackColor = Color.FromArgb(21, 30, 41);
-            //    iconButton3.IconColor = Color.White;
-            //}
-            //else
-            //{
-            //    iconButton3.BackColor = Color.FromArgb(177, 180, 183);
-            //    iconButton3.IconColor = Color.Black;
-            //}
-
-            iconButton2.Enabled = p2;
-            if (iconButton2.Enabled == true)
+            iconButton3.Enabled = p1;
+            if (iconButton3.Enabled == true)
             {
-                iconButton2.BackColor = Color.FromArgb(21, 30, 41);
-                iconButton2.IconColor = Color.White;
+                iconButton3.BackColor = Color.FromArgb(21, 30, 41);
+                iconButton3.IconColor = Color.White;
             }
             else
             {
-                iconButton2.BackColor = Color.FromArgb(177, 180, 183);
-                iconButton2.IconColor = Color.Black;
+                iconButton3.BackColor = Color.FromArgb(177, 180, 183);
+                iconButton3.IconColor = Color.Black;
             }
+
+            //iconButton2.Enabled = p1;
+            //if (iconButton2.Enabled == true)
+            //{
+            //    iconButton2.BackColor = Color.FromArgb(21, 30, 41);
+            //    iconButton2.IconColor = Color.White;
+            //}
+            //else
+            //{
+            //    iconButton2.BackColor = Color.FromArgb(177, 180, 183);
+            //    iconButton2.IconColor = Color.Black;
+            //}
 
 
 
@@ -259,7 +264,7 @@ namespace WIN
 
         private void WINDCompracs_Load(object sender, EventArgs e)
         {
-            HabilitarBotones(false, true);
+            HabilitarBotones(false, false);
 
             LlenaComboProducto();
             LlenaComboProveedor();
@@ -268,6 +273,7 @@ namespace WIN
             cajasdetextotrue();
             dtfecha.Value = DateTime.Now;
             txtIVAdetalleC.MaxLength = 2;
+            HabilitarEliminar(false);
 
             ContextMenu _blankContextMenu = new ContextMenu();
             CmbProveedor.ContextMenu = _blankContextMenu;
@@ -414,24 +420,41 @@ namespace WIN
             
         }
 
-        private void DetalleCompraGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void guardar(bool p1)
         {
-            fila = DetalleCompraGridView1.CurrentRow.Index;
-
-            if (DetalleCompraGridView1.Rows.Count == 0) return;
-            HabilitarBotones(true, false);
-            
-            if (iconButton4.Enabled == true)
+            iconButton2.Enabled = p1;
+            if (iconButton2.Enabled == true)
             {
-                iconButton4.BackColor = Color.FromArgb(21, 30, 41);
-                iconButton4.IconColor = Color.White;
+                iconButton2.BackColor = Color.FromArgb(21, 30, 41);
+                iconButton2.IconColor = Color.White;
             }
             else
             {
-                iconButton4.BackColor = Color.FromArgb(177, 180, 183);
-                iconButton4.IconColor = Color.Black;
+                iconButton2.BackColor = Color.FromArgb(177, 180, 183);
+                iconButton2.IconColor = Color.Black;
             }
+        }
 
+        private void DetalleCompraGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HabilitarBotones(true, true);
+            guardar(false);
+            fila = DetalleCompraGridView1.CurrentRow.Index;
+
+            if (DetalleCompraGridView1.Rows.Count == 0) return;
+            
+            
+            //if (iconButton4.Enabled == true)
+            //{
+            //    iconButton4.BackColor = Color.FromArgb(21, 30, 41);
+            //    iconButton4.IconColor = Color.White;
+            //}
+            //else
+            //{
+            //    iconButton4.BackColor = Color.FromArgb(177, 180, 183);
+            //    iconButton4.IconColor = Color.Black;
+            //}
+            
         }
 
         private void txtcantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -639,7 +662,7 @@ namespace WIN
                 DetalleCompraGridView1.DataSource = EDetalleC;
                 FormatoGrid();
                 CalcularTotal();
-                HabilitarBotones(false, true);
+                HabilitarBotones(true, true);
                 limpiar2();
                 txtIVAdetalleC.Enabled = false;
             }
@@ -651,6 +674,7 @@ namespace WIN
             CmbProveedor.Enabled = false;
             txtnfactura.Enabled = false;
             txtdescr.Enabled = false;
+            HabilitarEliminar(false);
             
 
         }
@@ -672,10 +696,25 @@ namespace WIN
                 CalcularTotal();
                 limpiar3();
                 //txtIVA.Text = Convert.ToString(0);
-                HabilitarBotones(false, true);
+                HabilitarBotones(true, true);
+                guardar(true);
+                //HabilitarEliminar(false);
                 txtIVAdetalleC.Enabled = true;
+                Eliminar();
             }
             
+        }
+
+       private void Eliminar()
+        {
+            if (DetalleCompraGridView1.Rows.Count == 0)
+            {
+                HabilitarBotones(false, false);
+            }
+            else
+            {
+                HabilitarBotones(true, false);
+            }
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

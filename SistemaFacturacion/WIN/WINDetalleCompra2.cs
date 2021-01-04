@@ -23,7 +23,7 @@ namespace WIN
         private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
         [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
-        public string codigo, marca, modelo, estado;
+        public string codigo, marca, modelo, estado, descripciom;
 
 
         private int IdCategoria, IdMarca, IdModelo, IdEstado, IdProducto;
@@ -522,13 +522,14 @@ namespace WIN
 
                 IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
             codigo = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
-            //nombrep = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
+            nombrep = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
+            descripciom = DetalleCompra2GridView1.CurrentRow.Cells[3].Value.ToString();
             marca = DetalleCompra2GridView1.CurrentRow.Cells[7].Value.ToString();
             modelo = DetalleCompra2GridView1.CurrentRow.Cells[8].Value.ToString();
             estado = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
 
             WINDCompracs dv = Owner as WINDCompracs;
-            dv.bmbproducto.Text = codigo + " " + marca + " " + modelo + " - " + estado;
+            dv.bmbproducto.Text = codigo + " " + nombrep + " " + marca + " " + descripciom + " " + modelo + " - " + estado;
             this.Close();
               
         }
