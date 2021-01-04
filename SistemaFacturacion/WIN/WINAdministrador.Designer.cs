@@ -48,6 +48,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.configuracion = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnojo)).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.configuracion)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -104,6 +106,7 @@
             this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(139, 22);
             this.ClavetextBox.TabIndex = 9;
+            this.ClavetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClavetextBox_KeyPress);
             // 
             // errorProvider1
             // 
@@ -290,12 +293,28 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
+            // configuracion
+            // 
+            this.configuracion.BackColor = System.Drawing.Color.White;
+            this.configuracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.configuracion, System.Windows.Forms.ErrorIconAlignment.BottomRight);
+            this.configuracion.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.configuracion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.configuracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.configuracion.IconSize = 34;
+            this.configuracion.Location = new System.Drawing.Point(571, 449);
+            this.configuracion.Name = "configuracion";
+            this.configuracion.Size = new System.Drawing.Size(35, 34);
+            this.configuracion.TabIndex = 53;
+            this.configuracion.TabStop = false;
+            // 
             // WINAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(606, 483);
+            this.Controls.Add(this.configuracion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnojo);
             this.Controls.Add(this.iconPictureBox1);
@@ -326,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.configuracion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +370,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox configuracion;
     }
 }
