@@ -369,9 +369,9 @@ namespace WIN
 
                 kardex.fecha = DateTime.Now;
                 kardex.concepto = "Inventario Inicial";
-                kardex.entrada = EProducto.stockProducto;
+                kardex.entrada = EProducto.stockProducto;       //Bien
                 kardex.salida = 0;
-                kardex.existencia = EProducto.stockProducto;//Momento
+                kardex.existencia = EProducto.stockProducto;    //Momento
                 kardex.costeunitario = EProducto.costo;
                 kardex.FK_idProducto = idP;
                 BKardex.InsertKardex(kardex);
