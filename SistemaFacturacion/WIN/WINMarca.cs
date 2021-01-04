@@ -116,7 +116,7 @@ namespace WIN
             BLMarca.UpdateMarca(EMarca);
             LlenarDataGrid();
             Limpiar();
-            HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
         }
 
         private void btnguardar_Click(object sender, EventArgs e)

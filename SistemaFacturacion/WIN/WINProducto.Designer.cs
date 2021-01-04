@@ -101,6 +101,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnexportar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncategoria)).BeginInit();
@@ -130,7 +131,7 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProductodataGridView
@@ -172,7 +173,7 @@
             this.ProductodataGridView.RowHeadersVisible = false;
             this.ProductodataGridView.RowHeadersWidth = 51;
             this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductodataGridView.Size = new System.Drawing.Size(1100, 355);
+            this.ProductodataGridView.Size = new System.Drawing.Size(1100, 334);
             this.ProductodataGridView.TabIndex = 0;
             this.ProductodataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellDoubleClick);
             this.ProductodataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ProductodataGridView_CellFormatting);
@@ -210,7 +211,7 @@
             this.btnmodelo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnmodelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnmodelo.IconSize = 30;
-            this.btnmodelo.Location = new System.Drawing.Point(212, 108);
+            this.btnmodelo.Location = new System.Drawing.Point(212, 156);
             this.btnmodelo.Name = "btnmodelo";
             this.btnmodelo.Size = new System.Drawing.Size(30, 30);
             this.btnmodelo.TabIndex = 39;
@@ -228,7 +229,7 @@
             this.btnmarca.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnmarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnmarca.IconSize = 30;
-            this.btnmarca.Location = new System.Drawing.Point(212, 149);
+            this.btnmarca.Location = new System.Drawing.Point(212, 107);
             this.btnmarca.Name = "btnmarca";
             this.btnmarca.Size = new System.Drawing.Size(30, 30);
             this.btnmarca.TabIndex = 40;
@@ -512,10 +513,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscartextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BuscartextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscartextBox.Location = new System.Drawing.Point(184, 219);
+            this.BuscartextBox.Location = new System.Drawing.Point(185, 220);
             this.BuscartextBox.MaxLength = 30;
             this.BuscartextBox.Name = "BuscartextBox";
-            this.BuscartextBox.Size = new System.Drawing.Size(143, 20);
+            this.BuscartextBox.Size = new System.Drawing.Size(150, 20);
             this.BuscartextBox.TabIndex = 27;
             this.BuscartextBox.Visible = false;
             this.BuscartextBox.TextChanged += new System.EventHandler(this.BuscartextBox_TextChanged);
@@ -636,7 +637,7 @@
             this.ModelocomboBox.BackColor = System.Drawing.Color.White;
             this.ModelocomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModelocomboBox.FormattingEnabled = true;
-            this.ModelocomboBox.Location = new System.Drawing.Point(3, 109);
+            this.ModelocomboBox.Location = new System.Drawing.Point(3, 157);
             this.ModelocomboBox.Name = "ModelocomboBox";
             this.ModelocomboBox.Size = new System.Drawing.Size(203, 28);
             this.ModelocomboBox.TabIndex = 6;
@@ -651,7 +652,7 @@
             this.MarcacomboBox.BackColor = System.Drawing.Color.White;
             this.MarcacomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MarcacomboBox.FormattingEnabled = true;
-            this.MarcacomboBox.Location = new System.Drawing.Point(3, 150);
+            this.MarcacomboBox.Location = new System.Drawing.Point(3, 108);
             this.MarcacomboBox.Name = "MarcacomboBox";
             this.MarcacomboBox.Size = new System.Drawing.Size(203, 28);
             this.MarcacomboBox.TabIndex = 7;
@@ -749,7 +750,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(67)))));
-            this.label8.Location = new System.Drawing.Point(390, 111);
+            this.label8.Location = new System.Drawing.Point(389, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 20);
             this.label8.TabIndex = 7;
@@ -761,7 +762,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(67)))));
-            this.label7.Location = new System.Drawing.Point(398, 151);
+            this.label7.Location = new System.Drawing.Point(397, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 20);
             this.label7.TabIndex = 6;
@@ -784,7 +785,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(67)))));
-            this.label4.Location = new System.Drawing.Point(350, 62);
+            this.label4.Location = new System.Drawing.Point(349, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 20);
             this.label4.TabIndex = 3;
@@ -796,7 +797,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(67)))));
-            this.label3.Location = new System.Drawing.Point(400, 20);
+            this.label3.Location = new System.Drawing.Point(399, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 2;
@@ -865,7 +866,7 @@
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(177, 212);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(155, 35);
+            this.pictureBox9.Size = new System.Drawing.Size(166, 35);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 34;
             this.pictureBox9.TabStop = false;
@@ -1123,12 +1124,23 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.ProductodataGridView);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 337);
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(0, 671);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1100, 355);
+            this.panel2.Size = new System.Drawing.Size(1100, 21);
             this.panel2.TabIndex = 41;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.ProductodataGridView);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 337);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1100, 334);
+            this.panel5.TabIndex = 42;
             // 
             // WINProducto
             // 
@@ -1136,6 +1148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 692);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -1182,7 +1195,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1243,7 +1256,6 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
@@ -1256,5 +1268,7 @@
         private FontAwesome.Sharp.IconPictureBox btnmarca;
         private FontAwesome.Sharp.IconPictureBox btnmodelo;
         private FontAwesome.Sharp.IconPictureBox btnestado;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel2;
     }
 }

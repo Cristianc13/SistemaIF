@@ -121,7 +121,7 @@ namespace WIN
             BLEstado.UpdateEstado(EEstado);
             LlenarDataGrid();
             Limpiar();
-            HabilitarBotones(true, false);
+            HabilitarBotones(false, true);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
