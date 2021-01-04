@@ -20,6 +20,11 @@ namespace WIN
         public WINProveedor()
         {
             InitializeComponent();
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MinimumSize = this.Size;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private const int EM_SETCUEBANNER = 0x1501;
@@ -58,12 +63,15 @@ namespace WIN
 
         private void WINProveedor_Load(object sender, EventArgs e)
         {
+           
+
             HabilitarBotones(true, false);
             LlenarDataGrid();
             FormatoGrid();
             Limpiar();
             SendMessage(textBox1.Handle, EM_SETCUEBANNER, 0, "Nombre o RUC");
             Botones();
+
 
             ContextMenu _blankContextMenu = new ContextMenu();
             txtnombreProv.ContextMenu = _blankContextMenu;
@@ -72,7 +80,6 @@ namespace WIN
             txtnumeroCompañia.ContextMenu = _blankContextMenu;
             txtruc.ContextMenu = _blankContextMenu;
             textBox1.ContextMenu = _blankContextMenu;
-
 
         }
 
@@ -155,17 +162,17 @@ namespace WIN
                 btnagregar.IconColor = Color.Black;
             }
 
-            //btneliminar.Enabled = p2;
-            //if (btneliminar.Enabled == true)
-            //{
-            //    btneliminar.BackColor = Color.FromArgb(21, 30, 41);
-            //    btneliminar.IconColor = Color.White;
-            //}
-            //else
-            //{
-            //    btneliminar.BackColor = Color.FromArgb(177, 180, 183);
-            //    btneliminar.IconColor = Color.Black;
-            //}
+            btneliminar.Enabled = p2;
+            if (btneliminar.Enabled == true)
+            {
+                btneliminar.BackColor = Color.FromArgb(21, 30, 41);
+                btneliminar.IconColor = Color.White;
+            }
+            else
+            {
+                btneliminar.BackColor = Color.FromArgb(177, 180, 183);
+                btneliminar.IconColor = Color.Black;
+            }
 
             btnguardar.Enabled = p1;
             if (btnguardar.Enabled == true)

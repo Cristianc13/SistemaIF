@@ -172,7 +172,11 @@ namespace WIN
 
         private void WINDetalleCompra2_Load(object sender, EventArgs e)
         {
-
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MinimumSize = this.Size;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             HabilitarBotones(true, false);
             LlenarEstado();
             LlenarGrid();
