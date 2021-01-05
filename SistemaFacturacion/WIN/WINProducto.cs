@@ -342,6 +342,17 @@ namespace WIN
                     e.CellStyle.BackColor = Color.FromArgb(255, 199, 206);
                 }
             }
+
+            int b = Convert.ToInt32(row.Cells["costo"].Value);
+
+            if (this.ProductodataGridView.Columns[e.ColumnIndex].Name == "precioSalida")
+            {
+                if (Convert.ToInt32(e.Value) <= b)
+                {
+                    e.CellStyle.ForeColor = Color.FromArgb(156, 0, 6);
+                    e.CellStyle.BackColor = Color.FromArgb(255, 238, 98);
+                }
+            }
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
