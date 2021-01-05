@@ -353,7 +353,8 @@ namespace WIN
             filtro = txtfiltrar.Text;
             EProducto.codigopro = filtro;
             //  ProductodataGridView.Columns.Clear();
-            DetalleCompra2GridView1.DataSource = BProducto.BuscarProducto(EProducto);
+            DetalleCompra2GridView1.DataSource = BProducto.BuscarProductoDetalee(EProducto);
+            
         }
 
         private void DetalleCompra2GridView1_Click(object sender, EventArgs e)
@@ -361,27 +362,104 @@ namespace WIN
 
         }
 
+        public bool Validar()
+        {
+            //Nombre
+
+            if (txtnombre.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtnombre, "Debe ingresar un Nombre");
+                txtnombre.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            //Categoria
+            if (cmbCategoria.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(cmbCategoria, "Debe seleccionar un Categoria");
+                cmbCategoria.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            //Codigo
+            if (txtcodigo.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtcodigo, "Debe ingresar un Codigo");
+                txtcodigo.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+
+            //Precio Salida
+            if (txtpreciosalida.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtpreciosalida, "Debe ingresar un Precio Salida");
+                txtpreciosalida.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            errorProvider1.Clear();
+
+
+            //Modelo
+            if (cmbModelo.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(cmbModelo, "Debe seleccionar un Modelo");
+                cmbModelo.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+            //Marca
+
+            if (cmbMarca.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(cmbMarca, "Debe seleccionar una Marca");
+                cmbMarca.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            //Estado
+            if (cmbEstado.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(cmbEstado, "Debe seleccionar un Estado");
+                cmbEstado.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            return true;
+        }
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            EProducto.nombreProducto = txtnombre.Text;
-            EProducto.codigopro = txtcodigo.Text;
-            EProducto.FK_idMarca = IdMarca;
-            EProducto.precioSalida = Convert.ToDecimal(txtpreciosalida.Text);
-            EProducto.costo = 0;
-            EProducto.stockProducto = 0;
-            EProducto.FK_idModelo = IdModelo;
-            EProducto.FK_idCategoria = IdCategoria;
-            EProducto.FK_idEstado = IdEstado;
-            EProducto.descripcion = txtdescripcion.Text;
-            EProducto.observacion = txtobservacion.Text;
-            BProducto.InsertarProducto(EProducto);
-            Limpiar();
-            LlenarGrid();
-            HabilitarBotones(false, true);
+            if (!Validar()) return;
+           
+                EProducto.nombreProducto = txtnombre.Text;
+                EProducto.codigopro = txtcodigo.Text;
+                EProducto.FK_idMarca = IdMarca;
+                EProducto.precioSalida = Convert.ToDecimal(txtpreciosalida.Text);
+                EProducto.costo = 0;
+                EProducto.stockProducto = 0;
+                EProducto.FK_idModelo = IdModelo;
+                EProducto.FK_idCategoria = IdCategoria;
+                EProducto.FK_idEstado = IdEstado;
+                EProducto.descripcion = txtdescripcion.Text;
+                EProducto.observacion = txtobservacion.Text;
+                BProducto.InsertarProducto(EProducto);
+                Limpiar();
+                LlenarGrid();
+                HabilitarBotones(false, true);
+           
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (!Validar()) return;
             string ID = DetalleCompra2GridView1.CurrentRow.Cells[0].Value.ToString();
             IdProducto = Convert.ToInt32(ID);
             EProducto.idProducto = IdProducto;

@@ -38,6 +38,11 @@ namespace BL
             return CProducto.ObtenerPrecio(idProducto);
         }
 
+        public string ObtenerCantidad(int idProducto)
+        {
+            return CProducto.ObtenerCantidad(idProducto);
+        }
+
         public string SelectProductocosto(int idProducto)
         {
             return CProducto.ObtenerCosto(idProducto);
@@ -62,6 +67,12 @@ namespace BL
         {
             return CProducto.BuscarProducto(EProducto);
         }
+
+        public DataTable BuscarProductoDetalee(ENTProducto EProducto)
+        {
+            return CProducto.BuscarProdCodPro(EProducto);
+        }
+
 
         public DataTable BusarProdMarcaModelo(ENTProducto EProducto)
         {

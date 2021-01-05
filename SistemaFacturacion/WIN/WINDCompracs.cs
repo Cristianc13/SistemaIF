@@ -735,12 +735,14 @@ namespace WIN
                 
                  Bldetallec.InsertDetalleCompra(idCompra, miDetalle);
 
-               
+                decimal entrada = miDetalle.cantidadProducto;
+                decimal existencia = Convert.ToDecimal(BProducto.ObtenerCantidad(miDetalle.FK_idProducto));
+                
                 kardex.fecha = DateTime.Now;
                 kardex.concepto = "Compra";
-                kardex.entrada = miDetalle.cantidadProducto;
+                kardex.entrada = entrada;
                 kardex.salida = 0;
-                kardex.existencia = Eproducto.stockProducto;//Momento
+                kardex.existencia = existencia;
                 kardex.costeunitario = Eproducto.costo;
                 kardex.FK_idProducto = miDetalle.FK_idProducto;
                 BKardex.InsertKardex(kardex);
