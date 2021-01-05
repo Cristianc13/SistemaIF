@@ -29,6 +29,8 @@ namespace WIN
         private BLProducto BProducto = new BLProducto();
         private BLDetalleVenta BLDetalle = new BLDetalleVenta();
         private BLCliente BCliente = new BLCliente();
+        private ENTKardex kardex = new ENTKardex();
+        private BLKardex BKardex = new BLKardex();
 
         private void WINDetalleVenta_Load(object sender, EventArgs e)
         {
@@ -365,6 +367,19 @@ namespace WIN
             foreach (ENTDetalleVenta miDetalle in EDventa)
             {
                 BLDetalle.InsertDetalleVenta(idventa, miDetalle);
+
+                //kardex.salida = miDetalle.cantidadProducto;
+                //kardex.existencia = Convert.ToDecimal(BProducto.ObtenerStock(miDetalle.Fk_idProducto));
+                //kardex.FK_idProducto = miDetalle.Fk_idProducto;
+                //BKardex.kardexVenta(kardex);
+
+                kardex.fecha = DateTime.Now;
+                kardex.concepto = "Venta";
+                kardex.entrada = 0;
+                kardex.salida = miDetalle.cantidadProducto; ;
+                kardex.existencia = Convert.ToDecimal(BProducto.ObtenerStock(miDetalle.Fk_idProducto));
+                kardex.FK_idProducto = miDetalle.Fk_idProducto;
+                BKardex.InsertKardex(kardex);
             }
 
             MessageBox.Show("Venta realizada con exito");

@@ -19,5 +19,16 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
+
+        //public void KardexVenta(ENTKardex kardex)
+        //{
+        //    SqlCommand cmd = new SqlCommand("KardexVenta", AbrirConexion());
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@salida", kardex.salida);
+        //    cmd.Parameters.AddWithValue("@Stock", kardex.existencia);
+        //    cmd.Parameters.AddWithValue("@idProducto", kardex.FK_idProducto);
+        //    cmd.ExecuteNonQuery();
+        //    CerrarConexion();
+        //}
     }
 }
