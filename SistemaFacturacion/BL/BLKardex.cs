@@ -11,5 +11,10 @@ namespace BL
         {
             CADkardex.InsertKardex(kardex);
         }
+
+        //public void kardexVenta(ENTKardex kardex)
+        //{
+        //    CADkardex.KardexVenta(kardex);
+        //}
     }
 }
