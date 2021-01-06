@@ -34,22 +34,18 @@
             this.btnclose = new FontAwesome.Sharp.IconPictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtfiltrar = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.buscar = new FontAwesome.Sharp.IconPictureBox();
             this.comboBoxProducto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridViewKardex = new System.Windows.Forms.DataGridView();
-            this.buscar = new FontAwesome.Sharp.IconPictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buscar)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKardex)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,44 +83,35 @@
             this.label2.Location = new System.Drawing.Point(11, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.Size = new System.Drawing.Size(194, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Kardex";
+            this.label2.Text = "Registro de transacciones";
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.buscar);
-            this.panel2.Controls.Add(this.txtfiltrar);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.comboBoxProducto);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1123, 126);
+            this.panel2.Size = new System.Drawing.Size(1123, 95);
             this.panel2.TabIndex = 1;
             // 
-            // txtfiltrar
+            // buscar
             // 
-            this.txtfiltrar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtfiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtfiltrar.Location = new System.Drawing.Point(101, 75);
-            this.txtfiltrar.Name = "txtfiltrar";
-            this.txtfiltrar.Size = new System.Drawing.Size(435, 19);
-            this.txtfiltrar.TabIndex = 49;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(35, 77);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Filtrar:";
+            this.buscar.BackColor = System.Drawing.Color.White;
+            this.buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.buscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.buscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buscar.Location = new System.Drawing.Point(554, 20);
+            this.buscar.Name = "buscar";
+            this.buscar.Size = new System.Drawing.Size(32, 32);
+            this.buscar.TabIndex = 51;
+            this.buscar.TabStop = false;
+            this.buscar.Click += new System.EventHandler(this.buscar_Click);
             // 
             // comboBoxProducto
             // 
@@ -150,27 +137,13 @@
             this.label1.TabIndex = 46;
             this.label1.Text = "Producto:";
             // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
-            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(93, 68);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(454, 35);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 50;
-            this.pictureBox10.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridViewKardex);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 164);
+            this.panel3.Location = new System.Drawing.Point(0, 133);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1123, 394);
+            this.panel3.Size = new System.Drawing.Size(1123, 425);
             this.panel3.TabIndex = 2;
             // 
             // dataGridViewKardex
@@ -185,22 +158,8 @@
             this.dataGridViewKardex.Name = "dataGridViewKardex";
             this.dataGridViewKardex.ReadOnly = true;
             this.dataGridViewKardex.RowHeadersVisible = false;
-            this.dataGridViewKardex.Size = new System.Drawing.Size(1123, 394);
+            this.dataGridViewKardex.Size = new System.Drawing.Size(1123, 425);
             this.dataGridViewKardex.TabIndex = 0;
-            // 
-            // buscar
-            // 
-            this.buscar.BackColor = System.Drawing.Color.White;
-            this.buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.buscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.buscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buscar.Location = new System.Drawing.Point(554, 20);
-            this.buscar.Name = "buscar";
-            this.buscar.Size = new System.Drawing.Size(32, 32);
-            this.buscar.TabIndex = 51;
-            this.buscar.TabStop = false;
-            this.buscar.Click += new System.EventHandler(this.buscar_Click);
             // 
             // errorProvider1
             // 
@@ -218,17 +177,19 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1139, 574);
+            this.MinimumSize = new System.Drawing.Size(1139, 574);
             this.Name = "WINKardex";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.WINKardex_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buscar)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKardex)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -242,11 +203,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridViewKardex;
-        private System.Windows.Forms.TextBox txtfiltrar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxProducto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private FontAwesome.Sharp.IconPictureBox buscar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }

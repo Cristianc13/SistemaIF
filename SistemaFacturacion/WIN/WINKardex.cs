@@ -25,16 +25,9 @@ namespace WIN
             InitializeComponent();
         }
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
-    [MarshalAs(UnmanagedType.LPWStr)] string lParam);
-
-        private const int EM_SETCUEBANNER = 0x1501;
-
         private void WINKardex_Load(object sender, EventArgs e)
         {
             LlenarProducto();
-            SendMessage(txtfiltrar.Handle, EM_SETCUEBANNER, 0, "Codigo, Producto o Descripción");
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -76,11 +69,31 @@ namespace WIN
             comboBoxProducto.SelectedIndex = -1;
         }
 
+        public bool Validar()
+        {
+            if (comboBoxProducto.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(comboBoxProducto, "Debe seleccionar un Producto");
+                comboBoxProducto.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            return true;
+        }
+
         private void buscar_Click(object sender, EventArgs e)
         {
-            Ek.FK_idProducto = idProducto;
-            dataGridViewKardex.DataSource = bkardex.BuscarProductoID(Ek);
-            FormatoGrid();
+            if (!Validar()) return;
+            try
+            {
+                Ek.FK_idProducto = idProducto;
+                dataGridViewKardex.DataSource = bkardex.BuscarProductoID(Ek);
+                FormatoGrid();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         public void FormatoGrid()
@@ -107,6 +120,12 @@ namespace WIN
 
             Recursos.DatagridviewDiseño.DiseñoDGV(ref dataGridViewKardex);
             dataGridViewKardex.Columns[0].Width = 150;
+        }
+
+        private void label2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
