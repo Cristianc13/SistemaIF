@@ -6,6 +6,8 @@ namespace CAD
 {
     public class CADKardex : CADConexion
     {
+        private DataTable tabla = new DataTable();
+
         public void InsertKardex(ENTKardex kardex)
         {
             SqlCommand cmd = new SqlCommand("InsertKardex", AbrirConexion());
@@ -20,15 +22,16 @@ namespace CAD
             CerrarConexion();
         }
 
-        //public void KardexVenta(ENTKardex kardex)
-        //{
-        //    SqlCommand cmd = new SqlCommand("KardexVenta", AbrirConexion());
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.Parameters.AddWithValue("@salida", kardex.salida);
-        //    cmd.Parameters.AddWithValue("@Stock", kardex.existencia);
-        //    cmd.Parameters.AddWithValue("@idProducto", kardex.FK_idProducto);
-        //    cmd.ExecuteNonQuery();
-        //    CerrarConexion();
-        //}
+        public DataTable BuscarProductoID(ENTKardex EKardex)
+        {
+            tabla.Clear();
+            SqlCommand cmd = new SqlCommand("SelectKardexId", AbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idProducto", EKardex.FK_idProducto);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            CerrarConexion();
+            return tabla;
+        }
     }
 }

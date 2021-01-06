@@ -511,6 +511,13 @@ namespace WIN
             ObservacionestextBox.SelectionStart = ObservacionestextBox.Text.Length;
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            //Kardex
+            WINKardex wk = new WINKardex();
+            wk.ShowDialog();
+        }
+
         //Evitar espacios en blanco
         public static string ReducirEspaciado(string Cadena)
         {
