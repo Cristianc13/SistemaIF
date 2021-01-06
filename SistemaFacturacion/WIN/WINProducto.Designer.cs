@@ -98,8 +98,9 @@
             this.btneditar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnexportar = new FontAwesome.Sharp.IconButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductodataGridView)).BeginInit();
@@ -1065,6 +1066,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.iconButton1);
             this.panel3.Controls.Add(this.btnmarca);
             this.panel3.Controls.Add(this.btnexportar);
             this.panel3.Controls.Add(this.btnmodelo);
@@ -1080,26 +1082,26 @@
             this.panel3.Size = new System.Drawing.Size(262, 257);
             this.panel3.TabIndex = 1;
             // 
-            // panel4
+            // iconButton1
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.btnestado);
-            this.panel4.Controls.Add(this.EstadocomboBox);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.DescripciontextBox);
-            this.panel4.Controls.Add(this.BuscartextBox);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.ObservacionestextBox);
-            this.panel4.Controls.Add(this.pictureBox13);
-            this.panel4.Controls.Add(this.pictureBox12);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.pictureBox9);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(733, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(364, 257);
-            this.panel4.TabIndex = 2;
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.iconButton1.Location = new System.Drawing.Point(19, 212);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(109, 35);
+            this.iconButton1.TabIndex = 41;
+            this.iconButton1.Text = "Kardex";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btnexportar
             // 
@@ -1121,6 +1123,27 @@
             this.btnexportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnexportar.UseVisualStyleBackColor = false;
             this.btnexportar.Click += new System.EventHandler(this.btnexportar_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.btnestado);
+            this.panel4.Controls.Add(this.EstadocomboBox);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.DescripciontextBox);
+            this.panel4.Controls.Add(this.BuscartextBox);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.ObservacionestextBox);
+            this.panel4.Controls.Add(this.pictureBox13);
+            this.panel4.Controls.Add(this.pictureBox12);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.pictureBox9);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(733, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(364, 257);
+            this.panel4.TabIndex = 2;
             // 
             // panel2
             // 
@@ -1270,5 +1293,6 @@
         private FontAwesome.Sharp.IconPictureBox btnestado;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

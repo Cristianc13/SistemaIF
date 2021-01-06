@@ -179,7 +179,6 @@ namespace CAD
             return tabla;
         }
 
-
         public DataTable BusarProdMarcaModelo(ENTProducto EProducto)
         {
             tabla.Clear();

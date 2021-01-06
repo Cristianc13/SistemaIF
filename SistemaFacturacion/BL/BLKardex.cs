@@ -1,4 +1,5 @@
-﻿using CAD;
+﻿using System.Data;
+using CAD;
 using ENT;
 
 namespace BL
@@ -12,9 +13,9 @@ namespace BL
             CADkardex.InsertKardex(kardex);
         }
 
-        //public void kardexVenta(ENTKardex kardex)
-        //{
-        //    CADkardex.KardexVenta(kardex);
-        //}
+        public DataTable BuscarProductoID(ENTKardex EKardex)
+        {
+            return CADkardex.BuscarProductoID(EKardex);
+        }
     }
 }
