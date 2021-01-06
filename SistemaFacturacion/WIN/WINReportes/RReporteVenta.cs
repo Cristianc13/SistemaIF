@@ -23,7 +23,7 @@ namespace WIN.WINReportes
         public void GenerarF(int NFactura)
         {
             RBLGenerarFacturaVenta GF = new RBLGenerarFacturaVenta();
-            GF.GenerarReporte(NFactura);
+           // GF.GenerarReporte(NFactura);
             RBLGenerarFacturaVentaBindingSource.DataSource = GF;
         }
     }
