@@ -236,9 +236,9 @@ namespace WIN
 
         public void EnviarID()
         {
-            WINReportes.RReporteVenta GenerarFactura = new WINReportes.RReporteVenta();
-            GenerarFactura.Factura = idventa;
-            GenerarFactura.ShowDialog();
+            WINReportes.RFacturaVenta GF = new WINReportes.RFacturaVenta();
+            GF.Factura = idventa;
+            GF.ShowDialog();
         }
 
         private void Eliminar()

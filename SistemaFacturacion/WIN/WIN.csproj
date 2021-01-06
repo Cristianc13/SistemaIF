@@ -226,6 +226,12 @@
       <DependentUpon>DetalleVenta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="WINReportes\ReporteCristal\FacturaVenta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaVenta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WINReportes\ReporteCristal\Producto.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,6 +249,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RCompraCristal.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RFacturaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RFacturaVenta.Designer.cs">
+      <DependentUpon>RFacturaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="WINReportes\RProducto.cs">
       <SubType>Form</SubType>
@@ -351,6 +363,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DetalleVenta.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\ReporteCristal\FacturaVenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FacturaVenta.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\ReporteCristal\Producto.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Producto.cs</LastGenOutput>
@@ -367,6 +383,9 @@
     <EmbeddedResource Include="WINReportes\Reportes\ReporteVentasCliente1.rdlc" />
     <EmbeddedResource Include="WINReportes\Reportes\RGenerarFactura.rdlc" />
     <EmbeddedResource Include="WINReportes\Reportes\RProducto.rdlc" />
+    <EmbeddedResource Include="WINReportes\RFacturaVenta.resx">
+      <DependentUpon>RFacturaVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\RProducto.resx">
       <DependentUpon>RProducto.cs</DependentUpon>
     </EmbeddedResource>
