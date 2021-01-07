@@ -37,6 +37,7 @@ namespace WIN
             LlenarDataGrid();
             FormatoGrid();
             Botones();
+            textboxTelefono.Text = "+";
             SendMessage(textBoxBuscar.Handle, EM_SETCUEBANNER, 0, "Nombre, Apellido o Telefono");
             ContextMenu _blankContextMenu = new ContextMenu();
             textBoxnombre.ContextMenu = _blankContextMenu;
