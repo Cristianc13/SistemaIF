@@ -159,7 +159,7 @@
             this.dtfrom.Name = "dtfrom";
             this.dtfrom.Size = new System.Drawing.Size(225, 34);
             this.dtfrom.TabIndex = 50;
-            this.dtfrom.Value = new System.DateTime(2020, 12, 9, 10, 31, 53, 0);
+            this.dtfrom.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
             // 
             // btnpersonalizado
             // 
@@ -285,7 +285,7 @@
             this.dtdate.Name = "dtdate";
             this.dtdate.Size = new System.Drawing.Size(224, 34);
             this.dtdate.TabIndex = 44;
-            this.dtdate.Value = new System.DateTime(2020, 12, 9, 10, 31, 53, 0);
+            this.dtdate.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
             // 
             // panel2
             // 

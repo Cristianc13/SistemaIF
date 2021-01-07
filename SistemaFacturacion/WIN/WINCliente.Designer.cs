@@ -70,6 +70,7 @@
             this.NombreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NombreTextBox.Location = new System.Drawing.Point(93, 46);
+            this.NombreTextBox.MaxLength = 25;
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(196, 20);
             this.NombreTextBox.TabIndex = 2;
@@ -81,6 +82,7 @@
             this.ApellidoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ApellidoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApellidoTextBox.Location = new System.Drawing.Point(93, 89);
+            this.ApellidoTextBox.MaxLength = 25;
             this.ApellidoTextBox.Name = "ApellidoTextBox";
             this.ApellidoTextBox.Size = new System.Drawing.Size(196, 20);
             this.ApellidoTextBox.TabIndex = 4;
@@ -92,6 +94,7 @@
             this.TelefonoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TelefonoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TelefonoTextBox.Location = new System.Drawing.Point(406, 48);
+            this.TelefonoTextBox.MaxLength = 15;
             this.TelefonoTextBox.Name = "TelefonoTextBox";
             this.TelefonoTextBox.Size = new System.Drawing.Size(196, 20);
             this.TelefonoTextBox.TabIndex = 5;

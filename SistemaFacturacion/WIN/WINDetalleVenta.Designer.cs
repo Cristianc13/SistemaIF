@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINDetalleVenta));
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
@@ -156,6 +156,7 @@
             this.CantidadtextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CantidadtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CantidadtextBox.Location = new System.Drawing.Point(116, 135);
+            this.CantidadtextBox.MaxLength = 7;
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(350, 20);
             this.CantidadtextBox.TabIndex = 5;
@@ -230,20 +231,20 @@
             this.DVentadataGridView.AllowUserToDeleteRows = false;
             this.DVentadataGridView.AllowUserToResizeColumns = false;
             this.DVentadataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
-            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DVentadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DVentadataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DVentadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
             this.DVentadataGridView.Name = "DVentadataGridView";
@@ -311,6 +312,7 @@
             this.DescuentotextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescuentotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescuentotextBox.Location = new System.Drawing.Point(152, 134);
+            this.DescuentotextBox.MaxLength = 7;
             this.DescuentotextBox.Name = "DescuentotextBox";
             this.DescuentotextBox.Size = new System.Drawing.Size(364, 20);
             this.DescuentotextBox.TabIndex = 19;

@@ -40,6 +40,7 @@ namespace WIN
             LlenaComboProducto();
             Limpiar();
             DescuentotextBox.Text = "0";
+            CantidadtextBox.Text = "0";
             ClientecomboBox.Focus();
             Botones();
 
@@ -189,7 +190,7 @@ namespace WIN
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -223,7 +224,7 @@ namespace WIN
 
         private void DescuentotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -269,9 +270,24 @@ namespace WIN
             }
             errorProvider1.Clear();
 
+            if (CantidadtextBox.Text == ".")
+            {
+                errorProvider1.SetError(CantidadtextBox, "Debe ingresar una Cantidad Valida");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (DescuentotextBox.Text == ".")
+            {
+                errorProvider1.SetError(DescuentotextBox, "Debe ingresar un Descuento Valido");
+                return;
+            }
+            errorProvider1.Clear();
+
             Cero();
             decimal cantidad = Convert.ToDecimal(CantidadtextBox.Text);
             decimal precio = Convert.ToDecimal(PreciotextBox.Text);
+
             decimal descuento = Convert.ToDecimal(DescuentotextBox.Text);
             decimal NuevoPrecio = precio - descuento;
             int N = 1;
@@ -449,6 +465,7 @@ namespace WIN
                 ClientecomboBox.SelectedIndex = -1;
                 DescuentotextBox.Text = "";
                 DescuentotextBox.Text = "0";
+                ImportetextBox.Text = "0";
                 EDventa.Clear();
                 DVentadataGridView.DataSource = null;
                 HabilitarBotones(false, false);

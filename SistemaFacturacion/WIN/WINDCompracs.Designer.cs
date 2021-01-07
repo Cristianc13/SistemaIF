@@ -386,7 +386,7 @@
             this.dtfecha.Name = "dtfecha";
             this.dtfecha.Size = new System.Drawing.Size(260, 34);
             this.dtfecha.TabIndex = 36;
-            this.dtfecha.Value = new System.DateTime(2020, 12, 9, 10, 31, 53, 0);
+            this.dtfecha.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
             this.dtfecha.Visible = false;
             // 
             // txtIVAdetalleC

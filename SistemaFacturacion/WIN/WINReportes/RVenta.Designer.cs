@@ -70,7 +70,7 @@
             this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.ShowRefreshButton = false;
             this.crystalReportViewer1.ShowZoomButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1110, 652);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1110, 666);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -87,7 +87,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 44);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(240, 652);
+            this.panel1.Size = new System.Drawing.Size(240, 666);
             this.panel1.TabIndex = 1;
             // 
             // dtfrom
@@ -104,7 +104,7 @@
             this.dtfrom.Name = "dtfrom";
             this.dtfrom.Size = new System.Drawing.Size(225, 34);
             this.dtfrom.TabIndex = 50;
-            this.dtfrom.Value = new System.DateTime(2020, 12, 9, 10, 31, 53, 0);
+            this.dtfrom.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
             // 
             // btnpersonalizado
             // 
@@ -230,7 +230,7 @@
             this.dtdate.Name = "dtdate";
             this.dtdate.Size = new System.Drawing.Size(224, 34);
             this.dtdate.TabIndex = 44;
-            this.dtdate.Value = new System.DateTime(2020, 12, 9, 10, 31, 53, 0);
+            this.dtdate.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
             // 
             // panel2
             // 
@@ -239,7 +239,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(240, 44);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1110, 652);
+            this.panel2.Size = new System.Drawing.Size(1110, 666);
             this.panel2.TabIndex = 2;
             // 
             // panel3
@@ -320,7 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 696);
+            this.ClientSize = new System.Drawing.Size(1350, 710);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

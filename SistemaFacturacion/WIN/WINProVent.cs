@@ -69,7 +69,7 @@ namespace WIN
             ProductodataGridView.Columns[7].HeaderText = "Importe";
             ProductodataGridView.Columns[8].HeaderText = "Descripcion";
             ProductodataGridView.Columns[9].HeaderText = "Estado";
-            ProductodataGridView.AllowUserToResizeColumns = false;
+            ProductodataGridView.AllowUserToResizeColumns = true;
             ProductodataGridView.AllowUserToResizeRows = false;
             Recursos.DatagridviewDiseño.DiseñoDGV(ref ProductodataGridView);
         }
