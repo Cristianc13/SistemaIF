@@ -430,6 +430,7 @@ namespace WIN
             HabilitarEliminar(false);
             Guardar(true);
             Limpiar();
+            CantidadtextBox.Text = "0";
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -461,6 +462,7 @@ namespace WIN
             {
                 ClientecomboBox.Enabled = true;
                 Limpiar();
+                CantidadtextBox.Text = "0";
                 TelefonotextBox.Text = "";
                 ClientecomboBox.SelectedIndex = -1;
                 DescuentotextBox.Text = "";
