@@ -26,6 +26,7 @@ namespace WIN.WINReportes
         }
 
         DetalleVenta DV = new DetalleVenta();
+        FacturaVenta FV = new FacturaVenta();
         DateTime date = DateTime.Now;
 
         private void RVenta_Load(object sender, EventArgs e)
@@ -110,6 +111,23 @@ namespace WIN.WINReportes
             this.WindowState = FormWindowState.Normal;
             btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int F = Convert.ToInt32(textBoxFactura.Text);
+            FV.SetParameterValue("@idFactura", F);
+            crystalReportViewer1.ReportSource = FV;
+
+            textBoxFactura.Text = "";
+        }
+
+        private void textBoxFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

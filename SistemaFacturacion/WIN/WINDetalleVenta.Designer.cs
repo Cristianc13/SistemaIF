@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WINDetalleVenta));
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
@@ -98,7 +98,7 @@
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.ReadOnly = true;
             this.TelefonotextBox.Size = new System.Drawing.Size(354, 20);
-            this.TelefonotextBox.TabIndex = 15;
+            this.TelefonotextBox.TabIndex = 2;
             this.TelefonotextBox.TextChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
             // 
             // Telefono
@@ -147,7 +147,7 @@
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(364, 20);
-            this.PreciotextBox.TabIndex = 6;
+            this.PreciotextBox.TabIndex = 4;
             // 
             // CantidadtextBox
             // 
@@ -155,7 +155,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CantidadtextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CantidadtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantidadtextBox.Location = new System.Drawing.Point(116, 135);
+            this.CantidadtextBox.Location = new System.Drawing.Point(117, 135);
             this.CantidadtextBox.MaxLength = 7;
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(350, 20);
@@ -221,7 +221,7 @@
             this.ProductocomboBox.Location = new System.Drawing.Point(110, 87);
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(420, 28);
-            this.ProductocomboBox.TabIndex = 0;
+            this.ProductocomboBox.TabIndex = 3;
             this.ProductocomboBox.SelectedIndexChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
             this.ProductocomboBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProductocomboBox_KeyUp);
             // 
@@ -231,20 +231,20 @@
             this.DVentadataGridView.AllowUserToDeleteRows = false;
             this.DVentadataGridView.AllowUserToResizeColumns = false;
             this.DVentadataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
-            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
+            this.DVentadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DVentadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DVentadataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DVentadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DVentadataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.DVentadataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVentadataGridView.Location = new System.Drawing.Point(0, 0);
             this.DVentadataGridView.Name = "DVentadataGridView";
@@ -315,7 +315,7 @@
             this.DescuentotextBox.MaxLength = 7;
             this.DescuentotextBox.Name = "DescuentotextBox";
             this.DescuentotextBox.Size = new System.Drawing.Size(364, 20);
-            this.DescuentotextBox.TabIndex = 19;
+            this.DescuentotextBox.TabIndex = 6;
             this.DescuentotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescuentotextBox_KeyPress);
             // 
             // ClientecomboBox
@@ -332,7 +332,7 @@
             this.ClientecomboBox.Location = new System.Drawing.Point(110, 26);
             this.ClientecomboBox.Name = "ClientecomboBox";
             this.ClientecomboBox.Size = new System.Drawing.Size(420, 28);
-            this.ClientecomboBox.TabIndex = 18;
+            this.ClientecomboBox.TabIndex = 0;
             this.ClientecomboBox.SelectedIndexChanged += new System.EventHandler(this.ClientecomboBox_SelectedIndexChanged);
             this.ClientecomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClientecomboBox_KeyPress);
             this.ClientecomboBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ClientecomboBox_KeyUp);
@@ -506,7 +506,7 @@
             this.btncancelar.Location = new System.Drawing.Point(398, 3);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(109, 35);
-            this.btncancelar.TabIndex = 40;
+            this.btncancelar.TabIndex = 10;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btncancelar.UseVisualStyleBackColor = false;
@@ -527,7 +527,7 @@
             this.btnagregar.Location = new System.Drawing.Point(14, 1);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(104, 35);
-            this.btnagregar.TabIndex = 36;
+            this.btnagregar.TabIndex = 7;
             this.btnagregar.Text = "Agregar";
             this.btnagregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnagregar.UseVisualStyleBackColor = false;
@@ -548,7 +548,7 @@
             this.btnguardar.Location = new System.Drawing.Point(268, 3);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(104, 35);
-            this.btnguardar.TabIndex = 38;
+            this.btnguardar.TabIndex = 9;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = false;
@@ -570,7 +570,7 @@
             this.btneliminar.Location = new System.Drawing.Point(139, 2);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(104, 35);
-            this.btneliminar.TabIndex = 39;
+            this.btneliminar.TabIndex = 8;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btneliminar.UseVisualStyleBackColor = false;
@@ -613,7 +613,7 @@
             this.btnCancelarVenta.Location = new System.Drawing.Point(17, 4);
             this.btnCancelarVenta.Name = "btnCancelarVenta";
             this.btnCancelarVenta.Size = new System.Drawing.Size(157, 35);
-            this.btnCancelarVenta.TabIndex = 37;
+            this.btnCancelarVenta.TabIndex = 11;
             this.btnCancelarVenta.Text = "Cancelar Venta";
             this.btnCancelarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelarVenta.UseVisualStyleBackColor = false;
