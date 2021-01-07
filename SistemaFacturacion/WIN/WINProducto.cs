@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BL;
@@ -351,10 +352,10 @@ namespace WIN
             {
                 EProducto.nombreProducto = NombretextBox.Text;
                 EProducto.codigopro = CodigotextBox.Text;
-                EProducto.stockProducto = Convert.ToDecimal(StocktextBox.Text);
-                EProducto.costo = Convert.ToDecimal(CostotextBox.Text);
+                EProducto.stockProducto = Conversion(StocktextBox.Text);
+                EProducto.costo = Conversion(CostotextBox.Text);
                 EProducto.FK_idMarca = IdMarca;
-                EProducto.precioSalida = int.Parse(PrecioSalidatextBox.Text);
+                EProducto.precioSalida = Conversion(PrecioSalidatextBox.Text);
                 EProducto.FK_idModelo = IdModelo;
                 EProducto.FK_idCategoria = IdCategoria;
                 EProducto.FK_idEstado = IdEstado;
@@ -369,9 +370,9 @@ namespace WIN
 
                 kardex.fecha = DateTime.Now;
                 kardex.concepto = "Inventario Inicial";
-                kardex.entrada = EProducto.stockProducto;       //Bien
+                kardex.entrada = EProducto.stockProducto;
                 kardex.salida = 0;
-                kardex.existencia = EProducto.stockProducto;    //Momento
+                kardex.existencia = EProducto.stockProducto;
                 kardex.costeunitario = EProducto.costo;
                 kardex.FK_idProducto = idP;
                 BKardex.InsertKardex(kardex);
@@ -386,6 +387,17 @@ namespace WIN
             }
         }
 
+        public decimal Conversion(string numero)
+        {
+            CultureInfo invariant = CultureInfo.InvariantCulture;
+            string texto = numero;
+            decimal conversion1 = decimal.Parse(texto, invariant);
+            string conversion2 = conversion1.ToString("0.00", invariant);
+            decimal final = decimal.Parse(conversion2, invariant);
+            //.5=0.50  .47
+            return final;
+        }
+
         private void btneditar_Click(object sender, EventArgs e)
         {
             if (!Validar()) return;
@@ -394,10 +406,10 @@ namespace WIN
                 EProducto.idProducto = IdProducto;
                 EProducto.codigopro = CodigotextBox.Text;
                 EProducto.nombreProducto = NombretextBox.Text;
-                EProducto.stockProducto = Convert.ToDecimal(StocktextBox.Text);
-                EProducto.costo = Convert.ToDecimal(CostotextBox.Text);
+                EProducto.stockProducto = Conversion(StocktextBox.Text);
+                EProducto.costo = Conversion(CostotextBox.Text);
                 EProducto.FK_idMarca = IdMarca;
-                EProducto.precioSalida = Convert.ToDecimal(PrecioSalidatextBox.Text);
+                EProducto.precioSalida = Conversion(PrecioSalidatextBox.Text); ;
                 EProducto.FK_idModelo = IdModelo;
                 EProducto.FK_idCategoria = IdCategoria;
                 EProducto.FK_idEstado = IdEstado;
@@ -518,6 +530,19 @@ namespace WIN
             wk.ShowDialog();
         }
 
+        private void CodigotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
         //Evitar espacios en blanco
         public static string ReducirEspaciado(string Cadena)
         {
@@ -568,6 +593,14 @@ namespace WIN
             }
             errorProvider1.Clear();
 
+            if (StocktextBox.Text == ".")
+            {
+                errorProvider1.SetError(StocktextBox, "Debe ingresar un Numero de Stock");
+                StocktextBox.Focus();
+                return false;
+            }
+
+            errorProvider1.Clear();
             if (StocktextBox.Text == Convert.ToString(0))
             {
                 errorProvider1.SetError(StocktextBox, "Debe ingresar un Numero de Stock Mayor a 0");
@@ -585,7 +618,20 @@ namespace WIN
             }
             errorProvider1.Clear();
 
+            if (CostotextBox.Text == ".")
+            {
+                errorProvider1.SetError(CostotextBox, "Debe ingresar un Numero de Stock");
+                CostotextBox.Focus();
+                return false;
+            }
+
             //Precio Salida
+            if (PrecioSalidatextBox.Text == ".")
+            {
+                errorProvider1.SetError(PrecioSalidatextBox, "Debe ingresar un Numero de Stock");
+                PrecioSalidatextBox.Focus();
+                return false;
+            }
             if (PrecioSalidatextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(PrecioSalidatextBox, "Debe ingresar un Precio Salida");

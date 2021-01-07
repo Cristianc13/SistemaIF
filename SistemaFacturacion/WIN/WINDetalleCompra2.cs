@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using BL;
 using ENT;
 using System.Runtime.InteropServices;
+using System.Globalization;
 
 namespace WIN
 {
@@ -13,9 +14,8 @@ namespace WIN
         {
             InitializeComponent();
         }
-        public string nombrep;
-      
 
+        public string nombrep;
 
         private const int EM_SETCUEBANNER = 0x1501;
 
@@ -25,7 +25,8 @@ namespace WIN
 
         public string codigo, marca, modelo, estado, descripciom;
 
-
+        private ENTKardex kardex = new ENTKardex();
+        private BLKardex BKardex = new BLKardex();
         private int IdCategoria, IdMarca, IdModelo, IdEstado, IdProducto;
         private BLMarca BMarca = new BLMarca();
         private BLModelo BModelo = new BLModelo();
@@ -54,6 +55,22 @@ namespace WIN
             //LlenarGrid();
             //NombretextBox.Focus();
             //errorProvider1.Clear();
+        }
+
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
+        private const Keys CutKeys = Keys.Control | Keys.X;
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys) || (keyData == CutKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
         }
 
         public void FormatoGrid()
@@ -169,7 +186,6 @@ namespace WIN
             iconPictureBox1.Visible = true;
         }
 
-
         private void WINDetalleCompra2_Load(object sender, EventArgs e)
         {
             this.Text = string.Empty;
@@ -187,6 +203,18 @@ namespace WIN
             Limpiar();
             IniciarTextbox();
             SendMessage(txtfiltrar.Handle, EM_SETCUEBANNER, 0, "Codigo o Nombre");
+
+            ContextMenu _blankContextMenu = new ContextMenu();
+            txtnombre.ContextMenu = _blankContextMenu;
+            cmbCategoria.ContextMenu = _blankContextMenu;
+            txtcodigo.ContextMenu = _blankContextMenu;
+            txtpreciosalida.ContextMenu = _blankContextMenu;
+            cmbMarca.ContextMenu = _blankContextMenu;
+            cmbModelo.ContextMenu = _blankContextMenu;
+            txtdescripcion.ContextMenu = _blankContextMenu;
+            cmbEstado.ContextMenu = _blankContextMenu;
+            txtobservacion.ContextMenu = _blankContextMenu;
+            txtfiltrar.ContextMenu = _blankContextMenu;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -228,9 +256,6 @@ namespace WIN
             LlenarGrid();
             Limpiar();
             HabilitarBotones(true, false);
-
-
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -242,12 +267,10 @@ namespace WIN
             HabilitarBotones(false, true);
             Limpiar();
             LlenarGrid();
-           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
         }
 
         private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
@@ -298,7 +321,7 @@ namespace WIN
 
         private void txtpreciosalida_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -314,7 +337,6 @@ namespace WIN
             WINCategoria WCat = new WINCategoria();
             WCat.ShowDialog();
             LlenarCategoria();
-            
         }
 
         private void btnModelo_Click(object sender, EventArgs e)
@@ -354,12 +376,10 @@ namespace WIN
             EProducto.codigopro = filtro;
             //  ProductodataGridView.Columns.Clear();
             DetalleCompra2GridView1.DataSource = BProducto.BuscarProductoDetalee(EProducto);
-            
         }
 
         private void DetalleCompra2GridView1_Click(object sender, EventArgs e)
         {
-
         }
 
         public bool Validar()
@@ -392,8 +412,14 @@ namespace WIN
             }
             errorProvider1.Clear();
 
-
             //Precio Salida
+            if (txtpreciosalida.Text == ".")
+            {
+                errorProvider1.SetError(txtpreciosalida, "Debe ingresar un Numero de Stock");
+                txtpreciosalida.Focus();
+                return false;
+            }
+
             if (txtpreciosalida.Text == string.Empty)
             {
                 errorProvider1.SetError(txtpreciosalida, "Debe ingresar un Precio Salida");
@@ -401,9 +427,6 @@ namespace WIN
                 return false;
             }
             errorProvider1.Clear();
-
-            errorProvider1.Clear();
-
 
             //Modelo
             if (cmbModelo.SelectedIndex == -1)
@@ -435,14 +458,27 @@ namespace WIN
             return true;
         }
 
+        public decimal Conversion(string numero)
+        {
+            CultureInfo invariant = CultureInfo.InvariantCulture;
+            string texto = numero;
+            decimal conversion1 = decimal.Parse(texto, invariant);
+            string conversion2 = conversion1.ToString("0.00", invariant);
+            decimal final = decimal.Parse(conversion2, invariant);
+
+            return final;
+        }
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
             if (!Validar()) return;
-           
+
+            try
+            {
                 EProducto.nombreProducto = txtnombre.Text;
                 EProducto.codigopro = txtcodigo.Text;
                 EProducto.FK_idMarca = IdMarca;
-                EProducto.precioSalida = Convert.ToDecimal(txtpreciosalida.Text);
+                EProducto.precioSalida = Conversion(txtpreciosalida.Text);
                 EProducto.costo = 0;
                 EProducto.stockProducto = 0;
                 EProducto.FK_idModelo = IdModelo;
@@ -450,11 +486,23 @@ namespace WIN
                 EProducto.FK_idEstado = IdEstado;
                 EProducto.descripcion = txtdescripcion.Text;
                 EProducto.observacion = txtobservacion.Text;
-                BProducto.InsertarProducto(EProducto);
+
+                int idP = BProducto.InsertarProducto(EProducto);
                 Limpiar();
                 LlenarGrid();
                 HabilitarBotones(false, true);
-           
+
+                kardex.fecha = DateTime.Now;
+                kardex.concepto = "Inventario Inicial";
+                kardex.entrada = EProducto.stockProducto;       //Bien
+                kardex.salida = 0;
+                kardex.existencia = EProducto.stockProducto;    //Momento
+                kardex.FK_idProducto = idP;
+                BKardex.InsertKardex(kardex);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -522,7 +570,6 @@ namespace WIN
 
         private void WINDetalleCompra2_MouseDown(object sender, MouseEventArgs e)
         {
-
         }
 
         private void panel3_MouseDown(object sender, MouseEventArgs e)
@@ -533,12 +580,10 @@ namespace WIN
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-
         }
 
         private void cmbEstado_CursorChanged(object sender, EventArgs e)
         {
-
         }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
@@ -589,16 +634,15 @@ namespace WIN
             cmbMarca.Text = DetalleCompra2GridView1.CurrentRow.Cells[7].Value.ToString();
             cmbModelo.Text = DetalleCompra2GridView1.CurrentRow.Cells[8].Value.ToString();
             cmbEstado.Text = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
-            cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[10].Value.ToString(); 
+            cmbCategoria.Text = DetalleCompra2GridView1.CurrentRow.Cells[10].Value.ToString();
             txtcodigo.Text = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
-
         }
 
         private void DetalleCompra2GridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DetalleCompra2GridView1.CurrentRow == null) return;
 
-                IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
+            IdProducto = (int)DetalleCompra2GridView1.CurrentRow.Cells[0].Value;
             codigo = DetalleCompra2GridView1.CurrentRow.Cells[1].Value.ToString();
             nombrep = DetalleCompra2GridView1.CurrentRow.Cells[2].Value.ToString();
             descripciom = DetalleCompra2GridView1.CurrentRow.Cells[3].Value.ToString();
@@ -609,7 +653,6 @@ namespace WIN
             WINDCompracs dv = Owner as WINDCompracs;
             dv.bmbproducto.Text = codigo + " " + nombrep + " " + marca + " " + descripciom + " " + modelo + " - " + estado;
             this.Close();
-              
         }
     }
 }

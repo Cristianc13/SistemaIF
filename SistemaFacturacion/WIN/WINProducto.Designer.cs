@@ -547,6 +547,7 @@
             this.CodigotextBox.Size = new System.Drawing.Size(184, 20);
             this.CodigotextBox.TabIndex = 2;
             this.CodigotextBox.Visible = false;
+            this.CodigotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodigotextBox_KeyPress);
             // 
             // label6
             // 
