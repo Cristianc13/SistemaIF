@@ -46,6 +46,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.RCompraCristal1 = new WIN.WINReportes.Reportes.RCompraCristal();
+            this.txtbuscarn = new System.Windows.Forms.TextBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.btnbuscarn = new FontAwesome.Sharp.IconButton();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
@@ -53,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // header
@@ -132,6 +136,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.panel1.Controls.Add(this.txtbuscarn);
+            this.panel1.Controls.Add(this.btnbuscarn);
+            this.panel1.Controls.Add(this.pictureBox10);
             this.panel1.Controls.Add(this.dtfrom);
             this.panel1.Controls.Add(this.btnpersonalizado);
             this.panel1.Controls.Add(this.aniobtn);
@@ -315,6 +322,54 @@
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
+            // txtbuscarn
+            // 
+            this.txtbuscarn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbuscarn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbuscarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscarn.Location = new System.Drawing.Point(24, 543);
+            this.txtbuscarn.MaxLength = 10;
+            this.txtbuscarn.Name = "txtbuscarn";
+            this.txtbuscarn.Size = new System.Drawing.Size(193, 20);
+            this.txtbuscarn.TabIndex = 36;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(19, 535);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(203, 35);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 37;
+            this.pictureBox10.TabStop = false;
+            // 
+            // btnbuscarn
+            // 
+            this.btnbuscarn.FlatAppearance.BorderSize = 0;
+            this.btnbuscarn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscarn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbuscarn.ForeColor = System.Drawing.Color.White;
+            this.btnbuscarn.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnbuscarn.IconColor = System.Drawing.Color.White;
+            this.btnbuscarn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnbuscarn.IconSize = 30;
+            this.btnbuscarn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbuscarn.Location = new System.Drawing.Point(6, 595);
+            this.btnbuscarn.Name = "btnbuscarn";
+            this.btnbuscarn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnbuscarn.Size = new System.Drawing.Size(226, 46);
+            this.btnbuscarn.TabIndex = 51;
+            this.btnbuscarn.Text = "Buscar";
+            this.btnbuscarn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbuscarn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnbuscarn.UseVisualStyleBackColor = true;
+            this.btnbuscarn.Click += new System.EventHandler(this.btnbuscarn_Click);
+            // 
             // RCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,7 +389,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,5 +414,8 @@
         private FontAwesome.Sharp.IconButton Semanabtn;
         private Bunifu.Framework.UI.BunifuDatepicker dtdate;
         private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton btnbuscarn;
+        private System.Windows.Forms.TextBox txtbuscarn;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }

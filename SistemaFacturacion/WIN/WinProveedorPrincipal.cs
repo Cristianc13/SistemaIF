@@ -69,6 +69,11 @@ namespace WIN
             Limpiar();
             SendMessage(textBox1.Handle, EM_SETCUEBANNER, 0, "Nombre o RUC");
             Botones();
+            txtnombreProv.MaxLength = 50;
+            txtnombreCompañia.MaxLength = 50;
+            txttelefonoProv.MaxLength = 15;
+            txtnumeroCompañia.MaxLength = 15;
+            txtruc.MaxLength = 50;
 
             ContextMenu _blankContextMenu = new ContextMenu();
             textBox1.ContextMenu = _blankContextMenu;
@@ -76,7 +81,6 @@ namespace WIN
             txttelefonoProv.ContextMenu = _blankContextMenu;
             txtnombreCompañia.ContextMenu = _blankContextMenu;
             txtnumeroCompañia.ContextMenu = _blankContextMenu;
-
 
         }
 
@@ -299,6 +303,32 @@ namespace WIN
         {
             txtnumeroCompañia.Text = ReducirEspaciado(txtnumeroCompañia.Text);
             txtnumeroCompañia.SelectionStart = txtnumeroCompañia.Text.Length;
+        }
+
+        private void txttelefonoProv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '+') && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtnumeroCompañia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '+') && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
