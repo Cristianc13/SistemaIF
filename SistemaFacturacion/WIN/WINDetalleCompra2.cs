@@ -88,7 +88,7 @@ namespace WIN
             DetalleCompra2GridView1.Columns[8].HeaderText = "Modelo";
             DetalleCompra2GridView1.Columns[9].HeaderText = "Estado";
             DetalleCompra2GridView1.Columns[10].HeaderText = "Categoria";
-            DetalleCompra2GridView1.AllowUserToResizeColumns = false;
+            
             DetalleCompra2GridView1.AllowUserToResizeRows = false;
 
             DetalleCompra2GridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -202,7 +202,7 @@ namespace WIN
             LlenarModelo();
             Limpiar();
             IniciarTextbox();
-            SendMessage(txtfiltrar.Handle, EM_SETCUEBANNER, 0, "Codigo o Nombre");
+            SendMessage(txtfiltrar.Handle, EM_SETCUEBANNER, 0, "Codigo, Nombre o Descripción");
 
             ContextMenu _blankContextMenu = new ContextMenu();
             txtnombre.ContextMenu = _blankContextMenu;
@@ -547,6 +547,7 @@ namespace WIN
             LlenarGrid();
             txtnombre.Focus();
             errorProvider1.Clear();
+            HabilitarBotones(true, false);
         }
 
         private void txtcodigo_KeyPress(object sender, KeyPressEventArgs e)

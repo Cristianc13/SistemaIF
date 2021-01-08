@@ -20,6 +20,12 @@ namespace WIN.WINReportes
         public RCompra()
         {
             InitializeComponent();
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MinimumSize = this.Size;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
 
         RFacturaCompras rcompra = new RFacturaCompras();
@@ -72,11 +78,13 @@ namespace WIN.WINReportes
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-
+            dtdate.Value = DateTime.Now;
+            dtfrom.Value = DateTime.Now;
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MinimumSize = this.Size;
+            this.WindowState = FormWindowState.Maximized;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             RVentasHoy();
         }
@@ -93,12 +101,16 @@ namespace WIN.WINReportes
 
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
+            if (this.WindowState != FormWindowState.Maximized)
+            {
                 this.WindowState = FormWindowState.Maximized;
+                btnmaximizar.Text = "Restaurar";
+            }
             else
+            {
                 this.WindowState = FormWindowState.Normal;
-            btnmaximizar.Visible = false;
-            btnrestaurar.Visible = true;
+                btnmaximizar.Text = "Maximizar";
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -116,7 +128,7 @@ namespace WIN.WINReportes
         private void btnrestaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = false;
+            //btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
         }
 
