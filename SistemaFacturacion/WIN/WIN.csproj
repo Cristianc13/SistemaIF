@@ -244,6 +244,11 @@
       <DependentUpon>Producto.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="WINReportes\ReporteCristal\RFacturaCompras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFacturaCompras.rpt</DependentUpon>
+    </Compile>
     <Compile Include="WINReportes\Reportes\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -255,6 +260,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RCompraCristal.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RFacturaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINReportes\RFacturaCompra.Designer.cs">
+      <DependentUpon>RFacturaCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="WINReportes\RFacturaVenta.cs">
       <SubType>Form</SubType>
@@ -380,6 +391,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Producto.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="WINReportes\ReporteCristal\RFacturaCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RFacturaCompras.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\Reportes\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
@@ -392,6 +407,9 @@
     <EmbeddedResource Include="WINReportes\Reportes\ReporteVentasCliente1.rdlc" />
     <EmbeddedResource Include="WINReportes\Reportes\RGenerarFactura.rdlc" />
     <EmbeddedResource Include="WINReportes\Reportes\RProducto.rdlc" />
+    <EmbeddedResource Include="WINReportes\RFacturaCompra.resx">
+      <DependentUpon>RFacturaCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\RFacturaVenta.resx">
       <DependentUpon>RFacturaVenta.cs</DependentUpon>
     </EmbeddedResource>

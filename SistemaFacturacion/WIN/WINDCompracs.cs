@@ -276,6 +276,8 @@ namespace WIN
             cajasdetextotrue();
             dtfecha.Value = DateTime.Now;
             txtIVAdetalleC.MaxLength = 2;
+            txtcantidad.MaxLength = 7;
+            txtcosto.MaxLength = 8;
             HabilitarEliminar(false);
 
             ContextMenu _blankContextMenu = new ContextMenu();
@@ -560,7 +562,7 @@ namespace WIN
 
         private void txtIVAdetalleC_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -628,9 +630,23 @@ namespace WIN
                 }
                 errorProvider1.Clear();
 
+                if (txtcantidad.Text == ".")
+                {
+                    errorProvider1.SetError(txtcantidad, "Debe ingresar una cantidad");
+                    return;
+                }
+                errorProvider1.Clear();
+
                 if (txtcantidad.Text == string.Empty || Convert.ToDecimal(txtcantidad.Text) <= 0)
                 {
                     errorProvider1.SetError(txtcantidad, "Debe ingresar una Cantidad mayor a 0");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (txtcosto.Text == ".")
+                {
+                    errorProvider1.SetError(txtcosto, "Debe ingresar un costo");
                     return;
                 }
                 errorProvider1.Clear();
@@ -817,7 +833,7 @@ namespace WIN
 
         private void txtcantidad_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -835,7 +851,7 @@ namespace WIN
 
         private void txtcosto_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }

@@ -414,6 +414,7 @@
             this.txttelefonoProv.Name = "txttelefonoProv";
             this.txttelefonoProv.Size = new System.Drawing.Size(329, 20);
             this.txttelefonoProv.TabIndex = 45;
+            this.txttelefonoProv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefonoProv_KeyPress);
             this.txttelefonoProv.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txttelefonoProv_KeyUp);
             // 
             // pictureBox5
@@ -461,6 +462,7 @@
             this.txtnumeroCompañia.Name = "txtnumeroCompañia";
             this.txtnumeroCompañia.Size = new System.Drawing.Size(329, 20);
             this.txtnumeroCompañia.TabIndex = 46;
+            this.txtnumeroCompañia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnumeroCompañia_KeyPress);
             this.txtnumeroCompañia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnumeroCompañia_KeyUp);
             // 
             // pictureBox6

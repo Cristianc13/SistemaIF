@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using WIN.WINReportes.Reportes;
+using WIN.WINReportes.ReporteCristal;
+
 
 namespace WIN.WINReportes
 {
@@ -19,6 +21,8 @@ namespace WIN.WINReportes
         {
             InitializeComponent();
         }
+
+        RFacturaCompras rcompra = new RFacturaCompras();
 
         RCompraCristal dc = new RCompraCristal();
         DateTime date = DateTime.Now;
@@ -114,6 +118,16 @@ namespace WIN.WINReportes
             this.WindowState = FormWindowState.Normal;
             btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
+        }
+
+        private void btnbuscarn_Click(object sender, EventArgs e)
+        {
+            int ad = Convert.ToInt32(txtbuscarn.Text);
+            rcompra.SetParameterValue("@idFactura", ad);
+            crystalReportViewer1.ReportSource = rcompra;
+            txtbuscarn.Clear();
+
+
         }
     }
 }
