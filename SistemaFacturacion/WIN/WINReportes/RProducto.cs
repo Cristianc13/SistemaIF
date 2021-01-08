@@ -24,6 +24,7 @@ namespace WIN.WINReportes
         private void RProducto_Load(object sender, EventArgs e)
         {
             GenerarInforme(99999);
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void GenerarInforme(int existencia)
@@ -48,12 +49,16 @@ namespace WIN.WINReportes
 
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
+            if (this.WindowState != FormWindowState.Maximized)
+            {
                 this.WindowState = FormWindowState.Maximized;
+                btnmaximizar.Text = "Restaurar";
+            }
             else
+            {
                 this.WindowState = FormWindowState.Normal;
-            btnmaximizar.Visible = false;
-            btnrestaurar.Visible = true;
+                btnmaximizar.Text = "Maximizar";
+            }
         }
 
         private void minimizar_Click(object sender, EventArgs e)
@@ -69,7 +74,7 @@ namespace WIN.WINReportes
         private void btnrestaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = false;
+            // btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
         }
 
