@@ -46,7 +46,6 @@
             this.wrapper = new System.Windows.Forms.Panel();
             this.header = new System.Windows.Forms.Panel();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
-            this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.icohome = new FontAwesome.Sharp.IconPictureBox();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.lbltitulo = new System.Windows.Forms.Label();
@@ -57,7 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictreinicio)).BeginInit();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icohome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
@@ -337,7 +335,6 @@
             // 
             this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.header.Controls.Add(this.btnmaximizar);
-            this.header.Controls.Add(this.btnrestaurar);
             this.header.Controls.Add(this.icohome);
             this.header.Controls.Add(this.minimizar);
             this.header.Controls.Add(this.lbltitulo);
@@ -360,18 +357,6 @@
             this.btnmaximizar.TabIndex = 4;
             this.btnmaximizar.TabStop = false;
             this.btnmaximizar.Click += new System.EventHandler(this.btnmaximizar_Click);
-            // 
-            // btnrestaurar
-            // 
-            this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnrestaurar.Image")));
-            this.btnrestaurar.Location = new System.Drawing.Point(1028, 1);
-            this.btnrestaurar.Name = "btnrestaurar";
-            this.btnrestaurar.Size = new System.Drawing.Size(35, 35);
-            this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnrestaurar.TabIndex = 5;
-            this.btnrestaurar.TabStop = false;
-            this.btnrestaurar.Click += new System.EventHandler(this.btnrestaurar_Click);
             // 
             // icohome
             // 
@@ -445,7 +430,6 @@
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.icohome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
@@ -474,7 +458,6 @@
         private FontAwesome.Sharp.IconPictureBox icohome;
         private FontAwesome.Sharp.IconButton btnrespaldo;
         private System.Windows.Forms.PictureBox btnmaximizar;
-        private System.Windows.Forms.PictureBox btnrestaurar;
         private FontAwesome.Sharp.IconButton btnReporteVentas;
         private FontAwesome.Sharp.IconButton iconButton1;
     }
