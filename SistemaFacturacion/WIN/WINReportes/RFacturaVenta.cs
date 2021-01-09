@@ -46,9 +46,16 @@ namespace WIN.WINReportes
 
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            btnmaximizar.Visible = false;
-            btnrestaurar.Visible = true;
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                btnmaximizar.Text = "Restaurar";
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                btnmaximizar.Text = "Maximizar";
+            }
         }
 
         private void salir_Click(object sender, EventArgs e)
@@ -59,7 +66,6 @@ namespace WIN.WINReportes
         private void btnrestaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
         }
 
