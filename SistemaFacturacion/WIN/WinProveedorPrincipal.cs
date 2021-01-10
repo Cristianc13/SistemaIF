@@ -330,5 +330,18 @@ namespace WIN
                 e.Handled = true;
             }
         }
+
+        private void txtnombreProv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

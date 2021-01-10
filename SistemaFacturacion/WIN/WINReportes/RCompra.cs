@@ -134,12 +134,24 @@ namespace WIN.WINReportes
 
         private void btnbuscarn_Click(object sender, EventArgs e)
         {
+            if (txtbuscarn.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtbuscarn, "Debe ingresar una Factura");
+                return;
+            }
+            errorProvider1.Clear();
+
             int ad = Convert.ToInt32(txtbuscarn.Text);
             rcompra.SetParameterValue("@idFactura", ad);
             crystalReportViewer1.ReportSource = rcompra;
             txtbuscarn.Clear();
-
-
+        }
+        private void txtbuscarn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

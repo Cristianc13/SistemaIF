@@ -41,7 +41,6 @@ namespace WIN
             HabilitarBotones(true, false);
             LlenarDataGrid();
             FormatoGrid();
-            TelefonoTextBox.Text = "+";
             SendMessage(textBoxBuscar.Handle, EM_SETCUEBANNER, 0, "Nombre, Apellido o Telefono");
             ContextMenu _blankContextMenu = new ContextMenu();
             NombreTextBox.ContextMenu = _blankContextMenu;
@@ -289,7 +288,12 @@ namespace WIN
 
         private void TelefonoTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '+') && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }

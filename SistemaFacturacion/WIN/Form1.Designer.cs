@@ -82,6 +82,7 @@
             // 
             // iconButton1
             // 
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,6 +105,7 @@
             // 
             // btnReporteVentas
             // 
+            this.btnReporteVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporteVentas.FlatAppearance.BorderSize = 0;
             this.btnReporteVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporteVentas.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +129,7 @@
             // btnrespaldo
             // 
             this.btnrespaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnrespaldo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrespaldo.FlatAppearance.BorderSize = 0;
             this.btnrespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrespaldo.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,6 +152,7 @@
             // 
             // btproveedor
             // 
+            this.btproveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btproveedor.FlatAppearance.BorderSize = 0;
             this.btproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btproveedor.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +175,7 @@
             // 
             // btcliente
             // 
+            this.btcliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btcliente.FlatAppearance.BorderSize = 0;
             this.btcliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btcliente.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,6 +241,7 @@
             // 
             // btventa
             // 
+            this.btventa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btventa.FlatAppearance.BorderSize = 0;
             this.btventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btventa.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,6 +264,7 @@
             // 
             // btcompra
             // 
+            this.btcompra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btcompra.FlatAppearance.BorderSize = 0;
             this.btcompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btcompra.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,6 +287,7 @@
             // 
             // btdashboard
             // 
+            this.btdashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btdashboard.FlatAppearance.BorderSize = 0;
             this.btdashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btdashboard.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -302,6 +310,7 @@
             // 
             // btproducto
             // 
+            this.btproducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btproducto.FlatAppearance.BorderSize = 0;
             this.btproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btproducto.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,6 +358,7 @@
             // btnmaximizar
             // 
             this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximizar.Image")));
             this.btnmaximizar.Location = new System.Drawing.Point(1028, 1);
             this.btnmaximizar.Name = "btnmaximizar";
@@ -374,6 +384,7 @@
             // minimizar
             // 
             this.minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
             this.minimizar.Location = new System.Drawing.Point(992, 1);
             this.minimizar.Name = "minimizar";
@@ -398,6 +409,7 @@
             // salir
             // 
             this.salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salir.Image = global::WIN.Properties.Resources.icerrar;
             this.salir.Location = new System.Drawing.Point(1064, 1);
             this.salir.Name = "salir";

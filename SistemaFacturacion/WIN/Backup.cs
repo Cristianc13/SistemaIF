@@ -49,6 +49,13 @@ namespace WIN
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (txtruta.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtruta, "Debe agregar una ruta para realizar el respaldo");
+                return;
+            }
+            errorProvider1.Clear();
+
             CB.BackupBD(txtruta.Text);
 
             MessageBox.Show("Bakcup realizado satisfactoriamente");
