@@ -395,6 +395,7 @@
             // 
             this.ClientedataGridView.AllowUserToAddRows = false;
             this.ClientedataGridView.AllowUserToDeleteRows = false;
+            this.ClientedataGridView.BackgroundColor = System.Drawing.Color.White;
             this.ClientedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientedataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ClientedataGridView.Location = new System.Drawing.Point(0, 0);
