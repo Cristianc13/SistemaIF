@@ -903,6 +903,13 @@ namespace WIN
             {
                 txtIVAdetalleC.Enabled = true;
                 Limpiar();
+                CmbProveedor.Enabled = true;
+                txtdescr.Text = "";
+                txtdescr.Enabled = true;
+                txtnfactura.Enabled = true;
+                txtIVA.Text = "";
+                txtsubtotal.Text = "";
+                txtTotal.Text = "";
                 txtnombreCompañia.Text = "";
                 CmbProveedor.Text = "";
                 CmbProveedor.SelectedIndex = -1;
