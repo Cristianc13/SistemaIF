@@ -510,7 +510,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "WINProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Proveedor";
             this.Load += new System.EventHandler(this.WINProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProovedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

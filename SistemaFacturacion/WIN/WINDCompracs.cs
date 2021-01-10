@@ -549,7 +549,7 @@ namespace WIN
 
         private void txtnfactura_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '-'))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && (e.KeyChar != '-'))
             {
                 e.Handled = true;
             }
@@ -894,6 +894,26 @@ namespace WIN
         {
             WINReportes.RCompra RCompra = new WINReportes.RCompra();
             RCompra.ShowDialog();
+        }
+
+        private void btnCancelarCompra_Click(object sender, EventArgs e)
+        {
+            DialogResult rpt = MessageBox.Show("¿Cancelar Compra?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (rpt == DialogResult.Yes)
+            {
+                txtIVAdetalleC.Enabled = true;
+                Limpiar();
+                txtnombreCompañia.Text = "";
+                CmbProveedor.Text = "";
+                CmbProveedor.SelectedIndex = -1;
+                txtnfactura.Text = "";
+                txtIVAdetalleC.Text = "0";
+                dtfecha.Value = DateTime.Now;
+                EDetalleC.Clear();
+                DetalleCompraGridView1.DataSource = null;
+                HabilitarBotones(false, false);
+            }
+            if (rpt == DialogResult.No) return;
         }
     }
 }

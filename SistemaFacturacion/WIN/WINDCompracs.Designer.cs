@@ -86,6 +86,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.DetalleCompraGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnCancelarCompra = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).BeginInit();
@@ -703,6 +704,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.btnCancelarCompra);
             this.panel7.Controls.Add(this.label13);
             this.panel7.Controls.Add(this.label15);
             this.panel7.Controls.Add(this.label18);
@@ -884,6 +886,27 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnCancelarCompra
+            // 
+            this.btnCancelarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnCancelarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnCancelarCompra.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarCompra.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            this.btnCancelarCompra.IconColor = System.Drawing.Color.White;
+            this.btnCancelarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelarCompra.IconSize = 30;
+            this.btnCancelarCompra.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCancelarCompra.Location = new System.Drawing.Point(26, 30);
+            this.btnCancelarCompra.Name = "btnCancelarCompra";
+            this.btnCancelarCompra.Size = new System.Drawing.Size(168, 35);
+            this.btnCancelarCompra.TabIndex = 31;
+            this.btnCancelarCompra.Text = "Cancelar Compra";
+            this.btnCancelarCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelarCompra.UseVisualStyleBackColor = false;
+            this.btnCancelarCompra.Click += new System.EventHandler(this.btnCancelarCompra_Click);
+            // 
             // WINDCompracs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -982,5 +1005,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
+        private FontAwesome.Sharp.IconButton btnCancelarCompra;
     }
 }
