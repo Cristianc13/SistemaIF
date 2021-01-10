@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using BL;
 using ENT;
-using BL;
+
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
@@ -16,9 +16,9 @@ namespace WIN
         private BLCliente cliente = new BLCliente();
         public int n = 0;
         private int id;
-        string nombre;
-        string apellido;
-        string telefono;
+        private string nombre;
+        private string apellido;
+        private string telefono;
 
         public WINCliente()
         {
@@ -86,14 +86,13 @@ namespace WIN
                 errorProvider1.Clear();
 
                 WINDetalleVenta dv = Owner as WINDetalleVenta;
-                dv.ClientecomboBox.Text = nombre +" "+ apellido;
+                dv.ClientecomboBox.Text = nombre + " " + apellido;
                 dv.TelefonotextBox.Text = telefono;
                 dv.ClientecomboBox.Enabled = false;
                 this.Close();
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -137,8 +136,8 @@ namespace WIN
                 btnagregar.BackColor = Color.FromArgb(177, 180, 183);
                 btnagregar.IconColor = Color.Black;
             }
-
         }
+
         private void Habilitar(bool p1, bool p2)
         {
             btnagregar.Enabled = p2;
@@ -211,12 +210,10 @@ namespace WIN
             LlenarDataGrid();
             Limpiar();
             HabilitarBotones(true, false);
-
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -258,7 +255,7 @@ namespace WIN
             dv.ClientecomboBox.ValueMember = "idCliente";
             dv.ClientecomboBox.SelectedIndex = -1;
 
-            dv.ClientecomboBox.Text = NombreTextBox.Text +" "+ ApellidoTextBox.Text;
+            dv.ClientecomboBox.Text = NombreTextBox.Text + " " + ApellidoTextBox.Text;
             dv.TelefonotextBox.Text = TelefonoTextBox.Text;
             dv.ClientecomboBox.Enabled = false;
 
@@ -307,7 +304,6 @@ namespace WIN
             {
                 e.Handled = false;
             }
-
             else
             {
                 e.Handled = true;
@@ -320,7 +316,6 @@ namespace WIN
             {
                 e.Handled = false;
             }
-
             else
             {
                 e.Handled = true;

@@ -130,23 +130,11 @@
     <Compile Include="WINClientePrincipal.Designer.cs">
       <DependentUpon>WINClientePrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="WINCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WINCompra.Designer.cs">
-      <DependentUpon>WINCompra.cs</DependentUpon>
-    </Compile>
     <Compile Include="WINDCompracs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WINDCompracs.Designer.cs">
       <DependentUpon>WINDCompracs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WINDetalleCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WINDetalleCompra.Designer.cs">
-      <DependentUpon>WINDetalleCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="WINDetalleCompra2.cs">
       <SubType>Form</SubType>
@@ -177,12 +165,6 @@
     </Compile>
     <Compile Include="WINMarca.Designer.cs">
       <DependentUpon>WINMarca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WINMENU.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WINMENU.Designer.cs">
-      <DependentUpon>WINMENU.cs</DependentUpon>
     </Compile>
     <Compile Include="WINModelo.cs">
       <SubType>Form</SubType>
@@ -248,11 +230,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RFacturaCompras.rpt</DependentUpon>
-    </Compile>
-    <Compile Include="WINReportes\Reportes\CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WINReportes\Reportes\RCompraCristal.cs">
@@ -331,14 +308,8 @@
     <EmbeddedResource Include="WINClientePrincipal.resx">
       <DependentUpon>WINClientePrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WINCompra.resx">
-      <DependentUpon>WINCompra.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="WINDCompracs.resx">
       <DependentUpon>WINDCompracs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WINDetalleCompra.resx">
-      <DependentUpon>WINDetalleCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINDetalleCompra2.resx">
       <DependentUpon>WINDetalleCompra2.cs</DependentUpon>
@@ -354,9 +325,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINMarca.resx">
       <DependentUpon>WINMarca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WINMENU.resx">
-      <DependentUpon>WINMENU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WINModelo.resx">
       <DependentUpon>WINModelo.cs</DependentUpon>
@@ -395,18 +363,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RFacturaCompras.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="WINReportes\Reportes\CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\Reportes\RCompraCristal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RCompraCristal.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="WINReportes\Reportes\RDetalleVenta.rdlc" />
-    <EmbeddedResource Include="WINReportes\Reportes\ReporteVentasCliente1.rdlc" />
-    <EmbeddedResource Include="WINReportes\Reportes\RGenerarFactura.rdlc" />
-    <EmbeddedResource Include="WINReportes\Reportes\RProducto.rdlc" />
     <EmbeddedResource Include="WINReportes\RFacturaCompra.resx">
       <DependentUpon>RFacturaCompra.cs</DependentUpon>
     </EmbeddedResource>

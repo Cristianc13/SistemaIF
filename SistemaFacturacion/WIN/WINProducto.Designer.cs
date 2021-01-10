@@ -313,7 +313,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(243, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(209, 68);
+            this.panel9.Size = new System.Drawing.Size(217, 68);
             this.panel9.TabIndex = 2;
             // 
             // lbcantcate
@@ -359,9 +359,9 @@
             this.panel10.Controls.Add(this.label14);
             this.panel10.Controls.Add(this.pictureBox3);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(458, 3);
+            this.panel10.Location = new System.Drawing.Point(466, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(198, 68);
+            this.panel10.Size = new System.Drawing.Size(190, 68);
             this.panel10.TabIndex = 2;
             // 
             // lbcantmarca
@@ -934,8 +934,8 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.81818F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.54545F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.54545F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.27273F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.panel8, 0, 0);

@@ -333,7 +333,7 @@
             // 
             // wrapper
             // 
-            this.wrapper.BackColor = System.Drawing.SystemColors.Control;
+            this.wrapper.BackColor = System.Drawing.Color.White;
             this.wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wrapper.Location = new System.Drawing.Point(250, 60);
             this.wrapper.Name = "wrapper";

@@ -123,7 +123,7 @@ namespace WIN
         {
             if (MarcatextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(MarcatextBox, "Debe ingresar un Nombre");
+                errorProvider1.SetError(MarcatextBox, "Debe ingresar un nombre de Marca");
                 MarcatextBox.Focus();
                 return;
             }
