@@ -32,6 +32,8 @@ namespace WIN.WINReportes
         private void RVenta_Load(object sender, EventArgs e)
         {
             RVentasHoy();
+            dtdate.Value = DateTime.Now;
+            dtfrom.Value = DateTime.Now;
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -122,6 +124,13 @@ namespace WIN.WINReportes
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (textBoxFactura.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBoxFactura, "Debe ingresar una Factura");
+                return;
+            }
+            errorProvider1.Clear();
+
             int F = Convert.ToInt32(textBoxFactura.Text);
             FV.SetParameterValue("@idFactura", F);
             crystalReportViewer1.ReportSource = FV;

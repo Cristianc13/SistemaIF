@@ -65,6 +65,7 @@
             // 
             this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnclose.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnclose.IconColor = System.Drawing.Color.White;
             this.btnclose.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -102,6 +103,7 @@
             // buscar
             // 
             this.buscar.BackColor = System.Drawing.Color.White;
+            this.buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.buscar.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.buscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));

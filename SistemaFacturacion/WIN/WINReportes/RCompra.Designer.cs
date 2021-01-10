@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RCompra));
             this.header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.RCompraCristal1 = new WIN.WINReportes.Reportes.RCompraCristal();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
@@ -57,6 +59,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // header
@@ -87,6 +90,7 @@
             // btnmaximizar
             // 
             this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximizar.Image")));
             this.btnmaximizar.Location = new System.Drawing.Point(1279, 0);
             this.btnmaximizar.Name = "btnmaximizar";
@@ -99,6 +103,7 @@
             // minimizar
             // 
             this.minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
             this.minimizar.Location = new System.Drawing.Point(1243, 0);
             this.minimizar.Name = "minimizar";
@@ -111,6 +116,7 @@
             // salir
             // 
             this.salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salir.Image = global::WIN.Properties.Resources.icerrar;
             this.salir.Location = new System.Drawing.Point(1315, 0);
             this.salir.Name = "salir";
@@ -146,7 +152,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 493);
+            this.label3.Location = new System.Drawing.Point(16, 489);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 20);
             this.label3.TabIndex = 53;
@@ -169,14 +175,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbuscarn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbuscarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscarn.Location = new System.Drawing.Point(24, 543);
+            this.txtbuscarn.Location = new System.Drawing.Point(24, 530);
             this.txtbuscarn.MaxLength = 10;
             this.txtbuscarn.Name = "txtbuscarn";
             this.txtbuscarn.Size = new System.Drawing.Size(193, 20);
             this.txtbuscarn.TabIndex = 36;
+            this.txtbuscarn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscarn_KeyPress);
             // 
             // btnbuscarn
             // 
+            this.btnbuscarn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbuscarn.FlatAppearance.BorderSize = 0;
             this.btnbuscarn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscarn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,7 +194,7 @@
             this.btnbuscarn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnbuscarn.IconSize = 30;
             this.btnbuscarn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuscarn.Location = new System.Drawing.Point(6, 595);
+            this.btnbuscarn.Location = new System.Drawing.Point(6, 564);
             this.btnbuscarn.Name = "btnbuscarn";
             this.btnbuscarn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnbuscarn.Size = new System.Drawing.Size(226, 46);
@@ -204,7 +212,7 @@
             this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(19, 535);
+            this.pictureBox10.Location = new System.Drawing.Point(19, 522);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(203, 35);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -229,6 +237,7 @@
             // 
             // btnpersonalizado
             // 
+            this.btnpersonalizado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnpersonalizado.FlatAppearance.BorderSize = 0;
             this.btnpersonalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpersonalizado.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,6 +260,7 @@
             // 
             // aniobtn
             // 
+            this.aniobtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.aniobtn.FlatAppearance.BorderSize = 0;
             this.aniobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aniobtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,6 +283,7 @@
             // 
             // totalbtn
             // 
+            this.totalbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.totalbtn.FlatAppearance.BorderSize = 0;
             this.totalbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalbtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,6 +306,7 @@
             // 
             // mesbtn
             // 
+            this.mesbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mesbtn.FlatAppearance.BorderSize = 0;
             this.mesbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mesbtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -317,6 +329,7 @@
             // 
             // Semanabtn
             // 
+            this.Semanabtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Semanabtn.FlatAppearance.BorderSize = 0;
             this.Semanabtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Semanabtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -381,6 +394,10 @@
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // RCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,6 +419,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,5 +446,6 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

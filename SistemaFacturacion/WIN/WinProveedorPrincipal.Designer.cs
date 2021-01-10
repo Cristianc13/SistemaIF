@@ -174,6 +174,7 @@
             this.txtnombreProv.Name = "txtnombreProv";
             this.txtnombreProv.Size = new System.Drawing.Size(413, 20);
             this.txtnombreProv.TabIndex = 45;
+            this.txtnombreProv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreProv_KeyPress);
             this.txtnombreProv.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreProv_KeyUp);
             // 
             // pictureBox1

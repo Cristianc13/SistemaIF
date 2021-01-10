@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Backup));
             this.header = new System.Windows.Forms.Panel();
             this.btnclose = new FontAwesome.Sharp.IconPictureBox();
@@ -38,10 +39,12 @@
             this.txtruta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // header
@@ -60,6 +63,7 @@
             // 
             this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnclose.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnclose.IconColor = System.Drawing.Color.White;
             this.btnclose.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -98,6 +102,7 @@
             // btnguardar
             // 
             this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnguardar.ForeColor = System.Drawing.Color.White;
@@ -118,6 +123,7 @@
             // btnbuscar
             // 
             this.btnbuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnbuscar.ForeColor = System.Drawing.Color.White;
@@ -168,6 +174,10 @@
             this.pictureBox6.TabIndex = 41;
             this.pictureBox6.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Backup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +198,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +214,6 @@
         private FontAwesome.Sharp.IconButton btnbuscar;
         private System.Windows.Forms.PictureBox pictureBox6;
         private FontAwesome.Sharp.IconPictureBox btnclose;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

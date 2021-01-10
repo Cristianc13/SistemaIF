@@ -41,6 +41,7 @@
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            this.configuracion = new FontAwesome.Sharp.IconPictureBox();
             this.header = new System.Windows.Forms.Panel();
             this.btnclose = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,20 +49,19 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.configuracion = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnojo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.configuracion)).BeginInit();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.configuracion)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -115,6 +115,7 @@
             // btniniciarsesion
             // 
             this.btniniciarsesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btniniciarsesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btniniciarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btniniciarsesion.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btniniciarsesion.ForeColor = System.Drawing.Color.White;
@@ -151,6 +152,7 @@
             // btnojo
             // 
             this.btnojo.BackColor = System.Drawing.Color.White;
+            this.btnojo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnojo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.errorProvider1.SetIconAlignment(this.btnojo, System.Windows.Forms.ErrorIconAlignment.BottomRight);
             this.btnojo.IconChar = FontAwesome.Sharp.IconChar.Eye;
@@ -205,6 +207,21 @@
             this.iconPictureBox4.Size = new System.Drawing.Size(35, 34);
             this.iconPictureBox4.TabIndex = 15;
             this.iconPictureBox4.TabStop = false;
+            // 
+            // configuracion
+            // 
+            this.configuracion.BackColor = System.Drawing.Color.White;
+            this.configuracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.errorProvider1.SetIconAlignment(this.configuracion, System.Windows.Forms.ErrorIconAlignment.BottomRight);
+            this.configuracion.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.configuracion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.configuracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.configuracion.IconSize = 34;
+            this.configuracion.Location = new System.Drawing.Point(571, 449);
+            this.configuracion.Name = "configuracion";
+            this.configuracion.Size = new System.Drawing.Size(35, 34);
+            this.configuracion.TabIndex = 53;
+            this.configuracion.TabStop = false;
             // 
             // header
             // 
@@ -293,21 +310,6 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // configuracion
-            // 
-            this.configuracion.BackColor = System.Drawing.Color.White;
-            this.configuracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.errorProvider1.SetIconAlignment(this.configuracion, System.Windows.Forms.ErrorIconAlignment.BottomRight);
-            this.configuracion.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.configuracion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.configuracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.configuracion.IconSize = 34;
-            this.configuracion.Location = new System.Drawing.Point(571, 449);
-            this.configuracion.Name = "configuracion";
-            this.configuracion.Size = new System.Drawing.Size(35, 34);
-            this.configuracion.TabIndex = 53;
-            this.configuracion.TabStop = false;
-            // 
             // WINAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.configuracion)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
@@ -345,7 +348,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.configuracion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
