@@ -131,6 +131,7 @@ namespace WIN
             textBoxnombre.Text = string.Empty;
             TextBoxApellido.Text = string.Empty;
             textboxTelefono.Text = string.Empty;
+            textBoxBuscar.Text = "";
             errorProvider1.Clear();
         }
 
@@ -225,6 +226,7 @@ namespace WIN
         private void btncancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            LlenarDataGrid();
             HabilitarBotones(true, false);
         }
 

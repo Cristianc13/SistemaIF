@@ -108,6 +108,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClienteDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ClienteDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.ClienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClienteDataGridView.Location = new System.Drawing.Point(0, 166);
             this.ClienteDataGridView.Name = "ClienteDataGridView";
