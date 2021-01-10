@@ -139,6 +139,7 @@ namespace WIN
             txtnumeroCompañia.Text = string.Empty;
             txtruc.Text = string.Empty;
             textBox1.Text = string.Empty;
+            
 
             errorProvider1.Clear();
         }
@@ -248,6 +249,7 @@ namespace WIN
         {
             HabilitarBotones(true, false);
             Limpiar();
+            LlenarDataGrid();
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
