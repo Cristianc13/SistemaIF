@@ -32,33 +32,31 @@
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.DetalleVenta1 = new WIN.WINReportes.ReporteCristal.DetalleVenta();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.textBoxFactura = new System.Windows.Forms.TextBox();
-            this.dtfrom = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnpersonalizado = new FontAwesome.Sharp.IconButton();
+            this.textBoxFactura = new System.Windows.Forms.TextBox();
+            this.dtdate = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.dtfrom = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.aniobtn = new FontAwesome.Sharp.IconButton();
             this.totalbtn = new FontAwesome.Sharp.IconButton();
             this.mesbtn = new FontAwesome.Sharp.IconButton();
             this.Semanabtn = new FontAwesome.Sharp.IconButton();
-            this.dtdate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
-            this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.salir = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -101,57 +99,31 @@
             this.panel1.Size = new System.Drawing.Size(240, 666);
             this.panel1.TabIndex = 1;
             // 
-            // btnBuscar
+            // label2
             // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscar.IconColor = System.Drawing.Color.White;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 30;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(12, 533);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnBuscar.Size = new System.Drawing.Size(205, 46);
-            this.btnBuscar.TabIndex = 52;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(20, 461);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 18);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "Busqueda por Factura";
             // 
-            // textBoxFactura
+            // label1
             // 
-            this.textBoxFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFactura.Location = new System.Drawing.Point(23, 501);
-            this.textBoxFactura.MaxLength = 7;
-            this.textBoxFactura.Name = "textBoxFactura";
-            this.textBoxFactura.Size = new System.Drawing.Size(196, 17);
-            this.textBoxFactura.TabIndex = 51;
-            this.textBoxFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFactura_KeyPress);
-            // 
-            // dtfrom
-            // 
-            this.dtfrom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtfrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.dtfrom.BorderRadius = 0;
-            this.dtfrom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtfrom.ForeColor = System.Drawing.Color.White;
-            this.dtfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtfrom.FormatCustom = null;
-            this.dtfrom.Location = new System.Drawing.Point(17, 370);
-            this.dtfrom.Name = "dtfrom";
-            this.dtfrom.Size = new System.Drawing.Size(207, 34);
-            this.dtfrom.TabIndex = 50;
-            this.dtfrom.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(19, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 18);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Rango Personalizado";
             // 
             // btnpersonalizado
             // 
+            this.btnpersonalizado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnpersonalizado.FlatAppearance.BorderSize = 0;
             this.btnpersonalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpersonalizado.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,8 +144,91 @@
             this.btnpersonalizado.UseVisualStyleBackColor = true;
             this.btnpersonalizado.Click += new System.EventHandler(this.btnpersonalizado_Click);
             // 
+            // textBoxFactura
+            // 
+            this.textBoxFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFactura.Location = new System.Drawing.Point(23, 501);
+            this.textBoxFactura.MaxLength = 7;
+            this.textBoxFactura.Name = "textBoxFactura";
+            this.textBoxFactura.Size = new System.Drawing.Size(196, 17);
+            this.textBoxFactura.TabIndex = 51;
+            this.textBoxFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFactura_KeyPress);
+            // 
+            // dtdate
+            // 
+            this.dtdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.dtdate.BorderRadius = 0;
+            this.dtdate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtdate.ForeColor = System.Drawing.Color.White;
+            this.dtdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtdate.FormatCustom = null;
+            this.dtdate.Location = new System.Drawing.Point(18, 321);
+            this.dtdate.Name = "dtdate";
+            this.dtdate.Size = new System.Drawing.Size(206, 34);
+            this.dtdate.TabIndex = 44;
+            this.dtdate.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(18, 490);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(206, 37);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 55;
+            this.pictureBox6.TabStop = false;
+            // 
+            // dtfrom
+            // 
+            this.dtfrom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtfrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.dtfrom.BorderRadius = 0;
+            this.dtfrom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtfrom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtfrom.ForeColor = System.Drawing.Color.White;
+            this.dtfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtfrom.FormatCustom = null;
+            this.dtfrom.Location = new System.Drawing.Point(17, 370);
+            this.dtfrom.Name = "dtfrom";
+            this.dtfrom.Size = new System.Drawing.Size(207, 34);
+            this.dtfrom.TabIndex = 50;
+            this.dtfrom.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 30;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(12, 533);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnBuscar.Size = new System.Drawing.Size(205, 46);
+            this.btnBuscar.TabIndex = 52;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // aniobtn
             // 
+            this.aniobtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.aniobtn.FlatAppearance.BorderSize = 0;
             this.aniobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aniobtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,6 +251,7 @@
             // 
             // totalbtn
             // 
+            this.totalbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.totalbtn.FlatAppearance.BorderSize = 0;
             this.totalbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.totalbtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,6 +274,7 @@
             // 
             // mesbtn
             // 
+            this.mesbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mesbtn.FlatAppearance.BorderSize = 0;
             this.mesbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mesbtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,6 +297,7 @@
             // 
             // Semanabtn
             // 
+            this.Semanabtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Semanabtn.FlatAppearance.BorderSize = 0;
             this.Semanabtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Semanabtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,22 +318,6 @@
             this.Semanabtn.UseVisualStyleBackColor = true;
             this.Semanabtn.Click += new System.EventHandler(this.Semanabtn_Click);
             // 
-            // dtdate
-            // 
-            this.dtdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.dtdate.BorderRadius = 0;
-            this.dtdate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtdate.ForeColor = System.Drawing.Color.White;
-            this.dtdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtdate.FormatCustom = null;
-            this.dtdate.Location = new System.Drawing.Point(18, 321);
-            this.dtdate.Name = "dtdate";
-            this.dtdate.Size = new System.Drawing.Size(206, 34);
-            this.dtdate.TabIndex = 44;
-            this.dtdate.Value = new System.DateTime(2021, 1, 7, 0, 0, 0, 0);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -290,7 +332,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.panel3.Controls.Add(this.btnmaximizar);
-            this.panel3.Controls.Add(this.btnrestaurar);
             this.panel3.Controls.Add(this.minimizar);
             this.panel3.Controls.Add(this.salir);
             this.panel3.Controls.Add(this.label4);
@@ -304,6 +345,7 @@
             // btnmaximizar
             // 
             this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximizar.Image")));
             this.btnmaximizar.Location = new System.Drawing.Point(1276, 4);
             this.btnmaximizar.Name = "btnmaximizar";
@@ -313,21 +355,10 @@
             this.btnmaximizar.TabStop = false;
             this.btnmaximizar.Click += new System.EventHandler(this.btnmaximizar_Click);
             // 
-            // btnrestaurar
-            // 
-            this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnrestaurar.Image")));
-            this.btnrestaurar.Location = new System.Drawing.Point(1276, 4);
-            this.btnrestaurar.Name = "btnrestaurar";
-            this.btnrestaurar.Size = new System.Drawing.Size(35, 35);
-            this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnrestaurar.TabIndex = 48;
-            this.btnrestaurar.TabStop = false;
-            this.btnrestaurar.Click += new System.EventHandler(this.btnrestaurar_Click);
-            // 
             // minimizar
             // 
             this.minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
             this.minimizar.Location = new System.Drawing.Point(1240, 4);
             this.minimizar.Name = "minimizar";
@@ -340,6 +371,7 @@
             // salir
             // 
             this.salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salir.Image = global::WIN.Properties.Resources.icerrar;
             this.salir.Location = new System.Drawing.Point(1312, 4);
             this.salir.Name = "salir";
@@ -360,42 +392,6 @@
             this.label4.TabIndex = 44;
             this.label4.Text = "Reportes de Venta ";
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(18, 490);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(206, 37);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 55;
-            this.pictureBox6.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(19, 290);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 18);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Rango Personalizado";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(20, 461);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 18);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "Busqueda por Factura";
-            // 
             // RVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,14 +409,13 @@
             this.Load += new System.EventHandler(this.RVenta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -443,7 +438,6 @@
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox salir;
-        private System.Windows.Forms.PictureBox btnrestaurar;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.TextBox textBoxFactura;
         private System.Windows.Forms.PictureBox pictureBox6;

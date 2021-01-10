@@ -322,6 +322,7 @@ namespace WIN
 
                 miDetalle.precioSalida = NuevoPrecio;
                 miDetalle.importe = miDetalle.cantidadProducto * miDetalle.precioSalida;
+
                 EDventa.Add(miDetalle);
                 DVentadataGridView.DataSource = null;
                 DVentadataGridView.DataSource = EDventa;
