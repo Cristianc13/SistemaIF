@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using WIN.WINReportes.ReporteCristal;
+using BL;
 
 namespace WIN.WINReportes
 {
@@ -25,8 +26,11 @@ namespace WIN.WINReportes
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
+        private BLCliente BCliente = new BLCliente();
         DetalleVenta DV = new DetalleVenta();
         FacturaVenta FV = new FacturaVenta();
+        FacturaCliente FC = new FacturaCliente();
+
         DateTime date = DateTime.Now;
 
         private void RVenta_Load(object sender, EventArgs e)
@@ -34,7 +38,35 @@ namespace WIN.WINReportes
             RVentasHoy();
             dtdate.Value = DateTime.Now;
             dtfrom.Value = DateTime.Now;
+            LlenarComboCliente();
             this.WindowState = FormWindowState.Maximized;
+            ContextMenu _blankContextMenu = new ContextMenu();
+            comboBoxCliente.ContextMenu = _blankContextMenu;
+            textBoxFactura.ContextMenu = _blankContextMenu;
+        }
+
+        private const Keys CopyKeys = Keys.Control | Keys.C;
+        private const Keys PasteKeys = Keys.Control | Keys.V;
+        private const Keys CutKeys = Keys.Control | Keys.X;
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == CopyKeys) || (keyData == PasteKeys) || (keyData == CutKeys))
+            {
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
+
+        private void LlenarComboCliente()
+        {
+            comboBoxCliente.DataSource = BCliente.MostrarCliente();
+            comboBoxCliente.DisplayMember = "cliente";
+            comboBoxCliente.ValueMember = "idCliente";
+            comboBoxCliente.SelectedIndex = -1;
         }
 
         private void Semanabtn_Click(object sender, EventArgs e)
@@ -141,6 +173,58 @@ namespace WIN.WINReportes
         private void textBoxFactura_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            if (comboBoxCliente.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(comboBoxCliente, "Debe ingresar un Cliente");
+                return;
+            }
+            errorProvider1.Clear();
+
+            string F = comboBoxCliente.Text;
+            FC.SetParameterValue("@idCliente", F);
+            crystalReportViewer1.ReportSource = FC;
+
+            comboBoxCliente.SelectedIndex = -1;
+        }
+
+        public static string ReducirEspaciado(string Cadena)
+        {
+            while (Cadena.Contains("  "))
+            {
+                Cadena = Cadena.Replace("  ", " ");
+            }
+
+            return Cadena.TrimStart();
+        }
+
+        private void comboBoxCliente_KeyUp(object sender, KeyEventArgs e)
+        {
+            comboBoxCliente.Text = ReducirEspaciado(comboBoxCliente.Text);
+            comboBoxCliente.SelectionStart = comboBoxCliente.Text.Length;
+        }
+
+        private void comboBoxCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
             {
                 e.Handled = true;
             }

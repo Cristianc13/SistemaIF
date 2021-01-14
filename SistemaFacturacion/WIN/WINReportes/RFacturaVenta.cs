@@ -18,6 +18,11 @@ namespace WIN.WINReportes
         public RFacturaVenta()
         {
             InitializeComponent();
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MinimumSize = this.Size;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         public int Factura;
@@ -25,6 +30,7 @@ namespace WIN.WINReportes
         FacturaVenta DV = new FacturaVenta();
         private void RFacturaVenta_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             GF();
         }
 

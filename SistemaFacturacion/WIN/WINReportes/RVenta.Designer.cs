@@ -33,6 +33,9 @@
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.DetalleVenta1 = new WIN.WINReportes.ReporteCristal.DetalleVenta();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCliente = new FontAwesome.Sharp.IconButton();
+            this.comboBoxCliente = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnpersonalizado = new FontAwesome.Sharp.IconButton();
@@ -84,6 +87,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.panel1.Controls.Add(this.btnCliente);
+            this.panel1.Controls.Add(this.comboBoxCliente);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnpersonalizado);
@@ -102,12 +108,62 @@
             this.panel1.Size = new System.Drawing.Size(240, 666);
             this.panel1.TabIndex = 1;
             // 
+            // btnCliente
+            // 
+            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCliente.FlatAppearance.BorderSize = 0;
+            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCliente.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.ForeColor = System.Drawing.Color.White;
+            this.btnCliente.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnCliente.IconColor = System.Drawing.Color.White;
+            this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCliente.IconSize = 30;
+            this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCliente.Location = new System.Drawing.Point(14, 597);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnCliente.Size = new System.Drawing.Size(210, 46);
+            this.btnCliente.TabIndex = 60;
+            this.btnCliente.Text = "Buscar";
+            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // comboBoxCliente
+            // 
+            this.comboBoxCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxCliente.DropDownHeight = 115;
+            this.comboBoxCliente.DropDownWidth = 240;
+            this.comboBoxCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCliente.FormattingEnabled = true;
+            this.comboBoxCliente.IntegralHeight = false;
+            this.comboBoxCliente.Location = new System.Drawing.Point(17, 565);
+            this.comboBoxCliente.Name = "comboBoxCliente";
+            this.comboBoxCliente.Size = new System.Drawing.Size(207, 28);
+            this.comboBoxCliente.TabIndex = 59;
+            this.comboBoxCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxCliente_KeyPress);
+            this.comboBoxCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboBoxCliente_KeyUp);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(20, 530);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(169, 18);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Busqueda por Cliente";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(20, 461);
+            this.label2.Location = new System.Drawing.Point(20, 409);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 18);
             this.label2.TabIndex = 57;
@@ -118,7 +174,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(19, 290);
+            this.label1.Location = new System.Drawing.Point(19, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 18);
             this.label1.TabIndex = 56;
@@ -136,7 +192,7 @@
             this.btnpersonalizado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnpersonalizado.IconSize = 30;
             this.btnpersonalizado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnpersonalizado.Location = new System.Drawing.Point(12, 410);
+            this.btnpersonalizado.Location = new System.Drawing.Point(12, 358);
             this.btnpersonalizado.Name = "btnpersonalizado";
             this.btnpersonalizado.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnpersonalizado.Size = new System.Drawing.Size(207, 46);
@@ -151,7 +207,7 @@
             // 
             this.textBoxFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFactura.Location = new System.Drawing.Point(23, 501);
+            this.textBoxFactura.Location = new System.Drawing.Point(23, 449);
             this.textBoxFactura.MaxLength = 7;
             this.textBoxFactura.Name = "textBoxFactura";
             this.textBoxFactura.Size = new System.Drawing.Size(196, 17);
@@ -169,7 +225,7 @@
             this.dtdate.ForeColor = System.Drawing.Color.White;
             this.dtdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtdate.FormatCustom = null;
-            this.dtdate.Location = new System.Drawing.Point(18, 321);
+            this.dtdate.Location = new System.Drawing.Point(18, 269);
             this.dtdate.Name = "dtdate";
             this.dtdate.Size = new System.Drawing.Size(206, 34);
             this.dtdate.TabIndex = 44;
@@ -182,7 +238,7 @@
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(18, 490);
+            this.pictureBox6.Location = new System.Drawing.Point(18, 438);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(206, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -200,7 +256,7 @@
             this.dtfrom.ForeColor = System.Drawing.Color.White;
             this.dtfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtfrom.FormatCustom = null;
-            this.dtfrom.Location = new System.Drawing.Point(17, 370);
+            this.dtfrom.Location = new System.Drawing.Point(17, 318);
             this.dtfrom.Name = "dtfrom";
             this.dtfrom.Size = new System.Drawing.Size(207, 34);
             this.dtfrom.TabIndex = 50;
@@ -218,7 +274,7 @@
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 30;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(12, 533);
+            this.btnBuscar.Location = new System.Drawing.Point(12, 481);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnBuscar.Size = new System.Drawing.Size(205, 46);
@@ -241,7 +297,7 @@
             this.aniobtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.aniobtn.IconSize = 30;
             this.aniobtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.aniobtn.Location = new System.Drawing.Point(6, 183);
+            this.aniobtn.Location = new System.Drawing.Point(6, 131);
             this.aniobtn.Name = "aniobtn";
             this.aniobtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.aniobtn.Size = new System.Drawing.Size(226, 46);
@@ -264,7 +320,7 @@
             this.totalbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.totalbtn.IconSize = 30;
             this.totalbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.totalbtn.Location = new System.Drawing.Point(6, 235);
+            this.totalbtn.Location = new System.Drawing.Point(6, 183);
             this.totalbtn.Name = "totalbtn";
             this.totalbtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.totalbtn.Size = new System.Drawing.Size(226, 46);
@@ -287,7 +343,7 @@
             this.mesbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.mesbtn.IconSize = 30;
             this.mesbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mesbtn.Location = new System.Drawing.Point(5, 128);
+            this.mesbtn.Location = new System.Drawing.Point(5, 76);
             this.mesbtn.Name = "mesbtn";
             this.mesbtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.mesbtn.Size = new System.Drawing.Size(226, 46);
@@ -310,7 +366,7 @@
             this.Semanabtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Semanabtn.IconSize = 30;
             this.Semanabtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Semanabtn.Location = new System.Drawing.Point(6, 73);
+            this.Semanabtn.Location = new System.Drawing.Point(6, 21);
             this.Semanabtn.Name = "Semanabtn";
             this.Semanabtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.Semanabtn.Size = new System.Drawing.Size(226, 46);
@@ -452,5 +508,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private FontAwesome.Sharp.IconButton btnCliente;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ComboBox comboBoxCliente;
     }
 }
