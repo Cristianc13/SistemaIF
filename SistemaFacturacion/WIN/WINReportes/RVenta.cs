@@ -229,5 +229,10 @@ namespace WIN.WINReportes
                 e.Handled = true;
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            RVentasHoy();
+        }
     }
 }
