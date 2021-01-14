@@ -152,7 +152,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(20, 530);
+            this.label3.Location = new System.Drawing.Point(20, 531);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 18);
             this.label3.TabIndex = 58;
@@ -443,6 +443,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(7, 13);
@@ -450,6 +451,7 @@
             this.label4.Size = new System.Drawing.Size(142, 18);
             this.label4.TabIndex = 44;
             this.label4.Text = "Reportes de Venta ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // errorProvider1
             // 
