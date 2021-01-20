@@ -27,8 +27,9 @@ namespace WIN
             //RECUPERAMOS DATOS DE LA ENTIDAD PARA CARGAR LOS DATOS DEL DASHBOARD
             chartopproductos.Series[0].Points.DataBindXY(obj.Producto1, obj.Cant1);
             chartproductosCat.Series[0].Points.DataBindXY(obj.Categoria1, obj.CantProd1);
+            chartproductosCat.Legends[0].Docking = Docking.Bottom;
             chartventasmes.Series[0].Points.DataBindXY(obj.Meses1, obj.Cantvent1);
-             chartcompras.Series[0].Points.DataBindXY(obj.MesesCompras1, obj.CantCompras1);
+            chartcompras.Series[0].Points.DataBindXY(obj.MesesCompras1, obj.CantCompras1);
 
             lbproduc.Text = obj.CantProductos;
             lbmarca.Text = obj.CantMarcas;

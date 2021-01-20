@@ -141,7 +141,7 @@ namespace WIN.WINReportes
             }
             errorProvider1.Clear();
 
-            int ad = Convert.ToInt32(txtbuscarn.Text);
+            string ad = txtbuscarn.Text;
             rcompra.SetParameterValue("@idFactura", ad);
             crystalReportViewer1.ReportSource = rcompra;
             txtbuscarn.Clear();
