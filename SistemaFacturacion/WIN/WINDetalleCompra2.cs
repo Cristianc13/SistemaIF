@@ -488,7 +488,7 @@ namespace WIN
                 EProducto.observacion = txtobservacion.Text;
 
                 int idP = BProducto.InsertarProducto(EProducto);
-                Limpiar();
+                //Limpiar();
                 LlenarGrid();
                 HabilitarBotones(false, true);
 
@@ -499,6 +499,17 @@ namespace WIN
                 kardex.existencia = EProducto.stockProducto;    //Momento
                 kardex.FK_idProducto = idP;
                 BKardex.InsertKardex(kardex);
+
+                WINDCompracs dv = Owner as WINDCompracs;
+
+                dv.bmbproducto.DataSource = BProducto.MostrarProducto();
+                dv.bmbproducto.DisplayMember = "Producto";
+                dv.bmbproducto.ValueMember = "idProducto";
+                dv.bmbproducto.SelectedIndex = -1;
+
+                dv.bmbproducto.Text = txtcodigo.Text + " " + txtnombre.Text + " " + cmbMarca.Text + " " + txtdescripcion.Text + " " + cmbModelo.Text + " - " + cmbEstado.Text;
+                this.Close();
+
             }
             catch (Exception)
             {
@@ -652,7 +663,15 @@ namespace WIN
             estado = DetalleCompra2GridView1.CurrentRow.Cells[9].Value.ToString();
 
             WINDCompracs dv = Owner as WINDCompracs;
+           
+
+            dv.bmbproducto.DataSource = BProducto.MostrarProducto();
+            dv.bmbproducto.DisplayMember = "Producto";
+            dv.bmbproducto.ValueMember = "idProducto";
+            dv.bmbproducto.SelectedIndex = -1;
+
             dv.bmbproducto.Text = codigo + " " + nombrep + " " + marca + " " + descripciom + " " + modelo + " - " + estado;
+
             this.Close();
         }
     }
