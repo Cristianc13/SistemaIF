@@ -278,6 +278,8 @@ namespace WIN
             txtIVAdetalleC.MaxLength = 2;
             txtcantidad.MaxLength = 7;
             txtcosto.MaxLength = 8;
+            txtnfactura.MaxLength = 50;
+            txtdescr.MaxLength = 50;
             HabilitarEliminar(false);
 
             ContextMenu _blankContextMenu = new ContextMenu();
