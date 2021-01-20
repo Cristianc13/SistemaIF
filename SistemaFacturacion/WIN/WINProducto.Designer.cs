@@ -176,6 +176,7 @@
             this.ProductodataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductodataGridView.Size = new System.Drawing.Size(1100, 334);
             this.ProductodataGridView.TabIndex = 0;
+            this.ProductodataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellContentClick);
             this.ProductodataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductodataGridView_CellDoubleClick);
             this.ProductodataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ProductodataGridView_CellFormatting);
             // 
@@ -608,8 +609,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EstadocomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.EstadocomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EstadocomboBox.DropDownHeight = 100;
             this.EstadocomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EstadocomboBox.FormattingEnabled = true;
+            this.EstadocomboBox.IntegralHeight = false;
             this.EstadocomboBox.Location = new System.Drawing.Point(142, 18);
             this.EstadocomboBox.Name = "EstadocomboBox";
             this.EstadocomboBox.Size = new System.Drawing.Size(192, 28);
@@ -622,8 +625,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CategoriacomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CategoriacomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CategoriacomboBox.DropDownHeight = 100;
             this.CategoriacomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategoriacomboBox.FormattingEnabled = true;
+            this.CategoriacomboBox.IntegralHeight = false;
             this.CategoriacomboBox.Location = new System.Drawing.Point(95, 57);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(200, 28);
@@ -637,8 +642,10 @@
             this.ModelocomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.ModelocomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ModelocomboBox.BackColor = System.Drawing.Color.White;
+            this.ModelocomboBox.DropDownHeight = 100;
             this.ModelocomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModelocomboBox.FormattingEnabled = true;
+            this.ModelocomboBox.IntegralHeight = false;
             this.ModelocomboBox.Location = new System.Drawing.Point(3, 157);
             this.ModelocomboBox.Name = "ModelocomboBox";
             this.ModelocomboBox.Size = new System.Drawing.Size(203, 28);
@@ -652,8 +659,10 @@
             this.MarcacomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.MarcacomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MarcacomboBox.BackColor = System.Drawing.Color.White;
+            this.MarcacomboBox.DropDownHeight = 100;
             this.MarcacomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MarcacomboBox.FormattingEnabled = true;
+            this.MarcacomboBox.IntegralHeight = false;
             this.MarcacomboBox.Location = new System.Drawing.Point(3, 108);
             this.MarcacomboBox.Name = "MarcacomboBox";
             this.MarcacomboBox.Size = new System.Drawing.Size(203, 28);

@@ -543,6 +543,10 @@ namespace WIN
             }
         }
 
+        private void ProductodataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
         //Evitar espacios en blanco
         public static string ReducirEspaciado(string Cadena)
         {

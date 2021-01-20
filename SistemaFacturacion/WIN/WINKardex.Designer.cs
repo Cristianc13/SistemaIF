@@ -108,7 +108,7 @@
             this.buscar.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.buscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buscar.Location = new System.Drawing.Point(554, 20);
+            this.buscar.Location = new System.Drawing.Point(554, 21);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(32, 32);
             this.buscar.TabIndex = 51;
@@ -119,11 +119,14 @@
             // 
             this.comboBoxProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxProducto.BackColor = System.Drawing.Color.White;
+            this.comboBoxProducto.DropDownWidth = 100;
             this.comboBoxProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBoxProducto.FormattingEnabled = true;
+            this.comboBoxProducto.IntegralHeight = false;
             this.comboBoxProducto.Location = new System.Drawing.Point(94, 23);
             this.comboBoxProducto.Name = "comboBoxProducto";
-            this.comboBoxProducto.Size = new System.Drawing.Size(453, 28);
+            this.comboBoxProducto.Size = new System.Drawing.Size(454, 28);
             this.comboBoxProducto.TabIndex = 47;
             this.comboBoxProducto.SelectedIndexChanged += new System.EventHandler(this.comboBoxProducto_SelectedIndexChanged);
             // 
