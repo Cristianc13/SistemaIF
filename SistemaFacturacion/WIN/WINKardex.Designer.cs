@@ -120,6 +120,7 @@
             this.comboBoxProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxProducto.BackColor = System.Drawing.Color.White;
+            this.comboBoxProducto.DropDownWidth = 100;
             this.comboBoxProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBoxProducto.FormattingEnabled = true;
             this.comboBoxProducto.IntegralHeight = false;
