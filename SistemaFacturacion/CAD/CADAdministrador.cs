@@ -55,17 +55,5 @@ namespace CAD
             cmd.ExecuteNonQuery();
             CerrarConexion();
         }
-
-        public DataTable MostrarAdmin()
-        {
-            tabla.Clear();
-            SqlCommand cmd = new SqlCommand("SelectAdministrador", AbrirConexion());
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(tabla);
-            CerrarConexion();
-
-            return tabla;
-        }
     }
 }
