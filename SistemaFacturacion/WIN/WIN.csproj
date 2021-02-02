@@ -424,7 +424,7 @@
 
     <EmbeddedResource Include="WINUser.resx">
       <DependentUpon>WINUser.cs</DependentUpon>
-
+</EmbeddedResource>
     <EmbeddedResource Include="WinServer.resx">
       <DependentUpon>WinServer.cs</DependentUpon>
 
