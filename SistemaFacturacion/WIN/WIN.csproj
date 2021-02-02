@@ -190,12 +190,14 @@
     <Compile Include="WinProveedorPrincipal.Designer.cs">
       <DependentUpon>WinProveedorPrincipal.cs</DependentUpon>
     </Compile>
+    
     <Compile Include="WINProVent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WINProVent.Designer.cs">
       <DependentUpon>WINProVent.cs</DependentUpon>
     </Compile>
+    
     <Compile Include="WINReportes\RCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,14 +294,15 @@
     </Compile>
     <Compile Include="WINUser.Designer.cs">
       <DependentUpon>WINUser.cs</DependentUpon>
-
+    </Compile>
+    
     <Compile Include="WinServer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WinServer.Designer.cs">
       <DependentUpon>WinServer.cs</DependentUpon>
-
     </Compile>
+    
     <EmbeddedResource Include="Backup.resx">
       <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
