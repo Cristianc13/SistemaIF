@@ -27,6 +27,7 @@ namespace WIN
         private int id;
 
         private const int EM_SETCUEBANNER = 0x1501;
+
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam,
         [MarshalAs(UnmanagedType.LPWStr)] string lParam);
@@ -285,7 +286,6 @@ namespace WIN
             {
                 e.Handled = false;
             }
-
             else
             {
                 e.Handled = true;
@@ -298,7 +298,6 @@ namespace WIN
             {
                 e.Handled = false;
             }
-
             else
             {
                 e.Handled = true;

@@ -157,5 +157,9 @@ namespace WIN
         {
             this.Close();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }
