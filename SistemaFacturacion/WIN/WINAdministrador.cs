@@ -97,5 +97,11 @@ namespace WIN
                 }
             }
         }
+
+        private void configuracion_Click(object sender, EventArgs e)
+        {
+            WinServer S = new WinServer();
+            S.ShowDialog();
+        }
     }
 }

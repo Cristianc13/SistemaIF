@@ -407,6 +407,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 352);
+            this.ControlBox = false;
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnagregar);
@@ -434,7 +435,6 @@
             this.MinimumSize = new System.Drawing.Size(622, 350);
             this.Name = "WINCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.WINCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClienteDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
