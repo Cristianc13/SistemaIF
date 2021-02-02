@@ -286,6 +286,12 @@
     <Compile Include="WINReportes\RVentasCliente.Designer.cs">
       <DependentUpon>RVentasCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WINUser.Designer.cs">
+      <DependentUpon>WINUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Backup.resx">
       <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WINReportes\RVentasCliente.resx">
       <DependentUpon>RVentasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WINUser.resx">
+      <DependentUpon>WINUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.BLAdministrador.datasource" />
