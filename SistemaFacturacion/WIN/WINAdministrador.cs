@@ -77,7 +77,7 @@ namespace WIN
                 fr.Show();
                 this.Hide();
             }
-            else if (resultado == 0 && u != "Admin2")
+            else if (resultado == 0 && UsuariotextBox.Text != u || ClavetextBox.Text != u)
             {
                 MessageBox.Show("Usuario o Contraseña Incorrectos");
             }
@@ -106,7 +106,7 @@ namespace WIN
                     fr.Show();
                     this.Hide();
                 }
-                else if (resultado == 0 && u != "Admin2")
+                else if (resultado == 0 && UsuariotextBox.Text != u || ClavetextBox.Text != u)
                 {
                     MessageBox.Show("Usuario o Contraseña Incorrectos");
                 }
