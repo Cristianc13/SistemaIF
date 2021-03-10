@@ -492,7 +492,7 @@ namespace WIN
         {
             WINEstado we = new WINEstado();
             we.ShowDialog();
-            LlenarModelo();
+            LlenarEstado();
             Tarjetas();
             LlenarGrid();
         }
