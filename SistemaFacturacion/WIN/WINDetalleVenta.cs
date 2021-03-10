@@ -82,8 +82,9 @@ namespace WIN
             DVentadataGridView.Columns[2].HeaderText = "Producto";
             DVentadataGridView.Columns[3].HeaderText = "Cantidad";
             DVentadataGridView.Columns[4].HeaderText = "Costo";
-            DVentadataGridView.Columns[5].HeaderText = "Importe";
-            DVentadataGridView.Columns[6].Visible = false;
+            DVentadataGridView.Columns[5].HeaderText = "Descuento";
+            DVentadataGridView.Columns[6].HeaderText = "Importe";
+            DVentadataGridView.Columns[7].Visible = false;
             DVentadataGridView.AllowUserToResizeColumns = false;
             DVentadataGridView.AllowUserToResizeRows = false;
 
@@ -155,7 +156,7 @@ namespace WIN
             decimal total = 0;
             foreach (DataGridViewRow dr in DVentadataGridView.Rows)
             {
-                decimal importe = decimal.Parse(dr.Cells[5].Value.ToString());
+                decimal importe = decimal.Parse(dr.Cells[6].Value.ToString());
                 total += importe;
             }
             ImportetextBox.Text = total.ToString();
@@ -320,8 +321,9 @@ namespace WIN
                 miDetalle.producto = ProductocomboBox.Text;
                 miDetalle.cantidadProducto = Convert.ToDecimal(CantidadtextBox.Text);
 
-                miDetalle.precioSalida = NuevoPrecio;
-                miDetalle.importe = miDetalle.cantidadProducto * miDetalle.precioSalida;
+                miDetalle.precioSalida = Convert.ToDecimal(PreciotextBox.Text);
+                miDetalle.descuento = descuento;
+                miDetalle.importe = ((miDetalle.cantidadProducto * miDetalle.precioSalida) - miDetalle.descuento * Convert.ToDecimal(CantidadtextBox.Text)); 
 
                 EDventa.Add(miDetalle);
                 DVentadataGridView.DataSource = null;
@@ -380,6 +382,8 @@ namespace WIN
             object idcliente = ClientecomboBox.SelectedValue;
             int cliente = Convert.ToInt32(idcliente);
             idventa = BLDetalle.InsertarVenta(cliente);
+
+            HabilitarBotones(false, false);
 
             foreach (ENTDetalleVenta miDetalle in EDventa)
             {
